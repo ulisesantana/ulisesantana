@@ -69,3 +69,9 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# Admin access for Hexo Admin plugins
+admin:
+  username: ulisesantana
+  password_hash: $2a$08$eWJRae9R3OgTGU/rZ3un.u0qVmP0peYyk/tgDX0FVF./7e1yLVnZ6
+  secret: a secret something
