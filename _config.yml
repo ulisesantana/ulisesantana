@@ -3,19 +3,79 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: Ulises Santana # your blog title name
+subtitle: a bit of my life
+author: Ulises Santana
+language: en
+timezone: Atlantic/Canary
+
+# custom Site settings
+# more detail check out docs
+SEOTitle: Ulises' blog
+header-img: http://o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg
+email: ulisesantana@gmail.com
+description: "Github"
+keyword: web developer, web development
+
+# custom end
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://ulisesantana.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+
+# SNS settings
+# RSS:
+weibo_username:
+zhihu_username:
+github_username: ulisesantana
+twitter_username: ulisesantana
+facebook_username:
+linkedin_username:
+
+# Build settings
+anchorjs: false   # if you want to customize anchor. check out line:181 of `post.html`
+
+
+# Disqus settings
+disqus_username: ulisesantana
+
+# Duoshuo settings
+duoshuo_username:  # 你的多说帐号
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id:
+# Google Analytics
+ga_track_id:             # Format: UA-xxxxxx-xx
+ga_domain:
+
+# Sidebar settings
+sidebar-about-description: Noob but hard worker
+sidebar-avatar: https://avatars2.githubusercontent.com/u/17091490?v=3
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# friends
+friends:
+  [
+    {
+        title: "your friend title",
+        href: "your fiend path"
+    },
+    {
+        title: "your friend title 2",
+        href: "your friend path 2"
+    }
+]
 
 # Directory
 source_dir: source
@@ -34,12 +94,12 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace:
 
@@ -63,12 +123,31 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: Anisina
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+  repo:
+  branch:
+
+
+# img CDN path
+cdn-url:  # 你的CDN地址
+
+# Qiniu imageView2 API
+# More info http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
+clip-content: "?imageView2/1/w/1400/h/400/interlace/1/q/90"
+clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
+clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
+
+#post default images
+post-default-img: post-default.jpg
+post-default-img-mobile: #移动端显示的图片
+
+# search api , set your custom key
+swiftype_key:
 
 # Admin access for Hexo Admin plugins
 admin:
