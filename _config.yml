@@ -128,9 +128,9 @@ theme: Anisina
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
-  repo:
-  branch:
+  type:git
+  repo:https://github.com/ulisesantana/ulisesantana.github.io.git
+  branch:gh-pages
 
 
 # img CDN path
