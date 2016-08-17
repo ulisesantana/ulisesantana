@@ -130,7 +130,7 @@ theme: Anisina
 deploy:
   type:git
   repo:https://github.com/ulisesantana/ulisesantana.github.io.git
-  branch:gh-pages
+  branch:master
 
 
 # img CDN path
