@@ -5,7 +5,7 @@
 #
 title: A little bit of my life
 email: ulisesantana@gmail.com
-description: A little bit of my life
+description: "A blog where I talk about tech, geek stuff and my life. You will find posts about javascript and internet tech."
 url: https://ulisesantana.github.io
 
 
@@ -38,7 +38,7 @@ owner:
   job: "web developer"
   bio: "A little bit of my life"
   email: ulisesantana@gmail.com
-  disqus-shortname:
+  disqus-shortname: ulisesantana-github-io
   twitter: ulisesantana
   facebook: #username
   google:

@@ -5,15 +5,18 @@
 
   <!-- Meta info -->
   <title>{% if page.title %}{{ page.title }} | Ulises Santana{% else %}{{ site.title }} | Ulises Santana{% endif %}</title>
+  <meta name="keywords" content="web development, web developer, javascript, javascript framework, geek blog">
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:description" itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{ site.url }}/img/avatar.jpg">
   <link itemprop="image" href="{{ site.url }}/img/avatar.jpg">
+  <meta name="thumbnail" content="{{ site.url }}/img/avatar.jpg" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ulisesantana">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="author" content="Ulises Santana">
 
   <!-- CSS files -->
   <link rel="stylesheet" href="{{ site.url }}/css/main.css">
