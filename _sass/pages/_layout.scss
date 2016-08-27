@@ -1,12 +1,13 @@
 /* LAYOUT CSS */
 .cover {
-  background-color: $background-color;
+  background-image: url('/img/coverbg.jpg');
   position: fixed;
   text-align: center;
   width: 100%;
   min-height: 400px;
   padding: 30px 15px 20px;
   z-index: 1;
+      background-position: 50% 0% !important;
   @include media-query($small-screen) {
     background-position: center;
     padding: 30px;
@@ -28,7 +29,7 @@
   }
   .author_name {
     display: block;
-    color: #F36170;
+    color: $primary;
     font-size: 1.75em;
     text-transform: none;
   }
@@ -43,6 +44,7 @@
   .author_bio {
     font-size: 90%;
     display: block;
+    color: $white;
   }
   @include media-query($medium-screen) {
     text-align: right;
