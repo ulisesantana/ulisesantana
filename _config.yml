@@ -22,7 +22,7 @@ keyword: web developer, web development
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://ulisesantana.github.io
-root: 
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -128,9 +128,9 @@ theme: Anisina
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:git
-  repo:https://github.com/ulisesantana/ulisesantana.github.io.git
-  branch:master
+  type:
+  repo:
+  branch:
 
 
 # img CDN path
