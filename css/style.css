@@ -41,13 +41,13 @@
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #49bf9d;
+		color: #fe6f00;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #49bf9d !important;
+			color: #fe6f00 !important;
 			text-decoration: none;
 		}
 
@@ -170,7 +170,7 @@
 	.align-right {
 		text-align: right;
 	}
-    
+
     .f-right {
         float: right;
     }
@@ -259,7 +259,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #49bf9d;
+			border-color: #fe6f00;
 		}
 
 	.select-wrapper {
@@ -370,7 +370,7 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #49bf9d;
+			border-color: #fe6f00;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -822,8 +822,8 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #fe6f00;
+			color: #fe6f00 !important;
 		}
 
 		input[type="submit"]:active,
@@ -831,8 +831,8 @@
 		input[type="button"]:active,
 		.button:active {
 			background-color: rgba(73, 191, 157, 0.1);
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #fe6f00;
+			color: #fe6f00 !important;
 		}
 
 		input[type="submit"].icon,
@@ -877,8 +877,8 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #49bf9d;
-			border-color: #49bf9d;
+			background-color: #fe6f00;
+			border-color: #fe6f00;
 			color: #ffffff !important;
 		}
 
@@ -953,6 +953,7 @@
 
 		#header strong, #header b {
 			color: #ffffff;
+			font-weight: bolder;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -960,7 +961,7 @@
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 1);
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
@@ -1261,4 +1262,19 @@
 	body.is-touch .poptrox-popup .nav-previous,
 	body.is-touch .poptrox-popup .closer {
 		opacity: 1.0 !important;
+	}
+
+	/*iframe{display: block; margin: auto;}*/
+	.videoWrapper {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+	}
+	.videoWrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
