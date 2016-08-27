@@ -3,14 +3,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }} | A Jekyll theme{% endif %}</title>
+  <!-- Meta info -->
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }} | Ulises Santana{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="{{ site.url }}/img/avatar.jpg">
+  <link itemprop="image" href="{{ site.url }}/img/avatar.jpg">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ulisesantana">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="{{ site.url }}/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ site.url }}/css/main.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/font-awesome.min.css">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml " | prepend: site.url }}" />
 
   <!-- Icons -->
@@ -19,8 +27,10 @@
   <!-- 32x32 -->
   <link rel="shortcut icon" href="{{ site.url }}/favicon.png">
 
+  <!-- Browser Color -->
   <meta name="theme-color" content="#FF5000">
-<meta name="msapplication-navbutton-color" content="#FF5000">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#FF5000">
+  <meta name="msapplication-navbutton-color" content="#FF5000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF5000">
+
 </head>
