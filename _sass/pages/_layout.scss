@@ -62,10 +62,10 @@
       display: inline-block;
       margin-left: 1em;
       a.social-link-item {
-        color: $secondary;
+        color: $primary;
         &:hover,
         &:focus {
-          color: lighten($secondary, 14%);
+          color: lighten($primary, 14%);
         }
       }
     }
@@ -83,10 +83,10 @@
       margin-top: 1em;
       text-transform: lowercase;
       font-size: 85%;
-      color: $secondary;
+      color: $primary;
       &:hover,
       &:focus {
-        color: lighten($secondary, 14%);
+        color: lighten($primary, 14%);
       }
     }
   }
