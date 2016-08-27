@@ -1471,7 +1471,7 @@ pre code {
     display: block;
     color: #F36170;
     font-size: 1.75em;
-    text-transform: lowercase; }
+    text-transform: none; }
   .cover-card .author_job {
     display: block;
     color: #8d7edc;
