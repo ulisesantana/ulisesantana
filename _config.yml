@@ -1,24 +1,66 @@
-# Site settings
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Ulises' blog
+email: ulisesantana@gmail.com
+description: A little bit of my life
+url: https://ulisesantana.github.io
 
-title: Strata # Title of your site
-email: ulisesantana@gmail.com # Your contant email
 
-description: > # this means to ignore newlines until "baseurl:"
-  Github blog of Ulises Santana, a web developer
-  javascript oriented. This is my little place for share all my thoughts.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://ulisesantana.github.io" # the base hostname & protocol for your site
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Atlantic/Canary
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
 
-# Social links.
-# Replace the word 'example' with your username if you want to include the icon in the left sidebar
-# Delete the word 'example' if you don't want to include the icon in the left sidebar
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-twitter_username:     ulisesantana  # Replace this with your Twitter username
-github_username:      ulisesantana  # Replace this with your GitHub username
-linkedin_username:      # Replace this with your LinkedIn username
-google_plus_username:   # Replace this with your Google+ username
-facebook_username:      # Replace this with your Facebook username
-dribbble_username:      # Replace this with your Dribbble username
-
-# Build settings
-markdown: kramdown
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Ulises Santana
+  avatar: leonids-logo.png
+  job: "web developer"
+  bio: "A little bit of my life"
+  email: ulisesantana@gmail.com
+  disqus-shortname:
+  twitter: ulisesantana
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: ulisesantana
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: ulisesantana
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
