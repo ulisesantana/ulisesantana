@@ -1490,7 +1490,7 @@ pre code {
     color: #fff; }
   @media only screen and (min-width: 992px) {
     .cover-card {
-      text-align: right;
+      text-align: center;
       margin: 0 auto;
       padding: 0 0px 80px; } }
 

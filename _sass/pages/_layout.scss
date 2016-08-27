@@ -47,7 +47,7 @@
     color: $white;
   }
   @include media-query($medium-screen) {
-    text-align: right;
+    text-align: center;
     margin: 0 auto;
     padding: 0 0px 80px;
   }
