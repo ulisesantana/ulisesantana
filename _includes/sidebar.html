@@ -1,11 +1,4 @@
 {% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
-<div class="menu-bg"></div>
-<div class="menu-burger">☰</div>
-<div class="menu-items">
-  <div>CALL</div>
-  <div>DRIVE</div>
-  <div>MAIL</div>
-</div>
 <div class="cover-card table-cell table-middle">
   {% if author.avatar %}
   <img src="{{ site.url }}/img/{{ author.avatar }}" alt="" class="avatar">

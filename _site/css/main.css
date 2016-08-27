@@ -74,6 +74,7 @@
  * Global Variables
  */
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,400italic|Roboto+Mono);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -540,7 +541,7 @@ footer {
 .related-articles {
   margin-top: 2em; }
   .related-articles h4 {
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "Raleway", sans-serif; }
   .related-articles ul {
     margin: 0;
     padding: 0;
@@ -1034,7 +1035,7 @@ footer {
    ========================================================================== */
 html {
   line-height: 1.5;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.85);
   -webkit-font-smoothing: antialiased;
@@ -1119,7 +1120,7 @@ p {
   margin-bottom: 20px;
   padding: 8px 20px;
   font-size: 0.875em;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   background-color: #FF5000;
   color: #fff;
@@ -1440,64 +1441,6 @@ pre code {
   .highlight .il {
     color: #666666; }
 
-.menu, .menu-bg, .menu-burger {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  text-align: center;
-  border-radius: 100%;
-  right: 25px;
-  top: 25px; }
-
-.menu-bg {
-  background: #663399;
-  pointer-events: none;
-  transition: .3s;
-  right: 50px;
-  top: 50px;
-  transform: translate3d(50%, -50%, 0);
-  transform-origin: center center; }
-  .menu-bg.fs {
-    transform: translate3d(50%, -50%, 0);
-    width: 300vw;
-    height: 300vw; }
-
-.menu-burger {
-  color: white;
-  padding-top: 11px;
-  -webkit-user-select: none;
-  cursor: pointer;
-  transition: .4s;
-  transform-origin: center; }
-  .menu-burger.fs {
-    transform: rotate(-180deg) translateY(10px); }
-
-.menu-items {
-  position: absolute;
-  font-weight: bold;
-  font-size: 40px;
-  letter-spacing: 10px;
-  color: white;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  transition: .4s;
-  margin-top: 100px;
-  transform: translateY(-200%);
-  pointer-events: none; }
-  .menu-items div {
-    transition: 1s;
-    opacity: 0;
-    margin-top: 0px; }
-  .menu-items.fs {
-    transform: translateY(0);
-    pointer-events: auto;
-    opacity: 1; }
-    .menu-items.fs div {
-      opacity: 1;
-      margin-top: 75px; }
-
 /* LAYOUT CSS */
 .cover {
   background-image: url("/img/coverbg.jpg");
@@ -1572,7 +1515,7 @@ pre code {
     zoom: 1; }
     .nav-list .nav-item a {
       margin-top: 1em;
-      text-transform: lowercase;
+      text-transform: uppercase;
       font-size: 85%;
       color: #FF5000; }
       .nav-list .nav-item a:hover, .nav-list .nav-item a:focus {
