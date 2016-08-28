@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Meta info -->
+  <title>Set up your Ubuntu with ubuntuReady | Ulises Santana</title>
+  <meta name="keywords" content="web development, web developer, javascript, javascript framework, geek blog">
+  <meta name="description" content="Along the years I had formatted my laptop several times and now I have built a tool for make this process easier and faster. All with just one shell script. ...">
+  <meta property="og:description" itemprop="description" content="Along the years I had formatted my laptop several times and now I have built a tool for make this process easier and faster. All with just one shell script. ...">
+  <meta property="og:image" content="https://ulisesantana.github.io/img/posts/2016/08/28/ubuntuReady.jpg">
+  <link itemprop="image" href="https://ulisesantana.github.io/img/posts/2016/08/28/ubuntuReady.jpg">
+  <meta name="thumbnail" content="https://ulisesantana.github.io/img/posts/2016/08/28/ubuntuReady.jpg" />
+  <meta property="og:image:width" content="1320" />
+  <meta property="og:image:height" content="500" />
+  <link rel="canonical" href="https://ulisesantana.github.io/articles/2016-08/ubuntuReady">
+  <meta property="og:url" content="https://ulisesantana.github.io/articles/2016-08/ubuntuReady">
+  <meta property="og:type" content="website">
+  <meta name="author" content="Ulises Santana">
+
+<!-- Twitter Stuff -->
+  <meta name="twitter:site" content="@ulisesantana">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://ulisesantana.github.io/img/posts/2016/08/28/ubuntuReady.jpg" />
+  <meta name="twitter:title" content="Set up your Ubuntu with ubuntuReady | Ulises Santana" />
+  <meta name="twitter:description" content="Along the years I had formatted my laptop several times and now I have built a tool for make this process easier and faster. All with just one shell script. ..." />
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://ulisesantana.github.io/css/main.css">
+  <link rel="stylesheet" href="https://ulisesantana.github.io/css/font-awesome.min.css">
+
+  <link rel="alternate" type="application/rss+xml" title="A little bit of my life" href="https://ulisesantana.github.io/feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="https://ulisesantana.github.io/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="https://ulisesantana.github.io/favicon.png">
+
+  <!-- Browser Color -->
+  <meta name="theme-color" content="#FF5000">
+  <meta name="msapplication-navbutton-color" content="#FF5000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF5000">
+
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        <div class="cover-card table-cell table-middle">
+  <a href="https://ulisesantana.github.io/"><img src="https://ulisesantana.github.io/img/avatar.jpg" alt="" class="avatar"></a>
+  <a href="https://ulisesantana.github.io/" class="author_name">Ulises Santana</a>
+  <span class="author_job">web developer</span>
+  <span class="author_bio mbm">A little bit of my life</span>
+  <div class="space"></div>
+  <nav class="nav">
+    <ul class="nav-list">
+      <!-- <li class="nav-item">
+        <a href="https://ulisesantana.github.io/">home</a>
+        <span>/</span>
+      </li> -->
+      <li class="nav-item">
+        <a href="https://ulisesantana.github.io/about">about me</a>
+        <span class="secondary-color">/</span>
+      </li>
+      <li class="nav-item">
+        <a href="https://ulisesantana.github.io/archive">archive</a>
+        <span class="secondary-color">/</span>
+      </li>
+      <li class="nav-item">
+        <a href="https://ulisesantana.github.io/categories">categories</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="space"></div>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-2x fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+      <li>
+      <script>gen_mail_to_link('', 'Hello from website');</script>
+      </li>
+    <li><a href="http://twitter.com/" class="social-link-item" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>
+    <li><a href="http://github.com/" class="social-link-item" target="_blank"><i class="fa fa-2x fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "https://ulisesantana.github.io/" >
+  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+</a>
+
+<div class="post-image-feature">
+  <img class="feature-image" src=
+  
+  "https://ulisesantana.github.io/img/posts/2016/08/28/ubuntuReady.jpg"
+  
+  alt="Set up your Ubuntu with ubuntuReady feature image">
+
+  
+</div><!-- /.image-wrap -->
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Set up your Ubuntu with ubuntuReady">Set up your Ubuntu with ubuntuReady</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        28 AUG 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    5 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>I am a dangerous guy with PCs. Until few months ago I used to format my laptop every 3 months because I broke it trying new stuff in Linux. It makes a total of 4 formats at year,** at least**. With every format I need to reinstall and reconfigure everything. So many times it became into my Saturday night plan. I’m a geek, this is the kind of things I do.</p>
+
+<p>This <em>problem</em> started about 8 years ago and with the experience I finally have build a solution for all that Saturday nights wasted on reinstalling my laptop. A simple shell script.</p>
+
+<p>Now I just need to install Ubuntu and run the script. It will install all I need in my laptop for development and daily stuff: Chrome, Clementine, Atom (<em>and all the plugins that I use in Atom</em>), Git, Gitkraken and lot of drivers and libraries for Ubuntu.</p>
+
+<p>In <a href="https://github.com/ulisesantana/ubuntuReady">this Github repository</a> you can fin my ubuntuReady script for Ubuntu and almost every Ubuntu based distros. If you trust me and want to run this script without read it you can just run this code below:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd
+</span>wget https://raw.githubusercontent.com/ulisesantana/ubuntuReady/master/ubuntuReady.sh
+sudo chmod +x ubuntuReady.sh
+bash ubuntuReady.sh
+rm ubuntuReady.sh</code></pre></figure>
+
+<p>You just need accept some dialogs like Java and Wine installs, rest is automatic. On the other hand if you want to know the code I’m going to explain it. The script is divided in:</p>
+
+<ul>
+  <li>Add the repositories</li>
+  <li>Update the system and the repositories</li>
+  <li>Install all the software</li>
+  <li>Remove trash files</li>
+</ul>
+
+<p>I code it in this way because is the most optimized way. PC adds all needed repositories, update it just one time and then start installing all the software.</p>
+
+<h2 id="add-repositories--installs">Add repositories &amp; Installs</h2>
+
+<p>I divided in basic software, the repositories of software that every user will use, and software for development.</p>
+
+<p><strong>Basic software is</strong>:</p>
+
+<ul>
+  <li>Nvidia graphics drivers</li>
+  <li>Google Chrome</li>
+  <li>Compression stuff</li>
+  <li>Clementine</li>
+  <li>Skype</li>
+  <li>Royal Theme &amp; Numix circle icons</li>
+  <li>Unity Tweak Tool</li>
+  <li>Slurm (<em>maybe is not for a basic user, but I found it very useful when I am using my smartphone as Access Point</em>)</li>
+  <li>GIMP</li>
+  <li>Basic packages</li>
+</ul>
+
+<p><strong>Development software is</strong>:</p>
+
+<ul>
+  <li>Java 8 JDK</li>
+  <li>Git</li>
+  <li>Filezilla</li>
+  <li><a href="https://www.gitkraken.com/">Gitkraken</a></li>
+  <li><a href="https://atom.io/">Atom</a> &amp; Atom packages:
+    <ul>
+      <li>Emmet</li>
+      <li>Minimap</li>
+      <li>Atom Terminal</li>
+      <li>Atom Material Design Theme with dark syntax</li>
+      <li>Atom Beautify</li>
+      <li>Color Picker</li>
+      <li>File Icons</li>
+      <li>Atom Typescript plugin</li>
+    </ul>
+  </li>
+  <li>nvm (Node Version Manager)</li>
+</ul>
+
+<p>Furthermore, in the development installing part I put a command for create an <code class="highlighter-rouge">apps</code> directory, which is the directory where I put all my projects folders. Anyway, you can enter in the <a href="https://github.com/ulisesantana/ubuntuReady">Github repository</a> and read the <code class="highlighter-rouge">README.md</code> and how to configurate Unity Tweak Tool.</p>
+
+<p>Once explained you can see here the full script:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+<span class="c">#ubuntuReady</span>
+
+<span class="c">#ADD ALL REPOSITORIES WE NEED</span>
+
+	<span class="c">##BASIC REPOSITORIES</span>
+
+	<span class="c">##GIMP</span>
+	sudo apt-add-repository ppa:otto-kesselgulasch/gimp -y
+
+	<span class="c">##Nvidia Graphics Driver</span>
+	sudo add-apt-repository ppa:graphics-drivers/ppa -y
+
+	<span class="c">##Google Chrome</span>
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	sudo sh -c <span class="s1">'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" &gt;&gt; /etc/apt/sources.list.d/google-chrome.list'</span>
+
+	<span class="c">##Ubuntu Restricted Extras</span>
+	sudo apt-add-repository ppa:mc3man/trusty-media -y
+	sudo apt-add-repository ppa:gnome3-team/gnome3 -y
+
+	<span class="c">##Clementine (Music Player)</span>
+	sudo add-apt-repository ppa:me-davidsansome/clementine -y
+
+	<span class="c">##Skype</span>
+	sudo apt-add-repository <span class="s2">"deb http://archive.canonical.com/ubuntu/ trusty partner"</span> -y
+
+	<span class="c">##Ubuntu optional packages</span>
+	sudo apt-add-repository ppa:maarten-baert/simplescreenrecorder -y
+
+	<span class="c">##Numix Themes &amp; Icons</span>
+	sudo add-apt-repository ppa:numix/ppa -y
+	sudo add-apt-repository ppa:noobslab/themes -y
+
+
+	<span class="c">##DEV STUFF REPOSITORIES</span>
+
+	<span class="c">##Java 8</span>
+	sudo add-apt-repository ppa:webupd8team/java -y
+
+	<span class="c">##Git</span>
+	sudo add-apt-repository ppa:git-core/ppa -y
+
+	<span class="c">##Gitkraken</span>
+	wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+
+	<span class="c">##Atom</span>
+	wget https://github.com/atom/atom/releases/download/v1.9.8/atom-amd64.deb
+
+
+
+<span class="c">#UPDATE THE SYSTEM</span>
+sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get dist-upgrade -y
+
+
+<span class="c">#INSTALL BASICS</span>
+	<span class="c">##Install Nvidia Graphics Driver</span>
+	sudo apt-get install nvidia-361 -y
+
+	<span class="c">##Install Google Chrome</span>
+	sudo apt-get install google-chrome-stable -y
+
+	<span class="c">##Fix chrome duplicate plank</span>
+	sudo sed -i <span class="s2">"s/</span><span class="se">\/</span><span class="s2">usr</span><span class="se">\/</span><span class="s2">bin</span><span class="se">\/</span><span class="s2">google-chrome-stable/</span><span class="se">\/</span><span class="s2">usr</span><span class="se">\/</span><span class="s2">bin</span><span class="se">\/</span><span class="s2">google-chrome/g"</span> /usr/share/applications/google-chrome.desktop
+	sudo sed -i <span class="s2">"s/StartupWMClass=Google-chrome-stable//g"</span> /usr/share/applications/google-chrome.desktop
+
+	<span class="c">##Install File Compression Libs</span>
+	sudo apt-get install unace unrar zip unzip xz-utils p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
+
+	<span class="c">##Install Ubuntu Restricted Extras</span>
+	sudo apt-get install ubuntu-restricted-extras ubuntu-restricted-addons ffmpeg gstreamer0.10-plugins-ugly libavcodec-extra-54 libvdpau-va-gl1 libmad0 mpg321 gstreamer1.0-libav gdebi curl flashplugin-installer dconf-editor gnome-system-monitor -y
+
+	<span class="c">##Install common repositories manager</span>
+	sudo apt-get install software-properties-common -y
+
+	<span class="c">##Enable DVD Playback</span>
+	sudo /usr/share/doc/libdvdread4/install-css.sh
+
+	<span class="c">##Install Clementine</span>
+	sudo apt-get install clementine -y
+
+	<span class="c">##Install Skype</span>
+	sudo apt-get install skype -y
+	sudo apt-get install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386 -y
+
+	<span class="c">##Install more packages</span>
+	sudo apt-get install aptitude apt-file qbittorrent quiterss dconf-editor gnome-system-monitor simplescreenrecorder quassel-qt4 bleachbit kid3-qt calibre pinta unetbootin gnome-disk-utility vlc browser-plugin-vlc build-essential jockey-gtk -y
+
+	<span class="c">##Royal theme &amp; Numix circle icons</span>
+	sudo apt-get install numix-icon-theme-circle -y
+	sudo apt-get install numix-icon-theme numix-icon-theme-circle royal-gtk-theme
+
+	<span class="c">##Install Unity Tweak Tool</span>
+	sudo apt-get install unity-tweak-tool -y
+
+	<span class="c">##Install slurm (network traffic monitor)</span>
+	sudo apt-get install slurm -y
+
+	<span class="c">##Install GIMP</span>
+	sudo apt-get install gimp -y
+
+
+<span class="c">#INSTALL DEVELOPMENT STUFF</span>
+	<span class="c">##Install Java 8</span>
+	sudo apt-get install oracle-java8-installer -y
+
+	<span class="c">##Install the latest git Version</span>
+	sudo apt-get install git -y
+
+	<span class="c">##Install Filezilla</span>
+	sudo apt-get install filezilla -y
+
+	<span class="c">##Install Gitkraken</span>
+	sudo dpkg -i gitkraken-amd64.deb
+	rm gitkraken-amd64.deb
+
+	<span class="c">##Install Atom</span>
+	sudo dpkg -i atom-amd64.deb
+	rm atom-amd64.deb
+
+	<span class="c">##Install Atom packages</span>
+	apm install emmet
+	apm install minimap
+	apm install atom-terminal
+	apm install atom-material-ui
+	apm install atom-material-syntax-dark
+	apm install atom-beautify
+	apm install color-picker
+	apm install file-icons
+	apm install atom-typescript
+
+	<span class="c">##Install Node Version Manager</span>
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
+
+	<span class="c">##Create a $HOME/apps directory for projects</span>
+	mkdir apps
+
+<span class="c"># AUTOREMOVE TRASH FILES</span>
+sudo apt-get autoremove -y</code></pre></figure>
+
+<p>If you have any comment or idea you can write it below or add it in the <a href="https://github.com/ulisesantana/ubuntuReady">Github repository</a>.</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://ulisesantana.github.io/articles/2016-08/ubuntuReady" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://ulisesantana.github.io/articles/2016-08/ubuntuReady" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://ulisesantana.github.io/articles/2016-08/ubuntuReady" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=https://ulisesantana.github.io/articles/2016-08/ubuntuReady" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=https://ulisesantana.github.io/articles/2016-08/ubuntuReady" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ulisesantana-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        <footer>
+  &copy; 2016 Ulises Santana. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-2x fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+      <li>
+      <script>gen_mail_to_link('', 'Hello from website');</script>
+      </li>
+    <li><a href="http://twitter.com/" class="social-link-item" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>
+    <li><a href="http://github.com/" class="social-link-item" target="_blank"><i class="fa fa-2x fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ulisesantana.github.io/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://ulisesantana.github.io/js/main.js"></script>
+
+
+</body>
+</html>
