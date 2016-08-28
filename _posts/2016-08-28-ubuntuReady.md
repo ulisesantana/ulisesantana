@@ -15,7 +15,7 @@ This *problem* started about 8 years ago and with the experience I finally have 
 
 Now I just need to install Ubuntu and run the script. It will install all I need in my laptop for development and daily stuff: Chrome, Clementine, Atom (*and all the plugins that I use in Atom*), Git, Gitkraken and lot of drivers and libraries for Ubuntu.
 
-In [this Github repository](https://github.com/ulisesantana/ubuntuReady) you can fin my ubuntuReady script for Ubuntu and almost every Ubuntu based distros. If you trust me and want to run this script without read it you can just run this code below:
+In [this Github repository](https://github.com/ulisesantana/ubuntuReady){:target="_blank"} you can fin my ubuntuReady script for Ubuntu and almost every Ubuntu based distros. If you trust me and want to run this script without read it you can just run this code below:
 
 {% highlight bash %}
 cd
@@ -32,7 +32,7 @@ You just need accept some dialogs like Java and Wine installs, rest is automatic
 - Install all the software
 - Remove trash files
 
-I code it in this way because is the most optimized way. PC adds all needed repositories, update it just one time and then start installing all the software.
+I coded it in this way because is the most optimized way. PC adds all needed repositories, update it just one time and then start installing all the software.
 
 ## Add repositories & Installs
 
@@ -68,7 +68,7 @@ I divided in basic software, the repositories of software that every user will u
   - Atom Typescript plugin
 - nvm (Node Version Manager)
 
-Furthermore, in the development installing part I put a command for create an `apps` directory, which is the directory where I put all my projects folders. Anyway, you can enter in the [Github repository](https://github.com/ulisesantana/ubuntuReady) and read the `README.md` and how to configurate Unity Tweak Tool.
+Furthermore, in the development installing part I put a command for create an `apps` directory, which is the directory where I put all my projects folders. Anyway, you can enter in the [Github repository](https://github.com/ulisesantana/ubuntuReady){:target="_blank"} and read the `README.md` and how to configurate Unity Tweak Tool.
 
 Once explained you can see here the full script:
 
@@ -215,4 +215,4 @@ sudo apt-get autoremove -y
 
 {% endhighlight %}
 
-If you have any comment or idea you can write it below or add it in the [Github repository](https://github.com/ulisesantana/ubuntuReady).
+If you have any comment or idea you can write it below or add it in the [Github repository](https://github.com/ulisesantana/ubuntuReady){:target="_blank"}.
