@@ -1,3 +1,3 @@
-# A little bit of my life
+# My personal site
 
-This repository is for my blog hosted in Github and build with [Jekyll](http://jekyllrb.com/) and based on [leonids theme](http://github.com/renyuanz/leonids). I choose this theme because I love the way the directories and files are organized. 
+This repository is for my personal site hosted in Github. In the past I had a blog on this repository, however I prefer to set this personal site and on the way look for publishing alternatives.

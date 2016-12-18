@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
+
+@media screen and (max-width: 1024px){
+  .card-image i{
+    font-size: 40px !important;
+    padding: 0 3px !important;
+  }
+  #databases{margin-left: 4px !important;}
+  .subtitle{
+    font-size: 28px;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body:before{
+    background-image: none !important;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+  }
+  #header.valign-wrapper{
+    display: initial;
+    -webkit-align-items: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+  }
+  .subtitle{
+    font-size: 26px;
+    padding-top: 0.3em;
+  }
+  #databases{margin-left: 2px !important;}
+  .card-image i{padding: 0 15% !important;}
+}
+
+@media screen and (max-width: 359px){
+  .footer-copyright{font-size: smaller; }
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+body:before {
+  background-image: url(../img/bg/typing.gif);
+  background-color: #FFF;
+  content: "";
+  position: fixed;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  background-size: 35vw;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  filter: blur(5px);
+  z-index: -1;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #FF9900;
+  outline: none;
+}
+
+/*body::-webkit-scrollbar-track-piece  {
+  background-color: #ffe07c;
+}*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+a{color: #FF9900;}
+footer a{
+  color: inherit;;
+  /*text-shadow: 0 0 5px #00A0D1, 0 0 10px #fff;*/
+}
+
+/* Comment this class for enable materialize footer*/
+footer.page-footer{
+  padding-top: 0;
+}
+
+#about{font-size: 18px;}
+#header{
+  font-variant: small-caps;
+  color: #333;
+}
+
+#header img{width:200px;}
+#databases{margin-left: 6px;}
+.cta-group .btn{width:100% !important}
+.cta-group .btn:hover{background-color: #e65100 !important;}
+.space{padding-top: 5%;}
+.title{line-height: 0.7em}
+.subtitle{color: #FF9900;}
+
+.card{background-color: #f0f0f0;}
+
+.card-image{
+  background-color: #FF9900;
+  color: #fff;
+  width: 20%;
+}
+
+.card-image i{font-size: 52px;padding: 0 5px;}
+.card-content h5{font-variant: small-caps;}
+
+.chip{
+  background-color: #ffe07c;
+  font-weight: bold;
+}
+
+.heart-icon{
+  color: #f83e4b;
+  text-shadow: 0 0 5px #fff, 0 0 10px #f83e4b;
+}
