@@ -33,7 +33,7 @@
   }
   #databases{margin-left: 2px !important;}
   .card-image i{padding: 0 15% !important;}
-  #about{font-size: 16px;}
+  #about-title{text-align: center;}
 }
 
 @media screen and (max-width: 359px){
@@ -116,7 +116,7 @@ footer.page-footer{
 }
 
 #about{
-  font-size: 18px;
+  font-size: 20px;
   text-align: justify;
 }
 #header{
@@ -134,6 +134,8 @@ footer.page-footer{
 .space{padding-top: 5%;}
 .title{line-height: 0.7em}
 .subtitle{color: #FF9900;}
+
+.row-no-margin{margin-bottom: 0px}
 
 .card{background-color: #f0f0f0;}
 
