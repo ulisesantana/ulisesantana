@@ -33,6 +33,7 @@
   }
   #databases{margin-left: 2px !important;}
   .card-image i{padding: 0 15% !important;}
+  #about{font-size: 16px;}
 }
 
 @media screen and (max-width: 359px){
@@ -114,13 +115,19 @@ footer.page-footer{
   padding-top: 0;
 }
 
-#about{font-size: 18px;}
+#about{
+  font-size: 18px;
+  text-align: justify;
+}
 #header{
   font-variant: small-caps;
   color: #333;
 }
 
-#header img{width:200px;}
+#header img{
+  width: 100%;
+  max-width: 200px;
+}
 #databases{margin-left: 6px;}
 .cta-group .btn{width:100% !important}
 .cta-group .btn:hover{background-color: #e65100 !important;}
