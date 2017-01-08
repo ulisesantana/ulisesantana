@@ -157,3 +157,8 @@ footer.page-footer{
   color: #f83e4b;
   text-shadow: 0 0 5px #fff, 0 0 10px #f83e4b;
 }
+
+.card .card-content {
+    padding: 17px;
+    border-radius: 0 0 2px 2px;
+}
