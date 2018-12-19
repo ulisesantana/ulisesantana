@@ -1,0 +1,81 @@
+@import '../../../styles/variables.styl'
+
+.Sidebar
+  align-items: center
+  background #333333
+  background-image url("img/chromebook.jpg")
+  background-position center bottom
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding 8px
+
+  h1
+    display flex
+    flex-direction column
+    margin 0
+    font-size 1.5em
+    line-height 0.8em
+    text-align: center
+
+    span
+      color $baseGreen
+
+  img
+    margin 5% 0
+    width 200px
+
+  nav
+    align-items center
+    display flex
+    flex-direction row
+    justify-content space-around
+    padding 8px
+    width 100%
+
+    .Link
+      background-color transparent
+      background-image none
+      border transparent solid 2px
+      border-left none
+      border-right none
+      border-top none
+      color: $baseGreen
+      display block
+      font-size 60%
+      padding 0
+      text-shadow none
+      text-decoration none
+
+      &:hover, &.active
+        border-bottom-style solid
+        border-bottom-color $baseGreen
+        border-bottom-width 2px
+
+
+  .sidebar-info
+    align-items center
+    display flex
+    flex-direction column
+    justify-content space-around
+
+  @media screen and (max-width: 768px)
+    justify-content center
+    background $baseGreen
+
+    nav
+      .Link
+        font-size 80%
+        color $altTextColor
+
+        &:hover, &.active
+          border-bottom-color $altTextColor
+          font-weight bolder
+
+    .sidebar-info
+      display none
+
+  @media screen and (max-width: 768px)
+    nav
+      .Link
+        font-size 60%

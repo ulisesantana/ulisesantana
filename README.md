@@ -1,3 +1,11 @@
-# My personal site
+# gatsby-starter-blog
+Gatsby starter for creating a blog
 
-This repository is for my personal site hosted in Github. In the past I had a blog on this repository, however I prefer to set this personal site and on the way look for publishing alternatives.
+Install this starter (assuming Gatsby is installed) by running from your CLI:
+
+`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+
+Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
+
+## Running in development
+`gatsby develop`

@@ -1,0 +1,60 @@
+@import '../../styles/variables.styl'
+
+.post-container
+  align-items first
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content space-between
+
+  .post-card
+    //border 2px solid $baseGreen
+    margin 10px
+    padding 5px
+    width 250px
+
+    h5,a
+      padding 0
+      margin 0
+      color $textColor
+      display block
+
+      &:after
+        background-color: $baseGreen;
+        content: ''
+        display block
+        height 2px
+        margin-top -3px
+        margin-bottom 2px
+        width 100%
+
+    p
+      font-size 16px
+      margin-bottom 0
+
+    .date
+      display block
+      font-size 14px
+
+    .info
+      align-items first
+      display flex
+      flex-direction row
+      justify-content space-between
+      margin-bottom 10px
+
+    .time-to-read
+      color: $altAccentColor
+      display block
+      font-size 12px
+
+  @media screen and (max-width: 768px)
+    flex-direction column
+
+    .post-card
+      margin 10px 0
+      width 100%
+
+      &:first-child
+        margin-top 0
+
