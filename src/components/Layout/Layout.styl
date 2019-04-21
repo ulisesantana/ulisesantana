@@ -1,48 +1,34 @@
-$sidebarHeight = 10vh
-$contentHeight = 90vh
-$sidebarWidth = 25vw
-$contentWidth = 73vw
-
 .Layout
-  display grid
-  grid-template-areas "Sidebar Content"
-  grid-template-columns $sidebarWidth $contentWidth
-  grid-template-rows 1fr
+  display: grid;
+  grid-template-columns: 1fr
+  grid-template-rows 80px 1fr
+  grid-template-areas: "Nav" "Content";
   margin 0
   padding: 0
 
-  .Sidebar
-    grid-area Sidebar
-    height 100%
-    overflow hidden
-    position fixed
-    width $sidebarWidth
+  .Nav
+    grid-area Nav
+    width 100%
 
   .Content
     grid-area Content
-    height 100%
-    width $contentWidth
-    overflow-y: auto;
+    width 90%
+    max-width 1500px
+    padding 1rem
 
     & > :first-child > h3
       margin-top: 0
 
   @media screen and (max-width: 768px)
-    grid-template-areas "Content" "Sidebar"
+    grid-template-areas "Content" "Nav"
     grid-template-columns 1fr
-    grid-template-rows $contentHeight $sidebarHeight
-
-    .Sidebar
-      bottom: 0
-      height $sidebarHeight
-      margin-top 50%
-      width 100%
+    grid-template-rows 1fr 80px
 
     .Content
-      height $contentHeight
+      height 100vh
+      overflow-y auto
+      padding 0.5rem
       width 100%
 
-      & > :last-child
-        margin-bottom: $sidebarHeight + 50%
 
 

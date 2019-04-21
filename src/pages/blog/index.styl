@@ -1,4 +1,30 @@
 @import '../../styles/variables.styl'
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+header
+  align-items center
+  display flex
+  flex-direction column
+  justify-content center
+  margin-bottom 2rem
+
+  h1, h2
+    font-family 'Fredoka One', cursive
+    margin 0.10rem
+    text-align center
+
+  h1
+    font-size 2rem
+
+  h2
+    font-size 1.2rem
+    color $primaryColor
+
+  img#logo
+    align-content center
+    margin 0 auto
+    max-width 250px
+    width 80%
 
 .post-container
   align-items first
@@ -9,9 +35,10 @@
 
   .post-card
     //border 2px solid $baseGreen
+    height 350px
     margin 10px
     padding 5px
-    width 250px
+    width 31%
 
     h5,a
       padding 0
@@ -20,7 +47,7 @@
       display block
 
       &:after
-        background-color: $baseGreen;
+        background-color: $primaryColor;
         content: ''
         display block
         height 2px
@@ -44,13 +71,32 @@
       margin-bottom 10px
 
     .time-to-read
-      color: $altAccentColor
+      color: $primaryColor
       display block
       font-size 12px
 
-  @media screen and (max-width: 768px)
-    flex-direction column
+    .post-image
+      height: 200px
+      margin 0
+      padding 0
+      width 100%
+@media screen and (max-width: 1030px)
+  .post-container
+    .post-card
+      margin 10px 0
+      width 48%
 
+@media screen and (max-width: 767px)
+  flex-direction column
+
+  header
+    h1
+     font-size 1rem
+
+    h2
+      font-size 0.5rem
+
+  .post-container
     .post-card
       margin 10px 0
       width 100%

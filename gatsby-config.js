@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Ulises Santana',
     author: 'Ulises Santana',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: 'A bunch of JavaScript, Software Engineering and a lot of geek stuff.',
     siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
     menu: [
       {

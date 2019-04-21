@@ -2,9 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import './index.styl'
+import logo from './img/ulises_portal.png'
 
 import { Layout } from '../../components/Layout'
-import { rhythm } from '../../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -25,11 +25,18 @@ class BlogIndex extends React.Component {
           title={siteTitle}
         />
         {/*{JSON.stringify(data.site.siteMetadata, null, 2)}*/}
+        <header>
+          <img id="logo" src={logo} alt="Yep, I love Rick & Morty"/>
+          <h1>{data.site.siteMetadata.title}</h1>
+          <h2>{data.site.siteMetadata.description}</h2>
+        </header>
         <div className="post-container">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
+            const postImage = "https://placekitten.com/500/500";
             return (
               <div className={`post-card`} key={node.fields.slug}>
+                <div className="post-image" style={{background: `url(${postImage}) center center`}}/>
                 <time dateTime={node.frontmatter.date}>
                   <h5>
                     <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
