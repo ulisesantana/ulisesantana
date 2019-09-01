@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "storyhub-agency",
+  "alias": "storyhub-agency",
+  "builds": [
+    {
+      "use": "@now/static",
+      "config": {
+        "distDir": "./packages/agency-blog/public"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/agency-blog/public/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    }
+  ]
+}

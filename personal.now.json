@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "storyhub-personal",
+  "builds": [
+    {
+      "use": "@now/static",
+      "config": {
+        "distDir": "./packages/personal-blog/public"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/personal-blog/public/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    }
+  ]
+}

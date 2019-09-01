@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "storyhub-minimal",
+  "alias": "storyhub-minimal",
+  "builds": [
+    {
+      "use": "@now/static",
+      "config": {
+        "distDir": "./packages/personal-blog-minimal/public"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/personal-blog-minimal/public/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    }
+  ]
+}
