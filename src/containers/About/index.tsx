@@ -110,7 +110,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
           to spent my entire career working on the web.
         </p>
         <p>
-          However, after 2 and a half years working as Social Media Manager I realized that marketing was not my thing,
+          However, my fate with the web looks like wouldn't going to be as Social Media Manager.
+          After 2 and a half years working as on that role I realized that marketing was not my thing,
           not my love, but coding was. That was my starting point for becoming a programmer and the motivation to leave
           the company I co-founded behind and enroll into my coding studies. I consider Marketing very interesting, but
           I prefer to work on the code and let marketing-lovers work on marketing.
@@ -126,7 +127,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           NodeJS, but also with Docker and Rancher.
         </p>
         <p>
-          Since I got hired I’m trying to keep myself on the JavaScript cutting edge of JavaScript and the web so I try to go as
+          Since I got hired I’m trying to keep myself on the cutting edge of JavaScript and the web so I try to go as
           much conferences as I can. This result on assisting to events like JSConf EU where I had the opportunity to
           make a selfie with Ryan Dahl, NodeJS and <a href={Links.deno}>Deno</a> creator. A little fanboy moment.
         </p>
