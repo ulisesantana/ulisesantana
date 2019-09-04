@@ -66,6 +66,7 @@
     "@types/styled-components": "^4.1.11",
     "@types/styled-system": "^4.1.0",
     "@types/yup": "^0.26.13",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.17.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -85,6 +86,7 @@
     "start": "npm run develop",
     "serve": "node_modules/.bin/gatsby serve",
     "now-build": "yarn run build",
+    "deploy": "gatsby build && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }

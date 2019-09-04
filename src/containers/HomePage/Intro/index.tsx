@@ -1,8 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import {GITHUB_URL, INSTAGRAM_URL, TELEGRAM_URL, TWITTER_URL} from "../../../constants";
-import SocialProfile from "../../components/SocialProfile/SocialProfile"
 import {
   IntroWrapper,
   IntroImage,
@@ -14,7 +12,7 @@ import {SocialLinks} from "../../../components/SocialLinks";
 
 type IntroProps = {}
 
-const Intro: React.FunctionComponent<IntroProps> = props => {
+const Intro: React.FunctionComponent<IntroProps> = () => {
   const Data = useStaticQuery(graphql`
     query {
       avatar: file(absolutePath: { regex: "/author.jpg/" }) {
@@ -52,7 +50,7 @@ const Intro: React.FunctionComponent<IntroProps> = props => {
             <Image fluid={AuthorImage} alt="author" />
           </div>
           <div className="flip-back">
-            <Image fluid={Logo} alt="It's me!" />
+            <img src={Logo.src} alt="It's me!" />
           </div>
         </div>
       </IntroImage>

@@ -148,19 +148,13 @@ const ResetCSS = createGlobalStyle`
   }
   
   a {
-    display: inline-block;
-    border: 5px solid ${themeGet("colors.primary", "yellow")};
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    transition: border linear 0.6s;
     color: ${themeGet("colors.primary", "yellow")};
     text-shadow: 1px 0 1px ${themeGet("colors.lightTextColor", "black")};
   }
   
   a:hover {
-      border-bottom-color: initial;
+      font-style: italic;
+      font-weight: 700;
   }
   
   a:visited {

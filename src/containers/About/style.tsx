@@ -143,13 +143,13 @@ export const AboutDetails = styled.div`
   
   @media (min-width: 991px) {
     blockquote {
-      width: ${window.innerWidth * 0.95}px;
+      width: 95vw;
     } 
   }
   
   @media (max-width: 990px) {
     blockquote {
-      width: ${window.innerWidth}px;
+      width: 100vw;
     } 
     .tldr-open {
       left: 3.3vw;

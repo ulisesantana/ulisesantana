@@ -9,7 +9,6 @@ import {
   SearchForm,
   SearchResult,
   NoResult,
-  SearchResultContainer,
 } from "./SearchContainer.style"
 
 function Search() {
@@ -81,7 +80,7 @@ function Search() {
     }
   }, [dataset])
 
-  const { totalData, searchResults, searchQuery } = state
+  const { searchResults, searchQuery } = state
   const queryResults = searchResults
 
   return (
