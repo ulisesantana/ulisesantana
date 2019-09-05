@@ -40,6 +40,11 @@ export const AboutImage = styled.div`
   margin-bottom: 3rem;
   text-align: center;
   
+  span {
+    padding-top: 16px;
+    display: inline-block;
+  }
+  
   @media (max-width: 990px) {
     margin-bottom: 60px;
   }
@@ -56,7 +61,7 @@ export const AboutDetails = styled.div`
   
   p {
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 3rem;
     max-width: 960px;
   }
   
@@ -188,12 +193,13 @@ export const AboutDetails = styled.div`
   button {
     display: block;
     background-color: ${themeGet("colors.primary", "#FFFFFF")};
+    border-radius: 1rem;
     color: ${themeGet("colors.black", "#292929")};
     cursor: pointer;
     font-size: 1rem;
     font-style: italic;
     font-weight: 600;
-    filter: drop-shadow(0.1rem 0.1rem 0.25rem ${themeGet("colors.black", "black")});
+    filter: drop-shadow(0 0.2rem 0.2rem ${themeGet("colors.black", "black")});
     padding: 0.5rem;
     outline: none;
     margin: 1rem;
@@ -206,7 +212,8 @@ export const AboutDetails = styled.div`
       display: block;
     }
   }
-`
+`;
+
 export const SocialProfiles = styled.div`
   margin-top: 60px;
   position: relative;

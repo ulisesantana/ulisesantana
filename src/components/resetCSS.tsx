@@ -39,6 +39,7 @@ const ResetCSS = createGlobalStyle`
   div {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -55,8 +56,10 @@ const ResetCSS = createGlobalStyle`
     font-family: 'Fira Sans',sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 15px;
+    font-size: 1rem;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
   }
 

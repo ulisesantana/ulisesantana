@@ -30,17 +30,6 @@ const Links = Object.freeze({
 const About: React.FunctionComponent<AboutProps> = () => {
   const [tldrOpen, setTLDROpen] = useState(false);
   const toggleTLDR = () => {
-    if ( window.innerWidth <= 992){
-      if (!tldrOpen) {
-        document.querySelector('#tldr')!
-          .scrollIntoView({behavior: 'smooth', block: "start"})
-      } else {
-        document.body.scrollIntoView({behavior: 'smooth', block: "start"});
-      }
-
-    } else if (tldrOpen && window.innerWidth <= 992) {
-      tldrOpen && window.innerWidth <= 992
-    }
     setTLDROpen(!tldrOpen)
   };
 
