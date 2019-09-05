@@ -83,7 +83,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
             <p>
               I really love coding, the web app ecosystem and learn something new everyday. I’m very grateful to the
-              developer community and all the people that helped me on path to be a professional developer. So, just
+              developer community and all the people that helped me on my path to be a professional developer. So, just
               for
               keep the wheel rolling, if you think I can help you in any way just text me, if I can’t help you maybe I
               know somebody who can. By the way, I'm really interested in projects with a social good for aim, so don't hesitate to text me.
