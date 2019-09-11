@@ -101,8 +101,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
           the southeast of Gran Canaria, a wonderful place to be raised. I have
           been an internet boy since I was a kid, so is not a big surprise to say
           that I got hooked by the web ecosystem when I was starting as
-          Social Media Manager. At that very moment, I decided to spent my entire
-          career working on the web.
+          Social Media Manager. I decided to spent my entire
+          career working on the web at that very moment.
         </p>
         <p>
           However, my fate with the web looks like wouldn't be as Social Media Manager. After 2 and a half years working
@@ -112,7 +112,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           marketing-lovers work on marketing.
         </p>
         <p>
-          I finished my web application development studies in June 2017. Right after, I was hired as a backend
+          I finished my web application development studies in June 2017. Right after, I was hired as backend
           developer by <a href={Links.work} target="_blank">Kentech</a>, the company where I did my internship. Kentech is a provider of custom solutions across
           various verticals, specializing in the online entertainment industry with a focus on sports in multiple
           countries. One year later I was promoted to Full Stack Developer and most of the time I am working with
@@ -139,7 +139,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
         </AboutImage>
 
         <p>
-          On my free time during the workweek, I play around with NodeJS and improve my CS skills by reading books and
+          On my free time during the workweek I play around with NodeJS and improve my CS skills by reading books and
           blogs. On the weekends I enjoy spending family time, meeting friends, watching movies or trying some local
           tourism.
         </p>
@@ -164,7 +164,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           As part of my giveback plan, I've been sponsoring the last two
           <a href={Links.jsday} target={`_blank`}> JS Day Canarias </a>
           editions. Also, On November 2018 I had the opportunity
-          to give <a href={Links.talk} target={`_blank`}> talk </a>
+          to give a<a href={Links.talk} target={`_blank`}> talk </a>
           on <a href={Links.jsday2018} target={`_blank`}>JS Day Canarias </a>
           about NodeJS, npm and how to publish and maintain a package on an npm registry.
           I enjoyed the experience and I want to continue sharing the knowledge to the world.
