@@ -64,6 +64,7 @@ const ResetCSS = createGlobalStyle`
   }
 
   p{
+    text-align: justify;
     line-height: 2;
     margin: 0 0 1.7em 0;
   }
