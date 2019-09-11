@@ -114,6 +114,10 @@ export const AboutDetails = styled.div`
       font-weight: inherit;
       line-height: 1.80rem;
       max-width: 960px;
+      
+      a {
+          color: ${themeGet("colors.black", "#333")} !important;
+      }
     }
    
      @media (max-width: 990px) {
