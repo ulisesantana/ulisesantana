@@ -20,6 +20,15 @@
     "typeRoots": [
       "../node_modules/@types",
       "./@types"
-    ]
+    ],
+    "baseUrl": "src", 
+    "paths": {
+      "@components": ["components"],
+      "@constants": ["constants"],
+      "@containers": ["containers"],
+      "@images": ["images"],
+      "@templates": ["templates"],
+      "@theme": ["theme"]
+  },
   }
 }

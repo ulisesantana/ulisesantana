@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Home from "../containers/HomePage"
+import CVPage from "../containers/CVPage"
 import {graphql, useStaticQuery} from "gatsby";
 
-const AboutPage: React.FunctionComponent = () => {
+type CVProps = {}
+
+const CV: React.FunctionComponent<CVProps> = () => {
   const { site } = useStaticQuery(
     graphql`
         query {
@@ -25,10 +27,9 @@ const AboutPage: React.FunctionComponent = () => {
         description={site.siteMetadata.description}
         title="Ulises Santana | Full Stack Developer"
       />
-
-      <Home />
+      <CVPage />
     </Layout>
   )
 };
 
-export default AboutPage
+export default CV

@@ -1,7 +1,19 @@
-import SocialProfile from "./SocialProfile/SocialProfile";
-import React, {FC} from "react";
-import {FaTelegram, IoLogoGithub, IoLogoInstagram, IoLogoTwitter} from "react-icons/all";
-import {GITHUB_URL, INSTAGRAM_URL, TELEGRAM_URL, TWITTER_URL} from "../constants";
+import SocialProfile from "./SocialProfile/SocialProfile"
+import React, { FC } from "react"
+import {
+  FaTelegram,
+  IoLogoGithub,
+  IoLogoInstagram,
+  IoLogoTwitter,
+  FaRegFileAlt,
+} from "react-icons/all"
+import {
+  GITHUB_URL,
+  INSTAGRAM_URL,
+  TELEGRAM_URL,
+  TWITTER_URL,
+  CV_URL,
+} from "../constants"
 
 const SocialMedia = [
   {
@@ -24,6 +36,11 @@ const SocialMedia = [
     url: GITHUB_URL,
     tooltip: "Github",
   },
+  {
+    icon: <FaRegFileAlt />,
+    url: CV_URL,
+    tooltip: "Curriculum Vitae",
+  },
 ]
 
-export const SocialLinks: FC = () => <SocialProfile items={SocialMedia} />;
+export const SocialLinks: FC = () => <SocialProfile items={SocialMedia} />

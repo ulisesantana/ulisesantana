@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import FeaturedCard from "../../components/FeaturedCard/FeaturedCard"
+import FeaturedCard from "../../../components/FeaturedCard/FeaturedCard"
 import {
   FeaturedPostWrapper,
   FeaturedPostRow,
@@ -10,7 +10,7 @@ import {
 
 type FeaturedPostsProps = {}
 
-const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = props => {
+const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
   const Data = useStaticQuery(graphql`
     query {
       site {

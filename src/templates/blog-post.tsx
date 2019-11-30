@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from '../components/PostDetails/PostDetails'
+import Navbar from '../components/Navbar/Navbar'
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -46,6 +47,7 @@ const BlogPostTemplate = (props: any) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+      <Navbar/>
       <BlogPostDetailsWrapper>
         <PostDetails
           title={post.frontmatter.title}

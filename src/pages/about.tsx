@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Home from "../containers/HomePage"
+import About from "../containers/About"
 import {graphql, useStaticQuery} from "gatsby";
 
-const AboutPage: React.FunctionComponent = () => {
+type AboutPageProps = {}
+
+const AboutPage: React.FunctionComponent<AboutPageProps> = () => {
   const { site } = useStaticQuery(
     graphql`
         query {
@@ -26,7 +28,7 @@ const AboutPage: React.FunctionComponent = () => {
         title="Ulises Santana | Full Stack Developer"
       />
 
-      <Home />
+      <About />
     </Layout>
   )
 };

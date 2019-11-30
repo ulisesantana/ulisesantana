@@ -9,17 +9,17 @@ export const IntroWrapper = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 1400px) {
-    padding: 60px 10px 60px 10px;
+    padding: 0px 10px 60px 10px;
   }
   @media (max-width: 1200px) {
-    padding: 50px 10px 50px 10px;
+    padding: 0px 10px 50px 10px;
   }
   @media (max-width: 990px) {
-    padding: 35px 25px 40px 25px;
+    padding: 0px 25px 40px 25px;
   }
   @media (max-width: 575px) {
     display: block;
-    padding: 50px 25px 80px 25px;
+    padding: 0px 25px 1rem;
     text-align: center;
   }
 `
@@ -41,7 +41,7 @@ export const IntroImage = styled.div`
     padding: 25px;
     margin-bottom: 25px;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 767px) {
     width: 180px;
     height: 180px;
     padding: 20px;
@@ -54,7 +54,7 @@ export const IntroImage = styled.div`
     display: block;
     border-radius: 50%;
   }
-  
+
   .flip-container {
     position: relative;
     width: 100%;
@@ -63,16 +63,18 @@ export const IntroImage = styled.div`
     transition: transform 0.6s;
     transform-style: preserve-3d;
   }
-  
-  &:hover .flip-container, &:active .flip-container {
+
+  &:hover .flip-container,
+  &:active .flip-container {
     transform: rotateY(180deg);
-    
-    .flip-front{
+
+    .flip-front {
       opacity: 0;
     }
   }
-  
-  .flip-front, .flip-back {
+
+  .flip-front,
+  .flip-back {
     background-color: transparent;
     border-radius: 50%;
     position: absolute;
@@ -81,9 +83,9 @@ export const IntroImage = styled.div`
     backface-visibility: hidden;
     transition: opacity ease-in-out 0.6s;
   }
-  
+
   .flip-back {
-    transform: rotateY(180deg);    
+    transform: rotateY(180deg);
   }
 `
 

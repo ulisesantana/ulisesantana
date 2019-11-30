@@ -1,18 +1,17 @@
 import styled from "styled-components"
 import { themeGet } from "styled-system"
 
-export const AboutWrapper = styled.div`
+export const CVWrapper = styled.div`
   position: relative;
-  padding: 0 75px 0 75px;
   @media (max-width: 990px) {
-    padding: 80px 45px 30px 45px;
+    padding: 0px 45px 30px 45px;
   }
   @media (max-width: 575px) {
-    padding: 60px 25px 0 25px;
+    padding: 0px 25px 0 25px;
   }
 `
 
-export const AboutPageTitle = styled.div`
+export const CVPageTitle = styled.div`
   text-align: justify;
   margin-bottom: 45px;
   @media (max-width: 767px) {
@@ -34,7 +33,7 @@ export const AboutPageTitle = styled.div`
   }
 `
 
-export const AboutImage = styled.div`
+export const CVImage = styled.div`
   height: 70%;
   margin-bottom: 3rem;
   text-align: center;
@@ -52,7 +51,7 @@ export const AboutImage = styled.div`
   }
 `
 
-export const AboutDetails = styled.div`
+export const CVDetails = styled.div`
   width: 100%;
   max-width: 992px;
   margin: 0 auto;
@@ -70,7 +69,7 @@ export const AboutDetails = styled.div`
     z-index: 1000;
   }
 
-  blockquote {
+  blockquote:not(.twitter-tweet) {
     display: flex;
     flex-direction: column;
     background-color: ${themeGet("colors.primary", "#FFFFFF")};
@@ -134,6 +133,10 @@ export const AboutDetails = styled.div`
         max-width: 90%;
       }
     }
+  }
+
+  blockquote:not(.twitter-tweet) {
+    width: 100%;
   }
 
   .tldr-open,

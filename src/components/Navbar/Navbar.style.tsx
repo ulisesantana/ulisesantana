@@ -11,18 +11,18 @@ export const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${themeGet("borderColor", "#DBDBDB")};
-  padding: 30px 75px;
+  //border-bottom: 1px solid ${themeGet("borderColor", "#DBDBDB")};
+  padding: 16px 75px;
   background-color: #fff;
   transition: 0.25s ease-in-out;
   @media (max-width: 1400px) {
-    padding: 25px 45px;
+    padding: 16px 45px;
   }
   @media (max-width: 990px) {
-    padding: 15px 25px;
+    padding: 16px 25px;
   }
   @media (max-width: 575px) {
-    padding: 3px 15px;
+    padding: 16px 15px;
   }
 `
 
@@ -60,13 +60,14 @@ export const MenuItem = styled.li`
   margin: 0 20px;
   list-style: none;
   a {
-    padding: 5px 10px;
-    white-space: nowrap;
-    font-size: ${themeGet("fontSizes.3", "15")}px;
-    line-height: ${themeGet("lineHeights.normal", "1")};
-    font-weight: ${themeGet("fontWeights.3", "400")};
     color: ${themeGet("colors.lightTextColor", "#757575")};
+    font-size: ${themeGet("fontSizes.3", "15")}px;
+    font-weight: ${themeGet("fontWeights.3", "400")};
+    line-height: ${themeGet("lineHeights.normal", "1")};
+    padding: 5px 10px;
+    text-transform: uppercase;
     transition: 0.15s ease-in-out;
+    white-space: nowrap;
 
     &:hover {
       color: ${themeGet("colors.textColor", "#292929")};

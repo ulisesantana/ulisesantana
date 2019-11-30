@@ -55,7 +55,7 @@ const ResetCSS = createGlobalStyle`
   body {
     font-family: 'Fira Sans',sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 16px;
     font-size: 1rem;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
@@ -66,7 +66,7 @@ const ResetCSS = createGlobalStyle`
   p{
     text-align: justify;
     line-height: 2;
-    margin: 0 0 1.7em 0;
+    margin: 2rem auto;
   }
   
   input, textarea, select, button{font-family: 'Fira Sans',sans-serif;}
@@ -149,21 +149,37 @@ const ResetCSS = createGlobalStyle`
   body {
     width: 100vw !important;
     overflow-x: hidden;
+    transition: 0.3s;
   }
   
   a {
-    color: ${themeGet("colors.primary", "yellow")};
+    color: ${themeGet("colors.black", "black")}
+    font-weight: 700;
     text-shadow: 1px 0 1px ${themeGet("colors.lightTextColor", "black")};
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+      background-color: ${themeGet("colors.primary", "yellow")};
+      border-radius: 20px;
+      padding: 4px;
+    }
+    
+    &:visited {
+      color: ${themeGet("colors.secondary", "blue")};
+      text-shadow: none;
+    }
   }
   
-  a:hover {
-      font-style: italic;
-      font-weight: 700;
+  blockquote {
+    a:hover{
+      background-color: ${themeGet("colors.secondary", "blue")};
+    }
   }
-  
-  a:visited {
-    color: ${themeGet("colors.secondary", "blue")};
-    text-shadow: none;
-  }
+
+  /* @media (prefers-color-scheme: dark) {
+    body {
+        filter: invert();
+    }
+  } */
 `
 export default ResetCSS

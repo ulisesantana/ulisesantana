@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import NotFound from "../containers/NotFound"
 import Footer from "../components/Footer/Footer"
 
-const NotFoundPage = (props: any) => {
+const NotFoundPage = () => {
   return (
     <>
       <ResetCss />

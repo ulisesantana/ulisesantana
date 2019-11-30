@@ -12,6 +12,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    `gatsby-plugin-mdx`,
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         minify: false, // Breaks styles if not set to false
@@ -125,6 +133,13 @@ module.exports = {
         username: process.env.INSTAGRAM_USERNAME,
         access_token: process.env.INSTAGRAM_TOKEN,
         instagram_id: process.env.INSTAGRAM_ID,
+      },
+    },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`
       },
     },
     {
