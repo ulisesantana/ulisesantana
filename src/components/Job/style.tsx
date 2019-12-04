@@ -35,8 +35,13 @@ export const JobWrapper = styled.article`
     }
   }
 
-  @media (max-width: 575px) {
+  @media print, screen and (max-width: 575px) {
     h3 {
-    font-size: 1rem;
+      font-size: 1rem;
+    }
+
+    hr {
+      margin: 48px auto;
+    }
   }
 `

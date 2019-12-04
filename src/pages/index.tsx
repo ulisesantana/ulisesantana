@@ -1,23 +1,23 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Home from "../containers/HomePage"
-import {graphql, useStaticQuery} from "gatsby";
+import About from "../containers/About"
+import { graphql, useStaticQuery } from "gatsby"
 
 const AboutPage: React.FunctionComponent = () => {
   const { site } = useStaticQuery(
     graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                    description
-                    author
-                }
-            }
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
         }
+      }
     `
-  );
+  )
 
   return (
     <Layout>
@@ -26,9 +26,9 @@ const AboutPage: React.FunctionComponent = () => {
         title="Ulises Santana | Full Stack Developer"
       />
 
-      <Home />
+      <About />
     </Layout>
   )
-};
+}
 
 export default AboutPage

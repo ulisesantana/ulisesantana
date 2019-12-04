@@ -28,6 +28,20 @@ const PillCloudWrapper = styled.ul`
       line-height: 1rem;
     }
   }
+
+  @media print {
+    list-style: circle;
+    li {
+      background: none;
+      filter: none;
+      padding: 8px;
+    }
+
+    span {
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+    }
+  }
 `
 
 export const PillCloud: FC<{ items: string[] }> = ({ items }) => (

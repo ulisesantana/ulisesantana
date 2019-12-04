@@ -6,6 +6,8 @@ export interface CV {
     jobs: JobData[]
     about: string
     milestones: MilestoneData[]
+    sponsored: MilestoneData[]
+    attended: MilestoneData[]
 }
 
 export function useCV(): CV{
@@ -34,6 +36,16 @@ export function useCV(): CV{
                   twitter
                   location
                   description
+                }
+                sponsored {
+                  title
+                  when
+                  location
+                }
+                attended {
+                  title
+                  when
+                  location
                 }
                 education {
                   description

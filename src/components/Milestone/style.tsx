@@ -2,7 +2,10 @@ import styled from "styled-components"
 import { themeGet } from "styled-system"
 
 export const MilestoneWrapper = styled.article`
+  display: block;
   padding: 4px;
+  margin-bottom: 4rem;
+  max-width: 450px;
   width: 100%;
 
   h3 {
@@ -34,8 +37,19 @@ export const MilestoneWrapper = styled.article`
     }
   }
 
+  .center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
   @media (max-width: 575px) {
     h3 {
-    font-size: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media print {
+    max-width: 45vw;
   }
 `

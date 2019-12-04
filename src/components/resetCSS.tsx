@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import {themeGet} from "styled-system";
+import { themeGet } from "styled-system"
 
 const ResetCSS = createGlobalStyle`
   html {
@@ -173,6 +173,30 @@ const ResetCSS = createGlobalStyle`
   blockquote {
     a:hover{
       background-color: ${themeGet("colors.secondary", "blue")};
+    }
+  }
+
+  .only-print {
+    display: none;
+  }
+
+  @media print {
+    body {
+      display: block;
+      padding: 0;
+      margin: 0;    
+    }
+
+    .page-break-after {
+      page-break-after: always;
+    }
+
+    .only-print {
+      display: block !important;
+    }
+
+    .no-print{
+      display: none !important;
     }
   }
 

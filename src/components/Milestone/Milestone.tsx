@@ -1,8 +1,11 @@
-import React, { FC, useState, useEffect } from "react"
+import React, { FC, useMemo } from "react"
 import { MilestoneWrapper } from "./style"
 import { MilestoneHeader } from "./MilestoneHeader"
-import parse from "html-react-parser"
 
+const getIframeSize = (maxWidth: number) => {
+  const iframeWidth = maxWidth > 960 / 0.8 ? 960 : maxWidth * 0.8
+  return [iframeWidth, iframeWidth / 1.8]
+}
 export interface MilestoneData {
   youtube?: string
   twitter?: string
@@ -18,36 +21,29 @@ export const Milestone: FC<MilestoneData> = ({
   description,
   ...info
 }) => {
-  const [embedTwitter, setEmbedTwitter] = useState("")
-
-  useEffect(() => {
-    if (!!twitter) {
-      fetch(
-        "https://cors-anywhere.herokuapp.com/publish.twitter.com/oembed?url=" +
-          twitter
-      )
-        .then(r => r.json())
-        .then(({ html, ...rest }) => {
-          console.log({ html, ...rest })
-          setEmbedTwitter(html)
-        })
-    }
-  }, [])
-
+  const thereIsADescription =
+    typeof description === "string" && description !== ""
+  const [width, height] = useMemo(() => getIframeSize(window.innerWidth / 3), [
+    window.innerWidth,
+  ])
   return (
     <MilestoneWrapper>
       <MilestoneHeader {...info} />
-      {typeof description === "string" &&
+      {thereIsADescription &&
         description.split(/(?:\r\n|\r|\n)/g).map(t => <p>{t}</p>)}
       {!!youtube && (
-        <iframe
-          width="560"
-          height="315"
-          src={youtube}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe>
+        <>
+          <div className="center no-print">
+            <iframe
+              width={width}
+              height={height}
+              src={youtube}
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
+          <p className="only-print">{youtube}</p>
+        </>
       )}
-      <hr />
     </MilestoneWrapper>
   )
 }

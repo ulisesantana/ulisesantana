@@ -17,34 +17,49 @@ const Text: FC<{ text: string }> = ({ text }) => (
   </>
 )
 
+function isJob(info: JobData | MilestoneData): info is JobData {
+  return (info as JobData).skills !== undefined
+}
+
+const renderJob = (j: JobData) => (
+  <Job key={j.position + j.from + j.to} {...j} />
+)
+
+const renderMilestone = (m: MilestoneData) => (
+  <Milestone key={m.title + m.when} {...m} />
+)
+
+const renderInfo = (list: JobData[] | MilestoneData[]) =>
+  !!list.length && isJob(list[0])
+    ? list.map(renderJob)
+    : list.map(renderMilestone)
+
 export function CV() {
-  const { education, jobs, about, milestones } = useCV()
+  const { education, jobs, about, milestones, sponsored, attended } = useCV()
 
   return (
     <>
-      <Section title="About me" icon={<FaUserCircle />}>
+      <Section
+        className="page-break-after"
+        title="Who I am"
+        icon={<FaUserCircle />}
+      >
         <Text text={about} />
       </Section>
       <Section title="Work experience" icon={<MdWork />}>
-        {!!jobs.length &&
-          jobs.map((experience: JobData) => (
-            <Job
-              key={experience.position + experience.from + experience.to}
-              {...experience}
-            />
-          ))}
+        {renderInfo(jobs)}
       </Section>
       <Section title="Education & Training" icon={<MdSchool />}>
-        {!!education.length &&
-          education.map((e: JobData) => (
-            <Job key={e.position + e.from + e.to} {...e} />
-          ))}
+        {renderInfo(education)}
       </Section>
       <Section title="Milestones" icon={<FaStar />}>
-        {!!milestones.length &&
-          milestones.map((e: MilestoneData) => (
-            <Milestone key={e.title + e.when} {...e} />
-          ))}
+        {renderInfo(milestones)}
+      </Section>
+      <Section title="Sponsored Events" icon={<FaStar />}>
+        {renderInfo(sponsored)}
+      </Section>
+      <Section title="Attended Conferences" icon={<FaStar />}>
+        {renderInfo(attended)}
       </Section>
     </>
   )

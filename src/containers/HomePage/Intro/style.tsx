@@ -4,7 +4,7 @@ import { themeGet } from "styled-system"
 export const IntroWrapper = styled.div`
   width: 940px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 75px 10px 75px 10px;
   display: flex;
   align-items: center;

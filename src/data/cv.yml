@@ -8,7 +8,7 @@ about: >
   everyday. I’m very grateful to the developer community and all the
   people that helped me on my path to be a professional developer.
 
-  I'm always looking for something new to learn or a challenge for outbound my limits
+  I'm always looking for something new to learn or a challenge for outbound my limits.
 jobs:
   - employer: Kentech
     location: Las Palmas de Gran Canaria, Spain
@@ -137,12 +137,10 @@ jobs:
 
   - employer: Mokaps Studio
     location: Las Palmas de Gran Canaria, Spain (partial remote)
-    position: Social Media Manager & Copywriter / Co-founder
+    position: Social Media Manager / Co-founder
     from: 02/2013
     to: 06/2015
     description: > 
-      I co-founded a Digital Marketing Studio with a talented designer and a swiss army man of digital marketing who mentored me during my time in the studio and he also maintained the role of a leader since he is a born leader. 
-      
       For two and a half years I worked creating content and executing digital marketing plans in different channels based on customer objectives, interacting with communities, following active listening and resolving reputation crises with a community manager under my charge. As a copywriter, I wrote all the content for the different blogs that we managed. I also made the content insertion in web projects using HTML and CSS.
 
       As co-founder, I lived putting out fires daily along with all the management of customers, products, and projects. On the other hand, trying to do the math to pay employee salaries, company debts and the taxes of being a small business in Spain. This kind of experience gave me more perspective about the cost of a digital product.
@@ -212,30 +210,65 @@ education:
       - Excel reporting
       - CRM
 milestones:
+  - when: 10/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: Workshop for React Canarias community
+    youtube: https://www.youtube.com/embed/gkTAlgsr4tg
+    description: >      
+      An introductory workshop about Cypress and react-testing-library. 
   - when: 11/2018
     location: La Laguna, Santa Cruz de Tenerife, Spain
     title: Talk at JSDay Canarias 2018
     youtube: https://www.youtube.com/embed/Joqdb-oZjC8
     description: >      
       An introductory talk to npm and how to publish on it. 
-  - when: 11/2018
-    location: Kilkenny, Ireland
-    title: Compile NodeJS project on a Chromebook
-    twitter: https://twitter.com/ulisesantana/status/1059825362220261376
-    description: >
-      During a workshop on NodeConf EU I compiled NodeJS on a Chromebook, improve some tests and contribute to the project. 
+  # - when: 11/2018
+  #   location: Kilkenny, Ireland
+  #   title: Compile NodeJS project on a Chromebook
+  #   twitter: https://twitter.com/ulisesantana/status/1059825362220261376
+  #   description: >
+  #     During a workshop on NodeConf EU I compiled NodeJS on a Chromebook, improve some tests and contribute to the project. 
   - when: 03/2017
     location: Las Palmas de Gran Canaria, Spain
     title: Second prize at Hack for Good hackaton
     twitter: https://twitter.com/H4GCAN/status/840609174404886531?s=20
     description: >
       A 36-hours-long hackathon to create a tech solution for social good. The project was Aprende con Amidi, a question quiz for learning Canarian culture build as a progressive web app. Canarian culture is losing diffusion, so we try to increment the diffusion making a multiplatform app for being used for everybody who wants to learn or for teaching on schools. 
-
-      We also were chosen for Hack For Good: Big Day. A selection of the 5 most evolved projects from all the second and third prices over the country (Hack for Good 2017 was an event celebrated at the same time on 14 cities).
   - when: 03/2016
     location: Las Palmas de Gran Canaria, Spain
     title: First prize at Startup Weekend hackaton
     twitter: https://twitter.com/IGROCA/status/709106699530080258?s=20
     description: >
       A 54-hours-long hackathon for creating a startup. I worked in an English-speaking team and our project was BasketUp, a big data basketball analytics web app using just 3 smartphones for ball tracking. 
-    
+sponsored:
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: Global Day of Coderetreat Canarias
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: PyDay Gran Canaria
+  - when: 11/2019
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 10/2018
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+attended:
+  - when: 11/2019
+    location: Kilkenny, Ireland
+    title: NodeCONF EU
+  - when: 11/2019
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 09/2019
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: AdaLoversConf
+  - when: 06/2019
+    location: Berlin, Germany
+    title: JSConf EU
+  - when: 06/2019
+    location: Berlin, Germany
+    title: CSSconf EU
+  - when: 05/2019
+    location: Paris, France
+    title: React Europe

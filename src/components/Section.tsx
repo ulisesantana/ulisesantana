@@ -5,16 +5,17 @@ import { themeGet } from "styled-system"
 interface SectionProps {
   title: string
   icon: JSX.Element
+  className?: string
 }
 
 const SectionTitleWrapper = styled.div`
-  background-color: ${themeGet("colors.primary", "yellow")};
   align-items: center;
+  background-color: ${themeGet("colors.primary", "yellow")};
   color: ${themeGet("colors.black", "black")};
   display: flex;
   justify-content: start;
-  padding: 1rem;
   margin: 2rem 0 1rem;
+  padding: 1rem;
 
   span {
     display: inline-flex;
@@ -37,6 +38,22 @@ const SectionWrapper = styled.section`
     margin: 1rem 0;
     max-width: 100%;
   }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media print, screen and (max-width: 420px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
 `
 
 const SectionTitle: FC<SectionProps> = ({ title, icon }) => (
@@ -46,10 +63,15 @@ const SectionTitle: FC<SectionProps> = ({ title, icon }) => (
   </SectionTitleWrapper>
 )
 
-export const Section: FC<SectionProps> = ({ title, icon, children }) => (
-  <SectionWrapper>
+export const Section: FC<SectionProps> = ({
+  title,
+  icon,
+  children,
+  ...attrs
+}) => (
+  <SectionWrapper {...attrs}>
     <SectionTitle title={title} icon={icon} />
-    {children}
+    <div className="content">{children}</div>
   </SectionWrapper>
 )
 

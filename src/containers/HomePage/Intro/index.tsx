@@ -8,7 +8,7 @@ import {
   Desciption,
   IntroInfo,
 } from "./style"
-import {SocialLinks} from "../../../components/SocialLinks";
+import { SocialLinks } from "../../../components/SocialLinks"
 
 type IntroProps = {}
 
@@ -21,14 +21,14 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
-      },
-        easter: file(absolutePath: { regex: "/logo.png/" }) {
-            childImageSharp {
-                fluid(maxWidth: 210, maxHeight: 210, quality: 100) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-            }
-        },
+      }
+      easter: file(absolutePath: { regex: "/logo.png/" }) {
+        childImageSharp {
+          fluid(maxWidth: 210, maxHeight: 210, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
       site {
         siteMetadata {
           author
@@ -49,7 +49,7 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
           <div className="flip-front">
             <Image fluid={AuthorImage} alt="author" />
           </div>
-          <div className="flip-back">
+          <div className="flip-back no-print">
             <img src={Logo.src} alt="It's me!" />
           </div>
         </div>
@@ -59,7 +59,7 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
           Hey! I’m <b>{author}</b>
         </IntroTitle>
         <Desciption>{about}</Desciption>
-        <SocialLinks/>
+        <SocialLinks />
       </IntroInfo>
     </IntroWrapper>
   )
