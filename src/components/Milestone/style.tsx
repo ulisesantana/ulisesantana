@@ -50,6 +50,7 @@ export const MilestoneWrapper = styled.article`
   }
 
   @media print {
+    margin-bottom: 1rem;
     max-width: 45vw;
   }
 `

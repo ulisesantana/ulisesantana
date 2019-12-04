@@ -1,15 +1,19 @@
-import * as React from 'react';
-import FooterWrapper from './Footer.style';
+import * as React from "react"
+import FooterWrapper from "./Footer.style"
 
 type FooterProps = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 const Footer: React.FunctionComponent<FooterProps> = ({
   children,
   ...props
 }) => {
-  return <FooterWrapper {...props}>{children}</FooterWrapper>;
-};
+  return (
+    <FooterWrapper className="no-print" {...props}>
+      {children}
+    </FooterWrapper>
+  )
+}
 
-export default Footer;
+export default Footer
