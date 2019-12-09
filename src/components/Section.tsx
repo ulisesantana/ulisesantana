@@ -29,12 +29,12 @@ const SectionTitleWrapper = styled.div`
   }
 `
 const SectionWrapper = styled.section`
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
 
   p {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     margin: 1rem 0;
     max-width: 100%;
   }
@@ -46,12 +46,12 @@ const SectionWrapper = styled.section`
   }
 
   @media print, screen and (max-width: 420px) {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 20px;
 
     p {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 `

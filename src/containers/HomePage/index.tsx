@@ -12,9 +12,9 @@ const PersonalBlog: React.FunctionComponent<PersonalBlogProps> = ({
 }) => {
   return (
     <PersonalBlogWrapper {...props}>
-      <Navbar/>
+      <Navbar />
       <Intro />
-      <FeaturedPosts />
+      {/* <FeaturedPosts /> */}
       <Posts />
     </PersonalBlogWrapper>
   )

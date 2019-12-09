@@ -46,13 +46,25 @@ export function CV() {
       >
         <Text text={about} />
       </Section>
-      <Section title="Work experience" icon={<MdWork />}>
+      <Section
+        className="page-break-after"
+        title="Work experience"
+        icon={<MdWork />}
+      >
         {renderInfo(jobs)}
       </Section>
-      <Section title="Education & Training" icon={<MdSchool />}>
+      <Section
+        className="page-break-after"
+        title="Education & Training"
+        icon={<MdSchool />}
+      >
         {renderInfo(education)}
       </Section>
-      <Section title="Milestones" icon={<FaStar />}>
+      <Section
+        className="page-break-after"
+        title="Milestones"
+        icon={<FaStar />}
+      >
         {renderInfo(milestones)}
       </Section>
       <Section title="Sponsored Events" icon={<FaStar />}>

@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import About from "../containers/About"
+import HomePage from "../containers/HomePage"
 import { graphql, useStaticQuery } from "gatsby"
 
-const AboutPage: React.FunctionComponent = () => {
+const Home: React.FunctionComponent = () => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,9 +26,9 @@ const AboutPage: React.FunctionComponent = () => {
         title="Ulises Santana | Full Stack Developer"
       />
 
-      <About />
+      <HomePage />
     </Layout>
   )
 }
 
-export default AboutPage
+export default Home

@@ -5,7 +5,7 @@ export const MilestoneWrapper = styled.article`
   display: block;
   padding: 4px;
   margin-bottom: 4rem;
-  max-width: 450px;
+  max-width: 300px;
   width: 100%;
 
   h3 {

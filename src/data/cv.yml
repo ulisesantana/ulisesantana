@@ -1,14 +1,9 @@
 about: >
-  Hi, my name is Ulises Santana Suárez and I am located on Las Palmas,
-  Spain. I am Full Stack Developer at Kentech, where I’ve been creating tech solutions based on web technologies with
-  awesome people for the online entertainment industry, in multiple
-  countries for millions of users, for the last 2 years and a half.
+  I was thinking about defining myself in a sentence, but I concluded that's an impossible task. So let me simply describe myself. I am a  lifelong learner passionate about tech, focused on the web with JavaScript as my native programming language and I solve problems with tech based on JavaScript. 
 
-  I really love coding, the web app ecosystem and learn something new
-  everyday. I’m very grateful to the developer community and all the
-  people that helped me on my path to be a professional developer.
+  I believe that for a healthy industry the professionals must share their experience. Committed to this, I try to give at least one talk/workshop per year in vocational schools. Moreover, I co-organized and sponsored the last Global Day of Coderetreat in Gran Canaria, which is an awesome environment for coding students. 
 
-  I'm always looking for something new to learn or a challenge for outbound my limits.
+  I also sponsored other events during the last year as part of my giveback plan to the software community. There is no doubt that software communities and open source have been crucial for my professional growth, so I am just returning the favor.
 jobs:
   - employer: Kentech
     location: Las Palmas de Gran Canaria, Spain
@@ -222,12 +217,12 @@ milestones:
     youtube: https://www.youtube.com/embed/Joqdb-oZjC8
     description: >      
       An introductory talk to npm and how to publish on it. 
-  # - when: 11/2018
-  #   location: Kilkenny, Ireland
-  #   title: Compile NodeJS project on a Chromebook
-  #   twitter: https://twitter.com/ulisesantana/status/1059825362220261376
-  #   description: >
-  #     During a workshop on NodeConf EU I compiled NodeJS on a Chromebook, improve some tests and contribute to the project. 
+  - when: 11/2018
+    location: Kilkenny, Ireland
+    title: Compile NodeJS project on a Chromebook
+    twitter: https://twitter.com/ulisesantana/status/1059825362220261376
+    description: >
+      During a workshop on NodeConf EU I compiled NodeJS on a Chromebook, improve some tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took almost 2 hours only to compile. 
   - when: 03/2017
     location: Las Palmas de Gran Canaria, Spain
     title: Second prize at Hack for Good hackaton
@@ -272,3 +267,101 @@ attended:
   - when: 05/2019
     location: Paris, France
     title: React Europe
+  - when: 11/2018
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 11/2018
+    location: Kilkenny, Ireland
+    title: NodeCONF EU
+  - when: 06/2018
+    location: Berlin, Germany
+    title: JSConf EU
+  - when: 04/2018
+    location: Las Palmas de Gran Canaria, Spain
+    title: Socracan
+stuff:
+  - title: Bizenter
+    url: 
+    git:
+    description: An assets management app. Asked by
+    stack: []
+  - title: ts-boilerplate
+    url: https://github.com/ulisesantana/ts-boilerplate
+    git: https://github.com/ulisesantana/ts-boilerplate 
+    description: A basic boilerplate for TypeScript projects
+    stack: ['TypeScript', 'Jest', 'Husky', 'xo']
+  - title: ink-boilerplate
+    url: https://github.com/ulisesantana/ink-boilerplate
+    git: https://github.com/ulisesantana/ink-boilerplate
+    description: A basic boilerplate for building CLI with React
+    stack: ['React', 'Ava', 'Husky', 'xo']
+  - title: Testing with React Workshop
+    url: 
+    git: https://github.com/ulisesantana/react-testing-workshop
+    description: 
+    stack: []
+  - title: Game of life in vanilla
+    url: https://wwww.ulisesantana.dev/game-of-life-vanilla
+    git: https://github.com/ulisesantana/game-of-life-vanilla
+    description: 
+    stack: ['Parcel', 'TypeScript']
+  - title: Randomizer
+    url: 
+    git: 
+    description: An Offline Progressive Web App app for get an item from a random list.  
+    stack: ['React', 'TypeScript', 'Styled Components']
+  - title: Diet
+    url: https://www.ulisesantana.dev/diet/
+    git: https://github.com/ulisesantana/diet
+    description: I have some minor health issues which affects to my diet. With this PWA me and my family can cook or buy food friendly for me.
+    stack: ['React', 'TypeScript', 'Styled Components', 'React Material UI']
+  - title: array-analyzer
+    url: https://www.ulisesantana.dev/array-analyzer/
+    git: https://github.com/ulisesantana/array-analyzer
+    description: Analize the data on JSON Array with the built-in Array methods
+    stack: ['React', 'TypeScript', 'Styled Components']
+  - title: Toolbox
+    url: 
+    git: https://github.com/ulisesantana/toolbox/tree/develop
+    description: A Chrome extension with some basic and dummy tools for my daily basis.
+    stack:  ['React', 'TypeScript', 'Styled Components', 'Styleguidist']
+  - title: assets-api
+    url: 
+    git: https://github.com/ulisesantana/assets-api
+    description: A proof of concept about a REST API build with TypeScript, Koa and TypeORM.
+    stack: ['TypeScript', 'TypeORM', 'Koa']
+  - title: buffer
+    url: 
+    git: https://github.com/ulisesantana/buffer
+    description: A proof of concept about a buffer with Mongo and Redis
+    stack: ['TypeScript', 'Redis', 'Mongo']
+  - title: cluedo
+    url: 
+    git: https://github.com/ulisesantana/cluedo
+    description: Digital version for playing to GOT Cluedo. Instead of using paper and pencil, just use your phone.
+    stack: ['Vue']
+  - title: ubuntuReady
+    url: 
+    git: https://github.com/ulisesantana/ubuntuReady
+    description: A bash script for setting up a new Ubuntu. Automate all the basic stuff I use install and config when I have a new PC.
+    stack: ['bash']
+  - title: bug-hunter
+    url: 
+    git: https://github.com/ulisesantana/bug-hunter
+    description: A CLI game as proof of concept about doing something with CLI on Vanilla NodeJS.
+    stack: ['NodeJS']
+  - title: Web Native Form Validation
+    url: https://repl.it/@ulisesantana/Web-Native-Form-Validation
+    git: 
+    description: A proof of concept about vanilla form validation without JavaScript. 
+    stack: ['HTML', 'CSS']
+  - title: Object deep validation
+    url: https://repl.it/@ulisesantana/Validate
+    git: 
+    description: A proof of concept about object validation with a recursive function
+    stack: ['NodeJS']
+  - title: Fibonacci limits
+    url: https://repl.it/@ulisesantana/fibonacci
+    git: 
+    description: A proof of concept about performance with a recursive function versus a iterative one using Big Number in JavaScript. 
+    stack: ['NodeJS']

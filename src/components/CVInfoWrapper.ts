@@ -12,13 +12,12 @@ export const CVInfoWrapper = styled.div`
   .info-title {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 8px;
     width: 100%;
   }
 
   .info-position,
   .info-date {
-    font-size: 1.5rem;
     font-weight: 700;
   }
 
