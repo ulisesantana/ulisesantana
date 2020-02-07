@@ -23,9 +23,7 @@ export const Milestone: FC<MilestoneData> = ({
 }) => {
   const thereIsADescription =
     typeof description === "string" && description !== ""
-  const [width, height] = useMemo(() => getIframeSize(window.innerWidth / 3), [
-    window.innerWidth,
-  ])
+  const [width, height] = getIframeSize(350)
   return (
     <MilestoneWrapper>
       <MilestoneHeader {...info} />
