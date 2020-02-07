@@ -70,7 +70,7 @@ export function CV() {
       <Section title="Sponsored Events" icon={<FaStar />}>
         {renderInfo(sponsored)}
       </Section>
-      <Section title="Attended Conferences" icon={<FaStar />}>
+      <Section title="Attended Conferences during last year" icon={<FaStar />}>
         {renderInfo(attended)}
       </Section>
     </>

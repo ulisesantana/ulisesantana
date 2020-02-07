@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HomePage from "../containers/HomePage"
+import About from "../containers/About"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Home: React.FunctionComponent = () => {
@@ -26,7 +26,7 @@ const Home: React.FunctionComponent = () => {
         title="Ulises Santana | Full Stack Developer"
       />
 
-      <HomePage />
+      <About />
     </Layout>
   )
 }

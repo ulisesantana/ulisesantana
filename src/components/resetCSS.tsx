@@ -157,12 +157,6 @@ const ResetCSS = createGlobalStyle`
     font-weight: 700;
     text-shadow: 1px 0 1px ${themeGet("colors.lightTextColor", "black")};
     transition: all ease-in-out 0.3s;
-
-    &:hover {
-      background-color: ${themeGet("colors.primary", "yellow")};
-      border-radius: 20px;
-      padding: 4px;
-    }
     
     &:visited {
       color: ${themeGet("colors.secondary", "blue")};
@@ -206,4 +200,5 @@ const ResetCSS = createGlobalStyle`
     }
   } */
 `
+
 export default ResetCSS

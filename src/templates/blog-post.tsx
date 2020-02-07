@@ -5,8 +5,8 @@ import { DiscussionEmbed } from "disqus-react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostCard from "../components/PostCard/PostCard"
-import PostDetails from '../components/PostDetails/PostDetails'
-import Navbar from '../components/Navbar/Navbar'
+import PostDetails from "../components/PostDetails/PostDetails"
+import Navbar from "../components/Navbar/Navbar"
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -47,7 +47,7 @@ const BlogPostTemplate = (props: any) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Navbar/>
+      <Navbar />
       <BlogPostDetailsWrapper>
         <PostDetails
           title={post.frontmatter.title}
@@ -58,7 +58,7 @@ const BlogPostTemplate = (props: any) => {
               : post.frontmatter.cover.childImageSharp.fluid
           }
           description={post.html}
-          imagePosition="left"
+          imagePosition="top"
         />
 
         <BlogPostFooter

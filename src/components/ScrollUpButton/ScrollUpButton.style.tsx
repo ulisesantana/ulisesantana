@@ -18,6 +18,10 @@ const ScrollUpButtonWrapper = styled.div`
     background-color: ${themeGet("colors.primary", "yellow")};
     color: ${themeGet("colors.black", "#000000")};
   }
+
+  @media print {
+    display: none;
+  }
 `
 
 export default ScrollUpButtonWrapper

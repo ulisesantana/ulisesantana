@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import {
   IntroWrapper,
@@ -44,16 +44,18 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
 
   return (
     <IntroWrapper>
-      <IntroImage>
-        <div className="flip-container">
-          <div className="flip-front">
-            <Image fluid={AuthorImage} alt="author" />
+      <Link to="/">
+        <IntroImage>
+          <div className="flip-container">
+            <div className="flip-front">
+              <Image fluid={AuthorImage} alt="author" />
+            </div>
+            <div className="flip-back no-print">
+              <img src={Logo.src} alt="It's me!" />
+            </div>
           </div>
-          <div className="flip-back no-print">
-            <img src={Logo.src} alt="It's me!" />
-          </div>
-        </div>
-      </IntroImage>
+        </IntroImage>
+      </Link>
       <IntroInfo>
         <IntroTitle>
           Hey! I’m <b>{author}</b>

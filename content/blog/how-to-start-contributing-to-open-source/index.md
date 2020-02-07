@@ -1,9 +1,9 @@
 ---
 title: I want to start contributing to Open Source, how can I achieve it?
-date: '2019-12-08'
+date: 2019-12-08
 description: Open Source is the cornerstone of web development and data science. Is the philoshopy behind of most of the tools you use on your daily basis. So, why not contribute to it? Let me give you some tips about how start contributing to open source projects.
-tags: ['open source', 'how-to', 'community']
-cover: './preview.jpg'
+tags: [open source, how-to, community]
+cover: ./start-contributing.png
 ---
 
 Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side. Historically, JavaScript was used primarily for client-side scripting, in which scripts written in JavaScript are embedded in a webpage’s HTML, to be run client-side by a JavaScript engine in the user’s web browser.

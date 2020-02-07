@@ -5,7 +5,7 @@ import { AboutWrapper, AboutImage, AboutPageTitle, AboutDetails } from "./style"
 import Intro from "../HomePage/Intro"
 import { useState } from "react"
 import { SocialLinks } from "../../components/SocialLinks"
-import Navbar from "../../components/Navbar/Navbar"
+// import Navbar from "../../components/Navbar/Navbar"
 import Links from "./links"
 
 interface AboutProps {}
