@@ -1,4 +1,4 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -8,7 +8,7 @@ module.exports = {
     author: `Ulises Santana`,
     about: `Full Stack Developer with JavaScript as mother tongue and web as my home nation. Based in Las Palmas de Gran Canaria 🏝️`,
     description: `A lifelong learner sharing his lessons learned.`,
-    siteUrl: `https://ulisesantana.dev/`,
+    siteUrl: `https://www.ulisesantana.dev/`,
   },
   plugins: [
     {
@@ -139,7 +139,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`
+        path: `${__dirname}/src/data/`,
       },
     },
     {
