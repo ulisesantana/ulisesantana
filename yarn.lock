@@ -1460,17 +1460,17 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.3.1", "@babel/runtime@^7.7.6":
-  version "7.8.4"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
-  integrity sha512-neAp3zt80trRVBI1x0azq6c57aNBqYZH8KhMm3TaB7wEI5Q4A2SHfBHE8w9gOhI/lrqxtEbXZgQIrHP+wvSGwQ==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
 "@babel/runtime@^7.4.2":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
   integrity sha512-9lsJwJLxDh/T3Q3SZszfWOTkk3pHbkmH+3KY+zwIDmsNlxsumuhS2TH3NIpktU4kNvfzy+k3eLT7aTJSPTo0OA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.7.6":
+  version "7.8.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
+  integrity sha512-neAp3zt80trRVBI1x0azq6c57aNBqYZH8KhMm3TaB7wEI5Q4A2SHfBHE8w9gOhI/lrqxtEbXZgQIrHP+wvSGwQ==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -7979,13 +7979,6 @@ html-minifier@^4.0.0:
     relateurl "^0.2.7"
     uglify-js "^3.5.1"
 
-html-parse-stringify2@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/html-parse-stringify2/-/html-parse-stringify2-2.0.1.tgz#dc5670b7292ca158b7bc916c9a6735ac8872834a"
-  integrity sha1-3FZwtyksoVi3vJFsmmc1rIhyg0o=
-  dependencies:
-    void-elements "^2.0.1"
-
 html-react-parser@^0.10.0:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-0.10.1.tgz#1a83c635f234645ee48b29f8dae31d55459e3043"
@@ -8086,13 +8079,6 @@ humanize-url@^1.0.0:
   dependencies:
     normalize-url "^1.0.0"
     strip-url-auth "^1.0.0"
-
-i18next@^19.1.0:
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.1.0.tgz#fe1a1da3d208872946307c7d2d115da45d46159f"
-  integrity sha512-ISbmukX4L6Dz0QoH9+EW1AnBw7j+NRLoMu9uLPMaNSSTP9Eie9/oUL0dOyWX15baB3gYOpkHJpGZRHOqcnl0ew==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
 
 iconv-lite@0.4, iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
@@ -12206,14 +12192,6 @@ react-hot-loader@^4.6.2:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-i18next@^11.3.1:
-  version "11.3.1"
-  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.3.1.tgz#9269282c3f566015f0bdf8fdbf46782bbe50f5a7"
-  integrity sha512-S/CWHcnew1lXo8HeniGhBU5kTmPhZ4w4rtA4m/gDN07soCtKKYSAcLNm7zhwjI2OSR4Skd0vOtzNp/FzEEjxIw==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
-    html-parse-stringify2 "2.0.1"
-
 react-icons@^3.5.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.7.0.tgz#64fe46231fabfeea27895edeae6c3b78114b8c8f"
@@ -15363,11 +15341,6 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
-
-void-elements@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
-  integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
 vue-template-compiler@^2.5.16:
   version "2.6.10"

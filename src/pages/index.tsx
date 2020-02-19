@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import AboutPage from "../containers/AboutPage"
 import { graphql, useStaticQuery } from "gatsby"
+import en from "../locales/en.json"
 
 const Home: React.FunctionComponent = props => {
   const { site } = useStaticQuery(
@@ -21,8 +22,8 @@ const Home: React.FunctionComponent = props => {
   return (
     <Layout>
       <SEO
-        description={site.siteMetadata.description}
-        title="Ulises Santana | Full Stack Developer"
+        description={en.about}
+        title="Ulises Santana | JavaScript Engineer"
       />
       <AboutPage />
     </Layout>
