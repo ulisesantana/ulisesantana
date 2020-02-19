@@ -216,7 +216,6 @@ export const TagName = styled.h1`
 `
 export const BlogPostFooter = styled.div`
   margin: 0 0 0 auto;
-  width: 58%;
   max-width: 100%;
   padding-top: 60px;
   display: flex;
@@ -274,7 +273,6 @@ export const PostShare = styled.div`
 
 export const BlogPostDetailsWrapper = styled.div`
   margin: 0 auto;
-  padding: 90px 0 120px 0;
   padding-left: 75px;
   padding-right: 75px;
   @media (min-width: 1550px) {

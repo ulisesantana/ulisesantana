@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { themeGet } from "styled-system"
 
 export const ContactWrapper = styled.div`
-  width: 870px;
+  width: 960px;
   margin: 0 auto;
   padding-top: 120px;
   max-width: 100%;

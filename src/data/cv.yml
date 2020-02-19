@@ -50,7 +50,7 @@ jobs:
     from: 06/2017
     to: 07/2018
     description: >
-      After my internship at Kentech, I was hired as a Backend Developer due to my interest and performance in NodeJS tasks during my internship. In the first six months, my main tasks were coding new features on NodeJS microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That means handling web servers with Nginx and pm2 processes for NodeJS, besides handling all the files on servers for other services. Thankfully, some really smart teammates deployed Rancher with Docker connected with our Gitlab, giving us the chance to add CI/CD on our workflow.
+      After my internship period, I was hired as a Backend Developer due to my interest and performance in NodeJS tasks during my internship. In the first six months, my main tasks were coding new features on NodeJS microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That means handling web servers with Nginx and pm2 processes for NodeJS, besides handling all the files on servers for other services. Thankfully, some really smart teammates deployed Rancher with Docker connected with our Gitlab, giving us the chance to add CI/CD on our workflow.
 
       During the following six months, I gradually stop working on infrastructure and started creating new features across all the stack. I also evangelized best practices about ES2017 Promises with async / await.
     skills:
@@ -138,7 +138,7 @@ jobs:
     description: >
       For two and a half years I worked creating content and executing digital marketing plans in different channels based on customer objectives, interacting with communities, following active listening and resolving reputation crises with a community manager under my charge. As a copywriter, I wrote all the content for the different blogs that we managed. I also made the content insertion in web projects using HTML and CSS.
 
-      As co-founder, I lived putting out fires daily along with all the management of customers, products, and projects. On the other hand, trying to do the math to pay employee salaries, company debts and the taxes of being a small business in Spain. This kind of experience gave me more perspective about the cost of a digital product.
+      As co-founder, I was involved in managing customers, products, and projects. Furthermore, a lot of problems come up on the daily basis of a business and somebody needs to handle it. On the other hand, trying to do the math to pay employee salaries, company debts and the taxes of being a small business in Spain. This kind of experience gave me more perspective about the cost of a digital product.
     skills:
       - Community Management
       - Social Media Strategy
@@ -205,6 +205,11 @@ education:
       - Excel reporting
       - CRM
 milestones:
+  - when: 11/2019
+    location: Las Palmas de Gran Canaria, Spain
+    title: Global Day of Coderetreat
+    description: >
+      I co-organized and hosted a Global Day of Coderetreat. Coderetreat is a day-long stress-free, intensive practice event, focusing on the fundamentals of software development and design.
   - when: 10/2019
     location: Las Palmas de Gran Canaria, Spain
     title: Workshop for React Canarias community

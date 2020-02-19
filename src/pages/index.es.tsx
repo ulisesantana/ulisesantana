@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/Layout"
+import { SpanishLayout } from "../components/Layout"
 import SEO from "../components/Seo"
-import AboutPage from "../containers/AboutPage"
+import AboutPage from "../containers/AboutPage/index.es"
 import { graphql, useStaticQuery } from "gatsby"
 
-const Home: React.FunctionComponent = props => {
+const Home: React.FunctionComponent = () => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,14 +18,15 @@ const Home: React.FunctionComponent = props => {
       }
     `
   )
+
   return (
-    <Layout>
+    <SpanishLayout>
       <SEO
         description={site.siteMetadata.description}
         title="Ulises Santana | Full Stack Developer"
       />
       <AboutPage />
-    </Layout>
+    </SpanishLayout>
   )
 }
 

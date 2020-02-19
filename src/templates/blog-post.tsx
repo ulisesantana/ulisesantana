@@ -2,8 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import _ from "lodash"
 import { DiscussionEmbed } from "disqus-react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
 import Navbar from "../components/Navbar/Navbar"
@@ -30,6 +30,7 @@ import {
   PostTags,
   BlogPostComment,
 } from "./templates.style"
+import Intro from "../containers/Intro"
 
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
@@ -47,7 +48,6 @@ const BlogPostTemplate = (props: any) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Navbar />
       <BlogPostDetailsWrapper>
         <PostDetails
           title={post.frontmatter.title}
@@ -60,7 +60,7 @@ const BlogPostTemplate = (props: any) => {
           description={post.html}
           imagePosition="top"
         />
-
+        <Intro lang={post.frontmatter.langKey} />
         <BlogPostFooter
           className={post.frontmatter.cover == null ? "center" : ""}
         >

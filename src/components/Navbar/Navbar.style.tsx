@@ -11,19 +11,13 @@ export const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //border-bottom: 1px solid ${themeGet("borderColor", "#DBDBDB")};
-  padding: 16px 75px;
+  flex-direction: row-reverse;
   background-color: #fff;
   transition: 0.25s ease-in-out;
-  @media (max-width: 1400px) {
-    padding: 16px 45px;
-  }
-  @media (max-width: 990px) {
-    padding: 16px 25px;
-  }
-  @media (max-width: 575px) {
-    padding: 16px 15px;
-  }
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+
   @media print {
     display: none;
   }
@@ -157,7 +151,7 @@ export const NavSearchWrapper = styled.div`
   }
 
   .nav-search-input {
-    width: 870px;
+    width: 960px;
     transition: 0.35s ease-in-out;
 
     .inner-wrap {

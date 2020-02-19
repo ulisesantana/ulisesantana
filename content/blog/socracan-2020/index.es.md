@@ -1,10 +1,11 @@
 ---
-title: Can I Use Hooks Today?
-date: '2019-03-20'
+title: Socracan 2020
+date: "2019-03-20"
 description: Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side. Historically, JavaScript was used primarily for client-side scripting, in which scripts written in JavaScript are embedded in a webpage’s HTML, to be run client-side by a JavaScript engine in the user’s web browser.
-tags: ['javascript', 'hooks', 'test']
-cover: './preview.jpg'
-slug: 'can-i-use-hooks-today'
+tags: ["software crafters", "socrates", "test"]
+cover: "./preview.jpg"
+slug: "can-i-use-hooks-today"
+langKey: es
 ---
 
 Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side. Historically, JavaScript was used primarily for client-side scripting, in which scripts written in JavaScript are embedded in a webpage’s HTML, to be run client-side by a JavaScript engine in the user’s web browser.

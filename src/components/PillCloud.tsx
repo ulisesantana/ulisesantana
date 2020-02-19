@@ -12,11 +12,9 @@ const PillCloudWrapper = styled.ul`
 
   li {
     align-items: center;
-    background: linear-gradient(#ffa, ${themeGet("colors.primary", "yellow")});
-    border-radius: 20px;
+    background: ${themeGet("colors.primary", "yellow")};
     display: flex;
     justify-content: center;
-    filter: drop-shadow(0.2rem 0.2rem 0.2rem lightgrey);
     max-height: fit-content;
     min-width: 60px;
     margin: 4px;
@@ -25,6 +23,7 @@ const PillCloudWrapper = styled.ul`
     span {
       display: inline-block;
       font-size: 1rem;
+      font-weight: 600;
       line-height: 1rem;
     }
   }

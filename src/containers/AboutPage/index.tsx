@@ -2,15 +2,16 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import { AboutWrapper, AboutImage, AboutPageTitle, AboutDetails } from "./style"
-import Intro from "../HomePage/Intro"
+import Intro from "../Intro"
 import { useState } from "react"
 import { SocialLinks } from "../../components/SocialLinks"
-// import Navbar from "../../components/Navbar/Navbar"
 import Links from "./links"
+import { useEnglish } from "../../hooks"
 
 interface AboutProps {}
 
 const About: React.FunctionComponent<AboutProps> = () => {
+  useEnglish()
   const [tldrOpen, setTLDROpen] = useState(false)
   const toggleTLDR = () => {
     setTLDROpen(!tldrOpen)
@@ -47,7 +48,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
     <>
       <AboutWrapper>
         <AboutPageTitle>
-          <Intro />
+          <Intro lang="en" />
         </AboutPageTitle>
         <AboutDetails>
           <div className={`flex-start`}>
@@ -175,7 +176,11 @@ const About: React.FunctionComponent<AboutProps> = () => {
             Lately, my main aim is giving back to the developer community. I
             enjoy every day at work and this is thanks to all the people that
             share their time, knowledge or point of view making others able to
-            learn or use tools otherwise it wouldn't be possible.
+            learn or use tools otherwise it wouldn't be possible. That´s one of
+            the reasons why I try to give a talk at least once a year in a
+            vocational school. The talks are about web tech and the software
+            industry. I try to help them to optimize their studies increasing in
+            this way their success finding a job at the end of the course.
           </p>
 
           <p>
@@ -196,7 +201,14 @@ const About: React.FunctionComponent<AboutProps> = () => {
               {" "}
               JS Day Canarias{" "}
             </a>
-            editions. Also, On November 2018 I had the opportunity to give a
+            editions and{" "}
+            <a
+              href="https://pythoncanarias.es/events/pydaygc19/"
+              target={`_blank`}
+            >
+              PyDay Gran Canaria 2019
+            </a>
+            . Also, On November 2018 I had the opportunity to give a
             <a href={Links.talk} target={`_blank`}>
               {" "}
               talk{" "}

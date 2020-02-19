@@ -11,7 +11,6 @@ import {
   PostDescription,
   PostTags,
 } from "./PostDetails.style"
-import Intro from "../../containers/HomePage/Intro"
 
 type PostDetailsProps = {
   title: string
@@ -52,18 +51,8 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
               <PostPreview className="post_preview">
                 <Img fluid={preview} alt={title} />
               </PostPreview>
-              <Intro />
             </>
           )}
-        </>
-      ) : (
-        ""
-      )}
-
-      {imagePosition == "top" ? (
-        <>
-          <PostTitle>{title}</PostTitle>
-          <PostDate>{date}</PostDate>
         </>
       ) : (
         ""
@@ -80,7 +69,16 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
       ) : (
         ""
       )}
+
       <PostDescriptionWrapper className="post_des_wrapper">
+        {imagePosition == "top" ? (
+          <>
+            <PostTitle>{title}</PostTitle>
+            <PostDate>{date}</PostDate>
+          </>
+        ) : (
+          ""
+        )}
         {imagePosition == "left" ? (
           <>
             <PostTitle>{title}</PostTitle>

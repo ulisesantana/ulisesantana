@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
-import _ from 'lodash';
-import Img from 'gatsby-image';
+import * as React from "react"
+import { Link } from "gatsby"
+import _ from "lodash"
+import Img from "gatsby-image"
 import {
   PostCardWrapper,
   PostPreview,
@@ -13,17 +13,17 @@ import {
   PostTags,
   PostDateAndPreview,
   ReadMore,
-} from './PostCardMinimal.style';
+} from "./PostCardMinimal.style"
 
 interface PostCardMinimalProps {
-  image?: any;
-  title: string;
-  description?: string;
-  url: string;
-  date?: string;
-  tags?: [];
-  className?: string;
-  imageType?: 'fixed' | 'fluid';
+  image?: any
+  title: string
+  description?: string
+  url: string
+  date?: string
+  tags?: string[]
+  className?: string
+  imageType?: "fixed" | "fluid"
 }
 
 const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
@@ -38,15 +38,15 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses = ['post_card'];
+  const addAllClasses = ["post_card"]
 
   // className prop checking
   if (className) {
-    addAllClasses.push(className);
+    addAllClasses.push(className)
   }
 
   return (
-    <PostCardWrapper className={addAllClasses.join(' ')} {...props}>
+    <PostCardWrapper className={addAllClasses.join(" ")} {...props}>
       <PostDetails className="post_details">
         <PostDateAndPreview>
           {date && (
@@ -60,7 +60,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
           {image == null ? null : (
             <PostPreview className="post_preview">
               <Link to={url}>
-                {imageType === 'fluid' ? (
+                {imageType === "fluid" ? (
                   <Img fluid={image} alt="post preview" />
                 ) : (
                   <Img fixed={image} alt="post preview" />
@@ -97,11 +97,11 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
         </PostContent>
       </PostDetails>
     </PostCardWrapper>
-  );
-};
+  )
+}
 
 PostCardMinimal.defaultProps = {
-  imageType: 'fluid',
-};
+  imageType: "fluid",
+}
 
-export default PostCardMinimal;
+export default PostCardMinimal

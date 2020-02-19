@@ -1,44 +1,61 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 // import { Link } from "gatsby"
 import { IoIosSearch, IoIosClose } from "react-icons/io"
 import { DrawerProvider } from "../Drawer/DrawerContext"
 import Menu from "./Menu"
 import MobileMenu from "./MobileMenu"
+import SelectLanguage from "../SelectLanguage"
 import SearchContainer from "../../containers/SearchContainer/SearchContainer"
 import HeaderWrapper, {
   NavbarWrapper,
-  // Logo,
   MenuWrapper,
   NavSearchButton,
   NavSearchWrapper,
   SearchCloseButton,
   NavSearchFromWrapper,
 } from "./Navbar.style"
-// import LogoImage from "../../../content/assets/logo.png"
+import { Language } from "../../types"
 
 type NavbarProps = {
   className?: string
+  lang: Language
 }
 
 const MenuItems = [
   {
     label: "About",
-    url: "/about",
+    url: "/",
   },
   {
     label: "Blog",
-    url: "/",
+    url: "/blog",
   },
 ]
 
-export const Navbar: React.FunctionComponent<NavbarProps> = ({
-  className,
-  ...props
-}) => {
+const MenuItemsSpanish = [
+  {
+    label: "Quien soy",
+    url: "/es",
+  },
+  {
+    label: "Blog",
+    url: "/es/blog",
+  },
+]
+
+export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
   const [state, setState] = useState({
     toggle: false,
+    menu: MenuItems,
     search: "",
   })
+
+  useEffect(() => {
+    setState(oldValues => ({
+      ...oldValues,
+      menu: props.lang !== "en" ? MenuItemsSpanish : MenuItems,
+    }))
+  }, [props.lang])
 
   const toggleHandle = () => {
     setState({
@@ -58,24 +75,20 @@ export const Navbar: React.FunctionComponent<NavbarProps> = ({
   return (
     <HeaderWrapper className={addAllClasses.join(" ")} {...props}>
       <NavbarWrapper className="navbar">
-        <DrawerProvider>
-          <MobileMenu items={MenuItems} />
-        </DrawerProvider>
-        {/*<Logo>*/}
-        {/*  <Link to="/">*/}
-        {/*    <img src={LogoImage} alt="logo" />*/}
-        {/*  </Link>*/}
-        {/*</Logo>*/}
-        <MenuWrapper>
-          <Menu items={MenuItems} />
-        </MenuWrapper>
-        <NavSearchButton
+        {/* <DrawerProvider>
+            <MobileMenu items={state.menu} />
+          </DrawerProvider>
+          <MenuWrapper>
+            <Menu items={state.menu} />
+          </MenuWrapper> */}
+        <SelectLanguage lang={props.lang} />
+        {/* <NavSearchButton
           type="button"
           aria-label="search"
           onClick={toggleHandle}
         >
           <IoIosSearch size="23px" />
-        </NavSearchButton>
+        </NavSearchButton> */}
       </NavbarWrapper>
 
       <NavSearchWrapper className={state.toggle === true ? "expand" : ""}>

@@ -6,7 +6,7 @@ import {
   MilestoneData,
   Milestone,
 } from "../../components"
-import { useCV } from "../../effects"
+import { useCV } from "../../hooks"
 import { FaUserCircle, MdWork, MdSchool, FaStar } from "react-icons/all"
 
 const Text: FC<{ text: string }> = ({ text }) => (

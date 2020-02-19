@@ -2,8 +2,8 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import PostCardMinimal from "../components/PostCardMinimal/PostCardMinimal"
 import Pagination from "../components/Pagination/Pagination"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import { BlogPostsWrapper } from "./templates.style"
 
 const BlogList = (props: any) => {

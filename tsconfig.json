@@ -3,7 +3,12 @@
     "target": "esnext",
     "module": "commonjs",
     "jsx": "preserve",
-    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "lib": [
+      "dom",
+      "es6",
+      "es2017",
+      "esnext.asynciterable"
+    ],
     "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
@@ -20,15 +25,6 @@
     "typeRoots": [
       "../node_modules/@types",
       "./@types"
-    ],
-    "baseUrl": "src", 
-    "paths": {
-      "@components": ["components"],
-      "@constants": ["constants"],
-      "@containers": ["containers"],
-      "@images": ["images"],
-      "@templates": ["templates"],
-      "@theme": ["theme"]
-  },
+    ]
   }
 }

@@ -74,12 +74,8 @@ export const AboutDetails = styled.div`
     display: flex;
     flex-direction: column;
     background-color: ${themeGet("colors.primary", "#FFFFFF")};
-    border-radius: 1rem;
     color: ${themeGet("colors.black", "#292929")};
     cursor: pointer;
-    filter: drop-shadow(
-      0.25rem 0.25rem 0.5rem ${themeGet("colors.black", "gray")}
-    );
     font-size: 1.2rem;
     font-style: italic;
     font-weight: 600;
@@ -198,13 +194,11 @@ export const AboutDetails = styled.div`
   button {
     display: block;
     background-color: ${themeGet("colors.primary", "#FFFFFF")};
-    border-radius: 1rem;
     color: ${themeGet("colors.black", "#292929")};
     cursor: pointer;
     font-size: 1rem;
     font-style: italic;
     font-weight: 600;
-    filter: drop-shadow(0 0.2rem 0.2rem ${themeGet("colors.black", "black")});
     padding: 0.5rem;
     outline: none;
     margin: 1rem;
