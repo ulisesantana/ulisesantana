@@ -6,12 +6,10 @@ import Intro from "../Intro"
 import { useState } from "react"
 import { SocialLinks } from "../../components/SocialLinks"
 import Links from "./links"
-import { useEnglish } from "../../hooks"
 
 interface AboutProps {}
 
 const About: React.FunctionComponent<AboutProps> = () => {
-  useEnglish()
   const [tldrOpen, setTLDROpen] = useState(false)
   const toggleTLDR = () => {
     setTLDROpen(!tldrOpen)

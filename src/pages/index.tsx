@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import AboutPage from "../containers/AboutPage"
 import { graphql, useStaticQuery } from "gatsby"
-import en from "../locales/en.json"
+import en from "../locales/en/Intro.json"
 
 const Home: React.FunctionComponent = props => {
   const { site } = useStaticQuery(
