@@ -1,6 +1,7 @@
 export default {
   dahlNodeRegrets: "https://www.youtube.com/watch?v=M3BM9TB-8yA",
-  work: "https://www.kentech-sp.com",
+  work: "https://leanmind.es/",
+  kentech: "https://www.kentech-sp.com",
   angular: "https://angularjs.org",
   react: "https://reactjs.org",
   node: "https://nodejs.org",

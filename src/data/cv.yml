@@ -5,15 +5,45 @@ about: >
 
   I also sponsored other events during the last year as part of my giveback plan to the software community. There is no doubt that software communities and open source have been crucial for my professional growth, so I am just returning the favor.
 jobs:
+  - employer: Lean Mind
+    location: San Cristóbal de la La Laguna, Spain (Remote)
+    position: Full Stack Developer
+    from: 03/2020
+    to: Now
+    description: >
+      I work as external developer in developer teams for different customers with different technologies. At Lean Mind we are focused in agile methodologies as XP and we bring these workflows with the team we work with. We also consult solutions between Lean Mind workers, looking for the better solution for the customer.
+
+      As company, Lean Mind has a very rich culture based on knowledge sharing and confidence. We learn from each others and we are always open for feedback.
+    skills:
+      - NodeJS
+      - AngularJS
+      - React
+      - TypeScript
+      - Jest
+      - Java
+      - Groovy
+      - Kotlin
+      - Husky
+      - testing-library
+      - MySQL
+      - Microservices
+      - Docker
+      - Gitlab
+      - Toggl
+      - Jira
+      - Confluence
+      - Slack
+      - Visual Studio Code
+      - IntelliJ Ultimate
   - employer: Kentech
     location: Las Palmas de Gran Canaria, Spain
     position: Full Stack Developer
     from: 08/2018
-    to: Now
+    to: 03-2020
     description: >
       After being promoted, I am daily involved in developing features, even whole projects, on the backend and frontend side. Based on the team goal, could be just backend or frontend. This means working some sprints with AngularJS and Symfony, others with NestJS and React and sometimes just React or NodeJS and Express.
 
-      I usually discuss the solutions with the Solution Architect or Team Leaders. Also, I introduced and evangelized things like TypeScript, Storybook, NestJS,  Microfrontends, Inner Source, Cypress, Husky, Jest or how to create npm packages among my teammates. 
+      I usually discuss the solutions with the Solution Architect or Team Leaders. Also, I introduced and evangelized things like TypeScript, Storybook, NestJS,  Microfrontends, Inner Source, Cypress, Husky, Jest or how to create npm packages among my teammates.
 
       Besides, I help with another kind of tasks as maintaining development environments, assisting production deployments or recruiting React/NodeJS developers.
     skills:

@@ -80,9 +80,6 @@
   "keywords": [
     "gatsby"
   ],
-  "engines": {
-    "node": "8.17.0"
-  },
   "license": "MIT",
   "main": "n/a",
   "repository": {
