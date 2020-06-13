@@ -29,4 +29,4 @@ const BlogPageEnglish: React.FunctionComponent<BlogPageProps> = ({
 }
 
 export default BlogPageEnglish
-export * from "./index.es"
+export * from "./es"

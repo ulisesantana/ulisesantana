@@ -5,12 +5,19 @@ const BlogPostsWrapper = styled.div`
   margin: 0 auto;
   position: relative;
   .post_card {
-    margin-bottom: 120px;
+    border-bottom: 16px solid transparent;
+    margin-bottom: 54px;
+    transition: ease all 0.3s;
+    
+    &:hover {
+      border-bottom-color: ${themeGet('colors.primary', 'yellow')};
+    }
+    
     @media (max-width: 990px) {
-      margin-bottom: 90px;
+      margin-bottom: 40px;
     }
     @media (max-width: 575px) {
-      margin-bottom: 60px;
+      margin-bottom: 24px;
     }
   }
   @media (min-width: 990px) {

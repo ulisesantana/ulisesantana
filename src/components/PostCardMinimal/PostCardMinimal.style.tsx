@@ -104,7 +104,7 @@ export const PostTitle = styled.h2`
 
 export const Excerpt = styled.p`
   font-size: ${themeGet('fontSizes.3', '15')}px;
-  color: ${themeGet('textColor', '#292929')};
+  color: ${themeGet('colors.textColor', '#292929')};
   font-weight: 400;
   line-height: 2;
   margin-bottom: 0;
@@ -124,7 +124,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet('primary', '#D10068')};
+    color: ${themeGet('colors.primary', '#D10068')};
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;
@@ -156,10 +156,10 @@ export const ReadMore = styled.div`
   a {
     font-size: 13px;
     font-weight: 500;
-    color: ${themeGet('textColor', '#292929')};
+    color: ${themeGet('colors.textColor', '#292929')};
     transition: 0.15s ease-in-out;
     &:hover {
-      color: ${themeGet('primary', '#D10068')};
+      color: ${themeGet('colors.primary', '#D10068')};
     }
   }
 `;

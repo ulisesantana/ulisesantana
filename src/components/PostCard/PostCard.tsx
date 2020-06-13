@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import _ from 'lodash';
 import Img from 'gatsby-image';
 import {
@@ -47,13 +46,13 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
     <PostCardWrapper className={addAllClasses.join(' ')} {...props}>
       {image == null ? null : (
         <PostPreview className="post_preview">
-          <Link to={url}>
+          <a href={url}>
             {imageType === 'fluid' ? (
               <Img fluid={image} alt="post preview" />
             ) : (
               <Img fixed={image} alt="post preview" />
             )}
-          </Link>
+          </a>
         </PostPreview>
       )}
 
@@ -69,7 +68,7 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
 
         <PostContent className="post_content">
           <PostTitle className="post_title">
-            <Link to={url}>{title}</Link>
+            <a href={url}>{title}</a>
           </PostTitle>
           {description && (
             <Excerpt
@@ -83,9 +82,9 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
           {tags == null ? null : (
             <PostTags className="post_tags">
               {tags.map((tag: string, index: number) => (
-                <Link key={index} to={`/tags/${_.kebabCase(tag)}/`}>
+                <a key={index} href={`/tags/${_.kebabCase(tag)}/`}>
                   {`#${tag}`}
-                </Link>
+                </a>
               ))}
             </PostTags>
           )}

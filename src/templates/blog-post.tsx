@@ -1,12 +1,11 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import _ from "lodash"
 import { DiscussionEmbed } from "disqus-react"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
-import Navbar from "../components/Navbar/Navbar"
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -35,7 +34,8 @@ import Intro from "../containers/Intro"
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
   const { edges } = props.data.allMarkdownRemark
-  const title = post.frontmatter.title
+    const { lang } = props.pageContext
+    const title = post.frontmatter.title
   const slug = post.fields.slug
 
   const disqusConfig = {
@@ -43,7 +43,7 @@ const BlogPostTemplate = (props: any) => {
     config: { identifier: slug, title },
   }
   return (
-    <Layout>
+    <Layout lang={lang}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -60,16 +60,16 @@ const BlogPostTemplate = (props: any) => {
           description={post.html}
           imagePosition="top"
         />
-        <Intro lang={post.frontmatter.langKey} />
+        <Intro lang={lang} />
         <BlogPostFooter
           className={post.frontmatter.cover == null ? "center" : ""}
         >
           {post.frontmatter.tags == null ? null : (
             <PostTags className="post_tags">
               {post.frontmatter.tags.map((tag: string, index: number) => (
-                <Link key={index} to={`/tags/${_.kebabCase(tag)}/`}>
+                <a key={index} href={`/tags/${_.kebabCase(tag)}/`}>
                   {`#${tag}`}
-                </Link>
+                </a>
               ))}
             </PostTags>
           )}
@@ -114,7 +114,7 @@ const BlogPostTemplate = (props: any) => {
 
       {edges.length !== 0 && (
         <RelatedPostWrapper>
-          <RelatedPostTitle>Related Posts</RelatedPostTitle>
+          <RelatedPostTitle>{lang === 'es' ? 'Artículos relacionados' : 'Related Posts'}</RelatedPostTitle>
           <RelatedPostItems>
             {edges.map(({ node }: any) => (
               <RelatedPostItem key={node.fields.slug}>

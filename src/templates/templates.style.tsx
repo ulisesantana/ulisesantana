@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import {themeGet} from "styled-system"
 
 export const BlogPostsWrapper = styled.div`
   margin: 0 auto;
@@ -37,6 +37,7 @@ export const RelatedPostWrapper = styled.div`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
+
   @media (min-width: 1550px) {
     width: 1500px;
     padding-left: 0;
@@ -132,7 +133,12 @@ export const RelatedPostItem = styled.div`
 
     .post_tags {
       margin-top: 20px;
-      a {
+      a {  
+        display: block;
+        color: ${themeGet("colors.primary", "#D10068")};
+        background-color: #333;
+        padding: 0 4px;
+      
         @media (max-width: 990px) {
           font-size: 12px;
           margin-right: 15px;
@@ -275,6 +281,19 @@ export const BlogPostDetailsWrapper = styled.div`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
+  
+   p a {
+    display: inline-block;
+    font-weight: 400;
+    color: ${themeGet("colors.primary", "#D10068")};
+    background-color: #333;
+    padding: 0 4px;
+    @media (max-width: 990px) {
+      font-size: 13px;
+      margin-right: 25px;
+    }
+  }
+  
   @media (min-width: 1550px) {
     width: 1500px;
     padding-left: 0;
@@ -301,7 +320,9 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("primary", "#D10068")};
+    color: ${themeGet("colors.primary", "#D10068")};
+    background-color: #333;
+    padding: 4px;
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;

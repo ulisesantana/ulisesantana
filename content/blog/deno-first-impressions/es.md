@@ -1,10 +1,10 @@
 ---
-title: Socracan 2020
-date: "2019-03-20"
-description: Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side. Historically, JavaScript was used primarily for client-side scripting, in which scripts written in JavaScript are embedded in a webpage’s HTML, to be run client-side by a JavaScript engine in the user’s web browser.
-tags: ["software crafters", "socrates", "test"]
+title: Deno, primeras impresiones
+date: "2020-06-10"
+description: Deno acaba de sacar su versión 1.0 y se posiciona como sucesor de NodeJS. Veamos que puede ofrecernos.
+tags: ["nodejs", "deno", "typescript"]
 cover: "./preview.jpg"
-slug: "can-i-use-hooks-today"
+slug: "/deno-primeras-impresiones"
 langKey: es
 ---
 

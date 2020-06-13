@@ -33,6 +33,7 @@ export const useSpanishBlogPosts = () =>
               title
               description
               tags
+              langKey
               cover {
                 childImageSharp {
                   fluid(maxWidth: 325, maxHeight: 325, quality: 90) {

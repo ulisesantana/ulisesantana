@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import {themeGet} from "styled-system"
 
 const HeaderWrapper = styled.header`
   position: relative;
-  z-index: 99999;
   transition: 0.25s ease-in-out;
 `
 

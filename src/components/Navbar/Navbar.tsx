@@ -39,7 +39,7 @@ const MenuItemsSpanish = [
   },
   {
     label: "Blog",
-    url: "/es/blog",
+    url: "/blog/es",
   },
 ]
 
@@ -75,12 +75,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
   return (
     <HeaderWrapper className={addAllClasses.join(" ")} {...props}>
       <NavbarWrapper className="navbar">
-        {/* <DrawerProvider>
+          <DrawerProvider>
             <MobileMenu items={state.menu} />
           </DrawerProvider>
           <MenuWrapper>
             <Menu items={state.menu} />
-          </MenuWrapper> */}
+          </MenuWrapper>
         <SelectLanguage lang={props.lang} />
         {/* <NavSearchButton
           type="button"

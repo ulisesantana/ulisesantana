@@ -2,14 +2,14 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import PostCardMinimal from "../components/PostCardMinimal/PostCardMinimal"
 import Pagination from "../components/Pagination/Pagination"
-import Layout from "../components/Layout"
+import {Layout} from "../components/Layout"
 import SEO from "../components/Seo"
 import { BlogPostsWrapper } from "./templates.style"
 
 const BlogList = (props: any) => {
   const { data } = props
   const Posts = data.allMarkdownRemark.edges
-  const { currentPage, numPages } = props.pageContext
+  const { currentPage, numPages, lang } = props.pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage =
@@ -19,7 +19,7 @@ const BlogList = (props: any) => {
   const NextLink = !isLast && nextPage
 
   return (
-    <Layout>
+    <Layout lang={lang}>
       <SEO title={`Page ${currentPage}`} />
 
       <BlogPostsWrapper>

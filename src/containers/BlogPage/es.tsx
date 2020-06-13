@@ -17,6 +17,7 @@ export const BlogPageSpanish: React.FunctionComponent<BlogPageProps> = ({
   const TotalPage = Data.allSitePage.nodes[0].context.numPages
   const CurrentPage = Data.allSitePage.nodes[0].context.currentPage
 
+
   return (
     <BlogPageWrapper {...props}>
       <Intro lang="es" />

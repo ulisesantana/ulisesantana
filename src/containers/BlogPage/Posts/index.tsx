@@ -4,7 +4,7 @@ import Pagination from "../../../components/Pagination/Pagination"
 import BlogPostsWrapper, { SecTitle } from "./style"
 import en from "../../../locales/en/BlogPage.json"
 import es from "../../../locales/es/BlogPage.json"
-import { Language } from "types"
+import { Language } from "../../../types"
 
 const translations = { en, es }
 
@@ -23,7 +23,8 @@ type Post = {
         childImageSharp: {
           fluid: SVGAElement
         }
-      }
+      },
+        langKey: Language
     }
   }
 }
@@ -46,8 +47,7 @@ const Posts: React.FunctionComponent<PostsProps> = ({
       <SecTitle>{translations[lang].latestPosts}</SecTitle>
       {posts.map(({ node }: Post) => {
         const title = node.frontmatter.title || node.fields.slug
-        return (
-          <PostCardMinimal
+        return (<PostCardMinimal
             key={node.fields.slug}
             title={title}
             image={
