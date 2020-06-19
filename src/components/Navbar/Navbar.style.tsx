@@ -2,8 +2,12 @@ import styled from "styled-components"
 import {themeGet} from "styled-system"
 
 const HeaderWrapper = styled.header`
-  position: relative;
+  background-color: white;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
   transition: 0.25s ease-in-out;
+  z-index: 5;
 `
 
 export const NavbarWrapper = styled.div`

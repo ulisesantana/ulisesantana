@@ -36,7 +36,7 @@ const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
     <MobileMenuWrapper {...props}>
       <Drawer
         width="285px"
-        placement="left"
+        placement="right"
         drawerHandler={
           <HamburgerIcon>
             <span />
