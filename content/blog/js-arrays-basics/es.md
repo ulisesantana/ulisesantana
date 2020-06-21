@@ -7,14 +7,21 @@ cover: ./js-arrays-basic.png
 langKey: es
 ---
 
-## Array methods 
+## Cómo crear un array
+
+## Destructuring
+
+## Métodos básicos
+
+## Métodos que mutan el array
+
+### Formas de recorrer un array
+
+#### for
+
+#### for of
+
+#### forEach
 
 
-
-
-## Array destructuring
-
-## Array immutable
-
-## Ways of loop an array
 

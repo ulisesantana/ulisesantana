@@ -38,13 +38,6 @@ const NotFound: React.FunctionComponent<NotFoundProps> = ({ lang }) => {
     <NotFoundWrapper>
       <NotFoundContent>
         {lang === "en" ? <NotFoundTextEN /> : <NotFoundTextES />}
-        <Goback>
-          <Link to="/">
-            <Icon>
-              <IoMdArrowRoundBack />
-            </Icon>
-          </Link>
-        </Goback>
       </NotFoundContent>
       <NotFoundImage>
         <img src={travolta} alt="Travolta lost" />
@@ -60,6 +53,14 @@ const NotFoundTextEN = () => (
       The Page You are looking for isn’t available. Try to search again or use
       the Go Back button below.
     </p>
+    <Goback>
+      <Link to="/">
+        <Icon>
+          <IoMdArrowRoundBack />
+        </Icon>
+      </Link>
+      <span>GO TO HOME</span>
+    </Goback>
   </>
 )
 
@@ -68,8 +69,16 @@ const NotFoundTextES = () => (
     <h1>Esta página no existe</h1>
     <p>
       No sé cómo has llegado hasta aquí, pero la página que estás buscando no
-      existe. Puedes volver a la página anterior.
+      existe. Puedes volver a la página principal.
     </p>
+    <Goback>
+      <Link to="/">
+        <Icon>
+          <IoMdArrowRoundBack />
+        </Icon>
+        <span>VOLVER AL INICIO</span>
+      </Link>
+    </Goback>
   </>
 )
 

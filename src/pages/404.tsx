@@ -10,8 +10,8 @@ import { SocialLinks } from "../components/SocialLinks"
 const NotFoundPage = () => {
   const [lang] =
     typeof window !== "undefined"
-      ? window.navigator.language.split("-")
-      : ["es"]
+      ? (window.navigator.language.split("-") as Language)
+      : ["es" as Language]
   return (
     <>
       <ResetCss />
@@ -27,13 +27,3 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

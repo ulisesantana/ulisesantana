@@ -24,6 +24,10 @@ export const NavbarWrapper = styled.div`
   @media print {
     display: none;
   }
+
+  @media (min-width: 1400px) {
+    max-width: 1170px;
+  }
 `
 
 export const Logo = styled.div`

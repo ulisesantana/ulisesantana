@@ -1,9 +1,9 @@
 {
-  "name": "personal-blog-minimal",
+  "name": "ulisesantana-blog",
   "private": true,
   "description": "",
   "version": "1.0.0",
-  "author": "RedQ Team",
+  "author": "Ulises Santana",
   "dependencies": {
     "@mdx-js/mdx": "^1.4.5",
     "@mdx-js/react": "^1.4.5",
@@ -75,6 +75,7 @@
     "@types/styled-system": "^4.1.0",
     "@types/yup": "^0.26.13",
     "gh-pages": "^2.1.1",
+    "husky": "^4.2.5",
     "prettier": "^1.17.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
