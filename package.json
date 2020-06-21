@@ -91,7 +91,7 @@
     "build": "node_modules/.bin/gatsby build",
     "clean": "rm -rf .cache public",
     "clean-develop": "yarn clean && yarn develop",
-    "develop": "node_modules/.bin/gatsby develop",
+    "develop": "node_modules/.bin/gatsby develop -H 0.0.0.0",
     "format": "node_modules/.bin/prettier --write src/**/*.{js,jsx}",
     "start": "yarn develop",
     "serve": "node_modules/.bin/gatsby serve",
