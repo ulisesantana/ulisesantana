@@ -124,7 +124,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet('colors.primary', '#D10068')};
+    color: blue;
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;
@@ -156,10 +156,11 @@ export const ReadMore = styled.div`
   a {
     font-size: 13px;
     font-weight: 500;
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: blue;
     transition: 0.15s ease-in-out;
+    text-decoration: none;
     &:hover {
-      color: ${themeGet('colors.primary', '#D10068')};
+      text-decoration: underline;
     }
   }
 `;

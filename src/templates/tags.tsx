@@ -25,6 +25,7 @@ const Tags = ({pageContext, data}: any) => {
                         description={node.frontmatter.description || node.excerpt}
                         date={node.frontmatter.date}
                         tags={node.frontmatter.tags}
+                        lang={node.frontmatter.langKey}
                     />
                 ))}
             </TagPostsWrapper>
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
             title
             tags
             description
+            langKey
           }
         }
       }

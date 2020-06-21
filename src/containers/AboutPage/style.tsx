@@ -113,7 +113,7 @@ export const AboutDetails = styled.div`
       max-width: 960px;
 
       a {
-        color: ${themeGet("colors.black", "#333")} !important;
+        color: blue !important;
       }
     }
 

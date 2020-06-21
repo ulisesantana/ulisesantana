@@ -1,7 +1,7 @@
 import React from "react"
-import { SpanishLayout } from "../../components/Layout"
-import SEO from "../../components/Seo"
-import { BlogPageSpanish } from "../../containers/BlogPage"
+import Layout from "../components/layout"
+import SEO from "../components/Seo"
+import Blog from "../containers/BlogPage"
 import { graphql, useStaticQuery } from "gatsby"
 
 type BlogPageProps = {}
@@ -22,13 +22,13 @@ const BlogPage: React.FunctionComponent<BlogPageProps> = () => {
   )
 
   return (
-    <SpanishLayout>
+    <Layout>
       <SEO
         description={site.siteMetadata.description}
         title="Ulises Santana | Full Stack Developer"
       />
-      <BlogPageSpanish />
-    </SpanishLayout>
+      <Blog />
+    </Layout>
   )
 }
 

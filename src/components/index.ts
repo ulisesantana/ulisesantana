@@ -20,3 +20,4 @@ export * from "./Newsletter/Newsletter"
 export * from "./PostList/PostList"
 export * from "./Layout"
 export * from "./Section"
+export * from './LangIcon'

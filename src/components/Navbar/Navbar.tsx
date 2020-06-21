@@ -24,22 +24,22 @@ type NavbarProps = {
 const MenuItems = [
   {
     label: "About",
-    url: "/",
+    url: "/about/en",
   },
   {
     label: "Blog",
-    url: "/blog",
+    url: "/en",
   },
 ]
 
 const MenuItemsSpanish = [
   {
-    label: "Quien soy",
-    url: "/es",
+    label: "Sobre mí",
+    url: "/about",
   },
   {
     label: "Blog",
-    url: "/blog/es",
+    url: "/",
   },
 ]
 
@@ -75,12 +75,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
   return (
     <HeaderWrapper className={addAllClasses.join(" ")} {...props}>
       <NavbarWrapper className="navbar">
-          <DrawerProvider>
-            <MobileMenu items={state.menu} />
-          </DrawerProvider>
-          <MenuWrapper>
-            <Menu items={state.menu} />
-          </MenuWrapper>
+        <DrawerProvider>
+          <MobileMenu items={state.menu} />
+        </DrawerProvider>
+        <MenuWrapper>
+          <Menu items={state.menu} />
+        </MenuWrapper>
         <SelectLanguage lang={props.lang} />
         {/* <NavSearchButton
           type="button"

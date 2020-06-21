@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {themeGet} from "styled-system"
+import { themeGet } from "styled-system"
 
 const HeaderWrapper = styled.header`
   background-color: white;
@@ -75,6 +75,7 @@ export const MenuItem = styled.li`
     &.active-link {
       color: ${themeGet("colors.textColor", "#292929")};
       font-weight: ${themeGet("fontWeights.4", "500")};
+      border-bottom: 4px solid ${themeGet("colors.primary", "black")};
     }
   }
 `

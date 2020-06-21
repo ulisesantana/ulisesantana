@@ -8,12 +8,16 @@ import Footer from "../components/Footer/Footer"
 import { SocialLinks } from "../components/SocialLinks"
 
 const NotFoundPage = () => {
+  const [lang] =
+    typeof window !== "undefined"
+      ? window.navigator.language.split("-")
+      : ["es"]
   return (
     <>
       <ResetCss />
-      <Navbar />
+      <Navbar lang={lang} />
       <SEO title="404: Not Found" />
-      <NotFound />
+      <NotFound lang={lang} />
       <Footer>
         <SocialLinks />
         <div>Copyright &copy; {new Date().getFullYear()}</div>

@@ -121,6 +121,7 @@ const BlogPostTemplate = (props: any) => {
                 <PostCard
                   title={node.frontmatter.title || node.fields.slug}
                   url={node.fields.slug}
+                  lang={node.frontmatter.langKey}
                   image={
                     node.frontmatter.cover == null
                       ? null
@@ -184,6 +185,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            langKey
             cover {
               childImageSharp {
                 fluid(maxWidth: 480, maxHeight: 285, quality: 90) {

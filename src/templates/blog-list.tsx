@@ -37,6 +37,7 @@ const BlogList = (props: any) => {
               description={node.frontmatter.description || node.excerpt}
               date={node.frontmatter.date}
               tags={node.frontmatter.tags}
+              lang={node.frontmatter.langKey}
             />
           )
         })}
@@ -80,6 +81,7 @@ export const pageQuery = graphql`
             title
             description
             tags
+            langKey
             cover {
               childImageSharp {
                 fluid(maxWidth: 170, maxHeight: 170, quality: 90) {

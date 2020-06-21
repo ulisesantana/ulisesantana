@@ -53,8 +53,8 @@ export const SecTitle = styled.div`
   &:after {
     content: "";
     width: 68px;
-    height: 1px;
-    background: #292929;
+    height: 2px;
+    background: ${themeGet("colors.primary", "black")};
     display: block;
     margin-top: 8px;
   }

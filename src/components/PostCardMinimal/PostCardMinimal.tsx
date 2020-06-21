@@ -11,6 +11,8 @@ import {
     PostPreview,
     PostTitle,
 } from "./PostCardMinimal.style"
+import {LangIcon} from "../LangIcon";
+import {Language} from "../../types";
 
 interface PostCardMinimalProps {
     image?: any
@@ -21,6 +23,7 @@ interface PostCardMinimalProps {
     tags?: string[]
     className?: string
     imageType?: "fixed" | "fluid"
+    lang: Language
 }
 
 const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
@@ -31,6 +34,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
                                                                             date,
                                                                             className,
                                                                             imageType,
+                                                                            lang,
                                                                             ...props
                                                                         }) => {
     // Add all classs to an array
@@ -56,18 +60,18 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
                         )}
                         {image == null ? null : (
                             <PostPreview className="post_preview">
-                                    {imageType === "fluid" ? (
-                                        <Img fluid={image} alt="post preview"/>
-                                    ) : (
-                                        <Img fixed={image} alt="post preview"/>
-                                    )}
+                                {imageType === "fluid" ? (
+                                    <Img fluid={image} alt="post preview"/>
+                                ) : (
+                                    <Img fixed={image} alt="post preview"/>
+                                )}
                             </PostPreview>
                         )}
                     </PostDateAndPreview>
 
                     <PostContent className="post_content">
                         <PostTitle className="post_title">
-                            {title}
+                           <LangIcon lang={lang}/> {title}
                         </PostTitle>
                         {description && (
                             <Excerpt

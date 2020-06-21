@@ -135,9 +135,7 @@ export const RelatedPostItem = styled.div`
       margin-top: 20px;
       a {  
         display: block;
-        color: ${themeGet("colors.primary", "#D10068")};
-        background-color: #333;
-        padding: 0 4px;
+        color: blue;
       
         @media (max-width: 990px) {
           font-size: 12px;
@@ -211,7 +209,7 @@ export const TagPageHeading = styled.div`
 export const TagName = styled.h1`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet("colors.primary", "#D10068")};
+  color: ${themeGet("colors.textColor", "black")};
   margin-bottom: 8px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -283,15 +281,7 @@ export const BlogPostDetailsWrapper = styled.div`
   padding-right: 75px;
   
    p a {
-    display: inline-block;
-    font-weight: 400;
-    color: ${themeGet("colors.primary", "#D10068")};
-    background-color: #333;
-    padding: 0 4px;
-    @media (max-width: 990px) {
-      font-size: 13px;
-      margin-right: 25px;
-    }
+    color: blue;
   }
   
   @media (min-width: 1550px) {
@@ -320,9 +310,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("colors.primary", "#D10068")};
-    background-color: #333;
-    padding: 4px;
+    color: blue;
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;
