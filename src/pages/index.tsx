@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "../components"
-import SEO from "../components/Seo"
+import {Layout} from "../components"
+import {SEO} from "../components"
 import AboutPage from "../containers/AboutPage"
 import { graphql, useStaticQuery } from "gatsby"
 import en from "../locales/en/Intro.json"

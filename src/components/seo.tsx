@@ -10,7 +10,7 @@ type SEOProps = {
   title: string
 }
 
-const SEO: React.FunctionComponent<SEOProps> = ({
+export const SEO: React.FunctionComponent<SEOProps> = ({
   description,
   lang,
   meta,

@@ -2,11 +2,10 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import _ from "lodash"
 import { DiscussionEmbed } from "disqus-react"
-import Layout from "../components"
-import SEO from "../components/Seo"
+import {Layout} from "../components"
+import {SEO} from "../components"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
-import Navbar from "../components/Navbar/Navbar"
 import {
   FacebookShareButton,
   TwitterShareButton,
