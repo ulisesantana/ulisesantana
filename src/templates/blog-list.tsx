@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import PostCardMinimal from "../components/PostCardMinimal/PostCardMinimal"
 import Pagination from "../components/Pagination/Pagination"
-import Layout from "../components/Layout"
+import Layout from "../components"
 import SEO from "../components/Seo"
 import { BlogPostsWrapper } from "./templates.style"
 
