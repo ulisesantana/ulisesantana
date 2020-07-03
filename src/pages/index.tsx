@@ -1,5 +1,5 @@
 import React from "react"
-import { SpanishLayout } from "../components/layout"
+import { SpanishLayout } from "../components"
 import SEO from "../components/Seo"
 import { BlogPageSpanish } from "../containers/BlogPage"
 import { graphql, useStaticQuery } from "gatsby"

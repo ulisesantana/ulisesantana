@@ -39,7 +39,7 @@ export const PostDetailsWrapper = styled.div`
 export const PostTitle = styled.h1`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   margin-bottom: 10px;
   @media (max-width: 1200px) {
@@ -59,7 +59,7 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.span`
   display: block;
   font-size: ${themeGet("fontSizes.3", "15")}px;
-  color: ${themeGet("textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   text-transform: uppercase;
   @media (max-width: 990px) {
@@ -82,6 +82,24 @@ export const PostPreview = styled.div`
 
   img {
     border-radius: 3px;
+  }
+
+  .post-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+    padding: 16px;
+    width: 100%;
+    height: 25%;
+    z-index: 50;
   }
 
   &:before {

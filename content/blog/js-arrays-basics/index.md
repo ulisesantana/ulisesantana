@@ -1,17 +1,27 @@
 ---
-title: JavaScript arrays explained
+title: Descubriendo los arrays en JavaScript
 date: 2020-06-28
-description: In the last 5 years JavaScript arrays have been improved awesomely. Let me show you.
+description: Durante los últimos 5 años los arrays en JavaScript han experimentado muchas mejoras. Te muestro algunas de ellas en esta entrada.
 tags: [javascript, arrays, basics]
-cover: ./start-contributing.png
-langKey: en
+cover: ./js-arrays-basic.png
+langKey: es
 ---
 
-# Array methods 
+## Cómo crear un array
 
-# Array destructuring
+## Destructuring
 
-# Array immutable
+## Métodos básicos
 
-# Ways of loop an array
+## Métodos que mutan el array
+
+### Formas de recorrer un array
+
+#### for
+
+#### for of
+
+#### forEach
+
+
 

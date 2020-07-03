@@ -10,7 +10,7 @@ import { SocialLinks } from "./SocialLinks"
 import Navbar from "./Navbar/Navbar"
 import { Language } from "../types"
 
-const Layout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
+const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
   menu = true,
 }) => (
@@ -34,6 +34,7 @@ const Layout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   </ThemeProvider>
 )
 
-export const SpanishLayout = Layout("es")
+export const Layout = BaseLayout()
+export const SpanishLayout = BaseLayout("es")
 
-export default Layout()
+export default Layout

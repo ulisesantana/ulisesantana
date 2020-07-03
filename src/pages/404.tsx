@@ -1,16 +1,16 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Navbar from "../components/Navbar/Navbar"
 import ResetCss from "../components/resetCSS"
 import SEO from "../components/Seo"
 import NotFound from "../containers/NotFound"
 import Footer from "../components/Footer/Footer"
 import { SocialLinks } from "../components/SocialLinks"
+import { Language } from "../types"
 
 const NotFoundPage = () => {
   const [lang] =
     typeof window !== "undefined"
-      ? (window.navigator.language.split("-") as Language)
+      ? ((window.navigator.language.split("-") as unknown) as Language)
       : ["es" as Language]
   return (
     <>

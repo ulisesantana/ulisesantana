@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import _ from "lodash"
 import { DiscussionEmbed } from "disqus-react"
-import Layout from "../components/Layout"
+import { Layout, SpanishLayout } from "../components"
 import SEO from "../components/Seo"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
@@ -34,16 +34,17 @@ import Intro from "../containers/Intro"
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
   const { edges } = props.data.allMarkdownRemark
-    const { lang } = props.pageContext
-    const title = post.frontmatter.title
+  const { lang } = props.pageContext
+  const title = post.frontmatter.title
   const slug = post.fields.slug
+  const LayoutWrapper = lang === "es" ? SpanishLayout : Layout
 
   const disqusConfig = {
     shortname: process.env.DISQUS_NAME,
     config: { identifier: slug, title },
   }
   return (
-    <Layout lang={lang}>
+    <LayoutWrapper>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -114,7 +115,9 @@ const BlogPostTemplate = (props: any) => {
 
       {edges.length !== 0 && (
         <RelatedPostWrapper>
-          <RelatedPostTitle>{lang === 'es' ? 'Artículos relacionados' : 'Related Posts'}</RelatedPostTitle>
+          <RelatedPostTitle>
+            {lang === "es" ? "Artículos relacionados" : "Related Posts"}
+          </RelatedPostTitle>
           <RelatedPostItems>
             {edges.map(({ node }: any) => (
               <RelatedPostItem key={node.fields.slug}>
@@ -134,7 +137,7 @@ const BlogPostTemplate = (props: any) => {
           </RelatedPostItems>
         </RelatedPostWrapper>
       )}
-    </Layout>
+    </LayoutWrapper>
   )
 }
 
