@@ -134,14 +134,6 @@ module.exports = {
     //     endpoint: '',
     //   },
     // },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: process.env.INSTAGRAM_USERNAME,
-        access_token: process.env.INSTAGRAM_TOKEN,
-        instagram_id: process.env.INSTAGRAM_ID,
-      },
-    },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
