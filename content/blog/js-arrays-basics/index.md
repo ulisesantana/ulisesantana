@@ -9,6 +9,15 @@ langKey: es
 
 ## Cómo crear un array
 
+Un array se puede crear de diferentes maneras:
+- Directamente expresando el array. `const food = ['pizza', 'sandwich']`
+- Con el constructor. 
+```const food = new Array(2);
+food[0] = 'pizza';
+food[1] = 'sandwich';
+```
+- Mediante el método `Array.from`
+
 ## Destructuring
 
 ## Métodos básicos
