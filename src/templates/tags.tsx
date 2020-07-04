@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components"
-import SEO from "../components/Seo"
+import {SEO} from "../components"
 import { TagName, TagPageHeading, TagPostsWrapper } from "./templates.style"
 import PostCard from "../components/PostCard/PostCard"
 

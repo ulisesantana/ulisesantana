@@ -1,5 +1,4 @@
 export * from "./Button/Button"
-export * from "./InstagramGrid/InstagramGrid"
 export * from "./Pagination/Pagination"
 export * from "./ScrollUpButton/ScrollUpButton"
 export * from "./resetCSS"
@@ -19,5 +18,6 @@ export * from "./Input/Input"
 export * from "./Newsletter/Newsletter"
 export * from "./PostList/PostList"
 export * from "./Layout"
+export * from "./Seo"
 export * from "./Section"
 export * from './LangIcon'

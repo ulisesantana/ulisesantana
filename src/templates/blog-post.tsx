@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import _ from "lodash"
 import { DiscussionEmbed } from "disqus-react"
 import { Layout, SpanishLayout } from "../components"
-import SEO from "../components/Seo"
+import {SEO} from "../components"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
 import {

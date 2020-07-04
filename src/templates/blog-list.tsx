@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import PostCardMinimal from "../components/PostCardMinimal/PostCardMinimal"
 import Pagination from "../components/Pagination/Pagination"
 import { Layout } from "../components"
-import SEO from "../components/Seo"
+import {SEO} from "../components"
 import { BlogPostsWrapper } from "./templates.style"
 
 const BlogList = (props: any) => {
