@@ -37,4 +37,3 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
 export const SpanishLayout = BaseLayout("es")
 export const Layout = BaseLayout()
 
-export default Layout
