@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import PostCardMinimal from "../components/PostCardMinimal/PostCardMinimal"
 import Pagination from "../components/Pagination/Pagination"
-import { Layout } from "../components"
+import {Layout, SpanishLayout} from "../components"
 import {SEO} from "../components"
 import { BlogPostsWrapper } from "./templates.style"
 
@@ -17,9 +17,11 @@ const BlogList = (props: any) => {
   const nextPage = `/page/${(currentPage + 1).toString()}`
   const PrevLink = !isFirst && prevPage
   const NextLink = !isLast && nextPage
+    const LayoutWrapper = lang === "es" ? SpanishLayout : Layout
 
-  return (
-    <Layout lang={lang}>
+
+    return (
+    <LayoutWrapper>
       <SEO title={`Page ${currentPage}`} />
 
       <BlogPostsWrapper>
@@ -49,7 +51,7 @@ const BlogList = (props: any) => {
           totalPage={`${numPages}`}
         />
       </BlogPostsWrapper>
-    </Layout>
+    </LayoutWrapper>
   )
 }
 
