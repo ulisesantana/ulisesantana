@@ -17,7 +17,7 @@ export const useEnglishBlogPosts = () =>
         }
       }
       allMarkdownRemark(
-        filter: { frontmatter: { langKey: { eq: "en" } } }
+        filter: { frontmatter: { langKey: { eq: "en" }, draft: { ne: true } } }
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 5
       ) {

@@ -6,6 +6,7 @@ tags: ["nodejs", "deno", "typescript"]
 cover: "./preview.jpg"
 slug: "/deno-first-glance"
 langKey: en
+draft: true
 ---
 
 En algun momem

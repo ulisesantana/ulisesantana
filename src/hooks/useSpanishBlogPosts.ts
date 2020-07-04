@@ -17,7 +17,7 @@ export const useSpanishBlogPosts = () =>
         }
       }
       allMarkdownRemark(
-        filter: { frontmatter: { langKey: { eq: "es" } } }
+        filter: { frontmatter: { langKey: { eq: "es" }, draft: { ne: true } } }
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 5
       ) {
