@@ -70,6 +70,20 @@ export const PostDate = styled.span`
   }
 `
 
+export const PostReadTime = styled.span`
+  display: block;
+  font-size: ${themeGet("fontSizes.3", "15")}px;
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  font-weight: 400;
+  margin-top: 0.4rem;
+  @media (max-width: 990px) {
+    font-size: 14px;
+  }
+  @media (max-width: 575px) {
+    font-size: 13px;
+  }
+`
+
 export const PostPreview = styled.div`
   margin-top: 45px;
   position: relative;

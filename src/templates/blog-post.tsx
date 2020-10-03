@@ -47,6 +47,7 @@ const BlogPostTemplate = (props: any) => {
                             : post.frontmatter.cover.childImageSharp.fluid
                     }
                     description={post.html}
+                    timeToRead={post.timeToRead}
                     imagePosition="top"
                 />
                 <Intro lang="es"/>
@@ -143,6 +144,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "DD MMM, YYYY")
