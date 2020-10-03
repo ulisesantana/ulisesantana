@@ -23,8 +23,7 @@ type Post = {
         childImageSharp: {
           fluid: SVGAElement
         }
-      },
-        langKey: Language
+      }
     }
   }
 }
@@ -46,16 +45,16 @@ const Posts: React.FunctionComponent<PostsProps> = ({
     <BlogPostsWrapper>
       <SecTitle>{translations[lang].latestPosts}</SecTitle>
       {posts.map(({ node }: Post) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.frontmatter.slug
         return (<PostCardMinimal
-            key={node.fields.slug}
+            key={node.frontmatter.slug}
             title={title}
             image={
               node.frontmatter.cover == null
                 ? null
                 : node.frontmatter.cover.childImageSharp.fluid
             }
-            url={node.fields.slug}
+            url={node.frontmatter.slug}
             description={node.frontmatter.description || node.excerpt}
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}

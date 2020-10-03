@@ -2,6 +2,7 @@ import styled from "styled-components"
 import {themeGet} from "styled-system"
 
 export const BlogPostsWrapper = styled.div`
+  font-size: 150%;
   margin: 0 auto;
   padding-top: 120px;
   position: relative;

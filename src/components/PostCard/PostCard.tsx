@@ -11,8 +11,6 @@ import {
     PostTags,
     PostTitle,
 } from './PostCard.style';
-import {LangIcon} from "../LangIcon";
-import {Language} from "../../types";
 
 interface PostCardProps {
     image?: any;
@@ -23,7 +21,6 @@ interface PostCardProps {
     tags?: [];
     className?: string;
     imageType?: 'fixed' | 'fluid';
-    lang: Language
 }
 
 const PostCard: React.FunctionComponent<PostCardProps> = ({
@@ -35,7 +32,6 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
                                                               tags,
                                                               className,
                                                               imageType,
-                                                              lang,
                                                               ...props
                                                           }) => {
     // Add all classs to an array
@@ -72,7 +68,7 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
 
                 <PostContent className="post_content">
                     <PostTitle className="post_title">
-                        <a href={url}><LangIcon lang={lang}/> {title}</a>
+                        <a href={url}>{title}</a>
                     </PostTitle>
                     {description && (
                         <Excerpt

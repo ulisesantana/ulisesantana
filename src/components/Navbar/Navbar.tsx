@@ -22,24 +22,20 @@ type NavbarProps = {
 }
 
 const MenuItems = [
-  {
-    label: "About",
-    url: "/about/en",
-  },
-  {
-    label: "Blog",
-    url: "/en",
-  },
+  // {
+  //   label: "About",
+  //   url: "/en",
+  // }
 ]
 
 const MenuItemsSpanish = [
   {
     label: "Sobre mí",
-    url: "/about",
+    url: "/",
   },
   {
     label: "Blog",
-    url: "/",
+    url: "/blog",
   },
 ]
 
@@ -53,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
   useEffect(() => {
     setState(oldValues => ({
       ...oldValues,
-      menu: props.lang !== "en" ? MenuItemsSpanish : MenuItems,
+      menu: props.lang === "en" ? MenuItems : MenuItemsSpanish,
     }))
   }, [props.lang])
 

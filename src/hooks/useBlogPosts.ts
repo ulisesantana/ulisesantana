@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useSpanishBlogPosts = () =>
+export const useBlogPosts = () =>
   useStaticQuery(graphql`
     query {
       site {
@@ -17,7 +17,7 @@ export const useSpanishBlogPosts = () =>
         }
       }
       allMarkdownRemark(
-        filter: { frontmatter: { langKey: { eq: "es" }, draft: { ne: true } } }
+        filter: { frontmatter: { draft: { ne: true } } }
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 5
       ) {
@@ -33,7 +33,7 @@ export const useSpanishBlogPosts = () =>
               title
               description
               tags
-              langKey
+              slug
               cover {
                 childImageSharp {
                   fluid(maxWidth: 325, maxHeight: 325, quality: 90) {

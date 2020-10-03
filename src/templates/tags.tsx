@@ -19,13 +19,12 @@ const Tags = ({ pageContext, data }: any) => {
         </TagPageHeading>
         {edges.map(({ node }: any) => (
           <PostCard
-            key={node.fields.slug}
+            key={node.frontmatter.slug}
             title={node.frontmatter.title}
-            url={node.fields.slug}
+            url={node.frontmatter.slug}
             description={node.frontmatter.description || node.excerpt}
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}
-            lang={node.frontmatter.langKey}
           />
         ))}
       </TagPostsWrapper>
@@ -54,7 +53,6 @@ export const pageQuery = graphql`
             title
             tags
             description
-            langKey
           }
         }
       }

@@ -3,7 +3,7 @@ import { themeGet } from "styled-system"
 
 const ResetCSS = createGlobalStyle`
   html {
-    font-size: 15px;
+    font-size: 18px;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
   }

@@ -1,35 +1,19 @@
 import React from "react"
 import { Layout } from "../components"
 import {SEO} from "../components"
-import Blog from "../containers/BlogPage"
-import { graphql, useStaticQuery } from "gatsby"
+import AboutPage from "../containers/AboutPage"
+import en from "../locales/en/Intro.json"
 
-type BlogPageProps = {}
-
-const BlogPage: React.FunctionComponent<BlogPageProps> = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  return (
-    <Layout>
-      <SEO
-        description={site.siteMetadata.description}
-        title="Ulises Santana | Full Stack Developer"
-      />
-      <Blog />
-    </Layout>
-  )
+const Home: React.FunctionComponent = () => {
+    return (
+        <Layout>
+            <SEO
+                description={en.about}
+                title="Ulises Santana | JavaScript Engineer"
+            />
+            <AboutPage />
+        </Layout>
+    )
 }
 
-export default BlogPage
+export default Home

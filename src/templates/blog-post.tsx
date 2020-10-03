@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import _ from "lodash"
 import { DiscussionEmbed } from "disqus-react"
-import { Layout, SpanishLayout } from "../components"
+import { SpanishLayout } from "../components"
 import {SEO} from "../components"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
@@ -36,15 +36,15 @@ const BlogPostTemplate = (props: any) => {
   const { edges } = props.data.allMarkdownRemark
   const { lang } = props.pageContext
   const title = post.frontmatter.title
-  const slug = post.fields.slug
-  const LayoutWrapper = lang === "es" ? SpanishLayout : Layout
+  const slug = post.frontmatter.slug
+    const shareUrl = window.location
 
   const disqusConfig = {
     shortname: process.env.DISQUS_NAME,
     config: { identifier: slug, title },
   }
   return (
-    <LayoutWrapper>
+    <SpanishLayout>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -61,7 +61,7 @@ const BlogPostTemplate = (props: any) => {
           description={post.html}
           imagePosition="top"
         />
-        <Intro lang={lang} />
+        <Intro lang="es" />
         <BlogPostFooter
           className={post.frontmatter.cover == null ? "center" : ""}
         >
@@ -75,21 +75,21 @@ const BlogPostTemplate = (props: any) => {
             </PostTags>
           )}
           <PostShare>
-            <span>Share This:</span>
+            <span>Comparte esta entrada:</span>
             <FacebookShareButton
-              url={post.fields.slug}
+              url={shareUrl}
               quote={post.frontmatter.title}
             >
               <IoLogoFacebook />
             </FacebookShareButton>
             <TwitterShareButton
-              url={post.fields.slug}
+              url={shareUrl}
               title={post.frontmatter.title}
             >
               <IoLogoTwitter />
             </TwitterShareButton>
             <PinterestShareButton
-              url={post.fields.slug}
+              url={shareUrl}
               media={`${
                 post.frontmatter.cover == null
                   ? null
@@ -99,7 +99,7 @@ const BlogPostTemplate = (props: any) => {
               <IoLogoPinterest />
             </PinterestShareButton>
             <RedditShareButton
-              url={post.fields.slug}
+              url={shareUrl}
               title={`${post.frontmatter.title}`}
             >
               <IoLogoReddit />
@@ -116,15 +116,14 @@ const BlogPostTemplate = (props: any) => {
       {edges.length !== 0 && (
         <RelatedPostWrapper>
           <RelatedPostTitle>
-            {lang === "es" ? "Artículos relacionados" : "Related Posts"}
+            Artículos relacionados
           </RelatedPostTitle>
           <RelatedPostItems>
             {edges.map(({ node }: any) => (
-              <RelatedPostItem key={node.fields.slug}>
+              <RelatedPostItem key={node.frontmatter.slug}>
                 <PostCard
-                  title={node.frontmatter.title || node.fields.slug}
-                  url={node.fields.slug}
-                  lang={node.frontmatter.langKey}
+                  title={node.frontmatter.title || node.frontmatter.slug}
+                  url={node.frontmatter.slug}
                   image={
                     node.frontmatter.cover == null
                       ? null
@@ -137,7 +136,7 @@ const BlogPostTemplate = (props: any) => {
           </RelatedPostItems>
         </RelatedPostWrapper>
       )}
-    </LayoutWrapper>
+    </SpanishLayout>
   )
 }
 
@@ -155,14 +154,12 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
-      fields {
-        slug
-      }
       frontmatter {
         title
         date(formatString: "DD MMM, YYYY")
         description
         tags
+        slug
         cover {
           childImageSharp {
             fluid(maxWidth: 1170, quality: 90) {
@@ -188,7 +185,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            langKey
+            slug
             cover {
               childImageSharp {
                 fluid(maxWidth: 480, maxHeight: 285, quality: 90) {

@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import PostCardMinimal from "../components/PostCardMinimal/PostCardMinimal"
 import Pagination from "../components/Pagination/Pagination"
-import {Layout, SpanishLayout} from "../components"
+import {SpanishLayout} from "../components"
 import {SEO} from "../components"
 import { BlogPostsWrapper } from "./templates.style"
 
@@ -17,29 +17,27 @@ const BlogList = (props: any) => {
   const nextPage = `/page/${(currentPage + 1).toString()}`
   const PrevLink = !isFirst && prevPage
   const NextLink = !isLast && nextPage
-    const LayoutWrapper = lang === "es" ? SpanishLayout : Layout
 
 
     return (
-    <LayoutWrapper>
+    <SpanishLayout>
       <SEO title={`Page ${currentPage}`} />
 
       <BlogPostsWrapper>
         {Posts.map(({ node }: any) => {
           return (
             <PostCardMinimal
-              key={node.fields.slug}
-              title={node.frontmatter.title || node.fields.slug}
+              key={node.frontmatter.slug}
+              title={node.frontmatter.title || node.frontmatter.slug}
               image={
                 node.frontmatter.cover == null
                   ? null
                   : node.frontmatter.cover.childImageSharp.fluid
               }
-              url={node.fields.slug}
+              url={node.frontmatter.slug}
               description={node.frontmatter.description || node.excerpt}
               date={node.frontmatter.date}
               tags={node.frontmatter.tags}
-              lang={node.frontmatter.langKey}
             />
           )
         })}
@@ -51,7 +49,7 @@ const BlogList = (props: any) => {
           totalPage={`${numPages}`}
         />
       </BlogPostsWrapper>
-    </LayoutWrapper>
+    </SpanishLayout>
   )
 }
 
@@ -75,16 +73,13 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt(pruneLength: 300)
-          fields {
-            slug
-          }
           frontmatter {
             date(formatString: "DD [<span>] MMMM [</span>]")
             title
+            slug
             description
             tags
-            langKey
-            cover {
+            cover { 
               childImageSharp {
                 fluid(maxWidth: 170, maxHeight: 170, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG

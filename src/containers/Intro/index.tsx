@@ -8,11 +8,11 @@ import {
   Desciption,
   IntroInfo,
 } from "./style"
-import { SocialLinks } from "../../components/SocialLinks"
+import { SocialLinks } from "../../components"
 import { userIntroInfo } from "../../hooks"
 import en from "../../locales/en/Intro.json"
 import es from "../../locales/es/Intro.json"
-import { Language } from "types"
+import { Language } from "../../types"
 
 const translations = { en, es }
 

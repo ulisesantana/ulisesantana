@@ -2,24 +2,28 @@ import * as React from "react"
 import BlogPageWrapper from "./style"
 import Intro from "../Intro"
 import Posts from "./Posts"
-import { useEnglishBlogPosts } from "../../hooks"
+import { useBlogPosts } from "../../hooks"
+
+// import FeaturedPosts from "./FeaturedPost"
 
 type BlogPageProps = {}
 
-const BlogPageEnglish: React.FunctionComponent<BlogPageProps> = ({
+export const BlogPageSpanish: React.FunctionComponent<BlogPageProps> = ({
   ...props
 }) => {
-  const Data = useEnglishBlogPosts()
+  const Data = useBlogPosts()
+
   const posts = Data.allMarkdownRemark.edges
   const TotalPage = Data.allSitePage.nodes[0].context.numPages
   const CurrentPage = Data.allSitePage.nodes[0].context.currentPage
 
+
   return (
     <BlogPageWrapper {...props}>
-      <Intro lang="en" />
+      <Intro lang="es" />
       {/* <FeaturedPosts /> */}
       <Posts
-        lang="en"
+        lang="es"
         posts={posts}
         totalPage={TotalPage}
         currentPage={CurrentPage}
@@ -27,6 +31,3 @@ const BlogPageEnglish: React.FunctionComponent<BlogPageProps> = ({
     </BlogPageWrapper>
   )
 }
-
-export default BlogPageEnglish
-export * from "./es"

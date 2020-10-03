@@ -14,18 +14,16 @@ const createPostHandler = (createPage) => (post, index, posts) => {
             slug,
             previous,
             next,
-            tag: post.node.frontmatter.tags,
-            lang: post.node.frontmatter.langKey
+            tag: post.node.frontmatter.tags
         },
     })
 }
 
-const createPostListHandler = (createPage, postsPerPage, numPages, lang = 'en') => (_, i) => {
+const createPostListHandler = (createPage, postsPerPage, numPages) => (_, i) => {
     createPage({
         path: i === 0 ? `/page/1` : `/page/${i + 1}`,
         component:  path.resolve(`./src/templates/blog-list.tsx`),
         context: {
-            lang: lang,
             limit: postsPerPage,
             skip: i * postsPerPage,
             numPages,
@@ -54,7 +52,6 @@ exports.createPages = ({graphql, actions}) => {
               frontmatter {
                 title
                 tags
-                langKey
                 slug
                 cover {
                   childImageSharp {
@@ -81,18 +78,14 @@ exports.createPages = ({graphql, actions}) => {
 
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges
-        const postsSpanish = result.data.allMarkdownRemark.edges.filter(({node: {frontmatter: {langKey}}}) => langKey === 'es')
 
         posts.forEach(createPostHandler(createPage))
-        postsSpanish.forEach(createPostHandler(createPage))
 
         // Create blog post list pages
         const postsPerPage = 5
         const numPages = Math.ceil(posts.length / postsPerPage)
-        const numPagesSpanish = Math.ceil(postsSpanish.length / postsPerPage)
 
         Array.from({length: numPages}).forEach(createPostListHandler(createPage, postsPerPage, numPages))
-        Array.from({length: numPagesSpanish}).forEach(createPostListHandler(createPage, postsPerPage, numPagesSpanish, 'es'))
 
         // Tag pages:
         let tags = []
