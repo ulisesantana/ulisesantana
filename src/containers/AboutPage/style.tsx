@@ -54,14 +54,14 @@ export const AboutImage = styled.div`
 
 export const AboutDetails = styled.div`
   width: 100%;
-  max-width: 992px;
   margin: 0 auto;
+  max-width: 960px;
   transition: all ease-in-out 0.6s;
 
   p {
-    font-size: 1.5rem;
-    line-height: 3rem;
-    max-width: 960px;
+    font-size: 120%;
+    line-height: 2rem;
+    
   }
 
   .out {

@@ -52,7 +52,6 @@ exports.createPages = ({graphql, actions}) => {
               frontmatter {
                 title
                 tags
-                slug
                 cover {
                   childImageSharp {
                     fluid {

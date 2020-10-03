@@ -27,14 +27,14 @@ const BlogList = (props: any) => {
         {Posts.map(({ node }: any) => {
           return (
             <PostCardMinimal
-              key={node.frontmatter.slug}
-              title={node.frontmatter.title || node.frontmatter.slug}
+              key={node.fields.slug}
+              title={node.frontmatter.title || node.fields.slug}
               image={
                 node.frontmatter.cover == null
                   ? null
                   : node.frontmatter.cover.childImageSharp.fluid
               }
-              url={node.frontmatter.slug}
+              url={node.fields.slug}
               description={node.frontmatter.description || node.excerpt}
               date={node.frontmatter.date}
               tags={node.frontmatter.tags}
@@ -76,7 +76,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD [<span>] MMMM [</span>]")
             title
-            slug
             description
             tags
             cover { 

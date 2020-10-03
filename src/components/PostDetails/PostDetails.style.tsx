@@ -131,6 +131,22 @@ export const PostDescriptionWrapper = styled.div`
 export const PostDescription = styled.div`
   font-size: ${themeGet("fontSizes.4", "16")}px;
 
+    
+  .badge {
+    display: block;
+    width: 96px;
+    
+    
+    p,img {
+      padding: 0;
+      margin: 0;
+    }
+    
+    & + div > pre {
+      margin-top: 0;
+    }
+  }
+  
   .mermaid {
     margin-bottom: 60px;
     @media (max-width: 767px) {

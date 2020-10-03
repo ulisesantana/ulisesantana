@@ -1,7 +1,6 @@
 ---
 title: Descubriendo los arrays en JavaScript
 date: 2020-06-28
-slug: js-arrays-basics
 description: Durante los últimos 5 años los arrays en JavaScript han experimentado muchas mejoras. Te muestro algunas de ellas en esta entrada.
 tags: [javascript, arrays, basics]
 cover: ./js-arrays-basic.png
@@ -37,11 +36,43 @@ Convierte iterables y cosas parecidas a un array como los NodeList a un array pa
 
 También sirve para clonar arrays:
 
-```javascript
+<a class="badge" href="https://repl.it/@ulisesantana/clone-array" target="_blank">
 
+![Run on Repl.it](https://repl.it/badge/github/ulisesantana/clone-array)
+
+</a>
+
+```javascript
+const array = [1, 2, 3, 4, 5]
+const array2 = Array.from(array)
+
+array2[0] = 'foo'
+
+console.table({'Array original': array, 'Array clonado': array2})
+/**
+┌────────────────┬───────┬───┬───┬───┬───┐
+│    (index)     │   0   │ 1 │ 2 │ 3 │ 4 │
+├────────────────┼───────┼───┼───┼───┼───┤
+│ Array original │   1   │ 2 │ 3 │ 4 │ 5 │
+│ Array clonado  │ 'foo' │ 2 │ 3 │ 4 │ 5 │
+└────────────────┴───────┴───┴───┴───┴───┘
+*/
+
+const array3 = array
+
+array3[0] = 'bar'
+
+console.table({'Array original': array, 'Array copiado': array3})
+/**
+┌────────────────┬───────┬───┬───┬───┬───┐
+│    (index)     │   0   │ 1 │ 2 │ 3 │ 4 │
+├────────────────┼───────┼───┼───┼───┼───┤
+│ Array original │ 'bar' │ 2 │ 3 │ 4 │ 5 │
+│ Array copiado  │ 'bar' │ 2 │ 3 │ 4 │ 5 │
+└────────────────┴───────┴───┴───┴───┴───┘
+*/
 ```
 
-[![Run on Repl.it](https://repl.it/badge/github/ulisesantana/clone-array)](https://repl.it/@ulisesantana/clone-array)
 
 La diferencia entre `array2` y `array3` es que `array2` se crea a partir de una nueva instancia de Array basándose en `array`, mientras que `array3` copia la referencia en memoria de `array`. De esta manera, cualquier mutación en `array3` hará que `array` mute también y viceversa.
 

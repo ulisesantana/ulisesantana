@@ -19,9 +19,9 @@ const Tags = ({ pageContext, data }: any) => {
         </TagPageHeading>
         {edges.map(({ node }: any) => (
           <PostCard
-            key={node.frontmatter.slug}
+            key={node.fields.slug}
             title={node.frontmatter.title}
-            url={node.frontmatter.slug}
+            url={node.fields.slug}
             description={node.frontmatter.description || node.excerpt}
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}

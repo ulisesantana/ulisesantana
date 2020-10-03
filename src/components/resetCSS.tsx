@@ -170,6 +170,7 @@ const ResetCSS = createGlobalStyle`
     }
   }
 
+
   .only-print {
     display: none;
   }

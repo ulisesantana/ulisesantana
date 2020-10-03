@@ -63,7 +63,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
       <SecTitle>Featured Stories</SecTitle>
       <FeaturedPostRow>
         {Posts.map(({ node }: any) => {
-          const title = node.frontmatter.title || node.frontmatter.slug
+          const title = node.frontmatter.title || node.fields.slug
           return (
             <FeaturedPostCol key={title}>
               <FeaturedCard
@@ -73,7 +73,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
                     ? null
                     : node.frontmatter.cover.childImageSharp.fluid
                 }
-                url={node.frontmatter.slug}
+                url={node.fields.slug}
                 tags={node.frontmatter.tags}
                 description={node.excerpt}
                 overlay

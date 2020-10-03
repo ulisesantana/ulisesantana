@@ -33,7 +33,6 @@ export const useBlogPosts = () =>
               title
               description
               tags
-              slug
               cover {
                 childImageSharp {
                   fluid(maxWidth: 325, maxHeight: 325, quality: 90) {
