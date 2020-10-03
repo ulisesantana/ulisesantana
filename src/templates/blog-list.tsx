@@ -5,10 +5,17 @@ import Pagination from "../components/Pagination/Pagination"
 import {SEO, SpanishLayout} from "../components"
 import {BlogPostsWrapper} from "./templates.style"
 import Intro from "../containers/Intro";
+import {SecTitle} from "../containers/BlogPage/Posts/style";
+import en from "../locales/en/BlogPage.json"
+import es from "../locales/es/BlogPage.json"
+
+const translations = { en, es }
+
+
 const BlogList = (props: any) => {
     const {data} = props
     const Posts = data.allMarkdownRemark.edges
-    const {currentPage, numPages, lang} = props.pageContext
+    const {currentPage, numPages, lang = 'es'} = props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage =
@@ -20,10 +27,11 @@ const BlogList = (props: any) => {
 
     return (
         <SpanishLayout>
-            <SEO title={`Page ${currentPage}`}/>
-            <Intro lang="es" />
+            <SEO title={`Página ${currentPage}`}/>
+            <Intro lang={lang} />
             {/* <FeaturedPosts /> */}
             <BlogPostsWrapper>
+                {currentPage === 1 && <SecTitle>{translations[lang].latestPosts}</SecTitle>}
                 {Posts.map(({node}: any) => {
                     return (
                         <PostCardMinimal
