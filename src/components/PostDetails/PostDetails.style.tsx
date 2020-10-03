@@ -112,7 +112,7 @@ export const PostPreview = styled.div`
     );
     padding: 16px;
     width: 100%;
-    height: 25%;
+    height: 35%;
     z-index: 50;
   }
 

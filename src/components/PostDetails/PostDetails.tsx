@@ -54,7 +54,7 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
               <div className="content">
                 <PostTitle color="white">{title}</PostTitle>
                 <PostDate color="lightgray">{date}</PostDate>
-                <PostReadTime color="lightgray">{timeToRead} minutos de lectura</PostReadTime>
+                <PostReadTime color="lightgray">{timeToRead} minuto{timeToRead === 1 ? '' : 's'} de lectura</PostReadTime>
               </div>
             </div>
             <Img fluid={preview} alt={title} />

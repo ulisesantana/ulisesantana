@@ -1,8 +1,8 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 export const useBlogPosts = () =>
-  useStaticQuery(graphql`
-    query {
+  graphql`
+    query BlogListing($draftDisabledList: [Boolean!]!) {
       site {
         siteMetadata {
           title
@@ -17,7 +17,7 @@ export const useBlogPosts = () =>
         }
       }
       allMarkdownRemark(
-        filter: { frontmatter: { draft: { ne: true } } }
+        filter: { frontmatter: { draft: { nin: $draftDisabledList } } }
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 5
       ) {
@@ -45,4 +45,4 @@ export const useBlogPosts = () =>
         }
       }
     }
-  `)
+  `

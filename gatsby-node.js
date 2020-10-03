@@ -11,6 +11,7 @@ const createPostHandler = (createPage) => (post, index, posts) => {
         path:  slug,
         component: path.resolve(`./src/templates/blog-post.tsx`),
         context: {
+            draftDisabledList: process.env.NODE_ENV === `production` ? [true] : [],
             slug,
             previous,
             next,
@@ -21,9 +22,10 @@ const createPostHandler = (createPage) => (post, index, posts) => {
 
 const createPostListHandler = (createPage, postsPerPage, numPages) => (_, i) => {
     createPage({
-        path: i === 0 ? `/page/1` : `/page/${i + 1}`,
+        path: i === 0 ? `/blog` : `/page/${i + 1}`,
         component:  path.resolve(`./src/templates/blog-list.tsx`),
         context: {
+            draftDisabledList: process.env.NODE_ENV === `production` ? [true] : [],
             limit: postsPerPage,
             skip: i * postsPerPage,
             numPages,

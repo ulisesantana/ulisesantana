@@ -1,5 +1,5 @@
 {
-  "name": "ulisesantana-blog",
+  "name": "ulisesantana-web",
   "private": true,
   "description": "",
   "version": "1.0.0",
@@ -83,7 +83,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/ulisesantana/ulisesantana.git"
   },
   "scripts": {
     "build": "node_modules/.bin/gatsby build",
@@ -93,6 +93,7 @@
     "format": "node_modules/.bin/prettier --write src/**/*.{js,jsx}",
     "start": "yarn develop",
     "serve": "node_modules/.bin/gatsby serve",
+    "new:post": "node_modules/.bin/hygen post new",
     "now-build": "yarn run build",
     "deploy": "gatsby build && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""

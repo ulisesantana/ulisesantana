@@ -2,8 +2,11 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
 export const PostCardWrapper = styled.div`
+  border-bottom: solid 8px transparent;
   position: relative;
+  transition: 0.35s ease-in-out;
   &:hover {
+    border-bottom-color: ${themeGet('colors.primary', "#F0DB4F")};
     .post_preview {
       transform: translateY(0);
     }
@@ -38,6 +41,8 @@ export const PostPreview = styled.div`
 
 export const PostDetails = styled.div`
   display: flex;
+  text-shadow: none;
+  
   @media (max-width: 575px) {
     flex-direction: column;
   }

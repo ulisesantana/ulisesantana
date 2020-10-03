@@ -7,8 +7,6 @@ cover: ./js-arrays-basic.png
 draft: false
 ---
 
-# Arrays en JavaScript
-
 ## ¿Qué es un array?
 
 En JavaScript los arrays son objetos parecidos a una lista y contiene métodos para poder recorrerlo y mutarlo. 
