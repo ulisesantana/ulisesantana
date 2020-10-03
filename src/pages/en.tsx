@@ -9,7 +9,7 @@ const Home: React.FunctionComponent = () => {
         <Layout>
             <SEO
                 description={en.about}
-                title="Ulises Santana | JavaScript Engineer"
+                title="About me"
             />
             <AboutPage />
         </Layout>

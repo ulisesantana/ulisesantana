@@ -27,7 +27,7 @@ const BlogList = (props: any) => {
 
     return (
         <SpanishLayout>
-            <SEO title={`Página ${currentPage}`}/>
+            <SEO title={`Blog ${currentPage > 1 ? "Página " + currentPage : ""}`}/>
             <Intro lang={lang} />
             {/* <FeaturedPosts /> */}
             <BlogPostsWrapper>
