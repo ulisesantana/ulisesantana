@@ -4,12 +4,12 @@ date: 2020-06-28
 description: Durante los últimos 5 años los arrays en JavaScript han experimentado muchas mejoras. Te muestro algunas de ellas en esta entrada.
 tags: [javascript, arrays, basics]
 cover: ./js-arrays-basic.png
-draft: false
+draft: true
 ---
 
 ## ¿Qué es un array?
 
-En JavaScript los arrays son objetos parecidos a una lista y contiene métodos para poder recorrerlo y mutarlo. 
+En JavaScript los arrays son objetos parecidos a una lista y contiene métodos para poder recorrerlo, mutarlo o generar nuevos arrays. 
 Tanto su longitud como el tipo de elementos que contiene es variable. 
 
 
@@ -25,7 +25,7 @@ Un array se puede crear de diferentes maneras:
 Directamente expresando el array con los valores que queramos incluir. También al tener longitud variable podemos 
 instanciarlo vacío para posteriormente rellenarlo, ya que el rellenarlo su longitud irá aumentando.
 
-```javascript
+```js
 const food = ['pizza', 'sandwich']
 console.log(food) // [ 'pizza', 'sandwich' ]
 
@@ -38,9 +38,9 @@ El constructor de Array se comporta de una manera u otra dependiendo del número
 en otras palabras, está sobrecargado. Si le pasamos sólo un parámetro y este parámetro es un número, entonces instanciará 
 un Array vacío con la longitud del número que le hayamos pasado. En caso de que le pasemos más de un parámetro o si el único 
 parámetro que le pasamos no es un número, instanciará un nuevo array con los elementos que le hemos pasado y su longitud 
-será igual al número de parámetros que le hemos pasado. Por cierto, usar la palabra reservada `new` es completamente opcional.
+será igual al número de parámetros que le hemos pasado. Por cierto, usar la palabra reservada ***new* es completamente opcional**.
 
-```javascript
+```js
 const numberArray = new Array(10)
 console.log(numberArray) // [ <10 empty items> ]
 
@@ -55,20 +55,30 @@ console.log(fibonacciNumbers) // [ 1, 1,  2, 3, 5, 8, 13]
 
 Este método fue introducido en ES2015 y funciona a modo de factoría convirtiendo iterables y cosas parecidas a un array 
 (también conocidos como array-like objects) como los NodeList a un array para poder usar sus métodos y trabajar con ellos 
-con mayor comodidad. 
+con mayor comodidad. Otro ejemplo de array-like objects son los iterables como por ejemplo el String, Map o Set.
 
-<!--AÑADIR IFRAME DE EJEMPLO--->
+```js
+const mapExample = new Map()
 
+mapExample.set('first',1)
+mapExample.set('second',2)
 
+Array.from(mapExample) // [ [ 'first', 1 ], [ 'second', 2 ] ]
+Array.from(mapExample.values()) // [ 1, 2 ]
 
+const stringExample = 'Hello world!'
+Array.from(stringExample) // ['H', 'e', 'l', 'l', 'o', ' ', 'w', 'o','r', 'l', 'd', '!']
+
+const setExample = new Set([1,2,3,4,5,4,3,2,1])
+Array.from(setExample) // [ 1, 2, 3, 4, 5 ]
+```
 
 ### 4. Array.of
 
 
-
 ## La mutabilidad del array en JavaScript
 
-```javascript
+```js
 const array = []
 
 array[0] = 1
@@ -78,7 +88,7 @@ array.length // 100
 console.log(array) // [ 1, <98 empty items>, 100 ]
 ```
 
-```javascript
+```js
 const array = [1,2,3,4,5]
 console.log(array) // [1,2,3,4,5] 
 array.length = 0
@@ -98,7 +108,7 @@ Como habíamos visto a la hora de crear un array se puede usar Array.from ya que
 
 </a>
 
-```javascript
+```js
 const array = [1, 2, 3, 4, 5]
 const array2 = Array.from(array)
 
@@ -128,7 +138,7 @@ console.table({'Array original': array, 'Array copiado': array3})
 └────────────────┴───────┴───┴───┴───┴───┘
 */
 ```
-La diferencia entre `array2` y `array3` es que `array2` se crea a partir de una nueva instancia de Array basándose en `array`, mientras que `array3` copia la referencia en memoria de `array`. De esta manera, cualquier mutación en `array3` hará que `array` mute también y viceversa.
+La diferencia entre *array2* y *array3* es que *array2* se crea a partir de una nueva instancia de Array basándose en *array*, mientras que *array3* copia la referencia en memoria de *array*. De esta manera, cualquier mutación en *array3* hará que *array* mute también y viceversa.
 
 ## Destructuring
 

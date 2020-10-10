@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { themeGet } from "styled-system"
+import {createGlobalStyle} from "styled-components"
+import {themeGet} from "styled-system"
 
 const ResetCSS = createGlobalStyle`
   html {
@@ -90,10 +90,6 @@ const ResetCSS = createGlobalStyle`
     font-weight: 500;
   }
 
-  :not(pre) > code[class*="language-"], pre[class*="language-"] {
-    background: #f5f5f5;
-  }
-
   pre[class*="language-"] {
     padding: 1.5em;
     margin: 2em 0;
@@ -169,8 +165,7 @@ const ResetCSS = createGlobalStyle`
       background-color: ${themeGet("colors.secondary", "blue")};
     }
   }
-
-
+    
   .only-print {
     display: none;
   }

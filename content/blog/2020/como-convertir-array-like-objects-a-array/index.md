@@ -1,0 +1,155 @@
+---
+title: Cómo convertir array-like objects a array
+date: 2020-10-10
+description: En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar, pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para poder trabajar mejor con ellos.
+tags: [javascript,array,array-like objects]
+cover: ../../preview.png
+draft: true
+---
+
+En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar, 
+pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para 
+poder tener a acceso a métodos tan útiles como Array.filter.
+
+Se considera un array-like object todo objeto que tiene propiedades cuyos nombres son números y tienen una propiedad length. 
+Algunos array-like objects también incluyen [el protocolo iterable](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Iteration_protocols)
+que les permiten ser iterados por un bucle *for of*. Este es el caso de los 
+[NodeList](https://developer.mozilla.org/es/docs/Web/API/NodeList), el [objeto arguments](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/arguments) 
+o cualquier String. Estos casos en concreto engañan mucho, ya que se pueden acceder por índice, tienen propiedad *length* y se pueden iterar en un *for of*, 
+pero carecen del resto de métodos del prototipo Array. Por lo que si intentas hacer un Array.includes, Array.filter o 
+cualquier otro método del prototipo Array te explotará en la cara. 
+
+## Antes de ES2015
+
+Antes de ES2015 sólo existía una manera de pasar un array-like object a array, **usando Array.prototype.slice**. Concretamente 
+tenemos que usar el prototipo y llamar al método *Function.prototype.call* del método *Array.prototype.slice:*
+```js
+const sentence = Array.prototype.slice.call('Hola Mundo!') 
+console.log(sentence) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
+```
+
+Veamos un ejemplo con el objeto arguments en una función en la que vamos a sumar todos los argumentos que nos pasen, 
+pero sólo si son números positivos:
+
+```js
+function safeSum() {
+  const validParams = Array.prototype.slice
+    .call(arguments)
+    .filter(function (arg) {
+      return arg > 0;
+    });
+
+  return validParams.reduce(function (total, param) {
+    return total + param;
+  }, 0);
+}
+safeSum(-3, -2, -1, 0, 1, 2, 3) // 6
+
+```
+
+`Array.prototype.slice.call(arrayLikeObject)` también se puede sustituir por `[].slice.call(arrayLikeObject)`. 
+Por otro lado, en el caso de String, también se puede usar el método String.split pasar de array-like object a array:
+
+```js
+const sentence = 'Benji Price tiene más reflejos que un laberinto de espejos.';
+sentence.split('') // [ 'B', 'e', 'n', 'j', 'i', ' ', 'P', 'r', 'i', 'c', 'e', ' ', 't', 'i', 'e', 'n', 'e', ' ', 'm', 'á', 's', ' ', 'r', 'e', 'f', 'l', 'e', 'j', 'o', 's', ' ', 'q', 'u', 'e', ' ', 'u', 'n', ' ', 'l', 'a', 'b', 'e', 'r', 'i', 'n', 't', 'o', ' ', 'd', 'e', ' ', 'e', 's', 'p', 'e', 'j', 'o', 's', '.' ]
+```
+
+Puede sonar algo tonto, pero imagina que necesitas contar el número de *e* que tiene la frase:
+
+```js
+const sentence = 'Benji Price tiene más reflejos que un laberinto de espejos.';
+sentence.split('')
+        .filter( letter => letter === 'e').length // 11
+``` 
+
+## A partir de ES2015
+
+Con ES2015 JavaScript evolucionó como lenguaje gracias a un buen montón de nuevas características del lenguaje que 
+llegaron para facilitar el desarrollo y también atraer a nuevos desarrolladores al lenguaje. Entre todas las novedades 
+que llegaron con este nuevo estándar del lenguaje hay dos que permitieron facilitar el paso de array-like objects a array:
+*Array.from* y la sintaxis extendida o syntax spread, también conocida como *spread operator*.
+
+### Array.from
+
+*Array.from* funciona exactamente de la misma manera que *Array.prototype.slice*, pero sin necesidad de invocar 
+*Function.prototype.call*:
+```js
+const sentence = Array.from('Hola Mundo!') 
+console.log(sentence) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
+```
+
+### Sintaxis extendida (Spread operator)
+
+La sintaxis extendida permite a los iterables expandirse dentro de un array junto a más elementos o en el 
+caso de objetos literales expandir sus claves y valores junto con otros objetos. En otras palabras, nos permite combinar 
+tanto arrays e iterables entre sí como también objetos literales entre sí, además de también poder extenderlos. 
+```js
+const sentence = [...'Hola Mundo!'] 
+console.log(sentence) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
+```
+
+## Benchmark
+
+Después de haber visto estás opciones podríamos usar la forma que más nos convenza o más clara nos parezca y aplicarla 
+donde necesitemos. Sin embargo, estas tres opciones difieren en cuanto a rendimiento y en algunos casos usar una u otra 
+opción puede hacer que el programa que escribimos sea más o menos eficiente. Déjame mostrarte el resultado sacado de este 
+[proyecto](https://github.com/ulisesantana/benchmark-js/blob/master/benchmark/arrays/arrayLikeToArray.js) en el que hago 
+benchmarking sobre funcionalidades de JavaScript:
+
+
+```text
+Results for Converting array-like object with 100 elements to array
+┌───────────────────────┬─────────────────┬─────────────────────┬─────────┐
+│        (index)        │ totalIterations │ perSecondIterations │  diff   │
+├───────────────────────┼─────────────────┼─────────────────────┼─────────┤
+│      Array.from       │   '1.240.975'   │      '384.321'      │  '0%'   │
+│    Spread operator    │   '1.257.741'   │      '380.441'      │ '1.01%' │
+│ Array.prototype.slice │   '1.175.874'   │      '362.141'      │ '5.77%' │
+└───────────────────────┴─────────────────┴─────────────────────┴─────────┘
+
+
+Results for Converting array-like object with 1000 elements to array
+┌───────────────────────┬─────────────────┬─────────────────────┬─────────┐
+│        (index)        │ totalIterations │ perSecondIterations │  diff   │
+├───────────────────────┼─────────────────┼─────────────────────┼─────────┤
+│ Array.prototype.slice │    '126.923'    │      '40.064'       │  '0%'   │
+│    Spread operator    │    '117.857'    │      '36.612'       │ '8.62%' │
+│      Array.from       │    '120.474'    │      '36.551'       │ '8.77%' │
+└───────────────────────┴─────────────────┴─────────────────────┴─────────┘
+
+
+Results for Converting array-like object with 10000 elements to array
+┌───────────────────────┬─────────────────┬─────────────────────┬─────────┐
+│        (index)        │ totalIterations │ perSecondIterations │  diff   │
+├───────────────────────┼─────────────────┼─────────────────────┼─────────┤
+│ Array.prototype.slice │     '6.333'     │       '1.904'       │  '0%'   │
+│      Array.from       │     '5.989'     │       '1.837'       │ '3.52%' │
+│    Spread operator    │     '6.021'     │       '1.830'       │ '3.89%' │
+└───────────────────────┴─────────────────┴─────────────────────┴─────────┘
+
+
+Results for Converting array-like object with 100000 elements to array
+┌───────────────────────┬─────────────────┬─────────────────────┬─────────┐
+│        (index)        │ totalIterations │ perSecondIterations │  diff   │
+├───────────────────────┼─────────────────┼─────────────────────┼─────────┤
+│ Array.prototype.slice │      '539'      │        '162'        │  '0%'   │
+│      Array.from       │      '493'      │        '149'        │ '8.02%' │
+│    Spread operator    │      '492'      │        '149'        │ '8.02%' │
+└───────────────────────┴─────────────────┴─────────────────────┴─────────┘
+
+
+Results for Converting array-like object with 500000 elements to array
+┌───────────────────────┬─────────────────┬─────────────────────┬──────┐
+│        (index)        │ totalIterations │ perSecondIterations │ diff │
+├───────────────────────┼─────────────────┼─────────────────────┼──────┤
+│ Array.prototype.slice │      '87'       │        '25'         │ '0%' │
+│      Array.from       │      '81'       │        '24'         │ '4%' │
+│    Spread operator    │      '80'       │        '24'         │ '4%' │
+└───────────────────────┴─────────────────┴─────────────────────┴──────┘
+```
+
+Por lo que vemos en los resultados, *Array.from* y la sintaxis extendida (spread operator) tienen rendimientos similares, 
+aunque de nada que pasamos de una lista de 1.000 elementos *Array.prototype.slice* se mantiene como la opción con mejor 
+rendimiento. La diferencia no es abismal, pero es bueno saber que el viejo *Array.prototype.slice* es la mejor opción
+si necesitas afinar el rendimiento del proceso al máximo y sabemos que nos vamos a enfrentar a listas de más de 1.000 elementos.  
