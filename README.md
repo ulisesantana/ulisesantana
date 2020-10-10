@@ -1,7 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ulises Santana</h1>
-<h3 align="center">Full Stack Developer with JavaScript as mother tongue and web as my home nation. Based in the Canary Islands 🏝️</h3>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=ulisesantana" alt="ulisesantana" /></a> </p>
+<h4 align="center">Full Stack Developer with JavaScript as mother tongue and web as my home nation. Based in the Canary Islands 🏝️</h4>
 
 - 🔭 I’m currently working on [Lean Mind](https://leanmind.es/en/)
 
