@@ -25,7 +25,7 @@ export const PrevPage = styled.div`
     }
     &:hover {
       color: #fff;
-      background-color: ${themeGet('colors.primary', '#D10068')};
+      background-color: ${themeGet('colors.primary', 'yellow')};
     }
   }
 `;
@@ -48,7 +48,7 @@ export const NextPage = styled.div`
     }
     &:hover {
       color: #fff;
-      background-color: ${themeGet('colors.primary', '#D10068')};
+      background-color: ${themeGet('colors.primary', 'yellow')};
     }
   }
 `;

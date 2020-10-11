@@ -262,7 +262,7 @@ export const PostShare = styled.div`
       margin-left: 20px;
     }
     &:hover {
-      color: ${themeGet("colors.primary", "#D10068")};
+      color: ${themeGet("colors.primary", "yellow")};
     }
     svg {
       display: block;
@@ -274,10 +274,6 @@ export const BlogPostDetailsWrapper = styled.div`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
-  
-   p a {
-    color: blue;
-  }
   
   @media (min-width: 1550px) {
     width: 1500px;

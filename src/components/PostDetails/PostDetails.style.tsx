@@ -294,7 +294,7 @@ export const PostDescription = styled.div`
   a {
     font-weight: 500;
     transition: 0.15s ease-in-out;
-    color: ${themeGet("primary", "#D10068")};
+    color: ${themeGet("textColor", "black")};
   }
 `
 
@@ -309,6 +309,6 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("primary", "#D10068")};
+    color: ${themeGet("primary", "yellow")};
   }
 `

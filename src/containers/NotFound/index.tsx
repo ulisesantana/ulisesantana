@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import { IoMdArrowRoundBack } from "react-icons/io"
 import {
   Goback,
@@ -16,24 +16,6 @@ interface NotFoundProps {
 }
 
 const NotFound: React.FunctionComponent<NotFoundProps> = ({ lang }) => {
-  const Data = useStaticQuery(graphql`
-    query {
-      avatar: file(absolutePath: { regex: "/404.png/" }) {
-        childImageSharp {
-          fluid(maxWidth: 750, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author
-          about
-        }
-      }
-    }
-  `)
-
   return (
     <NotFoundWrapper>
       <NotFoundContent>

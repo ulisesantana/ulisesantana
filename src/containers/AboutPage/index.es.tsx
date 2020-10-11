@@ -237,7 +237,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                             NodeJS, npm y cómo publicar y mantener un paquete en un registro
                             npm
                         </a>
-                        . Me encantó la experiencia and quiero continuar compartiendo
+                        . Me encantó la experiencia y quiero continuar compartiendo
                         conocimiento con el resto del mundo.
                     </p>
 

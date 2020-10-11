@@ -51,9 +51,9 @@ console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '
 
 ## A partir de ES2015
 
-Con ES2015 JavaScript evolucionó como lenguaje gracias a la gran cantidad de nuevas características del lenguaje que 
-llegaron para facilitar el desarrollo y también atraer a nuevos desarrolladores al lenguaje. Entre todas las novedades 
-que llegaron con este nuevo estándar del lenguaje hay dos que permitieron facilitar el paso de array-like objects a array:
+Con ES2015 JavaScript dió un gran salto gracias a la gran cantidad de nuevas características dentro del lenguaje que 
+llegaron para facilitar el desarrollo y también atraer a nuevos desarrolladores a JavaScript. Entre todas las novedades 
+que llegaron con este nuevo estándar hay dos que permitieron facilitar el paso de array-like objects a array:
 *Array.from* y la sintaxis extendida o syntax spread, también conocida como *spread operator*. 
 
 ### Array.from
