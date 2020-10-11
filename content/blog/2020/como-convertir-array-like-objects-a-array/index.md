@@ -3,7 +3,7 @@ title: Cómo convertir array-like objects a array
 date: 2020-10-10
 description: En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar, pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para poder trabajar mejor con ellos.
 tags: [javascript,array,array-like objects]
-cover: ../../preview.png
+cover: ./thumbnail.png
 draft: false
 ---
 
@@ -13,14 +13,22 @@ poder tener a acceso a métodos tan útiles como Array.filter.
 
 Se considera un array-like object todo objeto que tiene propiedades cuyos nombres son números y tienen una propiedad length. 
 Algunos array-like objects también incluyen [el protocolo iterable](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Iteration_protocols)
-que les permiten ser iterados por un bucle *for of*. Este es el caso de los 
+que les permiten ser iterados por un bucle *for of*, como por ejemplo los 
 [NodeList](https://developer.mozilla.org/es/docs/Web/API/NodeList), el [objeto arguments](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/arguments) 
-o cualquier String. Estos casos en concreto engañan mucho, ya que se pueden acceder por índice, tienen propiedad *length* y se pueden iterar en un *for of*, 
+o cualquier String. Estos casos en concreto pueden llevar a errores durante el desarrollo, ya que se pueden acceder por índice, tienen propiedad *length* y se pueden iterar en un *for of*, 
 pero carecen del resto de métodos del prototipo Array. Por lo que si intentas hacer un Array.includes, Array.filter o 
 cualquier otro método del prototipo Array te explotará en la cara. También comentar que existen otros elementos en JavaScript 
 como [Set](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Set) y 
 [Map](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Map) que son iterables y se les 
-puede considerar también como array-like objects.
+puede considerar también como array-like objects. Podemos decir que todo iterable es un array-like object, pero no todo 
+array-like object es un iterable.
+
+## TLDR;
+```js
+const charsArray = Array.prototype.slice.call('Hola Mundo!')
+const charsArray2 = Array.from('Hola Mundo!') 
+const charsArray3 = [...'Hola Mundo!'] 
+```
 
 ## Antes de ES2015
 
@@ -28,16 +36,16 @@ Antes de ES2015 sólo existía una manera de pasar un array-like object a array,
 tenemos que usar el prototipo y llamar al método [*Function.prototype.call*](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call) 
 del método *Array.prototype.slice:*
 ```js
-const chars = Array.prototype.slice.call('Hola Mundo!')
-console.log(chars) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
+const charsArray = Array.prototype.slice.call('Hola Mundo!')
+console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
 ```
 
 `Array.prototype.slice.call(arrayLikeObject)` también se puede sustituir por `[].slice.call(arrayLikeObject)`. 
-Por otro lado, en el caso de String, también se puede usar el método String.split pasar de array-like object a array:
+Por otro lado, en el caso de String, también se puede usar el método *String.split* pasar de array-like object a array:
 
 ```js
-const chars = 'Hola Mundo!'.split('');
-chars.split(chars) // [ 'B', 'e', 'n', 'j', 'i', ' ', 'P', 'r', 'i', 'c', 'e', ' ', 't', 'i', 'e', 'n', 'e', ' ', 'm', 'á', 's', ' ', 'r', 'e', 'f', 'l', 'e', 'j', 'o', 's', ' ', 'q', 'u', 'e', ' ', 'u', 'n', ' ', 'l', 'a', 'b', 'e', 'r', 'i', 'n', 't', 'o', ' ', 'd', 'e', ' ', 'e', 's', 'p', 'e', 'j', 'o', 's', '.' ]
+const charsArray = 'Hola Mundo!'.split('');
+console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
 ```
 
 
@@ -53,8 +61,8 @@ que llegaron con este nuevo estándar del lenguaje hay dos que permitieron facil
 *Array.from* funciona exactamente de la misma manera que *Array.prototype.slice*, pero sin necesidad de invocar 
 *Function.prototype.call*:
 ```js
-const chars = Array.from('Hola Mundo!') 
-console.log(chars) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
+const charsArray = Array.from('Hola Mundo!') 
+console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
 ```
 
 ### Sintaxis extendida (Spread operator)
@@ -63,8 +71,8 @@ La sintaxis extendida permite a los iterables expandirse dentro de un array junt
 caso de objetos literales expandir sus claves y valores junto con otros objetos. En otras palabras, nos permite combinar 
 tanto arrays e iterables entre sí como también objetos literales entre sí, además de también poder extenderlos. 
 ```js
-const chars = [...'Hola Mundo!'] 
-console.log(chars) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
+const charsArray = [...'Hola Mundo!'] 
+console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
 ```
 
 ## Benchmark
@@ -128,6 +136,6 @@ Results for Converting array-like object with 500000 elements to array
 ```
 
 Por lo que vemos en los resultados, *Array.from* y la sintaxis extendida (spread operator) tienen rendimientos similares, 
-aunque de nada que pasamos de una lista de 1.000 elementos *Array.prototype.slice* se mantiene como la opción con mejor 
+aunque de nada que pasamos a una lista de 1.000 elementos *Array.prototype.slice* se mantiene como la opción con mejor 
 rendimiento. La diferencia no es abismal, pero es bueno saber que el viejo *Array.prototype.slice* es la mejor opción
-si necesitas afinar el rendimiento del proceso al máximo y sabes que te vas a enfrentar a listas de más de 1.000 elementos.  
+si necesitas afinar el rendimiento del proceso al máximo y sabes que te vas a enfrentar a listas de más de 100 elementos.  
