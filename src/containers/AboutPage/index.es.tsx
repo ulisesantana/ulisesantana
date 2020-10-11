@@ -149,8 +149,9 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
                     </p>
                     <p>
-                        Desde que me contrataron trato de manternme al día en JavaScript y
-                        la web, por lo que intento ir a todas las conferencias que puedo.
+                        Desde que me gano la vida como desarrollador trato de mantenerme al
+                        día en JavaScript y la web, por lo que intento ir a
+                        todas las conferencias que puedo.
                         Esto se tradujo en asistir a eventos como JSConf EU donde tuve la
                         oportunidad de hacerme una selfie con Ryan Dahl, el creador de{" "}
                         <a href={Links.node} target="_blank">
