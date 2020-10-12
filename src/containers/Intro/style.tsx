@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import {themeGet} from "styled-system"
 
 export const IntroWrapper = styled.div`
   width: 940px;
   max-width: 100%;
-  margin: 1rem auto;
+  margin: 0 auto;
   padding: 75px 10px 75px 10px;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@ export const IntroWrapper = styled.div`
   }
   @media (max-width: 575px) {
     display: block;
-    padding: 0px 25px 1rem;
+    padding: 0px;
     text-align: center;
   }
 `
@@ -101,6 +101,7 @@ export const IntroTitle = styled.h1`
   }
   @media (max-width: 575px) {
     font-size: 22px;
+    margin: 0;
   }
 `
 
@@ -108,6 +109,13 @@ export const Desciption = styled.p`
   color: ${themeGet("colors.textColor", "#292929")};
   font-size: 1.5rem;
   line-height: 2rem;
+  
+  
+  @media (max-width: 575px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0.5rem auto;
+  }
 `
 
 export const IntroInfo = styled.div`

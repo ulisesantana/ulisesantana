@@ -21,7 +21,7 @@ const Intro: React.FC<{ lang: Language }> = ({ lang = "en" }) => {
 
   return (
     <IntroWrapper>
-      <Link to={lang === "en" ? "/" : `/${lang}`}>
+      <Link to={lang === "es" ? "/" : `/${lang}`}>
         <IntroImage>
           <div className="flip-container">
             <div className="flip-front">

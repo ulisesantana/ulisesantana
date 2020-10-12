@@ -11,8 +11,6 @@ import {
     PostPreview,
     PostTitle,
 } from "./PostCardMinimal.style"
-import {LangIcon} from "../LangIcon";
-import {Language} from "../../types";
 
 interface PostCardMinimalProps {
     image?: any
@@ -23,7 +21,6 @@ interface PostCardMinimalProps {
     tags?: string[]
     className?: string
     imageType?: "fixed" | "fluid"
-    lang: Language
 }
 
 const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
@@ -34,7 +31,6 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
                                                                             date,
                                                                             className,
                                                                             imageType,
-                                                                            lang,
                                                                             ...props
                                                                         }) => {
     // Add all classs to an array
@@ -71,7 +67,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
 
                     <PostContent className="post_content">
                         <PostTitle className="post_title">
-                           <LangIcon lang={lang}/> {title}
+                            {title}
                         </PostTitle>
                         {description && (
                             <Excerpt

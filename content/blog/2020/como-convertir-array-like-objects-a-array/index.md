@@ -36,11 +36,11 @@ Antes de ES2015 sólo existía una manera de pasar un array-like object a array,
 tenemos que usar el prototipo y llamar al método [*Function.prototype.call*](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call) 
 del método *Array.prototype.slice:*
 ```js
-const charsArray = Array.prototype.slice.call('Hola Mundo!')
+const charsArray = Array.prototype.slice.call('Hola Mundo!') 
+// [].slice.call('Hola Mundo!') da el mismo resultado
 console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '!' ]
 ```
 
-`Array.prototype.slice.call(arrayLikeObject)` también se puede sustituir por `[].slice.call(arrayLikeObject)`. 
 Por otro lado, en el caso de String, también se puede usar el método *String.split* pasar de array-like object a array:
 
 ```js

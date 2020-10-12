@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-export const PostCardWrapper = styled.div`
+export const PostCardWrapper = styled.li`
   border-bottom: solid 8px transparent;
   position: relative;
   transition: 0.35s ease-in-out;
@@ -31,12 +31,13 @@ export const PostPreview = styled.div`
     transform: translateY(0);
   }
   @media (max-width: 575px) {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     width: auto;
     height: auto;
     position: relative;
     transform: translateY(0);
   }
+  
 `;
 
 export const PostDetails = styled.div`
@@ -89,7 +90,7 @@ export const PostTitle = styled.h2`
   font-weight: 700;
   color: ${themeGet('colors.textColor', '#292929')};
   line-height: 1.53;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
   font-family: 'Fira Sans', sans-serif;
   a {
     color: ${themeGet('colors.textColor', '#292929')};
@@ -103,7 +104,6 @@ export const PostTitle = styled.h2`
   }
   @media (max-width: 575px) {
     font-size: 17px;
-    margin-bottom: 10px;
   }
 `;
 
@@ -112,7 +112,7 @@ export const Excerpt = styled.p`
   color: ${themeGet('colors.textColor', '#292929')};
   font-weight: 400;
   line-height: 2;
-  margin-bottom: 0;
+  margin: 0;
   @media (max-width: 990px) {
     font-size: 14px;
   }
@@ -153,6 +153,11 @@ export const PostDateAndPreview = styled.div`
   @media (max-width: 575px) {
     height: auto;
     width: auto;
+  }
+  
+  @media (hover: none) {
+    margin: 0;
+    transform: translateY(0);
   }
 `;
 

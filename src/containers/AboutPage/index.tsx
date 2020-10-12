@@ -114,7 +114,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                         custom solutions across various verticals, specializing in the
                         online entertainment industry with a focus on sports in multiple
                         countries. One year later I was promoted to Full Stack Developer and
-                        most of the time I am working with
+                        most of the time I was working with
                         <a href={Links.angular} target="_blank">
                             {" "}
                             AngularJS
@@ -142,7 +142,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
                         3 years later I enrolled on <a href={Links.work} target="_blank">Lean Mind</a>, a wonderful
                         place to work, where I work remotely as Full Stack Developer with other developer teams for
                         different customers with different technologies. At <a href={Links.work} target="_blank">Lean Mind</a> we love clean code
-                        and we are always willing to learn and share knowledge. </p>
+                        and we are always willing to learn and share knowledge.
+                    </p>
                     <p>
                         Since I got hired I’m trying to keep myself on the cutting edge of
                         JavaScript and the web so I try to go as many conferences as I can.

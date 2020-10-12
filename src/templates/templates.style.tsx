@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import {themeGet} from "styled-system"
 
-export const BlogPostsWrapper = styled.div`
+export const BlogPostsWrapper = styled.ul`
   font-size: 150%;
+  list-style: none;
   margin: 0 auto;
   position: relative;
 
@@ -18,12 +19,12 @@ export const BlogPostsWrapper = styled.div`
 
 
   .post_card {
-    margin-bottom: 36px;
+    margin-bottom: 48px;
     @media (max-width: 990px) {
-      margin-bottom: 24px;
+      margin-bottom: 36px;
     }
     @media (max-width: 575px) {
-      margin-bottom: 16px;
+      margin-bottom: 72px;
     }
   }
 `
@@ -270,7 +271,7 @@ export const PostShare = styled.div`
   }
 `
 
-export const BlogPostDetailsWrapper = styled.div`
+export const BlogPostDetailsWrapper = styled.article`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
@@ -284,7 +285,10 @@ export const BlogPostDetailsWrapper = styled.div`
     padding: 80px 35px 80px 35px;
   }
   @media (max-width: 575px) {
-    padding: 60px 25px 60px 25px;
+    padding: 0;
+    .gatsby-highlight {
+      font-size: ${themeGet('fontSizes.3', '15')}px;
+    }
   }
 `
 

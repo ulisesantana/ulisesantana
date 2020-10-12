@@ -115,7 +115,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                         soluciones a medida a lo largo de varios verticales, especializado
                         en la industria entretenimiento online centrada en los deportes en
                         múltiples países. Un año más tarde fui ascendido a Full Stack
-                        Developer y la mayoría del tiempo estoy trabajando con
+                        Developer y la mayoría del tiempo estuve trabajando con
                         <a href={Links.angular} target="_blank">
                             {" "}
                             AngularJS
