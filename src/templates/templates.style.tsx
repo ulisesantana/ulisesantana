@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import {themeGet} from "styled-system"
 
-export const BlogPostsWrapper = styled.div`
+export const BlogPostsWrapper = styled.main`
+  font-size: 150%;
   margin: 0 auto;
-  padding-top: 120px;
   position: relative;
 
   @media (min-width: 990px) {
@@ -15,20 +15,15 @@ export const BlogPostsWrapper = styled.div`
   @media (min-width: 1400px) {
     width: 1170px;
   }
-  @media (max-width: 990px) {
-    padding: 80px 45px 0 45px;
-  }
-  @media (max-width: 575px) {
-    padding: 60px 25px 0 25px;
-  }
+
 
   .post_card {
-    margin-bottom: 120px;
+    margin-bottom: 48px;
     @media (max-width: 990px) {
-      margin-bottom: 90px;
+      margin-bottom: 36px;
     }
     @media (max-width: 575px) {
-      margin-bottom: 60px;
+      margin-bottom: 72px;
     }
   }
 `
@@ -37,6 +32,7 @@ export const RelatedPostWrapper = styled.div`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
+
   @media (min-width: 1550px) {
     width: 1500px;
     padding-left: 0;
@@ -132,7 +128,10 @@ export const RelatedPostItem = styled.div`
 
     .post_tags {
       margin-top: 20px;
-      a {
+      a {  
+        display: block;
+        color: blue;
+      
         @media (max-width: 990px) {
           font-size: 12px;
           margin-right: 15px;
@@ -205,7 +204,7 @@ export const TagPageHeading = styled.div`
 export const TagName = styled.h1`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet("colors.primary", "#D10068")};
+  color: ${themeGet("colors.textColor", "black")};
   margin-bottom: 8px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -214,7 +213,7 @@ export const TagName = styled.h1`
     font-size: 22px;
   }
 `
-export const BlogPostFooter = styled.div`
+export const BlogPostFooter = styled.footer`
   margin: 0 0 0 auto;
   max-width: 100%;
   padding-top: 60px;
@@ -231,17 +230,8 @@ export const BlogPostFooter = styled.div`
 `
 
 export const BlogPostComment = styled.div`
-  margin: 0 0 0 auto;
-  width: 58%;
-  max-width: 100%;
-  padding-top: 80px;
-  @media (max-width: 990px) {
-    padding-top: 60px;
-    width: 100%;
-  }
-  &.center {
-    margin: 0 auto;
-  }
+
+  padding: 24px 0;
 `
 
 export const PostShare = styled.div`
@@ -263,7 +253,7 @@ export const PostShare = styled.div`
       margin-left: 20px;
     }
     &:hover {
-      color: ${themeGet("colors.primary", "#D10068")};
+      color: ${themeGet("colors.primary", "yellow")};
     }
     svg {
       display: block;
@@ -271,10 +261,11 @@ export const PostShare = styled.div`
   }
 `
 
-export const BlogPostDetailsWrapper = styled.div`
+export const BlogPostDetailsWrapper = styled.article`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
+  
   @media (min-width: 1550px) {
     width: 1500px;
     padding-left: 0;
@@ -284,7 +275,10 @@ export const BlogPostDetailsWrapper = styled.div`
     padding: 80px 35px 80px 35px;
   }
   @media (max-width: 575px) {
-    padding: 60px 25px 60px 25px;
+    padding: 0;
+    .gatsby-highlight {
+      font-size: ${themeGet('fontSizes.3', '15')}px;
+    }
   }
 `
 
@@ -301,7 +295,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("primary", "#D10068")};
+    color: blue;
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;

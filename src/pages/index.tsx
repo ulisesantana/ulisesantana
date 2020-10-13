@@ -1,32 +1,18 @@
 import React from "react"
-import {Layout} from "../components"
+import { SpanishLayout } from "../components"
 import {SEO} from "../components"
-import AboutPage from "../containers/AboutPage"
-import { graphql, useStaticQuery } from "gatsby"
-import en from "../locales/en/Intro.json"
+import AboutPage from "../containers/AboutPage/index.es"
+import es from "../locales/es/Intro.json"
 
-const Home: React.FunctionComponent = props => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+const Home: React.FunctionComponent = () => {
   return (
-    <Layout>
+    <SpanishLayout>
       <SEO
-        description={en.about}
-        title="Ulises Santana | JavaScript Engineer"
+        description={es.about}
+        title="Sobre mí"
       />
       <AboutPage />
-    </Layout>
+    </SpanishLayout>
   )
 }
 

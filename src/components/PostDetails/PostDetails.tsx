@@ -9,6 +9,7 @@ import {
   PostPreview,
   PostDescriptionWrapper,
   PostDescription,
+    PostReadTime,
   PostTags,
 } from "./PostDetails.style"
 
@@ -17,6 +18,7 @@ type PostDetailsProps = {
   date?: string
   preview?: any
   description: any
+    timeToRead: number
   tags?: []
   className?: string
   imagePosition?: "left" | "top"
@@ -27,6 +29,7 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
   date,
   preview,
   description,
+    timeToRead,
   tags,
   className,
   imagePosition,
@@ -44,49 +47,29 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
 
   return (
     <PostDetailsWrapper {...props} className={addClass.join(" ")}>
-      {imagePosition == "left" ? (
-        <>
-          {preview == null ? null : (
-            <>
-              <PostPreview className="post_preview">
-                <Img fluid={preview} alt={title} />
-              </PostPreview>
-            </>
-          )}
-        </>
-      ) : (
-        ""
-      )}
-
-      {imagePosition == "top" ? (
-        <>
-          {preview == null ? null : (
-            <PostPreview className="post_preview">
-              <Img fluid={preview} alt={title} />
-            </PostPreview>
-          )}
-        </>
-      ) : (
-        ""
-      )}
+      <>
+        {preview == null ? null : (
+          <PostPreview className="post_preview">
+            <div className="post-info">
+              <div className="content">
+                <PostTitle color="white">{title}</PostTitle>
+                <PostDate color="lightgray">{date}</PostDate>
+                <PostReadTime color="lightgray">{timeToRead} minuto{timeToRead === 1 ? '' : 's'} de lectura</PostReadTime>
+              </div>
+            </div>
+            <Img fluid={preview} alt={title} />
+          </PostPreview>
+        )}
+      </>
 
       <PostDescriptionWrapper className="post_des_wrapper">
-        {imagePosition == "top" ? (
+        {preview == null && (
           <>
             <PostTitle>{title}</PostTitle>
             <PostDate>{date}</PostDate>
           </>
-        ) : (
-          ""
         )}
-        {imagePosition == "left" ? (
-          <>
-            <PostTitle>{title}</PostTitle>
-            <PostDate>{date}</PostDate>
-          </>
-        ) : (
-          ""
-        )}
+
         <PostDescription
           dangerouslySetInnerHTML={{ __html: description }}
           className="post_des"

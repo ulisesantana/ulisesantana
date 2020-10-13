@@ -64,7 +64,6 @@ function Search() {
       dataset.forEach(({ node }: any) => {
         let formatedData = {
           ...node.frontmatter,
-          slug: node.fields.slug,
         }
         data.push(formatedData)
       })

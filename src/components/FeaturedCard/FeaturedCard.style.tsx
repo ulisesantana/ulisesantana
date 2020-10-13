@@ -164,7 +164,7 @@ export const PostTags = styled.div`
     margin-right: 20px;
     font-size: 13px;
     font-weight: 400;
-    color: ${themeGet('primary', '#D10068')};
+    color: blue;
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 15px;

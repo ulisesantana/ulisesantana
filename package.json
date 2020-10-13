@@ -1,12 +1,10 @@
 {
-  "name": "personal-blog-minimal",
+  "name": "ulisesantana-web",
   "private": true,
   "description": "",
   "version": "1.0.0",
-  "author": "RedQ Team",
+  "author": "Ulises Santana",
   "dependencies": {
-    "@mdx-js/mdx": "^1.4.5",
-    "@mdx-js/react": "^1.4.5",
     "@types/node": "^13.7.1",
     "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",
@@ -21,7 +19,6 @@
     "gatsby-plugin-lodash": "^3.0.5",
     "gatsby-plugin-mailchimp": "^5.1.0",
     "gatsby-plugin-manifest": "^2.0.28",
-    "gatsby-plugin-mdx": "^1.0.41",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -40,6 +37,7 @@
     "gatsby-transformer-sharp": "^2.1.17",
     "gatsby-transformer-yaml": "^2.2.17",
     "html-react-parser": "^0.10.0",
+    "hygen": "^6.0.4",
     "js-search": "^1.4.2",
     "katex": "^0.10.2",
     "lodash": "^4.17.11",
@@ -55,6 +53,7 @@
     "react-stickynode": "^2.1.1",
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.0",
+    "styled-icons": "^10.2.1",
     "styled-system": "^4.1.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
@@ -73,6 +72,7 @@
     "@types/styled-system": "^4.1.0",
     "@types/yup": "^0.26.13",
     "gh-pages": "^2.1.1",
+    "husky": "^4.2.5",
     "prettier": "^1.17.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -83,16 +83,17 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/ulisesantana/ulisesantana.git"
   },
   "scripts": {
     "build": "node_modules/.bin/gatsby build",
     "clean": "rm -rf .cache public",
     "clean-develop": "yarn clean && yarn develop",
-    "develop": "node_modules/.bin/gatsby develop",
+    "develop": "node_modules/.bin/gatsby develop -H 0.0.0.0 -p 3000",
     "format": "node_modules/.bin/prettier --write src/**/*.{js,jsx}",
     "start": "yarn develop",
     "serve": "node_modules/.bin/gatsby serve",
+    "new:post": "node_modules/.bin/hygen post new",
     "now-build": "yarn run build",
     "deploy": "gatsby build && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""

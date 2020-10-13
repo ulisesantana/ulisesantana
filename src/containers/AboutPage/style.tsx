@@ -1,18 +1,18 @@
 import styled from "styled-components"
 import { themeGet } from "styled-system"
 
-export const AboutWrapper = styled.div`
+export const AboutWrapper = styled.main`
   position: relative;
   padding: 0 75px 0 75px;
   @media (max-width: 990px) {
     padding: 80px 45px 30px 45px;
   }
   @media (max-width: 575px) {
-    padding: 60px 25px 0 25px;
+    padding: 0;
   }
 `
 
-export const AboutPageTitle = styled.div`
+export const AboutPageTitle = styled.header`
   text-align: justify;
   margin-bottom: 45px;
   @media (max-width: 767px) {
@@ -52,16 +52,16 @@ export const AboutImage = styled.div`
   }
 `
 
-export const AboutDetails = styled.div`
+export const AboutDetails = styled.section`
   width: 100%;
-  max-width: 992px;
   margin: 0 auto;
+  max-width: 960px;
   transition: all ease-in-out 0.6s;
 
   p {
-    font-size: 1.5rem;
-    line-height: 3rem;
-    max-width: 960px;
+    font-size: 120%;
+    line-height: 2rem;
+    
   }
 
   .out {
@@ -113,7 +113,7 @@ export const AboutDetails = styled.div`
       max-width: 960px;
 
       a {
-        color: ${themeGet("colors.black", "#333")} !important;
+        color: blue !important;
       }
     }
 

@@ -1,5 +1,5 @@
 import React from "react"
-import {Layout} from "../components"
+import { Layout } from "../components"
 import {SEO} from "../components"
 import CVPage from "../containers/CVPage"
 import { graphql, useStaticQuery } from "gatsby"

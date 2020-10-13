@@ -7,7 +7,9 @@ export const NotFoundWrapper = styled.div`
   padding: 120px 0 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+
   @media (min-width: 990px) {
     width: 900px;
   }
@@ -56,7 +58,7 @@ export const NotFoundContent = styled.div`
 
 export const NotFoundImage = styled.div`
   flex: 0 0 65%;
-  max-width: 65%;
+  max-width: 490px;
   padding-left: 10px;
   @media (max-width: 1400px) {
     flex: 0 0 55%;
@@ -103,9 +105,9 @@ export const Goback = styled.div`
     color: ${themeGet("colors.textColor", "#292929")};
     transition: 0.15s ease-in-out;
     &:hover {
-      color: ${themeGet("colors.primary", "#D10068")};
+      color: blue;
       ${Icon} {
-        background-color: ${themeGet("colors.primary", "#D10068")};
+        background-color: blue;
       }
     }
   }

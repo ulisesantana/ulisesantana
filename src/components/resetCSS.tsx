@@ -1,9 +1,6 @@
-import { createGlobalStyle } from "styled-components"
-import { themeGet } from "styled-system"
-
 const ResetCSS = createGlobalStyle`
   html {
-    font-size: 15px;
+    font-size: 18px;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
   }
@@ -90,10 +87,6 @@ const ResetCSS = createGlobalStyle`
     font-weight: 500;
   }
 
-  :not(pre) > code[class*="language-"], pre[class*="language-"] {
-    background: #f5f5f5;
-  }
-
   pre[class*="language-"] {
     padding: 1.5em;
     margin: 2em 0;
@@ -152,24 +145,26 @@ const ResetCSS = createGlobalStyle`
     transition: 0.3s;
   }
   
-  a {
-    color: ${themeGet("colors.black", "black")}
-    font-weight: 700;
-    text-shadow: 1px 0 1px ${themeGet("colors.lightTextColor", "black")};
-    transition: all ease-in-out 0.3s;
-    
-    &:visited {
-      color: ${themeGet("colors.secondary", "blue")};
-      text-shadow: none;
+  p, span {
+    a {
+        border-bottom: solid 4px ${themeGet('colors.primary', 'yellow')};
+        color: ${themeGet("colors.black", "black")}
+        font-weight: 700;
+        transition: all ease-in-out 0.3s;
+        
+        &:visited {
+          color: purple;
+        }
     }
   }
+
   
   blockquote {
     a:hover{
       background-color: ${themeGet("colors.secondary", "blue")};
     }
   }
-
+    
   .only-print {
     display: none;
   }
@@ -200,5 +195,8 @@ const ResetCSS = createGlobalStyle`
     }
   } */
 `
+import {createGlobalStyle} from "styled-components"
+
+import {themeGet} from "styled-system"
 
 export default ResetCSS

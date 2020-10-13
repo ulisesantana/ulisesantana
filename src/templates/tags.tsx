@@ -1,24 +1,23 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import {Layout} from "../components"
-import PostCard from "../components/PostCard/PostCard"
+import { graphql } from "gatsby"
+import { SpanishLayout } from "../components"
 import {SEO} from "../components"
-import { TagPostsWrapper, TagPageHeading, TagName } from "./templates.style"
+import { TagName, TagPageHeading, TagPostsWrapper } from "./templates.style"
+import PostCard from "../components/PostCard/PostCard"
 
 const Tags = ({ pageContext, data }: any) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-
   return (
-    <Layout>
-      <SEO title={tag} description={`A collection of ${totalCount} post`} />
+    <SpanishLayout>
+      <SEO title={tag} description={`Un lista de ${totalCount} entradas sobre ${tag}`} />
 
       <TagPostsWrapper>
         <TagPageHeading>
           <TagName>{tag}</TagName>
-          {`A collection of ${totalCount} post`}
+          {`${totalCount} entrada${totalCount === 1 ? '' : 's'} sobre ${tag}`}
         </TagPageHeading>
-        {edges.map(({ node, index }: any) => (
+        {edges.map(({ node }: any) => (
           <PostCard
             key={node.fields.slug}
             title={node.frontmatter.title}
@@ -29,7 +28,7 @@ const Tags = ({ pageContext, data }: any) => {
           />
         ))}
       </TagPostsWrapper>
-    </Layout>
+    </SpanishLayout>
   )
 }
 

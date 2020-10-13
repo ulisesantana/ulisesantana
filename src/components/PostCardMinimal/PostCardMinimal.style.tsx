@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-export const PostCardWrapper = styled.div`
+export const PostCardWrapper = styled.section`
+  border-bottom: solid 8px transparent;
   position: relative;
+  transition: 0.35s ease-in-out;
   &:hover {
+    border-bottom-color: ${themeGet('colors.primary', "#F0DB4F")};
     .post_preview {
       transform: translateY(0);
     }
@@ -28,16 +31,19 @@ export const PostPreview = styled.div`
     transform: translateY(0);
   }
   @media (max-width: 575px) {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     width: auto;
     height: auto;
     position: relative;
     transform: translateY(0);
   }
+  
 `;
 
 export const PostDetails = styled.div`
   display: flex;
+  text-shadow: none;
+  
   @media (max-width: 575px) {
     flex-direction: column;
   }
@@ -84,7 +90,7 @@ export const PostTitle = styled.h2`
   font-weight: 700;
   color: ${themeGet('colors.textColor', '#292929')};
   line-height: 1.53;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
   font-family: 'Fira Sans', sans-serif;
   a {
     color: ${themeGet('colors.textColor', '#292929')};
@@ -98,16 +104,15 @@ export const PostTitle = styled.h2`
   }
   @media (max-width: 575px) {
     font-size: 17px;
-    margin-bottom: 10px;
   }
 `;
 
 export const Excerpt = styled.p`
   font-size: ${themeGet('fontSizes.3', '15')}px;
-  color: ${themeGet('textColor', '#292929')};
+  color: ${themeGet('colors.textColor', '#292929')};
   font-weight: 400;
   line-height: 2;
-  margin-bottom: 0;
+  margin: 0;
   @media (max-width: 990px) {
     font-size: 14px;
   }
@@ -124,7 +129,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet('primary', '#D10068')};
+    color: blue;
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;
@@ -149,6 +154,11 @@ export const PostDateAndPreview = styled.div`
     height: auto;
     width: auto;
   }
+  
+  @media (hover: none) {
+    margin: 0;
+    transform: translateY(0);
+  }
 `;
 
 export const ReadMore = styled.div`
@@ -156,10 +166,11 @@ export const ReadMore = styled.div`
   a {
     font-size: 13px;
     font-weight: 500;
-    color: ${themeGet('textColor', '#292929')};
+    color: blue;
     transition: 0.15s ease-in-out;
+    text-decoration: none;
     &:hover {
-      color: ${themeGet('primary', '#D10068')};
+      text-decoration: underline;
     }
   }
 `;

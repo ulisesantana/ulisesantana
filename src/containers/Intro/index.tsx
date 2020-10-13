@@ -8,11 +8,11 @@ import {
   Desciption,
   IntroInfo,
 } from "./style"
-import { SocialLinks } from "../../components/SocialLinks"
+import { SocialLinks } from "../../components"
 import { userIntroInfo } from "../../hooks"
 import en from "../../locales/en/Intro.json"
 import es from "../../locales/es/Intro.json"
-import { Language } from "types"
+import { Language } from "../../types"
 
 const translations = { en, es }
 
@@ -21,7 +21,7 @@ const Intro: React.FC<{ lang: Language }> = ({ lang = "en" }) => {
 
   return (
     <IntroWrapper>
-      <Link to={lang === "en" ? "/" : `/${lang}`}>
+      <Link to={lang === "es" ? "/" : `/${lang}`}>
         <IntroImage>
           <div className="flip-container">
             <div className="flip-front">

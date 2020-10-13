@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { themeGet } from "styled-system"
 
-export const PostDetailsWrapper = styled.div`
+export const PostDetailsWrapper = styled.section`
   position: relative;
 
   &.image_left {
@@ -39,7 +39,7 @@ export const PostDetailsWrapper = styled.div`
 export const PostTitle = styled.h1`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   margin-bottom: 10px;
   @media (max-width: 1200px) {
@@ -59,9 +59,23 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.span`
   display: block;
   font-size: ${themeGet("fontSizes.3", "15")}px;
-  color: ${themeGet("textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   text-transform: uppercase;
+  @media (max-width: 990px) {
+    font-size: 14px;
+  }
+  @media (max-width: 575px) {
+    font-size: 13px;
+  }
+`
+
+export const PostReadTime = styled.span`
+  display: block;
+  font-size: ${themeGet("fontSizes.3", "15")}px;
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  font-weight: 400;
+  margin-top: 0.4rem;
   @media (max-width: 990px) {
     font-size: 14px;
   }
@@ -82,6 +96,24 @@ export const PostPreview = styled.div`
 
   img {
     border-radius: 3px;
+  }
+
+  .post-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+    padding: 16px;
+    width: 100%;
+    height: 35%;
+    z-index: 50;
   }
 
   &:before {
@@ -113,6 +145,22 @@ export const PostDescriptionWrapper = styled.div`
 export const PostDescription = styled.div`
   font-size: ${themeGet("fontSizes.4", "16")}px;
 
+    
+  .badge {
+    display: block;
+    width: 96px;
+    
+    
+    p,img {
+      padding: 0;
+      margin: 0;
+    }
+    
+    & + div > pre {
+      margin-top: 0;
+    }
+  }
+  
   .mermaid {
     margin-bottom: 60px;
     @media (max-width: 767px) {
@@ -246,7 +294,7 @@ export const PostDescription = styled.div`
   a {
     font-weight: 500;
     transition: 0.15s ease-in-out;
-    color: ${themeGet("primary", "#D10068")};
+    color: ${themeGet("textColor", "black")};
   }
 `
 
@@ -261,6 +309,6 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("primary", "#D10068")};
+    color: ${themeGet("primary", "yellow")};
   }
 `

@@ -115,7 +115,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                         soluciones a medida a lo largo de varios verticales, especializado
                         en la industria entretenimiento online centrada en los deportes en
                         múltiples países. Un año más tarde fui ascendido a Full Stack
-                        Developer y la mayoría del tiempo estoy trabajando con
+                        Developer y la mayoría del tiempo estuve trabajando con
                         <a href={Links.angular} target="_blank">
                             {" "}
                             AngularJS
@@ -149,8 +149,9 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
                     </p>
                     <p>
-                        Desde que me contrataron trato de manternme al día en JavaScript y
-                        la web, por lo que intento ir a todas las conferencias que puedo.
+                        Desde que me gano la vida como desarrollador trato de mantenerme al
+                        día en JavaScript y la web, por lo que intento ir a
+                        todas las conferencias que puedo.
                         Esto se tradujo en asistir a eventos como JSConf EU donde tuve la
                         oportunidad de hacerme una selfie con Ryan Dahl, el creador de{" "}
                         <a href={Links.node} target="_blank">
@@ -224,6 +225,12 @@ const About: React.FunctionComponent<AboutProps> = () => {
                             target={`_blank`}
                         >
                             PyDay Gran Canaria 2019
+                        </a>, aparte de también patrocinar y co-organizar el
+                        <a
+                            href="https://twitter.com/GDCR_Canarias"
+                            target={`_blank`}
+                        >
+                            Global Day of Coderetreat Canarias 2019
                         </a>
                         . Además, en Noviembre de 2018 tuve la oportunidad de dar una charla
                         en
@@ -237,7 +244,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                             NodeJS, npm y cómo publicar y mantener un paquete en un registro
                             npm
                         </a>
-                        . Me encantó la experiencia and quiero continuar compartiendo
+                        . Me encantó la experiencia y quiero continuar compartiendo
                         conocimiento con el resto del mundo.
                     </p>
 

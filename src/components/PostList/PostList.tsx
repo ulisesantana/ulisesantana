@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
-import _ from 'lodash';
 import Img from 'gatsby-image';
 import {
   PostListWrapper,
@@ -42,7 +40,7 @@ const PostList: React.FunctionComponent<PostListProps> = ({
 
   return (
     <PostListWrapper className={addAllClasses.join(' ')} {...props}>
-      <Link to={url}>
+      <a href={url}>
         {image == null ? null : (
           <PostPreview className="post_preview">
             {imageType === 'fluid' ? (
@@ -73,7 +71,7 @@ const PostList: React.FunctionComponent<PostListProps> = ({
             )}
           </PostMeta>
         </PostDetails>
-      </Link>
+      </a>
     </PostListWrapper>
   );
 };

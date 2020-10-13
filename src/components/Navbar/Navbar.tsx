@@ -22,24 +22,20 @@ type NavbarProps = {
 }
 
 const MenuItems = [
+  // {
+  //   label: "About",
+  //   url: "/en",
+  // }
+]
+
+const MenuItemsSpanish = [
   {
-    label: "About",
+    label: "Sobre mí",
     url: "/",
   },
   {
     label: "Blog",
     url: "/blog",
-  },
-]
-
-const MenuItemsSpanish = [
-  {
-    label: "Quien soy",
-    url: "/es",
-  },
-  {
-    label: "Blog",
-    url: "/es/blog",
   },
 ]
 
@@ -53,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
   useEffect(() => {
     setState(oldValues => ({
       ...oldValues,
-      menu: props.lang !== "en" ? MenuItemsSpanish : MenuItems,
+      menu: props.lang === "en" ? MenuItems : MenuItemsSpanish,
     }))
   }, [props.lang])
 
@@ -75,12 +71,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
   return (
     <HeaderWrapper className={addAllClasses.join(" ")} {...props}>
       <NavbarWrapper className="navbar">
-        {/* <DrawerProvider>
-            <MobileMenu items={state.menu} />
-          </DrawerProvider>
-          <MenuWrapper>
-            <Menu items={state.menu} />
-          </MenuWrapper> */}
+        <DrawerProvider>
+          <MobileMenu items={state.menu} />
+        </DrawerProvider>
+        <MenuWrapper>
+          <Menu items={state.menu} />
+        </MenuWrapper>
         <SelectLanguage lang={props.lang} />
         {/* <NavSearchButton
           type="button"

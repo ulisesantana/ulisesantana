@@ -72,7 +72,7 @@ const Drawer: React.FunctionComponent<DrawerProps> = ({
 
 Drawer.defaultProps = {
   width: '300px',
-  placement: 'left',
+  placement: 'right',
 };
 
 export default Drawer;

@@ -2,9 +2,12 @@ import styled from "styled-components"
 import { themeGet } from "styled-system"
 
 const HeaderWrapper = styled.header`
-  position: relative;
-  z-index: 99999;
+  background-color: white;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
   transition: 0.25s ease-in-out;
+  z-index: 5;
 `
 
 export const NavbarWrapper = styled.div`
@@ -20,6 +23,10 @@ export const NavbarWrapper = styled.div`
 
   @media print {
     display: none;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1170px;
   }
 `
 
@@ -63,6 +70,7 @@ export const MenuItem = styled.li`
     line-height: ${themeGet("lineHeights.normal", "1")};
     padding: 5px 10px;
     text-transform: uppercase;
+    text-shadow: rgb(170, 170, 170) 1px 0px 1px;
     transition: 0.15s ease-in-out;
     white-space: nowrap;
 
@@ -72,6 +80,7 @@ export const MenuItem = styled.li`
     &.active-link {
       color: ${themeGet("colors.textColor", "#292929")};
       font-weight: ${themeGet("fontWeights.4", "500")};
+      border-bottom: 4px solid ${themeGet("colors.primary", "black")};
     }
   }
 `

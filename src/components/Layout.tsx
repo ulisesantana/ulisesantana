@@ -34,6 +34,7 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   </ThemeProvider>
 )
 
-export const SpanishLayout = BaseLayout("es")
 export const Layout = BaseLayout()
+export const SpanishLayout = BaseLayout("es")
 
+export default Layout
