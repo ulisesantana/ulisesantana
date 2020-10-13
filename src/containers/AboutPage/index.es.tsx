@@ -225,6 +225,12 @@ const About: React.FunctionComponent<AboutProps> = () => {
                             target={`_blank`}
                         >
                             PyDay Gran Canaria 2019
+                        </a>, aparte de también patrocinar y co-organizar el
+                        <a
+                            href="https://twitter.com/GDCR_Canarias"
+                            target={`_blank`}
+                        >
+                            Global Day of Coderetreat Canarias 2019
                         </a>
                         . Además, en Noviembre de 2018 tuve la oportunidad de dar una charla
                         en
