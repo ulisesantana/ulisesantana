@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { themeGet } from "styled-system"
 
-export const PostDetailsWrapper = styled.div`
+export const PostDetailsWrapper = styled.section`
   position: relative;
 
   &.image_left {

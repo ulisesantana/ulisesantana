@@ -1,9 +1,8 @@
 import styled from "styled-components"
 import {themeGet} from "styled-system"
 
-export const BlogPostsWrapper = styled.ul`
+export const BlogPostsWrapper = styled.main`
   font-size: 150%;
-  list-style: none;
   margin: 0 auto;
   position: relative;
 
@@ -214,7 +213,7 @@ export const TagName = styled.h1`
     font-size: 22px;
   }
 `
-export const BlogPostFooter = styled.div`
+export const BlogPostFooter = styled.footer`
   margin: 0 0 0 auto;
   max-width: 100%;
   padding-top: 60px;
@@ -231,17 +230,8 @@ export const BlogPostFooter = styled.div`
 `
 
 export const BlogPostComment = styled.div`
-  margin: 0 0 0 auto;
-  width: 58%;
-  max-width: 100%;
-  padding-top: 80px;
-  @media (max-width: 990px) {
-    padding-top: 60px;
-    width: 100%;
-  }
-  &.center {
-    margin: 0 auto;
-  }
+
+  padding: 24px 0;
 `
 
 export const PostShare = styled.div`

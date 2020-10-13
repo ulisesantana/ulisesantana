@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { themeGet } from "styled-system"
 
-export const AboutWrapper = styled.div`
+export const AboutWrapper = styled.main`
   position: relative;
   padding: 0 75px 0 75px;
   @media (max-width: 990px) {
@@ -12,7 +12,7 @@ export const AboutWrapper = styled.div`
   }
 `
 
-export const AboutPageTitle = styled.div`
+export const AboutPageTitle = styled.header`
   text-align: justify;
   margin-bottom: 45px;
   @media (max-width: 767px) {
@@ -52,7 +52,7 @@ export const AboutImage = styled.div`
   }
 `
 
-export const AboutDetails = styled.div`
+export const AboutDetails = styled.section`
   width: 100%;
   margin: 0 auto;
   max-width: 960px;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-export const PostCardWrapper = styled.li`
+export const PostCardWrapper = styled.section`
   border-bottom: solid 8px transparent;
   position: relative;
   transition: 0.35s ease-in-out;
