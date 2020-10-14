@@ -132,7 +132,7 @@ const BlogPostTemplate = (props: any) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!, $tag: [String!]) {
+  query BlogPostBySlug($slug: String!, $tag: [String!], $draftDisabledList: [Boolean!]!) {
     site {
       siteMetadata {
         title
@@ -163,7 +163,7 @@ export const pageQuery = graphql`
       limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { tags: { in: $tag } }
+        frontmatter: { draft: { nin: $draftDisabledList }, tags: { in: $tag } }
         fields: { slug: { ne: $slug } }
       }
     ) {
