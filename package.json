@@ -90,7 +90,7 @@
     "clean": "rm -rf .cache public",
     "clean-develop": "yarn clean && yarn develop",
     "develop": "node_modules/.bin/gatsby develop -H 0.0.0.0 -p 3000",
-    "format": "node_modules/.bin/prettier --write src/**/*.{js,jsx}",
+    "format": "node_modules/.bin/prettier --write src/**/*.{ts,tsx}",
     "start": "yarn develop",
     "serve": "node_modules/.bin/gatsby serve",
     "new:post": "node_modules/.bin/hygen post new",
