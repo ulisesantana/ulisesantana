@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import {AboutWrapper, AboutImage, AboutPageTitle, AboutDetails} from "./style"
 import Intro from "../Intro"
 import {useState} from "react"
-import {SocialLinks} from "../../components/SocialLinks"
+import {SocialLinks} from "../../components"
 import Links from "./links"
 
 interface AboutProps {
@@ -108,7 +108,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                     <p>
                         Terminé el Ciclo Superior de Desarrollo de Aplicaciones Web en Junio
                         de 2017. Justo después fui contratado como Backend Developer por{" "}
-                        <a href={Links.work} target="_blank">
+                        <a href={Links.kentech} target="_blank">
                             Kentech
                         </a>
                         , la empresa donde hice las prácticas. Kentech es un proveedor de
