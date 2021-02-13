@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const NotFoundWrapper = styled.div`
   position: relative;
@@ -56,7 +55,7 @@ export const NotFoundContent = styled.div`
   }
 `
 
-export const NotFoundImage = styled.div`
+export const NotFoundImage = styled.img`
   flex: 0 0 65%;
   max-width: 490px;
   padding-left: 10px;
@@ -91,18 +90,11 @@ export const Icon = styled.div`
 
 export const Goback = styled.div`
   margin-top: 60px;
-  @media (max-width: 990px) {
-    margin-top: 40px;
-  }
-  @media (max-width: 575px) {
-    margin-top: 30px;
-  }
   a {
     display: inline-flex;
     align-items: center;
     font-size: 15px;
     font-weight: 500;
-    color: ${themeGet("colors.textColor", "#292929")};
     transition: 0.15s ease-in-out;
     &:hover {
       color: blue;
@@ -110,5 +102,11 @@ export const Goback = styled.div`
         background-color: blue;
       }
     }
+  }
+  @media (max-width: 990px) {
+    margin-top: 40px;
+  }
+  @media (max-width: 575px) {
+    margin-top: 30px;
   }
 `

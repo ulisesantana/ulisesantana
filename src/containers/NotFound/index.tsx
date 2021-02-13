@@ -21,9 +21,7 @@ const NotFound: React.FunctionComponent<NotFoundProps> = ({ lang }) => {
       <NotFoundContent>
         {lang === "en" ? <NotFoundTextEN /> : <NotFoundTextES />}
       </NotFoundContent>
-      <NotFoundImage>
-        <img src={travolta} alt="Travolta lost" />
-      </NotFoundImage>
+      <NotFoundImage src={travolta} alt="Travolta lost" />
     </NotFoundWrapper>
   )
 }
