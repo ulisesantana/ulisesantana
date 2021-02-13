@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 export const PostCardWrapper = styled.section`
   border-bottom: solid 8px transparent;
   position: relative;
   transition: 0.35s ease-in-out;
   &:hover {
-    border-bottom-color: ${themeGet('colors.primary', "#F0DB4F")};
+    border-bottom-color: ${themeGet("colors.primary", "#F0DB4F")};
     .post_preview {
       transform: translateY(0);
     }
@@ -14,7 +14,7 @@ export const PostCardWrapper = styled.section`
       transform: translateY(100%);
     }
   }
-`;
+`
 
 export const PostPreview = styled.div`
   position: absolute;
@@ -37,17 +37,16 @@ export const PostPreview = styled.div`
     position: relative;
     transform: translateY(0);
   }
-  
-`;
+`
 
 export const PostDetails = styled.div`
   display: flex;
   text-shadow: none;
-  
+
   @media (max-width: 575px) {
     flex-direction: column;
   }
-`;
+`
 
 export const PostDate = styled.div`
   font-size: 90px;
@@ -60,7 +59,7 @@ export const PostDate = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   transition: 0.35s ease-in-out;
   @media (max-width: 1200px) {
     font-size: 70px;
@@ -79,21 +78,21 @@ export const PostDate = styled.div`
     margin-top: 12px;
     text-transform: uppercase;
   }
-`;
+`
 
 export const PostContent = styled.div`
   align-self: center;
-`;
+`
 
 export const PostTitle = styled.h2`
   font-size: 21px;
   font-weight: 700;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   //margin-bottom: 10px;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   a {
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
   }
   @media (max-width: 1200px) {
     font-size: 21px;
@@ -105,18 +104,18 @@ export const PostTitle = styled.h2`
   @media (max-width: 575px) {
     font-size: 17px;
   }
-`;
+`
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet('fontSizes.3', '15')}px;
-  color: ${themeGet('colors.textColor', '#292929')};
+  font-size: ${themeGet("fontSizes.3", "15")}px;
+  color: ${themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   line-height: 2;
   margin: 0;
   @media (max-width: 990px) {
     font-size: 14px;
   }
-`;
+`
 
 export const PostTags = styled.div`
   display: flex;
@@ -135,7 +134,7 @@ export const PostTags = styled.div`
       margin-right: 25px;
     }
   }
-`;
+`
 
 export const PostDateAndPreview = styled.div`
   position: relative;
@@ -154,12 +153,12 @@ export const PostDateAndPreview = styled.div`
     height: auto;
     width: auto;
   }
-  
+
   @media (hover: none) {
     margin: 0;
     transform: translateY(0);
   }
-`;
+`
 
 export const ReadMore = styled.div`
   margin-top: 16px;
@@ -173,4 +172,4 @@ export const ReadMore = styled.div`
       text-decoration: underline;
     }
   }
-`;
+`

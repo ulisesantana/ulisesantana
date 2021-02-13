@@ -147,7 +147,7 @@ const ResetCSS = createGlobalStyle`
   
   p, span {
     a {
-        border-bottom: solid 4px ${themeGet('colors.primary', 'yellow')};
+        border-bottom: solid 4px ${themeGet("colors.primary", "yellow")};
         color: ${themeGet("colors.black", "black")}
         font-weight: 700;
         transition: all ease-in-out 0.3s;
@@ -195,8 +195,8 @@ const ResetCSS = createGlobalStyle`
     }
   } */
 `
-import {createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
-import {themeGet} from "styled-system"
+import { themeGet } from "styled-system"
 
 export default ResetCSS

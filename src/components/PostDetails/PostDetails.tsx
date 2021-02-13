@@ -9,7 +9,7 @@ import {
   PostPreview,
   PostDescriptionWrapper,
   PostDescription,
-    PostReadTime,
+  PostReadTime,
   PostTags,
 } from "./PostDetails.style"
 
@@ -18,7 +18,7 @@ type PostDetailsProps = {
   date?: string
   preview?: any
   description: any
-    timeToRead: number
+  timeToRead: number
   tags?: []
   className?: string
   imagePosition?: "left" | "top"
@@ -29,7 +29,7 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
   date,
   preview,
   description,
-    timeToRead,
+  timeToRead,
   tags,
   className,
   imagePosition,
@@ -54,7 +54,9 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
               <div className="content">
                 <PostTitle color="white">{title}</PostTitle>
                 <PostDate color="lightgray">{date}</PostDate>
-                <PostReadTime color="lightgray">{timeToRead} minuto{timeToRead === 1 ? '' : 's'} de lectura</PostReadTime>
+                <PostReadTime color="lightgray">
+                  {timeToRead} minuto{timeToRead === 1 ? "" : "s"} de lectura
+                </PostReadTime>
               </div>
             </div>
             <Img fluid={preview} alt={title} />

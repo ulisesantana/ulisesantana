@@ -1,3 +1,3 @@
-import _ from './Job';
-export default _;
-export * from './Job'
+import _ from "./Job"
+export default _
+export * from "./Job"

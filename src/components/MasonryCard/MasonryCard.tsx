@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
-import _ from 'lodash';
-import Img from 'gatsby-image';
+import * as React from "react"
+import { Link } from "gatsby"
+import _ from "lodash"
+import Img from "gatsby-image"
 import {
   MasonryCardWrapper,
   PostPreview,
@@ -12,18 +12,18 @@ import {
   PostMeta,
   ReadingTime,
   ReadMore,
-} from './MasonryCard.style';
-import { IoIosArrowForward } from 'react-icons/io';
+} from "./MasonryCard.style"
+import { IoIosArrowForward } from "react-icons/io"
 
 interface MasonryCardProps {
-  image?: any;
-  title: string;
-  url: string;
-  date?: string;
-  tags?: [];
-  className?: string;
-  imageType?: 'fixed' | 'fluid';
-  readTime?: string;
+  image?: any
+  title: string
+  url: string
+  date?: string
+  tags?: []
+  className?: string
+  imageType?: "fixed" | "fluid"
+  readTime?: string
 }
 
 const MasonryCard: React.FunctionComponent<MasonryCardProps> = ({
@@ -38,19 +38,19 @@ const MasonryCard: React.FunctionComponent<MasonryCardProps> = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses = ['mesonry_card'];
+  const addAllClasses = ["mesonry_card"]
 
   // className prop checking
   if (className) {
-    addAllClasses.push(className);
+    addAllClasses.push(className)
   }
 
   return (
-    <MasonryCardWrapper className={addAllClasses.join(' ')} {...props}>
+    <MasonryCardWrapper className={addAllClasses.join(" ")} {...props}>
       {image == null ? null : (
         <PostPreview className="post_preview">
           <Link to={url}>
-            {imageType === 'fluid' ? (
+            {imageType === "fluid" ? (
               <Img fluid={image} alt="post preview" />
             ) : (
               <Img fixed={image} alt="post preview" />
@@ -91,11 +91,11 @@ const MasonryCard: React.FunctionComponent<MasonryCardProps> = ({
         </ReadMore>
       </PostDetails>
     </MasonryCardWrapper>
-  );
-};
+  )
+}
 
 MasonryCard.defaultProps = {
-  imageType: 'fluid',
-};
+  imageType: "fluid",
+}
 
-export default MasonryCard;
+export default MasonryCard

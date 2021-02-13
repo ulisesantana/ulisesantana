@@ -61,7 +61,6 @@ export const AboutDetails = styled.section`
   p {
     font-size: 120%;
     line-height: 2rem;
-    
   }
 
   .out {

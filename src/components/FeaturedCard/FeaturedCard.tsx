@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
-import _ from 'lodash';
-import Img from 'gatsby-image';
+import * as React from "react"
+import { Link } from "gatsby"
+import _ from "lodash"
+import Img from "gatsby-image"
 import {
   FeaturedCardWrapper,
   PostPreview,
@@ -11,17 +11,17 @@ import {
   PostMeta,
   ReadMore,
   Excerpt,
-} from './FeaturedCard.style';
+} from "./FeaturedCard.style"
 
 interface FeaturedCardProps {
-  image?: any;
-  title: string;
-  description?: string;
-  url: string;
-  tags?: [];
-  className?: string;
-  imageType?: 'fixed' | 'fluid';
-  overlay?: boolean;
+  image?: any
+  title: string
+  description?: string
+  url: string
+  tags?: []
+  className?: string
+  imageType?: "fixed" | "fluid"
+  overlay?: boolean
 }
 
 const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
@@ -35,22 +35,22 @@ const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
   overlay,
   ...props
 }) => {
-  const addClass = ['featured_card'];
+  const addClass = ["featured_card"]
 
   if (overlay == true) {
-    addClass.push('overlay');
+    addClass.push("overlay")
   }
 
   if (className) {
-    addClass.push(className);
+    addClass.push(className)
   }
 
   return (
-    <FeaturedCardWrapper className={addClass.join(' ')} {...props}>
+    <FeaturedCardWrapper className={addClass.join(" ")} {...props}>
       {image == null ? null : (
         <PostPreview className="post_preview">
           <Link to={url}>
-            {imageType === 'fluid' ? (
+            {imageType === "fluid" ? (
               <Img fluid={image} alt="post preview" />
             ) : (
               <Img fixed={image} alt="post preview" />
@@ -76,10 +76,10 @@ const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
           <Link to={url}>{title}</Link>
         </PostTitle>
         {overlay == true ? (
-          ''
+          ""
         ) : (
           <>
-            {' '}
+            {" "}
             {description && (
               <Excerpt
                 dangerouslySetInnerHTML={{
@@ -92,15 +92,15 @@ const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
         )}
 
         <ReadMore className="read_more">
-          <Link to={url}>{overlay == true ? 'Read Story' : 'Read More'}</Link>
+          <Link to={url}>{overlay == true ? "Read Story" : "Read More"}</Link>
         </ReadMore>
       </PostDetails>
     </FeaturedCardWrapper>
-  );
-};
+  )
+}
 
 FeaturedCard.defaultProps = {
-  imageType: 'fluid',
-};
+  imageType: "fluid",
+}
 
-export default FeaturedCard;
+export default FeaturedCard

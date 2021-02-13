@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 const InputWrapper = styled.div`
   position: relative;
@@ -10,10 +10,10 @@ const InputWrapper = styled.div`
     justify-content: space-between;
 
     > label {
-      color: ${themeGet('colors.textColor', '#292929')};
-      font-size: ${themeGet('fontSizes.3', '15')}px;
-      line-height: ${themeGet('lineHeights.normal', '1')};
-      font-weight: ${themeGet('fontWeights.4', '500')};
+      color: ${themeGet("colors.textColor", "#292929")};
+      font-size: ${themeGet("fontSizes.3", "15")}px;
+      line-height: ${themeGet("lineHeights.normal", "1")};
+      font-weight: ${themeGet("fontWeights.4", "500")};
     }
   }
 
@@ -26,7 +26,7 @@ const InputWrapper = styled.div`
 
   .inner-wrap {
     width: 100%;
-    margin-top: ${themeGet('space.4', '15')}px;
+    margin-top: ${themeGet("space.4", "15")}px;
     box-sizing: border-box;
     position: relative;
 
@@ -36,19 +36,19 @@ const InputWrapper = styled.div`
 
     input,
     textarea,
-    input[type='text'],
-    input[type='email'],
-    input[type='number'],
-    input[type='password'] {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"] {
       appearance: none;
       width: 100%;
-      height: ${themeGet('heights.2', '44')}px;
-      border: 1px solid ${themeGet('colors.borderColor', '#DBDBDB')};
-      color: ${themeGet('colors.textColor', '#292929')};
-      font-size: ${themeGet('fontSizes.3', '15')}px;
-      line-height: ${themeGet('lineHeights.normalText', '1.5')};
-      font-weight: ${themeGet('fontWeights.3', '400')};
-      padding: 0 ${themeGet('space.4', '15')}px;
+      height: ${themeGet("heights.2", "44")}px;
+      border: 1px solid ${themeGet("colors.borderColor", "#DBDBDB")};
+      color: ${themeGet("colors.textColor", "#292929")};
+      font-size: ${themeGet("fontSizes.3", "15")}px;
+      line-height: ${themeGet("lineHeights.normalText", "1.5")};
+      font-weight: ${themeGet("fontWeights.3", "400")};
+      padding: 0 ${themeGet("space.4", "15")}px;
       box-sizing: border-box;
       border-radius: 0;
       transition: border-color 0.25s ease;
@@ -59,15 +59,15 @@ const InputWrapper = styled.div`
       }
 
       &:focus {
-        border-color: ${themeGet('colors.textColor', '#292929')};
+        border-color: ${themeGet("colors.textColor", "#292929")};
       }
 
       &::placeholder {
-        color: ${themeGet('colors.textColor', '#292929')};
+        color: ${themeGet("colors.textColor", "#292929")};
       }
     }
 
-    input[type='number'] {
+    input[type="number"] {
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
         -webkit-appearance: none;
@@ -77,8 +77,8 @@ const InputWrapper = styled.div`
 
     textarea {
       height: auto;
-      min-height: ${themeGet('heights.9', '230')}px;
-      padding-top: ${themeGet('space.4', '15')}px;
+      min-height: ${themeGet("heights.9", "230")}px;
+      padding-top: ${themeGet("space.4", "15")}px;
       resize: none;
     }
   }
@@ -95,10 +95,10 @@ const InputWrapper = styled.div`
       position: relative;
 
       .search-icon {
-        width: ${themeGet('widths.2', '45')}px;
+        width: ${themeGet("widths.2", "45")}px;
         height: 100%;
-        font-size: ${themeGet('fontSizes.3', '15')}px;
-        color: ${themeGet('colors.textColor', '#292929')};
+        font-size: ${themeGet("fontSizes.3", "15")}px;
+        color: ${themeGet("colors.textColor", "#292929")};
         display: flex;
         align-items: center;
         justify-content: center;
@@ -113,11 +113,11 @@ const InputWrapper = styled.div`
       }
 
       .icon-left {
-        padding-left: ${themeGet('space.9', '50')}px;
+        padding-left: ${themeGet("space.9", "50")}px;
       }
 
       .icon-right {
-        padding-right: ${themeGet('space.9', '50')}px;
+        padding-right: ${themeGet("space.9", "50")}px;
       }
     }
   }
@@ -126,7 +126,7 @@ const InputWrapper = styled.div`
     label {
       position: absolute;
       left: 15px;
-      color: ${themeGet('colors.inactiveColor', '#767676')};
+      color: ${themeGet("colors.inactiveColor", "#767676")};
       font-weight: 400;
       top: 3px;
       transition: all 0.2s ease;
@@ -134,10 +134,10 @@ const InputWrapper = styled.div`
 
     input,
     textarea,
-    input[type='text'],
-    input[type='email'],
-    input[type='number'],
-    input[type='password'] {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"] {
       border-radius: 0;
       border-top: 0;
       border-left: 0;
@@ -146,7 +146,7 @@ const InputWrapper = styled.div`
       padding-right: 15px;
       height: auto;
       background: transparent;
-      border-color: ${themeGet('colors.textColor', '#292929')};
+      border-color: ${themeGet("colors.textColor", "#292929")};
     }
 
     textarea {
@@ -204,13 +204,13 @@ const InputWrapper = styled.div`
     /* Material input focus style */
     &.is-focus {
       input {
-        border-color: ${themeGet('colors.inactiveIcon', '#ebebeb')};
+        border-color: ${themeGet("colors.inactiveIcon", "#ebebeb")};
       }
 
       label {
         top: -10px;
         font-size: 12px;
-        color: ${themeGet('colors.textColor', '#484848')};
+        color: ${themeGet("colors.textColor", "#484848")};
       }
 
       .highlight {
@@ -220,6 +220,6 @@ const InputWrapper = styled.div`
       }
     }
   }
-`;
+`
 
-export default InputWrapper;
+export default InputWrapper

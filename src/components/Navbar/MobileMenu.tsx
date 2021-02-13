@@ -50,10 +50,11 @@ const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
         <DrawerContentWrapper>
           <DrawerHead>
             <DrawerLogo>
-              {!!logo && <Link to="/">
-                <img src={logo} alt="logo" />
-              </Link>
-              }
+              {!!logo && (
+                <Link to="/">
+                  <img src={logo} alt="logo" />
+                </Link>
+              )}
             </DrawerLogo>
             <DrawerClose onClick={toggleDrawer}>
               <FiX />

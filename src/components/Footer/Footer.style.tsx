@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 const FooterWrapper = styled.footer`
   position: relative;
   overflow: hidden;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   padding: 30px 15px;
   text-align: center;
   border-top: 1px solid #f3f3f3;
@@ -21,9 +21,9 @@ const FooterWrapper = styled.footer`
   }
 
   a {
-    color: ${themeGet('colors.black', '#292929')};
+    color: ${themeGet("colors.black", "#292929")};
     transition: 0.15s ease-in-out;
   }
-`;
+`
 
-export default FooterWrapper;
+export default FooterWrapper

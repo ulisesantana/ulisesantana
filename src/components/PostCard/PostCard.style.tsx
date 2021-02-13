@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 export const PostCardWrapper = styled.div`
   position: relative;
-`;
+`
 
 export const PostPreview = styled.div`
   margin-bottom: 45px;
@@ -13,7 +13,7 @@ export const PostPreview = styled.div`
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 80%;
     height: 80%;
@@ -22,11 +22,11 @@ export const PostPreview = styled.div`
     left: 10%;
     filter: blur(15px);
   }
-`;
+`
 
 export const PostDetails = styled.div`
   display: flex;
-`;
+`
 
 export const PostDate = styled.div`
   font-size: 90px;
@@ -35,7 +35,7 @@ export const PostDate = styled.div`
   padding: 30px 35px 15px 35px;
   margin-right: 20px;
   line-height: 1;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   @media (max-width: 1200px) {
     font-size: 70px;
     padding: 25px 25px 15px 25px;
@@ -57,20 +57,20 @@ export const PostDate = styled.div`
     margin-top: 12px;
     text-transform: uppercase;
   }
-`;
+`
 
 export const PostContent = styled.div`
   align-self: center;
-`;
+`
 
 export const PostTitle = styled.h2`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   margin-bottom: 10px;
   a {
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
   }
   @media (max-width: 1200px) {
     font-size: 26px;
@@ -83,18 +83,18 @@ export const PostTitle = styled.h2`
     font-size: 20px;
     margin-bottom: 10px;
   }
-`;
+`
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet('fontSizes.3', '15')}px;
-  color: ${themeGet('textColor', '#292929')};
+  font-size: ${themeGet("fontSizes.3", "15")}px;
+  color: ${themeGet("textColor", "#292929")};
   font-weight: 400;
   line-height: 2;
   margin-bottom: 0;
   @media (max-width: 990px) {
     font-size: 14px;
   }
-`;
+`
 
 export const PostTags = styled.div`
   display: flex;
@@ -113,4 +113,4 @@ export const PostTags = styled.div`
       margin-right: 25px;
     }
   }
-`;
+`
