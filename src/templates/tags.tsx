@@ -38,11 +38,16 @@ const Tags = ({ pageContext, data }: any) => {
 export default Tags
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($tag: String, $draftDisabledList: [Boolean!]!) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { 
+        frontmatter: { 
+            tags: { in: [$tag] },
+            draft: { nin: $draftDisabledList } 
+        } 
+      }
     ) {
       totalCount
       edges {

@@ -43,8 +43,9 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
   const { currentPage, numPages, lang = "es" } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage =
-    currentPage - 1 === 1 ? "/page/1" : `/page/${(currentPage - 1).toString()}`
+  const prevPage = currentPage - 1 === 1
+      ? "/blog"
+      : `/page/${(currentPage - 1).toString()}`
   const nextPage = `/page/${(currentPage + 1).toString()}`
   const PrevLink = !isFirst && prevPage
   const NextLink = !isLast && nextPage

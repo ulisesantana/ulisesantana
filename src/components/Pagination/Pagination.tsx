@@ -35,7 +35,7 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({
       </PrevPage>
 
       <PageNumber>
-        {totalPage > 1 && `Página ${currentPage} de ${totalPage}`}
+        {+totalPage > 1 && `Página ${currentPage} de ${totalPage}`}
       </PageNumber>
 
       <NextPage>

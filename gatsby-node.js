@@ -2,6 +2,8 @@ const path = require(`path`)
 const _ = require('lodash')
 const {createFilePath} = require(`gatsby-source-filesystem`)
 
+const draftDisabledList = process.env.NODE_ENV === `production` ? [true] : []
+
 const createPostHandler = (createPage) => (post, index, posts) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -11,7 +13,7 @@ const createPostHandler = (createPage) => (post, index, posts) => {
         path:  slug,
         component: path.resolve(`./src/templates/blog-post.tsx`),
         context: {
-            draftDisabledList: process.env.NODE_ENV === `production` ? [true] : [],
+            draftDisabledList,
             slug,
             previous,
             next,
@@ -25,7 +27,7 @@ const createPostListHandler = (createPage, postsPerPage, numPages) => (_, i) => 
         path: i === 0 ? `/blog` : `/page/${i + 1}`,
         component:  path.resolve(`./src/templates/blog-list.tsx`),
         context: {
-            draftDisabledList: process.env.NODE_ENV === `production` ? [true] : [],
+            draftDisabledList,
             limit: postsPerPage,
             skip: i * postsPerPage,
             numPages,
@@ -43,6 +45,10 @@ exports.createPages = ({graphql, actions}) => {
         `
       {
         allMarkdownRemark(
+          ${process.env.NODE_ENV === 'production' 
+            ? `filter: { frontmatter: { draft: { nin: ${draftDisabledList} } } }`
+            : ''
+          }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -106,6 +112,7 @@ exports.createPages = ({graphql, actions}) => {
                 component: tagTemplate,
                 context: {
                     tag,
+                    draftDisabledList
                 },
             })
         })
@@ -118,7 +125,6 @@ exports.onCreateNode = ({node, actions, getNode}) => {
     const {createNodeField} = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({node, getNode})
         if (typeof node.frontmatter.slug !== 'undefined') {
             createNodeField({
                 node,
