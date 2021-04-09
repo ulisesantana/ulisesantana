@@ -85,7 +85,7 @@ export const PostContent = styled.div`
 `
 
 export const PostTitle = styled.h2`
-  font-size: 21px;
+  font-size: ${themeGet("fontSizes.3", "34")}px;
   font-weight: 700;
   color: ${themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
@@ -94,27 +94,20 @@ export const PostTitle = styled.h2`
   a {
     color: ${themeGet("colors.textColor", "#292929")};
   }
-  @media (max-width: 1200px) {
-    font-size: 21px;
-  }
   @media (max-width: 990px) {
-    font-size: 19px;
     margin-bottom: 12px;
   }
   @media (max-width: 575px) {
-    font-size: 17px;
+    font-size: ${themeGet("fontSizes.2", "21")}px;
   }
 `
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet("fontSizes.3", "15")}px;
+  font-size: ${themeGet("fontSizes.2", "21")}px;
   color: ${themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   line-height: 2;
   margin: 0;
-  @media (max-width: 990px) {
-    font-size: 14px;
-  }
 `
 
 export const PostTags = styled.div`

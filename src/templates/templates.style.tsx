@@ -21,9 +21,6 @@ export const BlogPostsWrapper = styled.main`
     @media (max-width: 990px) {
       margin-bottom: 36px;
     }
-    @media (max-width: 575px) {
-      margin-bottom: 72px;
-    }
   }
 `
 
@@ -278,7 +275,7 @@ export const BlogPostDetailsWrapper = styled.article`
   @media (max-width: 575px) {
     padding: 0;
     .gatsby-highlight {
-      font-size: ${themeGet("fontSizes.3", "15")}px;
+      font-size: ${themeGet("fontSizes.1", "18")}px;
     }
   }
 `

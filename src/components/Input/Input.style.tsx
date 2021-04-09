@@ -11,7 +11,7 @@ const InputWrapper = styled.div`
 
     > label {
       color: ${themeGet("colors.textColor", "#292929")};
-      font-size: ${themeGet("fontSizes.3", "15")}px;
+      font-size: ${themeGet("fontSizes.1", "18")}px;
       line-height: ${themeGet("lineHeights.normal", "1")};
       font-weight: ${themeGet("fontWeights.4", "500")};
     }
@@ -45,7 +45,7 @@ const InputWrapper = styled.div`
       height: ${themeGet("heights.2", "44")}px;
       border: 1px solid ${themeGet("colors.borderColor", "#DBDBDB")};
       color: ${themeGet("colors.textColor", "#292929")};
-      font-size: ${themeGet("fontSizes.3", "15")}px;
+      font-size: ${themeGet("fontSizes.1", "18")}px;
       line-height: ${themeGet("lineHeights.normalText", "1.5")};
       font-weight: ${themeGet("fontWeights.3", "400")};
       padding: 0 ${themeGet("space.4", "15")}px;
@@ -97,7 +97,7 @@ const InputWrapper = styled.div`
       .search-icon {
         width: ${themeGet("widths.2", "45")}px;
         height: 100%;
-        font-size: ${themeGet("fontSizes.3", "15")}px;
+        font-size: ${themeGet("fontSizes.1", "18")}px;
         color: ${themeGet("colors.textColor", "#292929")};
         display: flex;
         align-items: center;

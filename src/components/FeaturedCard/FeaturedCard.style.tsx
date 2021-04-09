@@ -173,7 +173,7 @@ export const PostTags = styled.div`
 `
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet("fontSizes.3", "15")}px;
+  font-size: ${themeGet("fontSizes.1", "18")}px;
   color: ${themeGet("textColor", "#292929")};
   font-weight: 400;
   line-height: 2;
