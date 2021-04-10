@@ -199,19 +199,16 @@ export const PostDescription = styled.div`
       margin-bottom: 1rem;
     }
   }
-
-  details summary::-webkit-details-marker {
-    display: none;
+  
+  figcaption {
+    text-align: center;
   }
 
   details > summary {
     background-color: ${themeGet("colors.primary", 'yellow')};
-    align-content: center;
     cursor: pointer;
-    display: flex;
     font-size: ${themeGet("fontSizes.2", "21")}px;
     font-weight: bold;
-    justify-content: center;
     text-align: center;
     width: 6rem;
   }
@@ -263,7 +260,7 @@ export const PostDescription = styled.div`
     margin-top: 0px;
   }
 
-  a {
+  a, figcaption a {
     font-weight: 500;
     transition: 0.15s ease-in-out;
     color: ${themeGet("textColor", "black")};
@@ -279,7 +276,7 @@ export const PostDescription = styled.div`
     details > summary {
       font-size: ${themeGet("fontSizes.1", "18")}px;
       font-weight: bold;
-      width: 4rem;
+      width: 5rem;
     }
 
     details > blockquote, blockquote {

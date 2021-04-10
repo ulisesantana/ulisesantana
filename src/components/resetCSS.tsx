@@ -145,7 +145,7 @@ const ResetCSS = createGlobalStyle`
     transition: 0.3s;
   }
   
-  p, span {
+  p, span, figcaption, article li {
     a {
         border-bottom: solid 4px ${themeGet("colors.primary", "yellow")};
         color: ${themeGet("colors.black", "black")}
