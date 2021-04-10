@@ -6,7 +6,7 @@
   "author": "Ulises Santana",
   "dependencies": {
     "@types/node": "^13.7.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.10.0",
     "disqus-react": "^1.0.5",
     "dotenv": "^8.0.0",
