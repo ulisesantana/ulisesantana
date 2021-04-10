@@ -146,7 +146,7 @@ export const PostTitle = styled.h2`
   }
   @media (max-width: 990px) and (min-width: 768px) {
     font-size: 14px;
-    max-height: 3em;
+    max-height: 3rem;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;

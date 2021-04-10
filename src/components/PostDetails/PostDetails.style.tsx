@@ -37,24 +37,30 @@ export const PostDetailsWrapper = styled.section`
 `
 
 export const PostTitle = styled.h1`
-  font-size: ${themeGet("fontSizes.5", "41")}px;
+  font-size: ${themeGet("fontSizes.4", "41")}px;
   font-weight: 700;
   color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   margin-bottom: 10px;
   
   @media (max-width: 575px) {
-    font-size: ${themeGet("fontSizes.4", "34")}px;
+    font-size: ${themeGet("fontSizes.3", "34")}px;
     margin-bottom: 15px;
   }
 `
 
 export const PostDate = styled.span`
-  display: block;
+  display: inline-block;
   font-size: ${themeGet("fontSizes.1", "16")}px;
   color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   text-transform: uppercase;
+  margin-bottom: 2rem;
+  
+  &:after {
+    content: '·';
+    padding: 0 8px;
+  }
   
   @media (max-width: 575px) {
     font-size: 13px;
@@ -62,7 +68,7 @@ export const PostDate = styled.span`
 `
 
 export const PostReadTime = styled.span`
-  display: block;
+  display: inline-block;
   font-size: ${themeGet("fontSizes.1", "16")}px;
   color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
@@ -140,7 +146,7 @@ export const PostDescription = styled.div`
   }
 
   p {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
   }
 
   h1,
@@ -150,17 +156,17 @@ export const PostDescription = styled.div`
   h5,
   h6 {
     font-weight: 500;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.75rem;
   }
 
   h1 {
     font-size: ${themeGet("fontSizes.6", "48")}px;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.75rem;
   }
 
   h2 {
     font-size: ${themeGet("fontSizes.5", "41")}px;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.75rem;
   }
 
   h3 {
@@ -190,8 +196,12 @@ export const PostDescription = styled.div`
     margin-bottom: 0.45rem;
 
     p {
-      margin-bottom: 1em;
+      margin-bottom: 1rem;
     }
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
   }
 
   details > summary {
@@ -199,9 +209,10 @@ export const PostDescription = styled.div`
     align-content: center;
     cursor: pointer;
     display: flex;
-    font-size: ${themeGet("fontSizes.3", "21")}px;
+    font-size: ${themeGet("fontSizes.2", "21")}px;
     font-weight: bold;
     justify-content: center;
+    text-align: center;
     width: 6rem;
   }
 
@@ -234,7 +245,7 @@ export const PostDescription = styled.div`
     }
 
     p {
-      font-size: ${themeGet("fontSizes.2", "18")}px;
+      font-size: ${themeGet("fontSizes.1", "18")}px;
       font-weight: 500;
       line-height: 2;
       margin-bottom: 23px;
@@ -263,20 +274,25 @@ export const PostDescription = styled.div`
   }
   
   @media (max-width: 575px) {
-    font-size: ${themeGet("fontSizes.1", "16")}px;
+    font-size: ${themeGet("fontSizes.0", "16")}px;
 
     details > summary {
-      font-size: ${themeGet("fontSizes.2", "18")}px;
+      font-size: ${themeGet("fontSizes.1", "18")}px;
       font-weight: bold;
+      width: 4rem;
     }
 
     details > blockquote, blockquote {
-      font-size: ${themeGet("fontSizes.1", "16")}px;
-      margin: 40px 0;
+      font-size: ${themeGet("fontSizes.0", "16")}px;
+      margin: 16px 0;
       
       p {
-        font-size: ${themeGet("fontSizes.1 21", "16")}px;
+        font-size: ${themeGet("fontSizes.0", "16")}px;
       }
+    }
+    
+    details > blockquote {
+      margin-top: 0px;
     }
   }
   
@@ -305,7 +321,7 @@ export const PostTags = styled.div`
   a {
     display: block;
     margin-right: 30px;
-    font-size: ${themeGet("fontSizes.2", "18")}px;
+    font-size: ${themeGet("fontSizes.1", "18")}px;
     font-weight: 400;
     color: ${themeGet("primary", "yellow")};
   }

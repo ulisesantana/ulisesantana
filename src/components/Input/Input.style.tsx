@@ -21,7 +21,7 @@ const InputWrapper = styled.div`
     display: block;
     color: #d8000c;
     font-size: 14px;
-    padding-top: 0.5em;
+    padding-top: 0.5rem;
   }
 
   .inner-wrap {

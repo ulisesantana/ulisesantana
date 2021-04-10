@@ -50,14 +50,6 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
       <>
         {preview == null ? null : (
           <PostPreview className="post_preview">
-            <div className="post-info">
-              <div className="content">
-                <PostDate color="lightgray">{date}</PostDate>
-                <PostReadTime color="lightgray">
-                  {timeToRead} minuto{timeToRead === 1 ? "" : "s"} de lectura
-                </PostReadTime>
-              </div>
-            </div>
             <Img fluid={preview} alt={title} />
           </PostPreview>
         )}
@@ -68,9 +60,18 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
           <>
             <PostTitle>{title}</PostTitle>
             <PostDate>{date}</PostDate>
+            <PostReadTime color="lightgray">
+              {timeToRead} minuto{timeToRead === 1 ? "" : "s"} de lectura
+            </PostReadTime>
           </>
         ) : (
-            <PostTitle>{title}</PostTitle>
+            <>
+              <PostTitle>{title}</PostTitle>
+              <PostDate>{date}</PostDate>
+              <PostReadTime>
+                {timeToRead} minuto{timeToRead === 1 ? "" : "s"} de lectura
+              </PostReadTime>
+            </>
         )}
 
         <PostDescription
