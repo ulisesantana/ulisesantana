@@ -103,7 +103,7 @@ export const PostTitle = styled.h2`
 `
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet("fontSizes.2", "21")}px;
+  font-size: ${themeGet("fontSizes.0", "16")}px;
   color: ${themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   line-height: 2;
