@@ -8,7 +8,7 @@ draft: false
 ---
 
 <details>
-    <summary>
+    <summary role="button">
         TL;DR
     </summary>
 
@@ -46,14 +46,14 @@ vidas o cosas que les reconfortan. Por no hablar del hecho de que las redes
 sociales son los escaparates donde nos vendemos al resto del mundo. La vida de
 una persona es mucho más que lo que muestra en redes sociales.
 
-Con este panorama da la sensación de que si eres profesional del software estás
-todo el día detrás de la pantalla haciendo cursos, proyectos y leyendo libros.
-Esto puede ser cierto por épocas, pero es inviable pensar que vas a estar así el
-resto de tu vida. Aprendizaje continuo sí, pasar 80 horas a la semana delante
-del ordenador, no. Eres responsable de tu aprendizaje, pero también 
-responsable de tu salud y no quemarte por haberte pasado de exigente. Yo 
-siento que a veces tenía el límite demasiado borroso y tuve épocas malas a 
-raíz de no saber cuando parar.
+Con este panorama da la sensación de que si eres profesional del software tienes
+que estar todo el día detrás de la pantalla haciendo cursos, proyectos y leyendo
+libros. Esto puede ser así en algunos momentos de tu carrera, pero es inviable
+pensar que vas a estar así el resto de tu vida. Aprendizaje continuo sí, pasar
+80 horas a la semana delante del ordenador, no. Eres responsable de tu
+aprendizaje, pero también responsable de tu salud y no quemarte por haberte
+pasado de exigente. Yo siento que a veces tenía el límite demasiado borroso y
+tuve épocas malas a raíz de no saber cuando parar.
 
 Me pasé desde 2015 hasta 2020 sin descansar en las vacaciones que tenía. Desde
 que comencé el ciclo superior de desarrollo de aplicaciones web me puse como
