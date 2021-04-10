@@ -1,17 +1,17 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { MenuItemWrapper, MenuItem } from './Navbar.style';
+import React from "react"
+import { Link } from "gatsby"
+import { MenuItemWrapper, MenuItem } from "./Navbar.style"
 
 type MenuProps = {
-  items: MenuItemsProps[];
-  className?: string;
-};
+  items: MenuItemsProps[]
+  className?: string
+}
 
 type MenuItemsProps = {
-  url: string;
-  label: string;
-  external?: boolean;
-};
+  url: string
+  label: string
+  external?: boolean
+}
 
 const Menu: React.FunctionComponent<MenuProps> = ({
   items,
@@ -19,15 +19,15 @@ const Menu: React.FunctionComponent<MenuProps> = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses = ['menu'];
+  const addAllClasses = ["menu"]
 
   // className prop checking
   if (className) {
-    addAllClasses.push(className);
+    addAllClasses.push(className)
   }
 
   return (
-    <MenuItemWrapper className={addAllClasses.join(' ')} {...props}>
+    <MenuItemWrapper className={addAllClasses.join(" ")} {...props}>
       {items.map((item, index) => (
         <MenuItem key={index}>
           {item.external ? (
@@ -40,7 +40,7 @@ const Menu: React.FunctionComponent<MenuProps> = ({
         </MenuItem>
       ))}
     </MenuItemWrapper>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

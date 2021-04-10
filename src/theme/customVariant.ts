@@ -1,17 +1,17 @@
-import { variant } from 'styled-system';
+import { variant } from "styled-system"
 
 const buttonStyle = variant({
-  key: 'buttonStyles',
-});
+  key: "buttonStyles",
+})
 
 const colorStyle = variant({
-  key: 'colorStyles',
-  prop: 'colors',
-});
+  key: "colorStyles",
+  prop: "colors",
+})
 
 const buttonSize = variant({
-  key: 'buttonSize',
-  prop: 'size',
-});
+  key: "buttonSize",
+  prop: "size",
+})
 
-export { buttonStyle, colorStyle, buttonSize };
+export { buttonStyle, colorStyle, buttonSize }

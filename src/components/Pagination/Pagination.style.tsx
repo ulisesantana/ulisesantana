@@ -1,18 +1,18 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 export const PaginationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 export const PrevPage = styled.div`
   min-width: 32px;
   a {
     width: 32px;
     height: 32px;
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
     border-radius: 50%;
     background-color: #f3f3f3;
     font-size: 18px;
@@ -25,17 +25,17 @@ export const PrevPage = styled.div`
     }
     &:hover {
       color: #fff;
-      background-color: ${themeGet('colors.primary', 'yellow')};
+      background-color: ${themeGet("colors.primary", "yellow")};
     }
   }
-`;
+`
 
 export const NextPage = styled.div`
   min-width: 32px;
   a {
     width: 32px;
     height: 32px;
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
     border-radius: 50%;
     background-color: #f3f3f3;
     font-size: 18px;
@@ -48,9 +48,9 @@ export const NextPage = styled.div`
     }
     &:hover {
       color: #fff;
-      background-color: ${themeGet('colors.primary', 'yellow')};
+      background-color: ${themeGet("colors.primary", "yellow")};
     }
   }
-`;
+`
 
-export const PageNumber = styled.div``;
+export const PageNumber = styled.div``

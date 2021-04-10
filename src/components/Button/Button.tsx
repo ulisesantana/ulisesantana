@@ -1,19 +1,19 @@
-import React from 'react';
-import ButtonStyle from './Button.style';
+import React from "react"
+import ButtonStyle from "./Button.style"
 
 type ButtonProps = {
-  title: string;
-  icon?: React.ReactNode;
-  disabled?: boolean;
-  onClick?: (e: any) => void;
-  loader?: Object;
-  isLoading?: boolean;
-  className?: string;
-  fullwidth?: boolean;
-  style?: any;
-  type?: 'button' | 'submit' | 'reset';
-  iconPosition?: 'left' | 'right';
-};
+  title: string
+  icon?: React.ReactNode
+  disabled?: boolean
+  onClick?: (e: any) => void
+  loader?: Object
+  isLoading?: boolean
+  className?: string
+  fullwidth?: boolean
+  style?: any
+  type?: "button" | "submit" | "reset"
+  iconPosition?: "left" | "right"
+}
 
 const Button: React.FC<ButtonProps> = ({
   type,
@@ -30,32 +30,32 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses: string[] = ['button'];
+  const addAllClasses: string[] = ["button"]
 
   // isLoading prop checking
   if (disabled) {
-    addAllClasses.push('disabled');
+    addAllClasses.push("disabled")
   }
 
   if (isLoading) {
-    addAllClasses.push('is-loading');
+    addAllClasses.push("is-loading")
   }
 
   // className prop checking
   if (className) {
-    addAllClasses.push(className);
+    addAllClasses.push(className)
   }
 
   // Checking button loading state
   const buttonIcon =
     isLoading == true ? (
-      <>{loader ? loader : 'loading....'}</>
+      <>{loader ? loader : "loading...."}</>
     ) : (
       icon && <span className="btn-icon">{icon}</span>
-    );
+    )
 
   // set icon position
-  const position: string = iconPosition || 'right';
+  const position: string = iconPosition || "right"
 
   const LoadingIcon = () => {
     return (
@@ -70,10 +70,6 @@ const Button: React.FC<ButtonProps> = ({
           cx="50"
           cy="50"
           fill="none"
-          ng-attr-stroke="{{config.color}}"
-          ng-attr-stroke-width="{{config.width}}"
-          ng-attr-r="{{config.radius}}"
-          ng-attr-stroke-dasharray="{{config.dasharray}}"
           stroke="#ffffff"
           strokeWidth="10"
           r="35"
@@ -92,13 +88,13 @@ const Button: React.FC<ButtonProps> = ({
           />
         </circle>
       </svg>
-    );
-  };
+    )
+  }
 
   return (
     <ButtonStyle
       type={type}
-      className={addAllClasses.join(' ')}
+      className={addAllClasses.join(" ")}
       disabled={disabled}
       icon-position={position}
       onClick={onClick}
@@ -106,18 +102,18 @@ const Button: React.FC<ButtonProps> = ({
       style={style}
       {...props}
     >
-      {position === 'left' && buttonIcon}
+      {position === "left" && buttonIcon}
       {title && !isLoading && <span className="btn-text">{title}</span>}
-      {position === 'right' && buttonIcon}
+      {position === "right" && buttonIcon}
       {isLoading && <LoadingIcon />}
     </ButtonStyle>
-  );
-};
+  )
+}
 
 Button.defaultProps = {
   disabled: false,
   isLoading: false,
-  type: 'button',
-};
+  type: "button",
+}
 
-export default Button;
+export default Button

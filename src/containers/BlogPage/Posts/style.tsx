@@ -39,12 +39,12 @@ const BlogPostsWrapper = styled.div`
 
 export const SecTitle = styled.div`
   color: ${themeGet("colors.textColor", "#292929")};
-  font-size: 16px;
+  font-size: ${themeGet("fontSizes.3", "34")}px;
   font-weight: 500;
   font-family: ${themeGet("fontFamily.0", "'Fira Sans',sans-serif")};
-  letter-spacing: 0.17em;
+  letter-spacing: 0.17rem;
   position: relative;
-  margin-bottom: 30px;
+  margin: 30px 0;
 
   &:after {
     content: "";

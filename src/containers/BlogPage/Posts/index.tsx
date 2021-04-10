@@ -46,7 +46,8 @@ const Posts: React.FunctionComponent<PostsProps> = ({
       <SecTitle>{translations[lang].latestPosts}</SecTitle>
       {posts.map(({ node }: Post) => {
         const title = node.frontmatter.title || node.fields.slug
-        return (<PostCardMinimal
+        return (
+          <PostCardMinimal
             key={node.fields.slug}
             title={title}
             image={

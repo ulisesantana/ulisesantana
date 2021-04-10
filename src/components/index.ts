@@ -20,4 +20,4 @@ export * from "./PostList/PostList"
 export * from "./Layout"
 export * from "./Seo"
 export * from "./Section"
-export * from './LangIcon'
+export * from "./LangIcon"

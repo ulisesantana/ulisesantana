@@ -88,8 +88,8 @@ const ResetCSS = createGlobalStyle`
   }
 
   pre[class*="language-"] {
-    padding: 1.5em;
-    margin: 2em 0;
+    padding: 1.5rem;
+    margin: 2rem 0;
     overflow: auto;
   }
 
@@ -99,7 +99,7 @@ const ResetCSS = createGlobalStyle`
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
     line-height: 1.6;
   }
 
@@ -119,7 +119,7 @@ const ResetCSS = createGlobalStyle`
   table td,
   table th {
     border: 1px solid #dfe2e5;
-    padding: .4em 1em;
+    padding: .4rem 1rem;
   }
 
   .nav-sticky{
@@ -140,14 +140,14 @@ const ResetCSS = createGlobalStyle`
   }
   
   body {
-    width: 100vw !important;
+    width: 100% !important;
     overflow-x: hidden;
     transition: 0.3s;
   }
   
   p, span {
     a {
-        border-bottom: solid 4px ${themeGet('colors.primary', 'yellow')};
+        border-bottom: solid 4px ${themeGet("colors.primary", "yellow")};
         color: ${themeGet("colors.black", "black")}
         font-weight: 700;
         transition: all ease-in-out 0.3s;
@@ -195,8 +195,8 @@ const ResetCSS = createGlobalStyle`
     }
   } */
 `
-import {createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
-import {themeGet} from "styled-system"
+import { themeGet } from "styled-system"
 
 export default ResetCSS

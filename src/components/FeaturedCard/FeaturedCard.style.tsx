@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 export const FeaturedCardWrapper = styled.div`
   position: relative;
@@ -25,7 +25,7 @@ export const FeaturedCardWrapper = styled.div`
       }
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -51,7 +51,7 @@ export const FeaturedCardWrapper = styled.div`
     }
     .post_title {
       font-size: 15px;
-      font-family: 'Fira Sans', sans-serif;
+      font-family: "Fira Sans", sans-serif;
       line-height: 1.4;
       margin-bottom: 18px;
       a {
@@ -65,7 +65,7 @@ export const FeaturedCardWrapper = styled.div`
       }
     }
   }
-`;
+`
 
 export const PostPreview = styled.div`
   position: relative;
@@ -76,7 +76,7 @@ export const PostPreview = styled.div`
   a {
     display: block;
   }
-`;
+`
 
 export const PostDetails = styled.div`
   position: absolute;
@@ -108,30 +108,30 @@ export const PostDetails = styled.div`
     left: 15px;
     padding: 20px;
   }
-`;
+`
 
 export const PostMeta = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-`;
+`
 
 export const ReadMore = styled.div`
   a {
     font-size: 13px;
     font-weight: 700;
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
     text-decoration: underline;
   }
-`;
+`
 
 export const PostTitle = styled.h2`
   font-size: 21px;
   font-weight: 700;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   margin-bottom: 10px;
   a {
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
   }
   @media (max-width: 1400px) {
     font-size: 18px;
@@ -146,12 +146,12 @@ export const PostTitle = styled.h2`
   }
   @media (max-width: 990px) and (min-width: 768px) {
     font-size: 14px;
-    max-height: 3em;
+    max-height: 3rem;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
   }
-`;
+`
 
 export const PostTags = styled.div`
   display: flex;
@@ -170,11 +170,11 @@ export const PostTags = styled.div`
       margin-right: 15px;
     }
   }
-`;
+`
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet('fontSizes.3', '15')}px;
-  color: ${themeGet('textColor', '#292929')};
+  font-size: ${themeGet("fontSizes.1", "18")}px;
+  color: ${themeGet("textColor", "#292929")};
   font-weight: 400;
   line-height: 2;
   margin-bottom: 30px;
@@ -184,4 +184,4 @@ export const Excerpt = styled.p`
   @media (max-width: 1024px) {
     display: none;
   }
-`;
+`

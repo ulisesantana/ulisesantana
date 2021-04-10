@@ -1,3 +1,3 @@
-import _ from './Milestone';
-export default _;
-export * from './Milestone'
+import _ from "./Milestone"
+export default _
+export * from "./Milestone"

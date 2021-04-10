@@ -65,7 +65,7 @@ export const MenuItem = styled.li`
   list-style: none;
   a {
     color: ${themeGet("colors.lightTextColor", "#757575")};
-    font-size: ${themeGet("fontSizes.3", "15")}px;
+    font-size: ${themeGet("fontSizes.1", "18")}px;
     font-weight: ${themeGet("fontWeights.3", "400")};
     line-height: ${themeGet("lineHeights.normal", "1")};
     padding: 5px 10px;

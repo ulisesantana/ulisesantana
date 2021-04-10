@@ -73,7 +73,7 @@ export const NewsletterTitle = styled.h1`
 `
 
 export const NewsletterDescription = styled.p`
-  font-size: ${themeGet("fontSizes.3", "15")}px;
+  font-size: ${themeGet("fontSizes.1", "18")}px;
   line-height: ${themeGet("lineHeights.text", "2")};
   font-weight: ${themeGet("fontWeights.3", "400")};
   color: ${themeGet("colors.textColor", "#292929")};

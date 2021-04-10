@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components"
+import { themeGet } from "styled-system"
 
 export const MasonryCardWrapper = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ export const MasonryCardWrapper = styled.div`
       }
     }
   }
-`;
+`
 
 export const PostPreview = styled.div`
   margin-bottom: 15px;
@@ -23,27 +23,27 @@ export const PostPreview = styled.div`
     display: block;
     transition: 0.25s ease-in-out;
   }
-`;
+`
 
-export const PostDetails = styled.div``;
+export const PostDetails = styled.div``
 
 export const PostMeta = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-`;
+`
 
 export const PostDate = styled.div`
   font-size: 13px;
-  color: ${themeGet('colors.lightTextColor', '#757575')};
+  color: ${themeGet("colors.lightTextColor", "#757575")};
   @media (max-width: 990px) {
     font-size: 12px;
   }
-`;
+`
 
 export const ReadingTime = styled.div`
   font-size: 13px;
-  color: ${themeGet('colors.lightTextColor', '#757575')};
+  color: ${themeGet("colors.lightTextColor", "#757575")};
   position: relative;
   padding-left: 7px;
   margin-left: 5px;
@@ -52,7 +52,7 @@ export const ReadingTime = styled.div`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -61,14 +61,14 @@ export const ReadingTime = styled.div`
     height: 2px;
     border-radius: 50%;
     display: block;
-    background: ${themeGet('colors.lightTextColor', '#757575')};
+    background: ${themeGet("colors.lightTextColor", "#757575")};
   }
-`;
+`
 
 export const ReadMore = styled.div`
   a {
     font-size: 15px;
-    color: ${themeGet('colors.lightTextColor', '#757575')};
+    color: ${themeGet("colors.lightTextColor", "#757575")};
     display: inline-flex;
     align-items: center;
     transition: 0.15s ease-in-out;
@@ -76,7 +76,7 @@ export const ReadMore = styled.div`
       font-size: 14px;
     }
     &:hover {
-      color: ${themeGet('colors.textColor', '#292929')};
+      color: ${themeGet("colors.textColor", "#292929")};
       text-decoration: underline;
     }
     svg {
@@ -85,16 +85,16 @@ export const ReadMore = styled.div`
       margin-top: 1px;
     }
   }
-`;
+`
 
 export const PostTitle = styled.h2`
   font-size: 21px;
   font-weight: 700;
-  color: ${themeGet('colors.textColor', '#292929')};
+  color: ${themeGet("colors.textColor", "#292929")};
   line-height: 2;
   margin-bottom: 15px;
   a {
-    color: ${themeGet('colors.textColor', '#292929')};
+    color: ${themeGet("colors.textColor", "#292929")};
   }
   @media (max-width: 1200px) {
     font-size: 19px;
@@ -105,7 +105,7 @@ export const PostTitle = styled.h2`
   @media (max-width: 990px) {
     font-size: 15px;
   }
-`;
+`
 
 export const PostTags = styled.div`
   display: flex;
@@ -122,10 +122,10 @@ export const PostTags = styled.div`
     margin-left: 20px;
     font-size: 13px;
     font-weight: 400;
-    color: ${themeGet('primary', 'yellow')};
+    color: ${themeGet("primary", "yellow")};
     @media (max-width: 990px) {
       font-size: 13px;
       margin-left: 25px;
     }
   }
-`;
+`

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { SpanishLayout } from "../components"
-import {SEO} from "../components"
+import { SEO } from "../components"
 import { TagName, TagPageHeading, TagPostsWrapper } from "./templates.style"
 import PostCard from "../components/PostCard/PostCard"
 
@@ -10,12 +10,15 @@ const Tags = ({ pageContext, data }: any) => {
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <SpanishLayout>
-      <SEO title={tag} description={`Un lista de ${totalCount} entradas sobre ${tag}`} />
+      <SEO
+        title={tag}
+        description={`Un lista de ${totalCount} entradas sobre ${tag}`}
+      />
 
       <TagPostsWrapper>
         <TagPageHeading>
           <TagName>{tag}</TagName>
-          {`${totalCount} entrada${totalCount === 1 ? '' : 's'} sobre ${tag}`}
+          {`${totalCount} entrada${totalCount === 1 ? "" : "s"} sobre ${tag}`}
         </TagPageHeading>
         {edges.map(({ node }: any) => (
           <PostCard
@@ -35,11 +38,16 @@ const Tags = ({ pageContext, data }: any) => {
 export default Tags
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($tag: String, $draftDisabledList: [Boolean!]!) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { 
+        frontmatter: { 
+            tags: { in: [$tag] },
+            draft: { nin: $draftDisabledList } 
+        } 
+      }
     ) {
       totalCount
       edges {

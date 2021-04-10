@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {themeGet} from "styled-system"
+import { themeGet } from "styled-system"
 
 export const BlogPostsWrapper = styled.main`
   font-size: 150%;
@@ -16,14 +16,10 @@ export const BlogPostsWrapper = styled.main`
     width: 1170px;
   }
 
-
   .post_card {
     margin-bottom: 48px;
     @media (max-width: 990px) {
       margin-bottom: 36px;
-    }
-    @media (max-width: 575px) {
-      margin-bottom: 72px;
     }
   }
 `
@@ -51,7 +47,7 @@ export const RelatedPostTitle = styled.h2`
   font-size: 16px;
   font-weight: 500;
   font-family: ${themeGet("fontFamily.0", "'Fira Sans',sans-serif")};
-  letter-spacing: 0.17em;
+  letter-spacing: 0.17rem;
   position: relative;
   margin-bottom: 30px;
 
@@ -128,10 +124,10 @@ export const RelatedPostItem = styled.div`
 
     .post_tags {
       margin-top: 20px;
-      a {  
+      a {
         display: block;
         color: blue;
-      
+
         @media (max-width: 990px) {
           font-size: 12px;
           margin-right: 15px;
@@ -230,7 +226,6 @@ export const BlogPostFooter = styled.footer`
 `
 
 export const BlogPostComment = styled.div`
-
   padding: 24px 0;
 `
 
@@ -265,7 +260,10 @@ export const BlogPostDetailsWrapper = styled.article`
   margin: 0 auto;
   padding-left: 75px;
   padding-right: 75px;
-  
+
+  li a {
+  }
+
   @media (min-width: 1550px) {
     width: 1500px;
     padding-left: 0;
@@ -277,7 +275,7 @@ export const BlogPostDetailsWrapper = styled.article`
   @media (max-width: 575px) {
     padding: 0;
     .gatsby-highlight {
-      font-size: ${themeGet('fontSizes.3', '15')}px;
+      font-size: ${themeGet("fontSizes.1", "18")}px;
     }
   }
 `

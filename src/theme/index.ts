@@ -1,9 +1,17 @@
 import colors from "./colors"
 
+// post header desktop font-size 48px
+// post body desktop font-size 21px
+// post header mobile font-size 34px
+// post body mobile font-size 18px
+
+// thumbnail header font-size 21px
+// thumbnail description font-size 18px
+
 export const theme = {
   breakpoints: [576, 768, 991, 1220],
   space: [0, 5, 8, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100, 120],
-  fontSizes: [12, 14, 15, 16, 18, 24, 30, 36, 48, 80, 96],
+  fontSizes: [16, 18, 21, 34, 41, 48, 80, 96],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
   fontFamily: ["'Fira Sans',sans-serif", "'Poppins', sans-serif"],
   lineHeights: {

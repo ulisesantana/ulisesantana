@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {themeGet} from "styled-system"
+import { themeGet } from "styled-system"
 
 export const IntroWrapper = styled.div`
   width: 940px;
@@ -9,17 +9,17 @@ export const IntroWrapper = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 1400px) {
-    padding: 0px 10px 60px 10px;
+    padding: 0 10px 60px 10px;
   }
   @media (max-width: 1200px) {
-    padding: 0px 10px 50px 10px;
+    padding: 0 10px 50px 10px;
   }
   @media (max-width: 990px) {
-    padding: 0px 25px 40px 25px;
+    padding: 0 25px 40px 25px;
   }
   @media (max-width: 575px) {
     display: block;
-    padding: 0px;
+    padding: 0;
     text-align: center;
   }
 `
@@ -109,8 +109,7 @@ export const Desciption = styled.p`
   color: ${themeGet("colors.textColor", "#292929")};
   font-size: 1.5rem;
   line-height: 2rem;
-  
-  
+
   @media (max-width: 575px) {
     font-size: 1rem;
     line-height: 1.5rem;
