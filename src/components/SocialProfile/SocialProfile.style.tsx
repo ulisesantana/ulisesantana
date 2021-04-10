@@ -76,7 +76,8 @@ export const SocialProfileItem = styled.li`
     }
   }
 
-  a {
+  a, a:visited {
+    border: none;
     color: ${themeGet("colors.textColor", "#292929")};
     font-size: 22px;
     padding: 0.2rem;
