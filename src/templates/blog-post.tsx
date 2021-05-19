@@ -1,24 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
+import {graphql} from "gatsby"
 import _ from "lodash"
-import { DiscussionEmbed } from "disqus-react"
-import { SEO, SpanishLayout } from "../components"
+import {SEO, SpanishLayout} from "../components"
 import PostCard from "../components/PostCard/PostCard"
 import PostDetails from "../components/PostDetails/PostDetails"
+import {FacebookShareButton, PinterestShareButton, RedditShareButton, TwitterShareButton,} from "react-share"
+import {IoLogoFacebook, IoLogoPinterest, IoLogoReddit, IoLogoTwitter,} from "react-icons/io"
 import {
-  FacebookShareButton,
-  PinterestShareButton,
-  RedditShareButton,
-  TwitterShareButton,
-} from "react-share"
-import {
-  IoLogoFacebook,
-  IoLogoPinterest,
-  IoLogoReddit,
-  IoLogoTwitter,
-} from "react-icons/io"
-import {
-  BlogPostComment,
   BlogPostDetailsWrapper,
   BlogPostFooter,
   PostShare,
@@ -33,14 +21,9 @@ import Intro from "../containers/Intro"
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
   const { edges } = props.data.allMarkdownRemark
-  const title = post.frontmatter.title
   const slug = post.frontmatter.slug
   const shareUrl = `${props.data.site.siteMetadata.siteUrl}/${slug}`
 
-  const disqusConfig = {
-    shortname: process.env.DISQUS_NAME,
-    config: { identifier: slug, title },
-  }
   return (
     <SpanishLayout>
       <SEO
@@ -99,11 +82,6 @@ const BlogPostTemplate = (props: any) => {
             </RedditShareButton>
           </PostShare>
         </BlogPostFooter>
-        <BlogPostComment
-          className={post.frontmatter.cover == null ? "center" : ""}
-        >
-          <DiscussionEmbed {...disqusConfig} />
-        </BlogPostComment>
       </BlogPostDetailsWrapper>
 
       {edges.length !== 0 && (
