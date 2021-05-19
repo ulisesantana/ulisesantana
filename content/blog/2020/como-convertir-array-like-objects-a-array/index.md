@@ -28,7 +28,7 @@ En JavaScript existen los array-like objects que pueden parecerse a un array e i
 pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para 
 poder tener a acceso a métodos tan útiles como Array.filter.
 
-Se considera un array-like object todo objeto que tiene propiedades cuyos nombres son números y tienen una propiedad length. 
+**Se considera un array-like object todo objeto que tiene propiedades cuyas claves son números y tienen una propiedad length.** 
 Algunos array-like objects también incluyen [el protocolo iterable](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Iteration_protocols)
 que les permiten ser iterados por un bucle *for of*, como por ejemplo los 
 [NodeList](https://developer.mozilla.org/es/docs/Web/API/NodeList), el [objeto arguments](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/arguments) 
@@ -37,12 +37,12 @@ pero carecen del resto de métodos del prototipo Array. Por lo que si intentas h
 cualquier otro método del prototipo Array te explotará en la cara. También comentar que existen otros elementos en JavaScript 
 como [Set](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Set) y 
 [Map](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Map) que son iterables y se les 
-puede considerar también como array-like objects. Podemos decir que todo iterable es un array-like object, pero no todo 
-array-like object es un iterable.
+puede considerar también como array-like objects. Podemos decir que **todo iterable es un array-like object, pero no todo 
+array-like object es un iterable.**
 
 ## Antes de ES2015
 
-Antes de ES2015 sólo existía una manera de pasar un array-like object a array, **usando Array.prototype.slice.** Concretamente 
+**Antes de ES2015** sólo existía una manera de pasar un array-like object a array, usando **Array.prototype.slice.** Concretamente 
 tenemos que usar el prototipo y llamar al método [*Function.prototype.call*](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call) 
 del método *Array.prototype.slice:*
 ```js
