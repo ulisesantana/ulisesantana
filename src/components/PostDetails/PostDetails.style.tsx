@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import {themeGet} from "styled-system"
 
 export const PostDetailsWrapper = styled.section`
   position: relative;
@@ -11,6 +11,7 @@ export const PostDetailsWrapper = styled.section`
       justify-content: center;
       align-items: flex-start;
     }
+
     .post_preview {
       margin-top: 0;
       @media (min-width: 991px) {
@@ -23,12 +24,14 @@ export const PostDetailsWrapper = styled.section`
         }
       }
     }
+
     .post_des_wrapper {
       @media (min-width: 991px) {
         flex: 0 0 58%;
         max-width: 58%;
         margin: 0;
       }
+
       .post_des {
         margin-top: 60px;
       }
@@ -39,10 +42,10 @@ export const PostDetailsWrapper = styled.section`
 export const PostTitle = styled.h1`
   font-size: ${themeGet("fontSizes.4", "41")}px;
   font-weight: 700;
-  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   margin-bottom: 10px;
-  
+
   @media (max-width: 575px) {
     font-size: ${themeGet("fontSizes.3", "34")}px;
     margin-bottom: 15px;
@@ -52,16 +55,16 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.span`
   display: inline-block;
   font-size: ${themeGet("fontSizes.1", "16")}px;
-  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 2rem;
-  
+
   &:after {
     content: '·';
     padding: 0 8px;
   }
-  
+
   @media (max-width: 575px) {
     font-size: 13px;
   }
@@ -70,10 +73,10 @@ export const PostDate = styled.span`
 export const PostReadTime = styled.span`
   display: inline-block;
   font-size: ${themeGet("fontSizes.1", "16")}px;
-  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   margin-top: 0.4rem;
-  
+
   @media (max-width: 575px) {
     font-size: 13px;
   }
@@ -100,11 +103,9 @@ export const PostPreview = styled.div`
     position: absolute;
     bottom: 0;
     background: rgb(2, 0, 36);
-    background: linear-gradient(
-      0deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(255, 255, 255, 0.01) 100%
-    );
+    background: linear-gradient(0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 255, 255, 0.01) 100%);
     padding: 16px;
     width: 100%;
     height: 25%;
@@ -204,7 +205,7 @@ export const PostDescription = styled.div`
       margin-bottom: 1rem;
     }
   }
-  
+
   figcaption {
     text-align: center;
   }
@@ -223,11 +224,25 @@ export const PostDescription = styled.div`
   }
 
   @keyframes slide-in {
-    0%    {opacity: 0; margin-left: -100%; margin-right: 100%}
-    100%  {opacity: 1; margin-left: 0px; margin-right: 0px}
+    0% {
+      opacity: 0;
+      margin-left: -100%;
+      margin-right: 100%
+    }
+    100% {
+      opacity: 1;
+      margin-left: 0px;
+      margin-right: 0px
+    }
   }
-  
-  details > blockquote, blockquote {
+
+  details > :not(summary) {
+    background-color: ${themeGet("colors.primary", 'yellow')};
+    padding: 16px;
+
+  }
+
+  blockquote {
     background-color: ${themeGet("colors.primary", 'yellow')};
     font-family: "Poppins", sans-serif;
     font-size: ${themeGet("fontSizes.2", "18")}px;
@@ -235,7 +250,7 @@ export const PostDescription = styled.div`
     font-weight: 500;
     line-height: 2;
     margin: 32px 0;
-    
+
     &:before,
     &:after {
       background: #292929;
@@ -251,8 +266,9 @@ export const PostDescription = styled.div`
       font-weight: 500;
       line-height: 2;
       margin-bottom: 23px;
-      
+
     }
+
     h4 {
       font-size: 16px;
       margin: 0;
@@ -270,11 +286,11 @@ export const PostDescription = styled.div`
     transition: 0.15s ease-in-out;
     color: ${themeGet("textColor", "black")};
   }
-  
+
   &:last-child {
     margin-bottom: 0;
   }
-  
+
   @media (max-width: 575px) {
     font-size: ${themeGet("fontSizes.0", "16")}px;
 
@@ -287,17 +303,17 @@ export const PostDescription = styled.div`
     details > blockquote, blockquote {
       font-size: ${themeGet("fontSizes.0", "16")}px;
       margin: 16px 0;
-      
+
       p {
         font-size: ${themeGet("fontSizes.0", "16")}px;
       }
     }
-    
+
     details > blockquote {
       margin-top: 0px;
     }
   }
-  
+
 `
 
 export const PostDescriptionWrapper = styled.div`

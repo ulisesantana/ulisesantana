@@ -7,6 +7,23 @@ cover: ./thumbnail.png
 draft: false
 ---
 
+<details>
+    <summary role="button">
+        TL;DR
+    </summary>
+<div>
+
+Estas son las tres maneras posibles de convertir un array-like object a array en JavaScript, siendo el Array.prototype.slice el que mejor rendimiento ofrece:
+
+```js
+const charsArray = Array.prototype.slice.call('Hola Mundo!')
+const charsArray2 = Array.from('Hola Mundo!') 
+const charsArray3 = [...'Hola Mundo!'] 
+```
+
+</div>
+</details>
+
 En JavaScript existen los array-like objects que pueden parecerse a un array e incluso algunos se pueden iterar, 
 pero no tienen el mismo comportamiento que un array. Por ello en ocasiones es necesario convertirlo en un array para 
 poder tener a acceso a métodos tan útiles como Array.filter.
@@ -23,16 +40,9 @@ como [Set](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objet
 puede considerar también como array-like objects. Podemos decir que todo iterable es un array-like object, pero no todo 
 array-like object es un iterable.
 
-## TLDR;
-```js
-const charsArray = Array.prototype.slice.call('Hola Mundo!')
-const charsArray2 = Array.from('Hola Mundo!') 
-const charsArray3 = [...'Hola Mundo!'] 
-```
-
 ## Antes de ES2015
 
-Antes de ES2015 sólo existía una manera de pasar un array-like object a array, **usando Array.prototype.slice**. Concretamente 
+Antes de ES2015 sólo existía una manera de pasar un array-like object a array, **usando Array.prototype.slice.** Concretamente 
 tenemos que usar el prototipo y llamar al método [*Function.prototype.call*](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call) 
 del método *Array.prototype.slice:*
 ```js
@@ -54,7 +64,7 @@ console.log(charsArray) // [ 'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o', '
 Con ES2015 JavaScript dió un gran salto gracias a la gran cantidad de nuevas características dentro del lenguaje que 
 llegaron para facilitar el desarrollo y también atraer a nuevos desarrolladores a JavaScript. Entre todas las novedades 
 que llegaron con este nuevo estándar hay dos que permitieron facilitar el paso de array-like objects a array:
-*Array.from* y la sintaxis extendida o syntax spread, también conocida como *spread operator*. 
+**Array.from** y la sintaxis extendida o syntax spread, también conocida como **spread operator**. 
 
 ### Array.from
 
