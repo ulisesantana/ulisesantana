@@ -147,6 +147,11 @@ export const PostDescription = styled.div`
 
   p {
     margin-bottom: 2rem;
+
+    strong {
+      background-color: ${themeGet("colors.primary", 'yellow')};
+      padding: 8px;
+    }
   }
 
   h1,
