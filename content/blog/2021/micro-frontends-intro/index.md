@@ -101,6 +101,8 @@ muestran en la página.
 
 ## Recursos
 
+Si te interesa saber más sobre micro frontends, estos enlaces te pueden ayudar:
+
 - [Lessons from DAZN: Scaling Your Project with Micro-Frontends](https://www.infoq.com/presentations/dazn-microfrontend/)
 - [Micro Frontends](https://micro-frontends-es.org/)
 - [Micro Frontends post](https://martinfowler.com/articles/micro-frontends.html)
