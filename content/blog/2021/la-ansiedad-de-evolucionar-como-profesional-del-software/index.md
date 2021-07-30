@@ -81,7 +81,7 @@ bailao*.
         <small>
             En mi primera NodeCONF EU fui a un taller para hacer mi primera aportación
         a NodeJS. El problema es que fui con un chromebook que tardó casi 2 horas en
-        compilar NodeJS.
+        compilar Node.js.
         </small>
     </figcaption>
 </figure>
