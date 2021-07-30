@@ -125,7 +125,12 @@ export const PostPreview = styled.div`
 `
 
 export const PostDescription = styled.div`
-  font-size: ${themeGet("fontSizes.2", "18")}px;
+  font-size: ${themeGet("fontSizes.3", "18")}px;
+
+  a.gatsby-resp-image-link {
+    border-bottom: none;
+  }
+
 
   .badge {
     display: block;
