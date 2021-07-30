@@ -166,29 +166,29 @@ export const PostDescription = styled.div`
   }
 
   h1 {
-    font-size: ${themeGet("fontSizes.6", "48")}px;
+    font-size: ${themeGet("fontSizes.6", "41")}px;
     margin-bottom: 0.75rem;
   }
 
   h2 {
-    font-size: ${themeGet("fontSizes.5", "41")}px;
+    font-size: ${themeGet("fontSizes.5", "34")}px;
     margin-bottom: 0.75rem;
   }
 
   h3 {
-    font-size: ${themeGet("fontSizes.4", "34")}px;
+    font-size: ${themeGet("fontSizes.4", "21")}px;
   }
 
   h4 {
-    font-size: ${themeGet("fontSizes.3", "21")}px;
+    font-size: ${themeGet("fontSizes.3", "18")}px;
   }
 
   h5 {
-    font-size: ${themeGet("fontSizes.2", "18")}px;
+    font-size: ${themeGet("fontSizes.2", "16")}px;
   }
 
   h6 {
-    font-size: ${themeGet("fontSizes.1", "16")}px;
+    font-size: ${themeGet("fontSizes.1", "14")}px;
   }
 
   ol,
@@ -213,7 +213,7 @@ export const PostDescription = styled.div`
   details > summary {
     background-color: ${themeGet("colors.primary", 'yellow')};
     cursor: pointer;
-    font-size: ${themeGet("fontSizes.2", "21")}px;
+    font-size: ${themeGet("fontSizes.3", "21")}px;
     font-weight: bold;
     text-align: center;
     width: 6rem;
@@ -245,7 +245,7 @@ export const PostDescription = styled.div`
   blockquote {
     background-color: ${themeGet("colors.primary", 'yellow')};
     font-family: "Poppins", sans-serif;
-    font-size: ${themeGet("fontSizes.2", "18")}px;
+    font-size: ${themeGet("fontSizes.3", "18")}px;
     padding: 16px;
     font-weight: 500;
     line-height: 2;
@@ -262,7 +262,7 @@ export const PostDescription = styled.div`
     }
 
     p {
-      font-size: ${themeGet("fontSizes.1", "18")}px;
+      font-size: ${themeGet("fontSizes.2", "18")}px;
       font-weight: 500;
       line-height: 2;
       margin-bottom: 23px;
@@ -292,20 +292,44 @@ export const PostDescription = styled.div`
   }
 
   @media (max-width: 575px) {
-    font-size: ${themeGet("fontSizes.0", "16")}px;
+    font-size: ${themeGet("fontSizes.1", "16")}px;
+
+    h1 {
+      font-size: ${themeGet("fontSizes.5", "41")}px;
+    }
+
+    h2 {
+      font-size: ${themeGet("fontSizes.4", "34")}px;
+    }
+
+    h3 {
+      font-size: ${themeGet("fontSizes.3", "21")}px;
+    }
+
+    h4 {
+      font-size: ${themeGet("fontSizes.2", "18")}px;
+    }
+
+    h5 {
+      font-size: ${themeGet("fontSizes.1", "16")}px;
+    }
+
+    h6 {
+      font-size: ${themeGet("fontSizes.0", "14")}px;
+    }
 
     details > summary {
-      font-size: ${themeGet("fontSizes.1", "18")}px;
+      font-size: ${themeGet("fontSizes.2", "18")}px;
       font-weight: bold;
       width: 5rem;
     }
 
     details > blockquote, blockquote {
-      font-size: ${themeGet("fontSizes.0", "16")}px;
+      font-size: ${themeGet("fontSizes.1", "16")}px;
       margin: 16px 0;
 
       p {
-        font-size: ${themeGet("fontSizes.0", "16")}px;
+        font-size: ${themeGet("fontSizes.2", "16")}px;
       }
     }
 
@@ -339,7 +363,7 @@ export const PostTags = styled.div`
   a {
     display: block;
     margin-right: 30px;
-    font-size: ${themeGet("fontSizes.1", "18")}px;
+    font-size: ${themeGet("fontSizes.2", "18")}px;
     font-weight: 400;
     color: ${themeGet("primary", "yellow")};
   }
