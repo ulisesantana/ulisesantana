@@ -151,7 +151,7 @@ export const PostDescription = styled.div`
     margin-bottom: 60px;
   }
 
-  p {
+  p, li, ol {
     margin-bottom: 2rem;
 
     strong {
