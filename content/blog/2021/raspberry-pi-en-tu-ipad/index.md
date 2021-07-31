@@ -97,8 +97,15 @@ Sin embargo, por comodidad es bastante más cómodo hacerlo por ssh.
 La forma más fácil de hacerlo es **crear un archivo vacío y sin extensión con el nombre `ssh`** en la raíz de *boot*. De
 esta manera no necesitas conectar la Raspberry a nada para poder empezar a trastear con ella. Para crear el archivo
 puedes hacerlo por terminal o por entorno gráfico, como te sea más cómodo. En mi caso lo hice en mi Ubuntu por terminal
-con este comando: `touch /media/ulises/boot/ssh`. Si también usas Linux sería cambiar *ulises* por tu usuario. En caso
-de que uses macOS el comando sería `touch /Volumes/boot/ssh`.
+con este comando: 
+```bash
+touch /media/ulises/boot/ssh
+```
+Si también usas Linux sería cambiar *ulises* por tu usuario. En caso
+de que uses macOS el comando sería: 
+```bash
+touch /Volumes/boot/ssh
+```
 
 ### 4. Conecta tu Raspberry Pi por Ethernet a tu router
    
@@ -107,17 +114,28 @@ por WiFi.
 
 ### 5. Accede por ssh a tu Raspberry Pi 
 
-Ahora ya puedes encender a tu Raspberry y conectarte a ella por ssh. Debería ser algo tan sencillo como ejecutar desde
-tu terminal `ssh pi@raspberrypi.local`. Este paso lo hago desde mi ordenador, pero también lo puedes hacer desde tu
-tablet o iPad. Para iPad el cliente ssh que uso y recomiendo es [Blink](https://blink.sh). Es de pago, pero es
-maravillosamente cómodo.
+Ahora ya puedes encender a tu Raspberry y conectarte a ella por ssh. Debería ser algo tan sencillo como ejecutar esto desde
+tu terminal: 
+
+```bash
+ssh pi@raspberrypi.local
+``` 
+
+Te pedirá la contraseña para el usuario `pi` que será `raspberry`, a menos que la hayas cambiado previamente. Este paso
+lo hago desde mi ordenador, pero también lo puedes hacer desde tu tablet o iPad. Para iPad el cliente ssh que uso y
+recomiendo es [Blink](https://blink.sh). Es de pago, pero es maravillosamente cómodo.
 
 ### 6. Actualiza tu Raspberry Pi
 
 Para evitar que algo falle por no tener algún paquete del sistema actualizado vamos a actualizarlo
-ejecutando `sudo apt update -y && sudo apt upgrade -y`. Este proceso tardará un rato. Si por alguna extraña razón se te
-queda congelado el proceso de actualización no tengas miedo de cerrar la terminal, volver a conectarte por ssh y volver
-a ejecutar el comando.
+ejecutando:
+
+```bash
+sudo apt update -y && sudo apt upgrade -y
+```
+
+Este proceso tardará un rato. Si por alguna extraña razón se te queda congelado el proceso de actualización no tengas
+miedo de cerrar la terminal, volver a conectarte por ssh y volver a ejecutar el comando.
 
 El `-y` en los comandos es para
 que en caso de que nos pida confirmar alguna actualización automáticamente lo haga sin esperar nuestra confirmación.
@@ -126,10 +144,14 @@ alguna vez los términos y condiciones de algo antes de darle a *Aceptar*? Por e
 
 ### 7. Configura el país en el que vas a usar la WiFi
 
-Para esto escribimos en la terminal de la Raspberry `sudo raspi-config`. Nos pedirá la contraseña que será `raspberry`,
-a menos que la hayamos cambiado previamente.
+Para esto escribimos en la terminal de la Raspberry: 
 
-Seleccionamos con las flechas del teclado la opción *Localisation Options* y apretamos la tecla *ENTER*
+```bash
+sudo raspi-config
+```
+
+Seleccionamos con las flechas del teclado la
+opción *Localisation Options* y apretamos la tecla *ENTER*
 
 ![Selecciona la opción Localisation options](wifi-connect-step-3-1.png)
 
@@ -153,9 +175,19 @@ la opción `Finish` y darle a *ENTER*. Te pedirá que si quieres reiniciar la Ra
 
 Wifi Connect se instala por defecto en `/usr/local/sbin`. Esto me dió problemas la primera vez que lo instalé
 porque `/usr/local/sbin` no estaba en el PATH de mi Raspberry. Esto se arregla
-ejecutando `echo "PATH=$PATH:/usr/local/sbin" >> $HOME/.bashrc`. De todos modos, a lo mejor en tu caso no es necesario.
-Para comprobar si necesitas actualizar el PATH ejecuta `echo $PATH | grep /usr/local/sbin`. Si aparece es que no
-necesitas hacer este paso, como puedes ver en la siguiente imagen:
+ejecutando:
+```bash
+echo "PATH=$PATH:/usr/local/sbin" >> $HOME/.bashrc
+```
+
+De todos modos, a lo mejor en tu caso no es necesario.
+Para comprobar si necesitas actualizar el PATH ejecuta: 
+
+```bash
+echo $PATH | grep /usr/local/sbin
+```
+
+Si aparece es que no necesitas hacer este paso, como puedes ver en la siguiente imagen:
 
 ![imagen de cómo comprobar si hace falta actualizar el PATH](check-path.png)
 
@@ -164,16 +196,20 @@ también para ella.
 
 ### 9. Instala WiFi Connect
 
-Sólo tendremos que ejecutar este
-comando `bash <(curl -L https://github.com/balena-io/wifi-connect/raw/master/scripts/raspbian-install.sh)` y comenzará
-el proceso de instalación. Cuando nos pregunte para instalar NetworkManager le diremos que sí.
+Sólo tendremos que ejecutar el siguiente comando y comenzará el proceso de instalación. Cuando nos pregunte para
+instalar NetworkManager le diremos que sí.
 
+```bash
+bash <(curl -L https://github.com/balena-io/wifi-connect/raw/master/scripts/raspbian-install.sh)
+```
 
 ### 10. Añade script para arrancar WiFi Connect
 
-Crearemos el siguiente script en `/home/pi/start-wifi-connect.sh`:
+Crearemos el siguiente script en `$HOME/start-wifi-connect.sh`:
 ```bash
 #!/usr/bin/env bash
+sleep 10
+
 # Is there an active WiFi connection?
 iwgetid -r
 
@@ -186,9 +222,15 @@ fi
 ```
 
 Puedes hacerlo a mano tirando de `nano` o también puedes dejar que este comando haga la magia por ti:
-`curl https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe/raw/2acd59d6447f3a1779371fdedd58b3c24eaa9fd2/start-wifi-connect.sh > $HOME/start-wifi-connect.sh`
+```bash
+curl https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe/raw/3698194e9c70b811c7b86d8edde465ebcd503398/start-wifi-connect.sh > $HOME/start-wifi-connect.sh
+```
 
-Una vez tenemos ya el script vamos a darle permisos de ejecución con este comando `sudo chmod +x $HOME/start-wifi-connect.sh`.
+Una vez tenemos ya el script vamos a darle permisos de ejecución con este comando: 
+
+```bash 
+sudo chmod +x $HOME/start-wifi-connect.sh
+```
 
 
 ### 11. Añade servicio para WiFi Connect
@@ -219,21 +261,47 @@ O también podemos crearlo tirando de estos dos comandos:
 ```bash
 # Add wifi-connect service
 ## Download service file
-wget curl https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe/raw/2acd59d6447f3a1779371fdedd58b3c24eaa9fd2/wifi-connect-start.service
+curl https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9e9fbe/raw/2acd59d6447f3a1779371fdedd58b3c24eaa9fd2/wifi-connect-start.service > $HOME/wifi-connect-start.service
 ## Move it to relevant directory
-sudo mv wifi-connect-start.service /lib/systemd/system/wifi-connect-start.service
+sudo mv $HOME/wifi-connect-start.service /lib/systemd/system/wifi-connect-start.service
 ```
 
 ### 12. Habilita servicio para WiFi Connect
 
 Con el servicio de WiFi Connect creado, ahora sólo tenemos que habilitarlo para que se inicie automáticamente al
-encender la Raspberry. Sólo tenemos que ejecutar este comando `sudo systemctl enable wifi-connect-start.service`. Ahora
-para iniciarlo ejecutamos `sudo systemctl start wifi-connect-start.service` y por último para comprobar si está
-funcionando ejecuta `sudo systemctl status wifi-connect-start.service`. Si todo ha ido bien deberías ver algo como esto:
+encender la Raspberry. Sólo tenemos que ejecutar este comando: 
+```bash 
+sudo systemctl enable wifi-connect-start.service
+```
+Ahora para iniciarlo ejecutamos: 
+```bash 
+sudo systemctl start wifi-connect-start.service
+``` 
+
+Por último para comprobar si está funcionando ejecuta: 
+
+```bash
+sudo systemctl status wifi-connect-start.service
+```
+
+Si todo ha ido bien deberías ver algo como esto:
 
 ![imagen mostrando el estado del servicio de WiFi Connect funcionando correctamente](wifi-connect-status.png)
 
-### 13. Conecta tu Raspberry Pi a tu red WiFi
+### 13. Dar permisos de lectura y ejecución a Network Manager
+
+WiFi Connect usa Network Manager el cual no es el gestor de redes por defecto en Raspberry Pi OS. Por tanto, tendremos
+que habilitar los permisos de lectura y ejecución para el directorio donde guarda la configuración de las redes WiFi y
+para el programa en sí.
+
+```bash
+sudo chmod -R 755 /usr/sbin/NetworkManager
+sudo chmod -R 755 /etc/NetworkManager/system-connections
+```
+
+Una vez ejecutado reinicia la Raspberry.
+
+### 14. Conecta tu Raspberry Pi a tu red WiFi
 
 Coge tu móvil o cualquier otro dispositivo con conectividad WiFi y conéctate a la nueva red *WiFi Connect*, la cual no
 tiene contraseña. Automáticamente te abrirá el portal de *WiFi Connect* en el que tendrás que
@@ -247,3 +315,16 @@ Ahora desconecta el cable de Ethernet de la Raspberry, reiníciala y trata de co
 deberías de poder conectarte y empezar a trastear con ella. La próxima vez que enciendas la Raspberry y no reconozca
 ninguna red WiFi volverá a crear la red *WiFi Connect* y podrás conectarte a ella nuevamente para configurar a qué red
 WiFi quieres que se conecte.
+
+Por cierto, ten en cuenta que dependiendo de tu modelo de Raspberry no podrás conectarte a redes de 5 GHz, sólo a redes
+de 2.4 GHz.
+
+### 15. Convierte tu Raspberry en tu entorno de desarrollo 
+
+Ahora que ya puedes llevarte la Raspberry a cualquier lugar y conectarla con tu iPad sólo te queda convertirla en el
+entorno de desarrollo que necesitas. Como mis conexiones a la Raspberry se basan en ssh pues uso todo lo que necesito
+con herramientas de terminal y el editor de texto que uso es [neovim](https://neovim.io). Si quieres ver cómo lo hice con mi
+Raspberry te recomiendo que leas [este post](/blog/2021/convierte-tu-raspberry-pi-en-un-ide-espartano).
+
+También es cierto que puedes conectarte a la Raspberry por VNC y usar Visual Studio Code o cualquier otro editor de
+texto o IDE que se arranque en un entorno visual, pero la verdad es que prefiero la ligereza que me otorga la terminal.
