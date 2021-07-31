@@ -3,7 +3,7 @@ title: Cómo convertir tu iPad o tablet en un entorno de desarrollo
 date: 2021-07-12 
 description: Descubre cómo desarrollar y experimentar en cualquier lugar con tu tablet y tu Raspberry Pi. 
 tags: [desarrollo,raspberry pi]
-cover: ../../preview.png 
+cover: cover.jpg
 draft: true
 ---
 
