@@ -63,6 +63,12 @@ module.exports = {
                         }
                     },
                     {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            copy: true
+                        }
+                    },
+                    {
                         resolve: `gatsby-remark-responsive-iframe`,
                         options: {
                             wrapperStyle: `margin-bottom: 1.0725rem`,
@@ -79,18 +85,14 @@ module.exports = {
                         resolve: `gatsby-remark-mermaid`,
                     },
                     {
-                        resolve: `gatsby-remark-prismjs`,
-                    },
-                    {
-                        resolve: `gatsby-remark-prismjs`,
-                    },
-
-                    {
                         resolve: `gatsby-remark-copy-linked-files`,
                     },
                     {
                         resolve: `gatsby-remark-smartypants`,
                     },
+                    {
+                        resolve: "gatsby-remark-external-links"
+                    }
                 ],
             },
         },
