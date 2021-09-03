@@ -1,18 +1,17 @@
 ---
 title: Cómo convertir tu iPad o tablet en un entorno de desarrollo 
-date: 2021-07-12 
+date: 2021-09-03 
 description: Descubre cómo desarrollar y experimentar en cualquier lugar con tu tablet y tu Raspberry Pi. 
 tags: [desarrollo,raspberry pi]
 cover: cover.jpg
-draft: true
+draft: false
 ---
 
 ## El problema: cargar con un portátil para uso ocasional
 
-Este verano tengo planeado volver a mi isla natal para visitar a seres queridos que hace más de un año que no veo. La
-idea es viajar ligero, por lo que llevarme el macbook no me parecía una gran opción. Sin embargo, quiero tener la opción
-de poder programar o trabajar en mi blog si se me apetece. La idea es que sea algo puntual, por lo que se reafirma mi
-idea de que llevarme el portátil para eso no merece la pena.
+Cuando viajo me gusta viajar ligero, por lo que llevarme mi portátil no me parece una gran opción. Sin embargo, me gusta
+tener la opción de poder programar o trabajar en mi blog si se me apetece. La idea es que sea algo puntual, por lo que
+se reafirma mi idea de que llevarme el portátil para eso no merece la pena.
 
 Lo que si tengo claro que quiero llevarme es mi iPad Air. Aparte de para leer, también lo uso para escribir gracias
 al [Smart Keyboard](https://www.apple.com/es/shop/product/MX3L2Y/A/smart-keyboard-para-el-ipad-8ª-generación-español).
