@@ -48,7 +48,7 @@ export const PostDetails = styled.div`
   }
 `
 
-export const PostDate = styled.div`
+export const PostDateStyle = styled.div`
   font-size: 90px;
   font-weight: 700;
   text-align: center;

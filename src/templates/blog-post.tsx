@@ -17,6 +17,7 @@ import {
   RelatedPostWrapper,
 } from "./templates.style"
 import Intro from "../containers/Intro"
+import {DateHelper} from "../dateHelper";
 
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
@@ -33,7 +34,7 @@ const BlogPostTemplate = (props: any) => {
       <BlogPostDetailsWrapper>
         <PostDetails
           title={post.frontmatter.title}
-          date={post.frontmatter.date}
+          date={DateHelper.toHuman(post.frontmatter.date)}
           preview={
             post.frontmatter.cover == null
               ? null
@@ -134,7 +135,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "DD MMM, YYYY")
+        date
         description
         tags
         cover {

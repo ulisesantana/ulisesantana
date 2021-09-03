@@ -113,7 +113,7 @@ export const pageQuery = graphql`
           }
           excerpt(pruneLength: 300)
           frontmatter {
-            date(formatString: "DD [<span>] MMMM [</span>]")
+            date
             title
             description
             tags

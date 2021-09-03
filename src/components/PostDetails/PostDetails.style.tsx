@@ -57,7 +57,6 @@ export const PostDate = styled.span`
   font-size: ${themeGet("fontSizes.1", "16")}px;
   color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
-  text-transform: uppercase;
   margin-bottom: 2rem;
 
   &:after {
