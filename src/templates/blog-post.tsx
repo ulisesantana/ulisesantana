@@ -21,8 +21,8 @@ import Intro from "../containers/Intro"
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
   const { edges } = props.data.allMarkdownRemark
-  const slug = post.frontmatter.slug
-  const shareUrl = `${props.data.site.siteMetadata.siteUrl}/${slug}`
+  const slug = post.fields.slug
+  const shareUrl = `${props.data.site.siteMetadata.siteUrl}${slug}`
 
   return (
     <SpanishLayout>
@@ -129,6 +129,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       timeToRead
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "DD MMM, YYYY")
