@@ -38,7 +38,7 @@ export const RelatedPostWrapper = styled.div`
     padding: 0 45px 0 45px;
   }
   @media (max-width: 575px) {
-    padding: 0 25px 0 25px;
+    padding: 50px 25px 0 25px;
   }
 `
 
