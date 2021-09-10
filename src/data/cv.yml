@@ -1,7 +1,7 @@
 about: >
-  I was thinking about defining myself in a sentence, but I concluded that's an impossible task. So let me simply describe myself. I am a  lifelong learner passionate about tech, focused on the web with JavaScript as my native programming language and I solve problems with tech based on JavaScript. 
+  I was thinking about defining myself in a sentence, but I concluded that's an impossible task. So let me simply describe myself. I am a  lifelong learner passionate about tech, focused on the web with JavaScript as my native programming language and I solve problems with tech based on JavaScript.
 
-  I believe that for a healthy industry the professionals must share their experience. Committed to this, I try to give at least one talk/workshop per year in vocational schools. Moreover, I co-organized and sponsored the last Global Day of Coderetreat in Gran Canaria, which is an awesome environment for coding students. 
+  I believe that for a healthy industry the professionals must share their experience. Committed to this, I try to give at least one talk/workshop per year in vocational schools. Moreover, I co-organized and sponsored the last Global Day of Coderetreat in Gran Canaria, which is an awesome environment for coding students.
 
   I also sponsored other events during the last year as part of my giveback plan to the software community. There is no doubt that software communities and open source have been crucial for my professional growth, so I am just returning the favor.
 jobs:
@@ -11,11 +11,11 @@ jobs:
     from: 03/2020
     to: Now
     description: >
-      I work as external developer in developer teams for different customers with different technologies. The way we work at Lean Mind is firmly grounded in Software Craftsmanship and Agile principles. 
+      I work as external developer in developer teams for different customers with different technologies. The way we work at Lean Mind is firmly grounded in Software Craftsmanship and Agile principles.
 
       As company, Lean Mind has a very rich culture based on knowledge sharing and confidence. We learn from each others and we are always open for feedback.
     skills:
-      - NodeJS
+      - Node.js
       - AngularJS
       - React
       - TypeScript
@@ -41,13 +41,13 @@ jobs:
     from: 08/2018
     to: 03-2020
     description: >
-      After being promoted, I am daily involved in developing features, even whole projects, on the backend and frontend side. Based on the team goal, could be just backend or frontend. This means working some sprints with AngularJS and Symfony, others with NestJS and React and sometimes just React or NodeJS and Express.
+      After being promoted, I am daily involved in developing features, even whole projects, on the backend and frontend side. Based on the team goal, could be just backend or frontend. This means working some sprints with AngularJS and Symfony, others with NestJS and React and sometimes just React or Node.js and Express.
 
       I usually discuss the solutions with the Solution Architect or Team Leaders. Also, I introduced and evangelized things like TypeScript, Storybook, NestJS,  Microfrontends, Inner Source, Cypress, Husky, Jest or how to create npm packages among my teammates.
 
-      Besides, I help with another kind of tasks as maintaining development environments, assisting production deployments or recruiting React/NodeJS developers.
+      Besides, I help with another kind of tasks as maintaining development environments, assisting production deployments or recruiting React/Node.js developers.
     skills:
-      - NodeJS
+      - Node.js
       - AngularJS
       - React
       - TypeScript
@@ -80,11 +80,11 @@ jobs:
     from: 06/2017
     to: 07/2018
     description: >
-      After my internship period, I was hired as a Backend Developer due to my interest and performance in NodeJS tasks during my internship. In the first six months, my main tasks were coding new features on NodeJS microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That means handling web servers with Nginx and pm2 processes for NodeJS, besides handling all the files on servers for other services. Thankfully, some really smart teammates deployed Rancher with Docker connected with our Gitlab, giving us the chance to add CI/CD on our workflow.
+      After my internship period, I was hired as a Backend Developer due to my interest and performance in Node.js tasks during my internship. In the first six months, my main tasks were coding new features on Node.js microservices, helping the infrastructure area and handling deployments on our environments before CI/CD came to our lives. That means handling web servers with Nginx and pm2 processes for Node.js, besides handling all the files on servers for other services. Thankfully, some really smart teammates deployed Rancher with Docker connected with our Gitlab, giving us the chance to add CI/CD on our workflow.
 
       During the following six months, I gradually stop working on infrastructure and started creating new features across all the stack. I also evangelized best practices about ES2017 Promises with async / await.
     skills:
-      - NodeJS
+      - Node.js
       - AngularJS
       - Socket.io
       - PHP7
@@ -112,13 +112,13 @@ jobs:
     from: 03/2017
     to: 05/2017
     description: >
-      The last part of the Higher Technician in development of web application certification is doing an internship in a company of your choice. I chose Kentech because was the only company I found in Gran Canaria who was using NodeJS at that time. Also, was a really good opportunity to test my English skills because the communication on Kentech is full in English.
+      The last part of the Higher Technician in development of web application certification is doing an internship in a company of your choice. I chose Kentech because was the only company I found in Gran Canaria who was using Node.js at that time. Also, was a really good opportunity to test my English skills because the communication on Kentech is full in English.
 
       Kentech is a provider of custom solutions across various verticals, specializing in the online entertainment industry with a focus on sports in multiple countries. The applications build by Kentech are used by millions of users across the world.
 
-      I started as a QA, but after some weeks testing the main web app, they gave me some tasks related to UI optimization for Opera Mini and creating a Wordpress theme for a corporative site. In the last weeks, my mentor, a NodeJS developer, explained to me the microservices architecture and some basics about high availability concepts. Also, he challenged me on the last week to do a proof of concept about a cache system with a distributed lock with MySQL and Redis.
+      I started as a QA, but after some weeks testing the main web app, they gave me some tasks related to UI optimization for Opera Mini and creating a Wordpress theme for a corporative site. In the last weeks, my mentor, a Node.js developer, explained to me the microservices architecture and some basics about high availability concepts. Also, he challenged me on the last week to do a proof of concept about a cache system with a distributed lock with MySQL and Redis.
     skills:
-      - NodeJS
+      - Node.js
       - AngularJS
       - Quality Assurance
       - PHP7
@@ -196,8 +196,8 @@ education:
     from: 10/2015
     to: 05/2017
     description: >
-      2-years course of Web Application Development. 
-      Equivalent to a Certificate of Higher Education related to 
+      2-years course of Web Application Development.
+      Equivalent to a Certificate of Higher Education related to
       web application development.
 
     skills:
@@ -214,7 +214,7 @@ education:
       - Progressive Web Apps
       - Angular 2
       - MongoDB
-      - NodeJS
+      - Node.js
       - Express
   - employer: IES José Zerpa
     location: Vecindario, Las Palmas, Spain
@@ -222,8 +222,8 @@ education:
     from: 09/2011
     to: 11/2012
     description: >
-      1400-hours course of bussiness management and marketing. 
-      Equivalent to a Certificate of Higher Education related to 
+      1400-hours course of bussiness management and marketing.
+      Equivalent to a Certificate of Higher Education related to
       bussiness management and marketing.
     skills:
       - Marketing
@@ -254,10 +254,10 @@ milestones:
       An introductory talk to npm and how to publish on it.
   - when: 11/2018
     location: Kilkenny, Ireland
-    title: Compile NodeJS project on a Chromebook
+    title: Compile Node.js project on a Chromebook
     twitter: https://twitter.com/ulisesantana/status/1059825362220261376
     description: >
-      During a workshop on NodeConf EU I compiled NodeJS on a Chromebook, improve some tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took almost 2 hours only to compile.
+      During a workshop on NodeConf EU I compiled Node.js on a Chromebook, improve some tests and contribute to the project. With an Acer Chromebook R11 in a virtual Debian. Took almost 2 hours only to compile.
   - when: 03/2017
     location: Las Palmas de Gran Canaria, Spain
     title: Second prize at Hack for Good hackaton
@@ -386,8 +386,8 @@ stuff:
   - title: bug-hunter
     url:
     git: https://github.com/ulisesantana/bug-hunter
-    description: A CLI game as proof of concept about doing something with CLI on Vanilla NodeJS.
-    stack: ["NodeJS"]
+    description: A CLI game as proof of concept about doing something with CLI on Vanilla Node.js.
+    stack: ["Node.js"]
   - title: Web Native Form Validation
     url: https://repl.it/@ulisesantana/Web-Native-Form-Validation
     git:
@@ -397,9 +397,9 @@ stuff:
     url: https://repl.it/@ulisesantana/Validate
     git:
     description: A proof of concept about object validation with a recursive function
-    stack: ["NodeJS"]
+    stack: ["Node.js"]
   - title: Fibonacci limits
     url: https://repl.it/@ulisesantana/fibonacci
     git:
     description: A proof of concept about performance with a recursive function versus a iterative one using Big Number in JavaScript.
-    stack: ["NodeJS"]
+    stack: ["Node.js"]

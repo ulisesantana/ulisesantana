@@ -4,9 +4,9 @@
 
 - 🔭 I’m currently working on [Lean Mind](https://leanmind.es/en/)
 
-- 🌱 I’m currently getting deeper **in Node JS**
+- 🌱 I’m currently getting deeper **in Node.js**
 
-- 💬 Ask me about **JavaScript, NodeJS or Web Development**
+- 💬 Ask me about **JavaScript, Node.js or Web Development**
 
 - 📄 Know about my experiences [https://ulisesantana.dev/cv](https://ulisesantana.dev/cv)
 

@@ -9,6 +9,8 @@ import {
 import { useCV } from "../../hooks"
 import { FaUserCircle, MdWork, MdSchool, FaStar } from "react-icons/all"
 
+type InfoList = JobData[] | MilestoneData[]
+
 const Text: FC<{ text: string }> = ({ text }) => (
   <>
     {text.split(/(?:\r\n|\r|\n)/g).map((t: string) => (
@@ -17,8 +19,8 @@ const Text: FC<{ text: string }> = ({ text }) => (
   </>
 )
 
-function isJob(info: JobData | MilestoneData): info is JobData {
-  return (info as JobData).skills !== undefined
+function isJobList(info: InfoList): info is JobData[] {
+  return (info[0] as JobData).skills !== undefined
 }
 
 const renderJob = (j: JobData) => (
@@ -29,10 +31,16 @@ const renderMilestone = (m: MilestoneData) => (
   <Milestone key={m.title + m.when} {...m} />
 )
 
-const renderInfo = (list: JobData[] | MilestoneData[]) =>
-  !!list.length && isJob(list[0])
-    ? list.map(renderJob)
-    : list.map(renderMilestone)
+const renderInfo = (list: InfoList) => {
+  if (!!list.length) {
+    if (isJobList(list)) {
+      return list.map(renderJob)
+    }
+    return list.map(renderMilestone)
+  }
+  return []
+}
+
 
 export function CV() {
   const { education, jobs, about, milestones, sponsored, attended } = useCV()
@@ -70,7 +78,7 @@ export function CV() {
       <Section title="Sponsored Events" icon={<FaStar />}>
         {renderInfo(sponsored)}
       </Section>
-      <Section title="Attended Conferences during last year" icon={<FaStar />}>
+      <Section title="Attended Conferences before COVID-19" icon={<FaStar />}>
         {renderInfo(attended)}
       </Section>
     </>
