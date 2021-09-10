@@ -208,7 +208,7 @@ export const TagName = styled.h1`
     font-size: 22px;
   }
 `
-export const BlogPostFooter = styled.footer`
+export const BlogPostFooter = styled.section`
   margin: 0 0 0 auto;
   max-width: 100%;
   padding-top: 60px;
