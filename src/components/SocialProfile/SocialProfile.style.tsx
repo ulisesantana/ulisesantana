@@ -44,7 +44,7 @@ export const Tooltip = styled.div`
   white-space: nowrap;
   visibility: hidden;
   z-index: 999;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transform: translate3d(-50%, 0, 0);
   transition: 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 
@@ -62,6 +62,7 @@ export const Tooltip = styled.div`
   }
 `
 
+// @ts-ignore
 export const SocialProfileItem = styled.li`
   list-style: none;
   position: relative;
