@@ -2,8 +2,8 @@ import React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-type Meta = {name: string; content: string; property?: undefined; } |
-  { property: string; content: string; name?: undefined; }
+type Meta = { name: string; content: string; property?: undefined; } |
+{ property: string; content: string; name?: undefined; }
 
 type SEOProps = {
   description?: string
@@ -16,7 +16,7 @@ type SEOProps = {
 export const SEO: React.FunctionComponent<SEOProps> = ({
   description,
   lang,
-  meta= [] as Meta[],
+  meta = [] as Meta[],
   keywords,
   title,
 }) => {
@@ -35,7 +35,7 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaTitle = `Ulises Santana | ${title}`
+  const metaTitle = `${title} | Ulises Santana`
 
   return (
     <Helmet
@@ -77,9 +77,9 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
         .concat(
           keywords.length > 0
             ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
+              name: `keywords`,
+              content: keywords.join(`, `),
+            }
             : []
         )
         .concat(meta)}
