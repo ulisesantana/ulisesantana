@@ -99,5 +99,9 @@
     "now-build": "yarn run build",
     "deploy": "gatsby build && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  }
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "packageManager": "yarn@1.22.11"
 }
