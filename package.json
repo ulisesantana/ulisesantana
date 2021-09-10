@@ -101,7 +101,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "engines": {
-    "node": ">=16.9.0"
+    "node": ">=14.0.0"
   },
   "packageManager": "yarn@1.22.11"
 }
