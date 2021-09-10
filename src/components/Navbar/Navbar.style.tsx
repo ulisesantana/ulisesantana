@@ -7,7 +7,7 @@ const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   transition: 0.25s ease-in-out;
-  z-index: 5;
+  z-index: 100;
 `
 
 export const NavbarWrapper = styled.div`
@@ -70,7 +70,7 @@ export const MenuItem = styled.li`
     line-height: ${themeGet("lineHeights.normal", "1")};
     padding: 5px 10px;
     text-transform: uppercase;
-    text-shadow: rgb(170, 170, 170) 1px 0px 1px;
+    text-shadow: rgb(170, 170, 170) 1px 0 1px;
     transition: 0.15s ease-in-out;
     white-space: nowrap;
 

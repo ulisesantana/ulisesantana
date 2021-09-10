@@ -4,10 +4,10 @@ import { themeGet } from "styled-system"
 export const CVWrapper = styled.div`
   position: relative;
   @media (max-width: 990px) {
-    padding: 0px 45px 30px 45px;
+    padding: 0 45px 30px 45px;
   }
   @media (max-width: 575px) {
-    padding: 0px 25px 0 25px;
+    padding: 0 25px 0 25px;
   }
 `
 
@@ -66,7 +66,7 @@ export const CVDetails = styled.div`
   .out {
     position: relative;
     width: 100vw;
-    z-index: 1000;
+    z-index: 10;
   }
 
   blockquote:not(.twitter-tweet) {

@@ -66,7 +66,7 @@ export const AboutDetails = styled.section`
   .out {
     position: relative;
     width: 100vw;
-    z-index: 1000;
+    z-index: 10;
   }
 
   blockquote {
