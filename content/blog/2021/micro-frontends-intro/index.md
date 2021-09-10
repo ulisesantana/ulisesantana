@@ -135,7 +135,9 @@ y pasar datos por *query string* o usar el *local storage* del navegador.
 Usar micro frontends es una opción muy interesante a tener en cuenta a la hora de desarrollar aplicaciones. Sin embargo,
 no es una bala de plata y además hay que tener en cuenta más cosas que no he mencionado en este artículo como es el
 enrutado de la aplicación, las diferentes opciones que tienes a la hora de renderizar los micro frontends (todo desde el
-servidor, todo desde el cliente o un híbrido entre ambos) o cómo afecta al SEO y qué tienes que tener en cuenta. 
+servidor, todo desde el cliente o un híbrido entre ambos) o cómo afecta al SEO y qué tienes que tener en cuenta. Me he
+dejado todo esto en el tintero porque la idea de este artículo es una introducción a micro frontends, no un *from zero
+to hero*.
 
 Tampoco he hablado de frameworks para micro frontends, que existen, pero como no he usado ninguno tampoco puedo hablar
 mucho de ello. De todos modos, si quieres aquí tienes los dos de los que más he oído hablar:
