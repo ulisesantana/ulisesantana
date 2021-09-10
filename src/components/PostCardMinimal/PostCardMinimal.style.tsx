@@ -5,14 +5,25 @@ export const PostCardWrapper = styled.section`
   border-bottom: solid 8px transparent;
   position: relative;
   transition: 0.35s ease-in-out;
+
   &:hover {
     border-bottom-color: ${themeGet("colors.primary", "#F0DB4F")};
+
     .post_preview {
       transform: translateY(0);
     }
+
     .post_date {
       transform: translateY(100%);
     }
+  }
+
+  &.draft {
+    background: repeating-linear-gradient(45deg,
+    ${themeGet('colors.primary')},
+    ${themeGet('colors.primary')} 10px,
+    ${themeGet('colors.primaryHover')} 10px,
+    ${themeGet('colors.primaryHover')} 20px);
   }
 `
 

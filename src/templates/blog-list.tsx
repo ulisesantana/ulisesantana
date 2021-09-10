@@ -62,6 +62,7 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
         {Posts.map(({ node }: any) => {
           return (
             <PostCardMinimal
+              className={node.frontmatter.draft ? 'draft' : ''}
               key={node.fields.slug}
               title={node.frontmatter.title || node.fields.slug}
               image={
@@ -116,6 +117,7 @@ export const pageQuery = graphql`
             date
             title
             description
+            draft
             tags
             cover {
               childImageSharp {
