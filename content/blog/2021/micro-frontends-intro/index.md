@@ -1,10 +1,10 @@
 ---
 title: Introducción a micro frontends
-date: 2021-01-03
-description: Micro frontends es una arquitectura que cada vez suena más y se usa más por parte de las empresas.
+date: 2021-09-10
+description: Micro frontends es una arquitectura que cada vez suena más y se usa más por parte de las empresas. En este artículo explico algunos de los porqués.
 tags: [micro frontends,arquitectura,frontend]
 cover: ./thumbnail.png
-draft: true
+draft: false
 ---
 
 Cada vez se habla más de micro frontends, una arquitectura inspirada en la 
@@ -55,6 +55,8 @@ frontends de una manera clara y concisa:
 > Los micro frontends son la representación técnica de un subdominio empresarial, permiten implementaciones 
 > independientes con la misma o diferente elección de tecnología, finalmente evitando compartir lógica con otros 
 > subdominios y son propiedad de un solo equipo.
+> 
+> <small>Luca Mezzalira</small>
 
 Tal como define Luca, cada equipo es responsable de una parte del dominio del negocio y tiene total autonomía sobre 
 el mismo, dándole toda la libertad que necesita para innovar y ofrecer la mejor solución sin afectar al resto de la 
@@ -86,7 +88,18 @@ Verticalmente estaríamos definiendo una página entera como un micro frontend,
 mientras que horizontalmente estamos limitando el micro frontend a una parte 
 de la página. 
 
-AÑADIR ESQUEMA 
+<figure role="group" id="micro-frontend-split">
+    <img 
+        src="micro-frontend-split.jpeg" 
+        alt="Gráfico que muestra la división de micro frontends vertical u horizontalmente"
+    />
+    <figcaption>
+        <small>
+            Imagen de <a href="https://increment.com/frontend/micro-frontends-in-context/" target="_blank"> 
+            un post de Increment</a> sobre micro frontends
+        </small>
+    </figcaption>
+</figure>
 
 La ventaja de integrar un micro frontend verticalmente es que es más fácil 
 porque la página se carga entera y no hay que gestionar la comunicación 
@@ -95,11 +108,41 @@ nos da mayor libertad y flexibilidad, pero es probable que tengamos que
 gestionar la comunicación entre los diferentes micro frontends que se 
 muestran en la página.
 
-## Frameworks para micro frontends
+## Comunicación entre micro frontends
 
-## SEO
+En caso de que decidas integrar los micro frontends horizontalmente es muy probable que necesites comunicarlos entre
+ellos. En los proyectos en los que he implementado micro frontends ha sido de esta manera y cuando necesitaba
+comunicarlos entre ellos usaba los [*message events del
+DOM*](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event). La contrapartida de hacerlo así es que
+tienes a todos los micro frontends escuchando todo el tiempo y procesando los mensajes que a lo mejor no les interesa.
+Por otro lado, está la opción de usar [*Custom
+events*](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent), con los que puedes ser más selectivo
+en qué micro frontends escuchan a qué eventos. 
 
-## Recursos
+Otra opción posible es que si estás haciendo tu aplicación en React y todos tus micro frontends están en React puedes
+tener una aplicación padre que orqueste los datos y que los micro frontends reaccionen ante ellos. De esta manera puedes
+hacer que cada micro frontend sea un componente de React y exportarlo como un paquete de npm. Así es como hice
+un [pet project para hacer una prueba de concepto de micro frontends](https://www.youtube.com/watch?v=UEIiW-rU6G8). En
+este [vídeo](https://www.youtube.com/watch?v=UEIiW-rU6G8) explico el proyecto y los micro frontends. No obstante, esta
+implementación no sigue del todo la filosofía de micro frontends, ya que está anclada a React, perdiendo agilidad e
+innovación a la hora de usar otras soluciones para el frontend.
+
+Para los micro frontends integrados verticalmente es más fácil comunicarlos entre ellos, ya que puedes jugar con la URL
+y pasar datos por *query string* o usar el *local storage* del navegador.
+
+## Conclusión
+
+Usar micro frontends es una opción muy interesante a tener en cuenta a la hora de desarrollar aplicaciones. Sin embargo,
+no es una bala de plata y además hay que tener en cuenta más cosas que no he mencionado en este artículo como es el
+enrutado de la aplicación, las diferentes opciones que tienes a la hora de renderizar los micro frontends (todo desde el
+servidor, todo desde el cliente o un híbrido entre ambos) o cómo afecta al SEO y qué tienes que tener en cuenta. 
+
+Tampoco he hablado de frameworks para micro frontends, que existen, pero como no he usado ninguno tampoco puedo hablar
+mucho de ello. De todos modos, si quieres aquí tienes los dos de los que más he oído hablar:
+- [SingleSPA](https://single-spa.js.org)
+- [Open Components](https://github.com/opencomponents/oc)
+
+## Enlaces de interés
 
 Si te interesa saber más sobre micro frontends, estos enlaces te pueden ayudar:
 
@@ -107,3 +150,15 @@ Si te interesa saber más sobre micro frontends, estos enlaces te pueden ayudar:
 - [Micro Frontends](https://micro-frontends-es.org/)
 - [Micro Frontends post](https://martinfowler.com/articles/micro-frontends.html)
 - [Micro frontends: The Benefits of Microservices for Client-Side Development](https://thenewstack.io/microfrontends-the-benefits-of-microservices-for-client-side-development/)
+
+También puedes ver la presentación que hice para mis compañeros y aprendices de Lean Mind hace un año sobre un pet
+project en el que apliqué micro frontends:
+
+<iframe 
+    width="560" 
+    height="315" src="https://www.youtube-nocookie.com/embed/UEIiW-rU6G8" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
