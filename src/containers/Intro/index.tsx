@@ -16,7 +16,7 @@ import { Language } from "../../types"
 
 const translations = { en, es }
 
-const Intro: React.FC<{ lang: Language }> = ({ lang = "en" }) => {
+const Intro: React.FC<{ lang?: Language }> = ({ lang = "en" }) => {
   const { author, AuthorImage, Logo } = userIntroInfo()
 
   return (
