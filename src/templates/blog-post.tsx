@@ -21,15 +21,34 @@ import {DateHelper} from "../dateHelper";
 
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
-  const { edges } = props.data.allMarkdownRemark
+  const {edges} = props.data.allMarkdownRemark
   const slug = post.fields.slug
-  const shareUrl = `${props.data.site.siteMetadata.siteUrl}${slug}`
+  const siteUrl = props.data.site.siteMetadata.siteUrl
+  const shareUrl = `${siteUrl}${slug}`
+  const title = post.frontmatter.title
+  const metaTags = post.frontmatter.tags == null ? '' : post.frontmatter.tags.join(',')
+  const [metaDate] = post.frontmatter.date.split('T')
+  const metaImage = `${siteUrl}${post.frontmatter.cover.childImageSharp.fluid.src}`
 
   return (
     <SpanishLayout>
       <SEO
-        title={post.frontmatter.title}
+        title={title}
         description={post.frontmatter.description || post.excerpt}
+        meta={[
+          {property: 'og:type', content: 'article'},
+          {property: 'article:author', content: siteUrl},
+          {property: 'article:published_time', content: metaDate},
+          {property: 'article:section', content: 'Technology'},
+          {property: 'article:tag', content: metaTags},
+          {property: 'og:image', content: metaImage},
+          {property: 'og:url', content: shareUrl},
+          {property: 'og:image:width', content: '1300'},
+          {property: 'og:image:height', content: '652'},
+          {property: 'twitter:domain', content: siteUrl},
+          {property: 'twitter:image', content: metaImage},
+          {property: 'twitter:url', content: shareUrl},
+        ]}
       />
       <BlogPostDetailsWrapper>
         <PostDetails
@@ -44,7 +63,7 @@ const BlogPostTemplate = (props: any) => {
           timeToRead={post.timeToRead}
           imagePosition="top"
         />
-        <Intro lang="es" />
+        <Intro lang="es"/>
         <BlogPostFooter
           className={post.frontmatter.cover == null ? "center" : ""}
         >
@@ -60,10 +79,10 @@ const BlogPostTemplate = (props: any) => {
           <PostShare>
             <span>Comparte esta entrada:</span>
             <FacebookShareButton url={shareUrl} quote={post.frontmatter.title}>
-              <IoLogoFacebook />
+              <IoLogoFacebook/>
             </FacebookShareButton>
             <TwitterShareButton url={shareUrl} title={post.frontmatter.title}>
-              <IoLogoTwitter />
+              <IoLogoTwitter/>
             </TwitterShareButton>
             <PinterestShareButton
               url={shareUrl}
@@ -73,13 +92,13 @@ const BlogPostTemplate = (props: any) => {
                   : post.frontmatter.cover.childImageSharp.fluid
               }`}
             >
-              <IoLogoPinterest />
+              <IoLogoPinterest/>
             </PinterestShareButton>
             <RedditShareButton
               url={shareUrl}
               title={`${post.frontmatter.title}`}
             >
-              <IoLogoReddit />
+              <IoLogoReddit/>
             </RedditShareButton>
           </PostShare>
         </BlogPostFooter>
@@ -89,7 +108,7 @@ const BlogPostTemplate = (props: any) => {
         <RelatedPostWrapper>
           <RelatedPostTitle>Artículos relacionados</RelatedPostTitle>
           <RelatedPostItems>
-            {edges.map(({ node }: any) => (
+            {edges.map(({node}: any) => (
               <RelatedPostItem key={node.fields.slug}>
                 <PostCard
                   title={node.frontmatter.title || node.fields.slug}
