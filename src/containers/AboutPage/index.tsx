@@ -66,9 +66,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
                 <a href={Links.work} target="_blank">
                   Lean Mind
                 </a>
-                . I’ve been creating tech solutions based on web technologies
-                with awesome people for the online entertainment industry, in
-                multiple countries for millions of users, for the last 3 years.
+                . I’ve been creating tech solutions based on web technologies for the last 4 years.
+                Some of those solutions were used by millions of user across different countries.
               </p>
 
               <p>
@@ -111,7 +110,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             , the company where I did my internship. Kentech is a provider of
             custom solutions across various verticals, specializing in the
             online entertainment industry with a focus on sports in multiple
-            countries. One year later I was promoted to Full Stack Developer and
+            countries for millions of users. One year later I was promoted to Full Stack Developer and
             most of the time I was working with
             <a href={Links.angular} target="_blank">
               {" "}
@@ -123,7 +122,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             </a>
             and{" "}
             <a href={Links.node} target="_blank">
-              NodeJS
+              Node.js
             </a>
             , but also with
             <a href={Links.docker} target="_blank">
@@ -143,18 +142,21 @@ const About: React.FunctionComponent<AboutProps> = () => {
             </a>
             , a wonderful place to work, where I work remotely as Full Stack
             Developer with other developer teams for different customers with
-            different technologies. At{" "}
+            different technologies. However, lucky me, I've keep working with{" "}
+            <a href={Links.node} target="_blank">
+              Node.js
+            </a>, getting deeper with the platform and increasing my expertise on it. At{" "}
             <a href={Links.work} target="_blank">
               Lean Mind
             </a>{" "}
-            we love clean code and we are always willing to learn and share
-            knowledge.
+            we love sustainable code and we are always willing to learn and share
+            knowledge. For me this awesome because it's aligned to my own philosophy as professional.
           </p>
           <p>
             Since I got hired I’m trying to keep myself on the cutting edge of
             JavaScript and the web so I try to go as many conferences as I can.
             This result in assisting to events like JSConf EU where I had the
-            opportunity to take a selfie with Ryan Dahl, NodeJS and{" "}
+            opportunity to take a selfie with Ryan Dahl, Node.js and{" "}
             <a href={Links.deno} target="_blank">
               Deno
             </a>{" "}
@@ -177,7 +179,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           </AboutImage>
 
           <p>
-            On my free time during the workweek I play around with NodeJS and
+            On my free time during the workweek I play around with Node.js and
             improve my CS skills by reading books and blogs. On the weekends I
             enjoy spending family time, meeting friends, watching movies or
             trying some local tourism.
@@ -232,7 +234,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             <a href={Links.jsday2018} target={`_blank`}>
               JS Day Canarias{" "}
             </a>
-            about NodeJS, npm and how to publish and maintain a package on an
+            about Node.js, npm and how to publish and maintain a package on an
             npm registry. I enjoyed the experience and I want to continue
             sharing the knowledge to the world.
           </p>

@@ -66,9 +66,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
                 <a href={Links.work} target="_blank">
                   Lean Mind
                 </a>
-                . He estado durante los últimos 3 años creando soluciones
-                basadas en tecnología web para la industria del entretenimiento,
-                en varios paises para millones de usuarios.
+                . Durante los últimos 4 años he estado creando soluciones
+                basadas en tecnología web, algunas de ellas usadas en varios países para millones de usuarios.
               </p>
 
               <p>
@@ -116,7 +115,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             , la empresa donde hice las prácticas. Kentech es un proveedor de
             soluciones a medida a lo largo de varios verticales, especializado
             en la industria entretenimiento online centrada en los deportes en
-            múltiples países. Un año más tarde fui ascendido a Full Stack
+            múltiples países para millones de usuarios. Un año más tarde fui ascendido a Full Stack
             Developer y la mayoría del tiempo estuve trabajando con
             <a href={Links.angular} target="_blank">
               {" "}
@@ -128,7 +127,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             </a>
             y{" "}
             <a href={Links.node} target="_blank">
-              NodeJS
+              Node.js
             </a>
             , pero también con
             <a href={Links.docker} target="_blank">
@@ -149,12 +148,16 @@ const About: React.FunctionComponent<AboutProps> = () => {
             </a>
             , un lugar increíble donde trabajar, donde trabajo como Full Stack
             Developer con otros equipos de desarrolladores para diferentes
-            clientes con diferentes tecnologías. En{" "}
+            clientes con diferentes tecnologías. Sin embargo, por suerte en mi caso he podido seguir trabajando en{" "}
+            <a href={Links.node} target="_blank">
+              Node.js
+            </a>, permitiéndome profundizar en la plataforma y aumentar mi expertise en ella. En{" "}
             <a href={Links.work} target="_blank">
               Lean Mind
             </a>{" "}
-            nos encanta el código limpio y siempre estamos dispuestos a aprender
-            y compartir conocimiento.
+            nos encanta el código sostenible y siempre estamos dispuestos a aprender
+            y compartir conocimiento, lo cual me encanta porque se alinea muy bien con mi
+            filosofía como profesional.
           </p>
           <p>
             Desde que me gano la vida como desarrollador trato de mantenerme al
@@ -163,7 +166,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             JSConf EU donde tuve la oportunidad de hacerme una selfie con Ryan
             Dahl, el creador de{" "}
             <a href={Links.node} target="_blank">
-              NodeJS
+              Node.js
             </a>{" "}
             y{" "}
             <a href={Links.deno} target="_blank">
@@ -189,7 +192,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
           <p>
             En mi tiempo libre durante la semana trasteo con alguna tecnología
-            como NodeJS y trato de mejorar mis habilidades relacionadas con
+            como Node.js y trato de mejorar mis habilidades relacionadas con
             ingeniería de software leyendo blogs o libros. Durante los fines de
             semana disfruto pasando tiempo en familia o con amigos. Aunque
             también trato de hacer algo de turismo local.
@@ -247,7 +250,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             sobre
             <a href={Links.talk} target={`_blank`}>
               {" "}
-              NodeJS, npm y cómo publicar y mantener un paquete en un registro
+              Node.js, npm y cómo publicar y mantener un paquete en un registro
               npm
             </a>
             . Me encantó la experiencia y quiero continuar compartiendo
