@@ -279,6 +279,10 @@ export const PostDescription = styled.div`
       font-family: "Fira Sans", sans-serif;
       font-weight: 400;
     }
+
+    small {
+      font-style: italic;
+    }
   }
 
   details > blockquote {
