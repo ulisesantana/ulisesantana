@@ -59,6 +59,10 @@ const ResetCSS = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
   }
+  
+  body .medium-zoom-image.medium-zoom-image--opened, .medium-zoom-overlay {
+    z-index: 200 !important;
+  }
 
   p{
     text-align: justify;
