@@ -14,7 +14,7 @@ const CV: React.FunctionComponent<CVProps> = (props: any) => {
     <Layout menu={false}>
       <SEO
         description={description}
-        title="Ulises Santana | JavaScript Engineer"
+        title="JavaScript Engineer"
         meta={[
           {property: `og:type`, content: `profile`},
           {property: `profile:first_name`, content: `Ulises`},
