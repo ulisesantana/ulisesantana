@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components"
+
+import { themeGet } from "styled-system"
+
 const ResetCSS = createGlobalStyle`
   html {
     font-size: 18px;
@@ -199,8 +203,5 @@ const ResetCSS = createGlobalStyle`
     }
   } */
 `
-import { createGlobalStyle } from "styled-components"
-
-import { themeGet } from "styled-system"
 
 export default ResetCSS
