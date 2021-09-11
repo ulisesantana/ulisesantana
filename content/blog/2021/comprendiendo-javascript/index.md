@@ -27,15 +27,17 @@ Por otro lado, en la NodeCONF EU de 2019 se dijo esta involvidable frase que a d
 
 Entonces, si JavaScript es un lenguaje que tiene tanta tracción y que es tan ampliamente usado, ¿por qué no tratar de comprenderlo y aprender a usarlo de la mejor manera posible?
 
+## ¿De dónde salió JavaScript?
 
+Una empresa llamada Netscape fue fundada en 1994 y creó uno de los primeros navegadores web. En 1995 reclutaron a Brendan Eich para que creara un lenguaje de programación para ese navegador web. El atractivo para él era que él podría basar el idioma en el [Scheme](https://es.wikipedia.org/wiki/Scheme) (un dialecto [Lisp](https://es.wikipedia.org/wiki/Lisp)), lenguajes de programación funcional. La influencia de Scheme llevó a JavaScript a tener *closures*. Otra influencia fue Self, un lenguaje de programación basado en prototipos, que es responsable de la herencia prototípica de JavaScript, que en 2015 sería encubierta por el azúcar sintáctico de las clases.
 
 - La idea detrás de JavaScript
     - En qué está basado JavaScript
 - Cómo funciona JavaScript
     - Single threats
     - Event loop
+- Asincronía
     - Qué parte es asíncrona y qué parte es síncrona
-- Tipos de asincronía
     - Callbacks
     - Promesas
     - Async / await
