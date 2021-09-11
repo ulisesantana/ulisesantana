@@ -34,7 +34,7 @@ Por suerte, en la versión [16.9.0 de Node.js](https://nodejs.org/en/blog/releas
 que esperan ayude a los usuarios de otros gestores de paquetes a tener una experiencia más fluida y consistente. Tal
 cual como comentan en las *release notes*:
 
-> ...Corepack, un script que actúa como puente entre los proyectos de Node.js y los gestores de paquetes con los que 
+> [...] Corepack, un script que actúa como puente entre los proyectos de Node.js y los gestores de paquetes con los que 
 > están destinados a ser utilizados durante el desarrollo. En términos prácticos, Corepack le permitirá usar Yarn y pnpm 
 > sin tener que instalarlos, tal como sucede actualmente con npm, que se instala junto con Node.js por defecto.
 >
