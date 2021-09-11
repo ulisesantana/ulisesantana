@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {themeGet} from "styled-system"
+import { themeGet } from "styled-system"
 
 export const PostDetailsWrapper = styled.section`
   position: relative;
@@ -42,7 +42,7 @@ export const PostDetailsWrapper = styled.section`
 export const PostTitle = styled.h1`
   font-size: ${themeGet("fontSizes.4", "41")}px;
   font-weight: 700;
-  color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   line-height: 1.53;
   margin-bottom: 10px;
 
@@ -55,7 +55,7 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.span`
   display: inline-block;
   font-size: ${themeGet("fontSizes.1", "16")}px;
-  color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   margin-bottom: 2rem;
 
@@ -72,7 +72,7 @@ export const PostDate = styled.span`
 export const PostReadTime = styled.span`
   display: inline-block;
   font-size: ${themeGet("fontSizes.1", "16")}px;
-  color: ${({color}) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
   font-weight: 400;
   margin-top: 0.4rem;
 
@@ -261,16 +261,20 @@ export const PostDescription = styled.div`
       content: "";
       display: block;
       height: 1px;
-      margin-bottom: 60px;
+      margin-bottom: 24px;
       width: 30px;
+    }
+
+
+    &:after {
+      margin-bottom: 0;
     }
 
     p {
       font-size: ${themeGet("fontSizes.2", "18")}px;
       font-weight: 500;
       line-height: 2;
-      margin-bottom: 23px;
-
+      margin: 1rem auto;
     }
 
     h4 {
@@ -282,6 +286,11 @@ export const PostDescription = styled.div`
 
     small {
       font-style: italic;
+      text-align: right;
+    }
+
+    a {
+      border-bottom: solid 2px #000;
     }
   }
 
