@@ -1,6 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import {TWITTER_USERNAME} from "../constants";
 
 type Meta = { name: string; content: string; property?: undefined; } |
 { property: string; content: string; name?: undefined; }
@@ -59,7 +60,7 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -68,6 +69,10 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
         {
           name: `twitter:title`,
           content: metaTitle,
+        },
+        {
+          name: `twitter:site`,
+          content: TWITTER_USERNAME,
         },
         {
           name: `twitter:description`,

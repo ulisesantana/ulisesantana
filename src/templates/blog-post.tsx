@@ -43,8 +43,6 @@ const BlogPostTemplate = (props: any) => {
           {property: 'article:tag', content: metaTags},
           {property: 'og:image', content: metaImage},
           {property: 'og:url', content: shareUrl},
-          {property: 'og:image:width', content: '1300'},
-          {property: 'og:image:height', content: '652'},
           {property: 'twitter:domain', content: siteUrl},
           {property: 'twitter:image', content: metaImage},
           {property: 'twitter:url', content: shareUrl},
