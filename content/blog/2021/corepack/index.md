@@ -50,7 +50,7 @@ competencia nos traerá ventajas a la comunidad dotándonos de mejores herramien
 
 Antes que nada quiero aclarar que **Corepack se encuentra en estado experimental** todavía. Además, por
 ahora [sólo funciona con yarn y pnpm](https://nodejs.org/dist/latest-v16.x/docs/api/corepack.html#corepack_supported_package_managers)
-, dejando npm fuera por ahora. Sin embargo, nos permitirá tener varias versiones de yarn y pnpm, ya que la instalará y
+, dejando npm fuera. Sin embargo, nos permitirá tener varias versiones de yarn y pnpm, ya que la instalará y
 usará en función de lo que tengamos definido en nuestro package.json. Esto sería un ejemplo de un proyecto que usa yarn 
 en su versión 2.4.3:
 
