@@ -20,21 +20,20 @@ import Intro from "../containers/Intro"
 import {DateHelper} from "../dateHelper";
 
 const BlogPostTemplate = (props: any) => {
-  const post = props.data.markdownRemark
-  const {edges} = props.data.allMarkdownRemark
-  const slug = post.fields.slug
+  const {edges} = props.data.allMdx
+  const {slug, frontmatter, excerpt, timeToRead, body: post} = props.data.mdx
   const siteUrl = props.data.site.siteMetadata.siteUrl
   const shareUrl = `${siteUrl}${slug}`
-  const title = post.frontmatter.title
-  const metaTags = post.frontmatter.tags == null ? '' : post.frontmatter.tags.join(',')
-  const [metaDate] = post.frontmatter.date.split('T')
-  const metaImage = `${siteUrl}${post.frontmatter.cover.childImageSharp.fluid.src}`
+  const title = frontmatter.title
+  const metaTags = frontmatter.tags == null ? '' : frontmatter.tags.join(',')
+  const [metaDate] = frontmatter.date.split('T')
+  const metaImage = `${siteUrl}${frontmatter.cover.childImageSharp.fluid.src}`
 
   return (
     <SpanishLayout>
       <SEO
         title={title}
-        description={post.frontmatter.description || post.excerpt}
+        description={frontmatter.description || excerpt}
         meta={[
           {property: 'og:type', content: 'article'},
           {property: 'article:author', content: siteUrl},
@@ -50,24 +49,25 @@ const BlogPostTemplate = (props: any) => {
       />
       <BlogPostDetailsWrapper>
         <PostDetails
-          title={post.frontmatter.title}
-          date={DateHelper.toHuman(post.frontmatter.date)}
+          title={frontmatter.title}
+          date={DateHelper.toHuman(frontmatter.date)}
           preview={
-            post.frontmatter.cover == null
+            frontmatter.cover == null
               ? null
-              : post.frontmatter.cover.childImageSharp.fluid
+              : frontmatter.cover.childImageSharp.fluid
           }
-          description={post.html}
-          timeToRead={post.timeToRead}
+          images={frontmatter.images}
+          content={post}
+          timeToRead={timeToRead}
           imagePosition="top"
         />
         <Intro lang="es"/>
         <BlogPostFooter
-          className={post.frontmatter.cover == null ? "center" : ""}
+          className={frontmatter.cover == null ? "center" : ""}
         >
-          {post.frontmatter.tags == null ? null : (
+          {frontmatter.tags == null ? null : (
             <PostTags className="post_tags">
-              {post.frontmatter.tags.map((tag: string, index: number) => (
+              {frontmatter.tags.map((tag: string, index: number) => (
                 <a key={index} href={`/tags/${_.kebabCase(tag)}/`}>
                   {`#${tag}`}
                 </a>
@@ -76,25 +76,25 @@ const BlogPostTemplate = (props: any) => {
           )}
           <PostShare>
             <span>Comparte esta entrada:</span>
-            <FacebookShareButton url={shareUrl} quote={post.frontmatter.title}>
+            <FacebookShareButton url={shareUrl} quote={frontmatter.title}>
               <IoLogoFacebook/>
             </FacebookShareButton>
-            <TwitterShareButton url={shareUrl} title={post.frontmatter.title}>
+            <TwitterShareButton url={shareUrl} title={frontmatter.title}>
               <IoLogoTwitter/>
             </TwitterShareButton>
             <PinterestShareButton
               url={shareUrl}
               media={`${
-                post.frontmatter.cover == null
+                frontmatter.cover == null
                   ? null
-                  : post.frontmatter.cover.childImageSharp.fluid
+                  : frontmatter.cover.childImageSharp.fluid
               }`}
             >
               <IoLogoPinterest/>
             </PinterestShareButton>
             <RedditShareButton
               url={shareUrl}
-              title={`${post.frontmatter.title}`}
+              title={`${frontmatter.title}`}
             >
               <IoLogoReddit/>
             </RedditShareButton>
@@ -106,20 +106,19 @@ const BlogPostTemplate = (props: any) => {
         <RelatedPostWrapper>
           <RelatedPostTitle>Artículos relacionados</RelatedPostTitle>
           <RelatedPostItems>
-            {edges.map(({node}: any) => (
-              <RelatedPostItem key={node.fields.slug}>
-                <PostCard
-                  title={node.frontmatter.title || node.fields.slug}
-                  url={node.fields.slug}
-                  image={
-                    node.frontmatter.cover == null
-                      ? null
-                      : node.frontmatter.cover.childImageSharp.fluid
-                  }
-                  tags={node.frontmatter.tags}
-                />
-              </RelatedPostItem>
-            ))}
+            {edges.map(({node}: any) => {
+              console.log(node.slug)
+              return (
+                <RelatedPostItem key={node.slug}>
+                  <PostCard
+                    title={node.frontmatter.title || node.slug}
+                    url={`/${node.slug}`}
+                    image={node.frontmatter.cover.childImageSharp.fluid}
+                    tags={node.frontmatter.tags}
+                  />
+                </RelatedPostItem>
+              )
+            })}
           </RelatedPostItems>
         </RelatedPostWrapper>
       )}
@@ -142,17 +141,18 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx( slug: { eq: $slug }) {
       id
       excerpt(pruneLength: 160)
-      html
       timeToRead
-      fields {
-        slug
-      }
+      body
+      slug
       frontmatter {
         title
         date
+        images {
+          publicURL
+        }
         description
         tags
         cover {
@@ -164,19 +164,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: { draft: { nin: $draftDisabledList }, tags: { in: $tag } }
-        fields: { slug: { ne: $slug } }
+        slug: { ne: $slug }
       }
     ) {
       edges {
         node {
-          fields {
-            slug
-          }
+          slug
           frontmatter {
             title
             tags

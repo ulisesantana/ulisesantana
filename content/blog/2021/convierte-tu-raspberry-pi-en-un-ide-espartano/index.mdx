@@ -5,6 +5,7 @@ description: Tu Raspberry Pi puede ser un entorno de desarrollo muy interesante 
 tags: [desarrollo,raspberry pi]
 cover: neovim.png
 draft: false
+images: [starship.png, neovim.png]
 ---
 
 Trabajar desde una [Raspberry Pi](https://www.raspberrypi.org/products) puede parecer una locura, pero la realidad es
@@ -19,10 +20,10 @@ terminal, ya que conectar una Raspberry a una pantalla y usar los programas con 
 desesperante. Al menos para mí lo es, por lo que para montar mi entorno de desarrollo en mi Raspberry me he basado 100%
 en herramientas que funcionan por terminal y servidores web para usar el navegador web del iPad como cliente.
 
-## Mi entorno de desarrollo 
+## Mi entorno de desarrollo
 
 El entorno de desarrollo que he preparado para mi Raspberry Pi se compone de lo siguiente:
-    
+
 - [zsh](#zsh)
 - [zim](#zim)
 - [Starship](#starship)
@@ -93,7 +94,12 @@ echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
 ```
 
 Así es como luce Starship en mi Raspberry:
-![Como se ve Starship en mi Raspberry Pi](starship.png)
+
+<ImageWithDescription
+  id="starship"
+  src={props.images[0].publicURL}
+  alt="Como se ve Starship en mi Raspberry Pi"
+/>
 
 A continuación te comparto la configuración que tengo para hacer que se vea de esta manera. De todos modos, siempre
 puedes revisar la [documentación de Starship](https://starship.rs/es-ES/config/) y configurarlo a tu gusto.
@@ -124,7 +130,7 @@ time_format = "%T"
 ```
 
 Realmente todo esto también se podría hacer con zsh y zim, pero la ventaja que le veo a Starship es que por un lado es
-superfácil de configurar y por otro es que es compatible con varios shells como Bash o Powershell, por ejemplo. 
+superfácil de configurar y por otro es que es compatible con varios shells como Bash o Powershell, por ejemplo.
 
 <div id="nodejs"></div>
 
@@ -147,7 +153,7 @@ aprovechar las novedades que salen cada año. Hacer todo esto con binarios o los
 operativo puede ser un dolor, por lo que mejor usar nvm. Otro punto a tener en cuenta es que nvm es lo que recomiendan que uses en la certificación de
 Node.js para instalar Node.js.
 
-Para instalar nvm ejecutamos: 
+Para instalar nvm ejecutamos:
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
 ```
@@ -171,10 +177,10 @@ Y ya está, con esto ya deberías tener Node.js y npm instalados.
 
 [Neovim](https://neovim.io) es un editor de texto que se lanza directamente en la terminal y por tanto puedes abrir
 directamente en cualquier terminal, permitiéndote modificar archivos por ssh. Está basado en [vim](https://www.vim.org),
-por lo que si conoces o has usado vim en algún momento no te supondrá ninguna dificultad utilizar Neovim. 
+por lo que si conoces o has usado vim en algún momento no te supondrá ninguna dificultad utilizar Neovim.
 
 Realmente no tengo ninguna razón de peso para usar Neovim frente a vim, simplemente vi que lo
-usaba [Matteo Collina](https://twitter.com/matteocollina) y me pareció interesante. 
+usaba [Matteo Collina](https://twitter.com/matteocollina) y me pareció interesante.
 
 Al contrario que el resto de herramientas, la instalación de Neovim no es tan fácil ya que requiere que instalemos
 dependencias e incluso el propio proyecto para después compilarlo en nuestra Raspberry. Aun así, verás que no es tan
@@ -242,7 +248,11 @@ nvim +PlugInstall
 Si has hecho todo esto correctamente al abrir un fichero con el comando `nvim` deberías ver algo parecido a la terminal
 de la izquierda:
 
-![Programando con Neovim](neovim.png)
+<ImageWithDescription
+  id="neovim"
+  src={props.images[1].publicURL}
+  alt="Programando con Neovim"
+/>
 
 Con esto ya tendrás tu Raspberry Pi preparada como entorno de desarrollo en el podrás programar, escribir tus entradas
 de blog o hacer [katas](https://kata-log.rocks).

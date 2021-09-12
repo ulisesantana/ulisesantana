@@ -4,8 +4,12 @@ import { themeGet } from "styled-system"
 
 const ResetCSS = createGlobalStyle`
   html {
-    font-size: 18px;
     box-sizing: border-box;
+    font-size: 18px;
+    line-height: 1.15;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
   }
 

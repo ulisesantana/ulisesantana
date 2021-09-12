@@ -1,6 +1,8 @@
 import React from "react"
+import SimpleReactLightbox from "simple-react-lightbox";
 import { ThemeProvider } from "styled-components"
 import ScrollToTop from "react-scroll-up"
+import { MDXProvider } from "@mdx-js/react"
 
 import Footer from "./Footer/Footer"
 import ScrollUpButton from "./ScrollUpButton/ScrollUpButton"
@@ -9,26 +11,31 @@ import { theme } from "../theme"
 import { SocialLinks } from "./SocialLinks"
 import Navbar from "./Navbar/Navbar"
 import { Language } from "../types"
+import ImageWithDescription from "./ImageWithDescription";
 
 const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
   menu = true,
 }) => (
   <ThemeProvider theme={theme}>
-      <ResetCss />
-      {!!menu && <Navbar lang={lang} />}
-      {children}
-      <Footer>
-        <SocialLinks />
-        <div>Copyright &copy; {new Date().getFullYear()}</div>
-      </Footer>
-      <ScrollToTop
-        showUnder={300}
-        duration={700}
-        style={{ bottom: 30, right: 20 }}
-      >
-        <ScrollUpButton />
-      </ScrollToTop>
+    <SimpleReactLightbox>
+      <MDXProvider components={{ImageWithDescription}}>
+        <ResetCss />
+        {!!menu && <Navbar lang={lang} />}
+        {children}
+        <Footer>
+          <SocialLinks/>
+          <div>Copyright &copy; {new Date().getFullYear()}</div>
+        </Footer>
+        <ScrollToTop
+          showUnder={300}
+          duration={700}
+          style={{ bottom: 30, right: 20 }}
+        >
+          <ScrollUpButton/>
+        </ScrollToTop>
+      </MDXProvider>
+    </SimpleReactLightbox>
   </ThemeProvider>
 )
 

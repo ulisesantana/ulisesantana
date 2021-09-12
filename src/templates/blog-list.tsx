@@ -14,13 +14,11 @@ const translations = { en, es }
 
 interface BlogListProps {
     data: {
-        allMarkdownRemark: {
+        allMdx: {
             edges: Array<{
                 node: {
-                    fields: {
-                        slug: string
-                    }
                     excerpt: string
+                    slug: string
                     frontmatter: {
                         date: string
                         title: string
@@ -40,7 +38,7 @@ interface BlogListProps {
 }
 
 const BlogList = ({data, pageContext}: BlogListProps) => {
-  const Posts = data.allMarkdownRemark.edges
+  const Posts = data.allMdx.edges
   const { currentPage, numPages, lang = "es" } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -65,14 +63,14 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
           return (
             <PostCardMinimal
               className={node.frontmatter.draft ? 'draft' : ''}
-              key={node.fields.slug}
-              title={node.frontmatter.title || node.fields.slug}
+              key={node.slug}
+              title={node.frontmatter.title || node.slug}
               image={
                 node.frontmatter.cover == null
                   ? null
                   : node.frontmatter.cover.childImageSharp.fluid
               }
-              url={node.fields.slug}
+              url={`/${node.slug}`}
               description={node.frontmatter.description || node.excerpt}
               date={node.frontmatter.date}
               tags={node.frontmatter.tags}
@@ -103,7 +101,7 @@ export const pageQuery = graphql`
     sitePage {
       path
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { frontmatter: { draft: { nin: $draftDisabledList } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
@@ -111,9 +109,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fields {
-            slug
-          }
+          slug
           excerpt(pruneLength: 300)
           frontmatter {
             date

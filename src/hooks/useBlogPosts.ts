@@ -16,7 +16,7 @@ export const useBlogPosts = () =>
           }
         }
       }
-      allMarkdownRemark(
+      allMdx(
         filter: { frontmatter: { draft: { nin: $draftDisabledList } } }
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 5
@@ -25,9 +25,7 @@ export const useBlogPosts = () =>
         edges {
           node {
             excerpt(pruneLength: 300)
-            fields {
-              slug
-            }
+            slug
             frontmatter {
               date(formatString: "DD [<span>] MMM [</span>]")
               title

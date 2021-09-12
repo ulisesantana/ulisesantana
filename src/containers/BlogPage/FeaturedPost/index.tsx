@@ -26,7 +26,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
           }
         }
       }
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 6
       ) {
@@ -34,9 +34,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
         edges {
           node {
             excerpt(pruneLength: 150)
-            fields {
-              slug
-            }
+            slug
             frontmatter {
               date(formatString: "MMM DD, YYYY")
               title
@@ -56,14 +54,14 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
     }
   `)
 
-  const Posts = Data.allMarkdownRemark.edges
+  const Posts = Data.allMdx.edges
 
   return (
     <FeaturedPostWrapper>
       <SecTitle>Featured Stories</SecTitle>
       <FeaturedPostRow>
         {Posts.map(({ node }: any) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title || node.slug
           return (
             <FeaturedPostCol key={title}>
               <FeaturedCard
@@ -73,7 +71,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
                     ? null
                     : node.frontmatter.cover.childImageSharp.fluid
                 }
-                url={node.fields.slug}
+                url={node.slug}
                 tags={node.frontmatter.tags}
                 description={node.excerpt}
                 overlay

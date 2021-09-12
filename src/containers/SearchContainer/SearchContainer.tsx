@@ -17,12 +17,10 @@ function Search() {
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark ( filter: { frontmatter: { draft: { nin: [true] } } } ){
+      allMdx ( filter: { frontmatter: { draft: { nin: [true] } } } ){
         edges {
           node {
-            fields {
-              slug
-            }
+            slug
             frontmatter {
               date
               title
@@ -42,7 +40,7 @@ function Search() {
     }
   `)
 
-  const dataset = data.allMarkdownRemark.edges
+  const dataset = data.allMdx.edges
 
   /**
    * handles the input change and perfom a search with js-search
@@ -61,9 +59,9 @@ function Search() {
   }
   useEffect(() => {
     if (dataset.length !== 0) {
-      const data: any = dataset.map(({ node: {frontmatter, fields} }: any) => ({
+      const data: any = dataset.map(({ node: {frontmatter, slug} }: any) => ({
         ...frontmatter,
-        slug: fields.slug
+        slug
       }))
       dispatch({ type: "SET_DATA", payload: data })
       const dataToSearch = rebuildIndex(data)

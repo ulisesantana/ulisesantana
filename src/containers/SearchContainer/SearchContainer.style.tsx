@@ -7,11 +7,10 @@ export const SearchWrapper = styled.div`
   flex-grow: 1;
   font-size: 1rem;
   height: 100%;
-  margin: 24px auto 0;
+  margin: 24px auto;
   position: relative;
   
   @media (min-width: 990px) {
-    margin: 0 auto;
     width: 900px;
   }
   @media (min-width: 1200px) {

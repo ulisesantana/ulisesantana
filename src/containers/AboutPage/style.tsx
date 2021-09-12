@@ -65,7 +65,7 @@ export const AboutDetails = styled.section`
 
   .out {
     position: relative;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
   }
 
@@ -119,7 +119,6 @@ export const AboutDetails = styled.section`
     @media (max-width: 990px) {
       border-radius: 0;
       margin: 3rem -1.7rem;
-      width: 100vw;
 
       h3 {
         display: none;
@@ -154,7 +153,7 @@ export const AboutDetails = styled.section`
 
   @media (max-width: 990px) {
     blockquote {
-      width: 100vw;
+      width: 100%;
     }
     .tldr-open {
       left: 3.3vw;

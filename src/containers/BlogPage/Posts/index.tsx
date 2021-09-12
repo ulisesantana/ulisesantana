@@ -11,9 +11,7 @@ const translations = { en, es }
 type Post = {
   node: {
     excerpt: string
-    fields: {
-      slug: string
-    }
+    slug: string
     frontmatter: {
       date: string
       title: string
@@ -45,17 +43,17 @@ const Posts: React.FunctionComponent<PostsProps> = ({
     <BlogPostsWrapper>
       <SecTitle>{translations[lang].latestPosts}</SecTitle>
       {posts.map(({ node }: Post) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.slug
         return (
           <PostCardMinimal
-            key={node.fields.slug}
+            key={node.slug}
             title={title}
             image={
               node.frontmatter.cover == null
                 ? null
                 : node.frontmatter.cover.childImageSharp.fluid
             }
-            url={node.fields.slug}
+            url={node.slug}
             description={node.frontmatter.description || node.excerpt}
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}

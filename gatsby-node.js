@@ -7,10 +7,10 @@ const draftDisabledList = process.env.NODE_ENV === `production` ? [true] : []
 const createPostHandler = (createPage) => (post, index, posts) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
-    const slug = post.node.frontmatter.slug || post.node.fields.slug;
+    const slug = post.node.frontmatter.slug || post.node.slug;
 
     createPage({
-        path:  slug,
+        path: slug,
         component: path.resolve(`./src/templates/blog-post.tsx`),
         context: {
             draftDisabledList,
@@ -44,7 +44,7 @@ exports.createPages = ({graphql, actions}) => {
     return graphql(
         `
       {
-        allMarkdownRemark(
+        allMdx(
           ${process.env.NODE_ENV === 'production' 
             ? `filter: { frontmatter: { draft: { nin: ${draftDisabledList} } } }`
             : ''
@@ -54,9 +54,7 @@ exports.createPages = ({graphql, actions}) => {
         ) {
           edges {
             node {
-              fields {
-                slug
-              }
+              slug
               frontmatter {
                 title
                 tags
@@ -84,7 +82,7 @@ exports.createPages = ({graphql, actions}) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges
+        const posts = result.data.allMdx.edges
 
         posts.forEach(createPostHandler(createPage))
 
@@ -124,7 +122,7 @@ exports.createPages = ({graphql, actions}) => {
 exports.onCreateNode = ({node, actions, getNode}) => {
     const {createNodeField} = actions
 
-    if (node.internal.type === `MarkdownRemark`) {
+    if (node.internal.type === `Mdx`) {
         if (typeof node.frontmatter.slug !== 'undefined') {
             createNodeField({
                 node,

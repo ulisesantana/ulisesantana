@@ -5,13 +5,12 @@ import {
   Excerpt,
   PostCardWrapper,
   PostContent,
-  PostDateStyle,
   PostDateAndPreview,
   PostDetails,
   PostPreview,
   PostTitle,
 } from "./PostCardMinimal.style"
-import {DateHelper} from "../../dateHelper";
+import {PostDate} from "../PostDate";
 
 interface PostCardMinimalProps {
   image?: any
@@ -73,16 +72,6 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
         </PostDetails>
       </a>
     </PostCardWrapper>
-  )
-}
-
-const PostDate: React.FunctionComponent<{date: string}> = ({date}) => {
-  const {day, month, year} = DateHelper.getDate(date)
-  return (
-    <PostDateStyle className="post_date">
-      {day}
-      <span>{month} {year}</span>
-    </PostDateStyle>
   )
 }
 

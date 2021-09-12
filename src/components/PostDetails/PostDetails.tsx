@@ -12,12 +12,15 @@ import {
   PostReadTime,
   PostTags,
 } from "./PostDetails.style"
+import {MDXRenderer} from "gatsby-plugin-mdx";
+
 
 type PostDetailsProps = {
   title: string
   date?: string
   preview?: any
-  description: any
+  content: any
+  images: any[]
   timeToRead: number
   tags?: []
   className?: string
@@ -28,7 +31,8 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
   title,
   date,
   preview,
-  description,
+  content,
+  images,
   timeToRead,
   tags,
   className,
@@ -74,10 +78,11 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
             </>
         )}
 
-        <PostDescription
-          dangerouslySetInnerHTML={{ __html: description }}
-          className="post_des"
-        />
+        <PostDescription className="post_des">
+          <MDXRenderer images={images}>
+            {content}
+          </MDXRenderer>
+        </PostDescription>
         {tags == null ? null : (
           <PostTags>
             {tags.map((tag, index) => (
