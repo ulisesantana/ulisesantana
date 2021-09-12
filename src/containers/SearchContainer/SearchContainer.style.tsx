@@ -5,11 +5,13 @@ export const SearchWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-grow: 1;
+  font-size: 1rem;
   height: 100%;
-  margin: 0 auto;
+  margin: 24px auto 0;
   position: relative;
   
   @media (min-width: 990px) {
+    margin: 0 auto;
     width: 900px;
   }
   @media (min-width: 1200px) {
@@ -18,7 +20,6 @@ export const SearchWrapper = styled.div`
   @media (min-width: 1400px) {
     width: 1170px;
   }
-  
 `
 
 export const SearchForm = styled.form`
@@ -26,19 +27,13 @@ export const SearchForm = styled.form`
   width: calc(100% - 60px);
   input {
     width: 100%;
-    font-size: 21px;
     font-weight: normal;
     color: ${themeGet("colors.textColor", "#292929")};
     border: 0;
     background: transparent;
+    font-size: 1rem;
     &:focus {
       outline: none;
-    }
-    @media (max-width: 990px) {
-      font-size: 18px;
-    }
-    @media (max-width: 767px) {
-      font-size: 15px;
     }
   }
 `
