@@ -15,7 +15,6 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   menu = true,
 }) => (
   <ThemeProvider theme={theme}>
-    <>
       <ResetCss />
       {!!menu && <Navbar lang={lang} />}
       {children}
@@ -30,7 +29,6 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
       >
         <ScrollUpButton />
       </ScrollToTop>
-    </>
   </ThemeProvider>
 )
 
