@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { themeGet } from "styled-system"
 
 export const PostListWrapper = styled.div`
+  cursor: pointer;
   a {
     display: flex;
     align-items: center;
@@ -80,7 +81,7 @@ export const PostTags = styled.div`
     margin-left: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("primary", "yellow")};
+    color: ${themeGet("colors.textColor", "#292929")};
     @media (max-width: 990px) {
       font-size: 13px;
       margin-left: 25px;

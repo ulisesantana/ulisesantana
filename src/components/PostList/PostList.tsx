@@ -9,6 +9,7 @@ import {
   PostDate,
   PostTags,
 } from "./PostList.style"
+import {DateHelper} from "../../dateHelper";
 
 interface PostListProps {
   image?: any
@@ -56,11 +57,10 @@ const PostList: React.FunctionComponent<PostListProps> = ({
           <PostMeta>
             {date && (
               <PostDate
-                dangerouslySetInnerHTML={{
-                  __html: date,
-                }}
                 className="post_date"
-              />
+              >
+                {DateHelper.toHuman(date)}
+              </PostDate>
             )}
             {tags == null ? null : (
               <PostTags className="post_tags">

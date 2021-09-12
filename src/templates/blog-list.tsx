@@ -8,6 +8,7 @@ import Intro from "../containers/Intro"
 import { SecTitle } from "../containers/BlogPage/Posts/style"
 import en from "../locales/en/BlogPage.json"
 import es from "../locales/es/BlogPage.json"
+import Search from "../containers/SearchContainer/SearchContainer"
 
 const translations = { en, es }
 
@@ -54,6 +55,7 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
     <SpanishLayout>
       <SEO title={`Blog ${currentPage > 1 ? "Página " + currentPage : ""}`} />
       <Intro lang={lang} />
+      <Search/>
       {/* <FeaturedPosts /> */}
       <BlogPostsWrapper>
         {currentPage === 1 && (

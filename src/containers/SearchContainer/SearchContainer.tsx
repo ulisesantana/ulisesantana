@@ -10,20 +10,21 @@ import {
   SearchResult,
   NoResult,
 } from "./SearchContainer.style"
+import {FaSearch} from "react-icons/all"
 
 function Search() {
   const [state, dispatch] = useReducer(SearchReducer, initialState)
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark ( filter: { frontmatter: { draft: { nin: [true] } } } ){
         edges {
           node {
             fields {
               slug
             }
             frontmatter {
-              date(formatString: "MMMM D, YYYY")
+              date
               title
               description
               tags
@@ -60,14 +61,10 @@ function Search() {
   }
   useEffect(() => {
     if (dataset.length !== 0) {
-      let data: any = []
-      dataset.forEach(({ node }: any) => {
-        let formatedData = {
-          ...node.frontmatter,
-        }
-        data.push(formatedData)
-      })
-
+      const data: any = dataset.map(({ node: {frontmatter, fields} }: any) => ({
+        ...frontmatter,
+        slug: fields.slug
+      }))
       dispatch({ type: "SET_DATA", payload: data })
       const dataToSearch = rebuildIndex(data)
       if (dataToSearch) {
@@ -84,17 +81,18 @@ function Search() {
 
   return (
     <SearchWrapper>
+      <FaSearch/>
       <SearchForm onSubmit={handleSubmit}>
         <input
           id="Search"
           value={searchQuery}
           onChange={searchData}
-          placeholder="Enter Your Search Topic"
+          placeholder="Busca entre mis artículos"
         />
       </SearchForm>
       <SearchResult>
         {queryResults.length == 0 && searchQuery !== "" ? (
-          <NoResult>No result found</NoResult>
+          <NoResult>No se ha encontrado nada por "{searchQuery}"</NoResult>
         ) : (
           ""
         )}

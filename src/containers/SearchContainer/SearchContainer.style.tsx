@@ -2,15 +2,27 @@ import styled from "styled-components"
 import { themeGet } from "styled-system"
 
 export const SearchWrapper = styled.div`
-  display: block;
+  align-items: center;
+  display: flex;
   flex-grow: 1;
   height: 100%;
-  display: flex;
-  align-items: center;
+  margin: 0 auto;
   position: relative;
+  
+  @media (min-width: 990px) {
+    width: 900px;
+  }
+  @media (min-width: 1200px) {
+    width: 1050px;
+  }
+  @media (min-width: 1400px) {
+    width: 1170px;
+  }
+  
 `
 
 export const SearchForm = styled.form`
+  margin-left: 8px;
   width: calc(100% - 60px);
   input {
     width: 100%;
@@ -38,7 +50,8 @@ export const SearchResult = styled.div`
   top: 100%;
   left: 0;
   display: block;
-  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.75);
+  z-index: 200;
 
   .post_list {
     border-bottom: 1px solid #f3f3f3;
