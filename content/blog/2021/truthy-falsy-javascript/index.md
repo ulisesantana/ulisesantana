@@ -1,0 +1,10 @@
+---
+title: Truthy y Falsy en JavaScript
+date: 2021-09-12
+description: En JavaScript existe el concepto de Truthy y Falsy values. Déjame explicarte en este artículo de qué se trata.
+tags: [javascript]
+cover: cover.png
+draft: true
+---
+
+En JavaScript existe la coerción de tipos, que se trata de 
