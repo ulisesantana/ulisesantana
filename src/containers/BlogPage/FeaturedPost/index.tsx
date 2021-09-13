@@ -42,7 +42,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
               tags
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 270, maxHeight: 405, quality: 100) {
+                  fluid(cropFocus: CENTER, maxWidth: 270, maxHeight: 405, quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }

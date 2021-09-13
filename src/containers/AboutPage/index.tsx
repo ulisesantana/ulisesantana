@@ -21,14 +21,14 @@ const About: React.FunctionComponent<AboutProps> = () => {
     query {
       talk: file(absolutePath: { regex: "/jsdaycanarias.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 870, quality: 90) {
+          fluid(cropFocus: CENTER, maxWidth: 870, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       dahl: file(absolutePath: { regex: "/dahl.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 870, quality: 90) {
+          fluid(cropFocus: CENTER, maxWidth: 870, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }

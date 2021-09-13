@@ -28,7 +28,7 @@ function Search() {
               tags
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 62, maxHeight: 62, quality: 90) {
+                  fluid(cropFocus: CENTER, maxWidth: 62, maxHeight: 62, quality: 90) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }

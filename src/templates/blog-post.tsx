@@ -158,7 +158,7 @@ export const pageQuery = graphql`
         tags
         cover {
           childImageSharp {
-            fluid(maxWidth: 1170, quality: 90) {
+            fluid(cropFocus: CENTER, maxWidth: 1170, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
@@ -181,7 +181,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fluid(maxWidth: 480, maxHeight: 285, quality: 90, cropFocus: CENTER) {
+                fluid(cropFocus: CENTER, maxWidth: 480, maxHeight: 285, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

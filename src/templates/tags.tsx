@@ -62,7 +62,7 @@ export const pageQuery = graphql`
             title
             cover {
               childImageSharp {
-                fluid(maxWidth: 170, maxHeight: 170, quality: 90) {
+                fluid(cropFocus: CENTER, maxWidth: 170, maxHeight: 170, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }

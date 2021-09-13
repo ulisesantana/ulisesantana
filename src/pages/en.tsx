@@ -41,7 +41,7 @@ export const pageQuery = graphql`
     }
      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 210, maxHeight: 210, quality: 100) {
+          fluid(cropFocus: CENTER, maxWidth: 210, maxHeight: 210, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }

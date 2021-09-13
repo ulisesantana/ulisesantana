@@ -25,7 +25,7 @@ export const BlogPostsWrapper = styled.main`
 `
 
 export const RelatedPostWrapper = styled.div`
-  margin: 0 auto;
+  margin: 24px auto 0;
   padding-left: 75px;
   padding-right: 75px;
 
@@ -137,7 +137,7 @@ export const RelatedPostItem = styled.div`
 `
 export const TagPostsWrapper = styled.div`
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 60px;
   position: relative;
   @media (min-width: 990px) {
     width: 900px;
@@ -156,7 +156,7 @@ export const TagPostsWrapper = styled.div`
   }
 
   .post_card {
-    margin-bottom: 120px;
+    margin-bottom: 48px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -172,7 +172,7 @@ export const TagPageHeading = styled.div`
   padding-left: 210px;
   font-size: 15px;
   font-weight: 400;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   position: relative;
   @media (max-width: 1200px) {
     padding-left: 160px;

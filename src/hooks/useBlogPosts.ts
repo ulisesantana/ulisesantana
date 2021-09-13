@@ -33,7 +33,7 @@ export const useBlogPosts = () =>
               tags
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 325, maxHeight: 325, quality: 90) {
+                  fluid(cropFocus: CENTER, maxWidth: 325, maxHeight: 325, quality: 90) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
