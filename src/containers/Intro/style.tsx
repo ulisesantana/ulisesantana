@@ -31,7 +31,7 @@ export const IntroImage = styled.div`
   padding: 30px;
   border-radius: 50%;
   margin: 0 auto;
-  border: 1px solid ${themeGet("lightBorderColor")};
+  border: 4px solid ${themeGet("lightBorderColor")};
   flex-shrink: 0;
   perspective: 1000px;
 
@@ -93,7 +93,7 @@ export const IntroTitle = styled.h1`
   font-size: 30px;
   font-weight: 400;
   font-family: ${themeGet("fontFamily.1")};
-  color: ${themeGet("black")};
+  color: ${props => themeGet(props.theme.isDark ? "white" : "black")};
   margin-bottom: 20px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -105,7 +105,7 @@ export const IntroTitle = styled.h1`
   }
 `
 
-export const Desciption = styled.p`
+export const Description = styled.p`
   color: ${themeGet("textColor")};
   font-size: 1.5rem;
   line-height: 2rem;
