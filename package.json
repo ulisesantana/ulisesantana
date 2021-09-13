@@ -11,6 +11,7 @@
     "awesome-react-repl": "^0.1.10",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.10.0",
+    "browser-monads": "^1.0.0",
     "disqus-react": "^1.0.5",
     "dotenv": "^8.0.0",
     "formik": "^1.5.7",

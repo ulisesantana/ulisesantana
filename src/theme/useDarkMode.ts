@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+// @ts-ignore
+import {window} from 'browser-monads'
 import {darkTheme, lightTheme, Theme} from "./theme";
 
 const themeKey = 'theme'
@@ -19,12 +21,9 @@ const getDarkModeCachedValue = () => {
 }
 
 export function useDarkMode() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(getDarkModeCachedValue() ?? isDarkModeEnabled())
   const [theme, setTheme] = useState<Theme>(getTheme(darkMode))
 
-  useEffect(() => {
-    setDarkMode(getDarkModeCachedValue() ?? isDarkModeEnabled())
-  }, [])
   useEffect(() => {
     setDarkModeCachedValue(darkMode)
     setTheme(getTheme(darkMode))
