@@ -27,7 +27,7 @@ export const useBlogPosts = () =>
             excerpt(pruneLength: 300)
             slug
             frontmatter {
-              date(formatString: "DD [<span>] MMM [</span>]")
+              date
               title
               description
               tags
