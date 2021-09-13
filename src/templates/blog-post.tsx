@@ -109,7 +109,6 @@ const BlogPostTemplate = (props: any) => {
           <RelatedPostTitle>Artículos relacionados</RelatedPostTitle>
           <RelatedPostItems>
             {edges.map(({node}: any) => {
-              console.log(node.slug)
               return (
                 <RelatedPostItem key={node.slug}>
                   <PostCard
