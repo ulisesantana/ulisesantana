@@ -23,7 +23,7 @@ const BlogPostTemplate = (props: any) => {
   const {edges} = props.data.allMdx
   const {slug, frontmatter, excerpt, timeToRead, body: post} = props.data.mdx
   const siteUrl = props.data.site.siteMetadata.siteUrl
-  const shareUrl = `${siteUrl}${slug}`
+  const shareUrl = `${siteUrl}/${slug}`
   const title = frontmatter.title
   const metaTags = frontmatter.tags == null ? '' : frontmatter.tags.join(',')
   const [metaDate] = frontmatter.date.split('T')
@@ -42,6 +42,8 @@ const BlogPostTemplate = (props: any) => {
           {property: 'article:tag', content: metaTags},
           {property: 'og:image', content: metaImage},
           {property: 'og:url', content: shareUrl},
+          {property: 'og:image:width', content: '1301'},
+          {property: 'og:image:height', content: '653'},
           {property: 'twitter:domain', content: siteUrl},
           {property: 'twitter:image', content: metaImage},
           {property: 'twitter:url', content: shareUrl},
