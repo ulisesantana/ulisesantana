@@ -97,9 +97,6 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
     },
     {
-      resolve: `gatsby-plugin-feed`,
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ulises Santana Suárez`,
