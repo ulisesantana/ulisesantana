@@ -27,6 +27,9 @@ export const PrevPage = styled.div`
       color: ${props => themeGet(props.theme.isDark ? "black" : "textColor")};
       background-color: ${themeGet("primary")};
     }
+    &:visited {
+      color: ${themeGet("textColor")};
+    }
   }
 `
 
@@ -49,6 +52,9 @@ export const NextPage = styled.div`
     &:hover {
       color: ${props => themeGet(props.theme.isDark ? "black" : "textColor")};
       background-color: ${themeGet("primary")};
+    }
+    &:visited {
+      color: ${themeGet("textColor")};
     }
   }
 `

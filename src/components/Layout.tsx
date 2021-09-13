@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react"
+import React from "react"
 import SimpleReactLightbox from "simple-react-lightbox";
 import ScrollToTop from "react-scroll-up"
 import {MDXProvider} from "@mdx-js/react"
@@ -10,42 +10,20 @@ import Navbar from "./Navbar/Navbar"
 import {Language} from "../types"
 import ImageWithDescription from "./ImageWithDescription";
 import {JavaScriptRepl} from "./JavaScriptRepl";
-import {GlobalStyle} from "../theme";
-import {ThemeContext} from "styled-components";
-import {useStyledDarkMode} from "gatsby-styled-components-dark-mode";
-
-enum ThemeMode {
-  Dark = 'dark',
-  Light = 'light'
-}
-
-const isDarkModeEnabled = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-const getDarkModeCachedValue = () => {
-  const state = window.localStorage.getItem('theme')
-  if (state !== null) {
-    return state === ThemeMode.Dark
-  }
-  return state
-}
-const setDarkModeCachedValue = (value: boolean) => window.localStorage.setItem('theme', value ? ThemeMode.Dark : ThemeMode.Light)
+import {GlobalStyle, useDarkMode} from "../theme";
+import {ThemeProvider} from "styled-components";
 
 const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
   menu = true,
 }) => {
-  const [darkMode, setDarkMode] = useState(getDarkModeCachedValue() ?? isDarkModeEnabled())
-  const { toggleDark } = useStyledDarkMode();
-  const theme = useContext(ThemeContext);
+  const {darkMode, setDarkMode, theme} = useDarkMode()
 
-  useEffect(() => toggleDark(darkMode), [])
-  useEffect(() => {
-    setDarkModeCachedValue(darkMode)
-    toggleDark(darkMode)
-  }, [darkMode])
   return (
+    <ThemeProvider theme={theme}>
     <SimpleReactLightbox>
       <MDXProvider components={{ImageWithDescription, JavaScriptRepl}}>
-        <GlobalStyle theme={theme} didAppLoad={theme.didLoad}/>
+        <GlobalStyle theme={theme} />
         {!!menu && <Navbar lang={lang} isDark={darkMode} themeHandler={setDarkMode}/>}
         {children}
         <Footer>
@@ -61,6 +39,7 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
         </ScrollToTop>
       </MDXProvider>
     </SimpleReactLightbox>
+    </ThemeProvider>
   )
 }
 
