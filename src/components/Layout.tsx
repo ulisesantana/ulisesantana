@@ -12,6 +12,7 @@ import { SocialLinks } from "./SocialLinks"
 import Navbar from "./Navbar/Navbar"
 import { Language } from "../types"
 import ImageWithDescription from "./ImageWithDescription";
+import {JavaScriptRepl} from "./JavaScriptRepl";
 
 const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
@@ -19,7 +20,7 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
 }) => (
   <ThemeProvider theme={theme}>
     <SimpleReactLightbox>
-      <MDXProvider components={{ImageWithDescription}}>
+      <MDXProvider components={{ImageWithDescription, JavaScriptRepl}}>
         <ResetCss />
         {!!menu && <Navbar lang={lang} />}
         {children}
