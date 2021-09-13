@@ -1,7 +1,6 @@
 export * from "./Button/Button"
 export * from "./Pagination/Pagination"
 export * from "./ScrollUpButton/ScrollUpButton"
-export * from "./resetCSS"
 export * from "./Drawer/Drawer"
 export * from "./Job"
 export * from "./SocialLinks"

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const SocialProfileWrapper = styled.ul`
   align-items: center;
@@ -7,7 +7,7 @@ export const SocialProfileWrapper = styled.ul`
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 110px;
   width: 50%;
 
   @media screen and (max-width: 767px) {
@@ -79,7 +79,7 @@ export const SocialProfileItem = styled.li`
 
   a, a:visited {
     border: none;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: ${props => themeGet(props.theme.isDark ? "primary" : "textColor")};
     font-size: 22px;
     padding: 0.2rem;
     display: block;

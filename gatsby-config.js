@@ -1,3 +1,5 @@
+require('source-map-support').install()
+require('ts-node').register()
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -95,6 +97,13 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sharp`,
+    },
+    {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: require(`${__dirname}/src/theme.ts`).lightTheme,
+        dark: require(`${__dirname}/src/theme.ts`).darkTheme,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

@@ -27,7 +27,7 @@ const Tags = ({ pageContext, data }: any) => {
             key={node.slug}
             image={node.frontmatter.cover.childImageSharp.fluid}
             title={node.frontmatter.title}
-            url={node.slug}
+            url={'/' + node.slug}
             description={node.frontmatter.description || node.excerpt}
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}

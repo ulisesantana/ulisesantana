@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const PaginationWrapper = styled.div`
   display: flex;
@@ -12,9 +12,9 @@ export const PrevPage = styled.div`
   a {
     width: 32px;
     height: 32px;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: ${themeGet("textColor")};
     border-radius: 50%;
-    background-color: #f3f3f3;
+    background-color: ${themeGet("lightColor")};
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -24,8 +24,8 @@ export const PrevPage = styled.div`
       display: block;
     }
     &:hover {
-      color: #fff;
-      background-color: ${themeGet("colors.primary", "yellow")};
+      color: ${props => themeGet(props.theme.isDark ? "black" : "textColor")};
+      background-color: ${themeGet("primary")};
     }
   }
 `
@@ -35,9 +35,9 @@ export const NextPage = styled.div`
   a {
     width: 32px;
     height: 32px;
-    color: ${themeGet("colors.textColor", "#292929")};
+    background-color: ${themeGet("lightColor")};
+    color: ${themeGet("textColor")};
     border-radius: 50%;
-    background-color: #f3f3f3;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -47,8 +47,8 @@ export const NextPage = styled.div`
       display: block;
     }
     &:hover {
-      color: #fff;
-      background-color: ${themeGet("colors.primary", "yellow")};
+      color: ${props => themeGet(props.theme.isDark ? "black" : "textColor")};
+      background-color: ${themeGet("primary")};
     }
   }
 `

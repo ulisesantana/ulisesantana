@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../../theme"
 
 const BlogPostsWrapper = styled.div`
   margin: 0 auto;
@@ -10,7 +10,7 @@ const BlogPostsWrapper = styled.div`
     transition: ease all 0.3s;
 
     &:hover {
-      border-bottom-color: ${themeGet("colors.primary", "yellow")};
+      border-bottom-color: ${themeGet("primary")};
     }
 
     @media (max-width: 990px) {
@@ -38,10 +38,10 @@ const BlogPostsWrapper = styled.div`
 `
 
 export const SecTitle = styled.div`
-  color: ${themeGet("colors.textColor", "#292929")};
-  font-size: ${themeGet("fontSizes.3", "34")}px;
+  color: ${themeGet("textColor")};
+  font-size: ${themeGet("fontSizes.3")}px;
   font-weight: 500;
-  font-family: ${themeGet("fontFamily.0", "'Fira Sans',sans-serif")};
+  font-family: ${themeGet("fontFamily.0")};
   letter-spacing: 0.17rem;
   position: relative;
   margin: 30px 0;
@@ -50,7 +50,7 @@ export const SecTitle = styled.div`
     content: "";
     width: 68px;
     height: 2px;
-    background: ${themeGet("colors.primary", "black")};
+    background: ${themeGet("primary")};
     display: block;
     margin-top: 8px;
   }

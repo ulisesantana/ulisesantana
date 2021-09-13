@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const JobWrapper = styled.article`
   padding: 4px;
   width: 100%;
 
   h3 {
-    color: ${themeGet("colors.secondary", "blue")};
+    color: ${themeGet("secondary", "blue")};
     font-weight: 600;
     font-size: 1.25rem;
     margin: 1rem 0;

@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../theme"
 
 export const CVInfoWrapper = styled.div`
   align-items: flex-start;
-  color: ${themeGet("colors.secondary", "blue")};
+  color: ${themeGet("secondary")};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

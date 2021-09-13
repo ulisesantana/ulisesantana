@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const FeaturedPostWrapper = styled.div`
   margin: 0 auto;
@@ -42,7 +42,7 @@ export const FeaturedPostCol = styled.div`
 `
 
 export const SecTitle = styled.div`
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: ${themeGet("textColor", "#292929")};
   font-size: 16px;
   font-weight: 500;
   font-family: ${themeGet("fontFamily.0", "'Fira Sans',sans-serif")};
@@ -54,7 +54,7 @@ export const SecTitle = styled.div`
     content: "";
     width: 68px;
     height: 2px;
-    background: ${themeGet("colors.primary", "black")};
+    background: ${themeGet("primary", "black")};
     display: block;
     margin-top: 8px;
   }

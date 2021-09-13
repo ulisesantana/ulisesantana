@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../theme"
 
 interface SectionProps {
   title: string
@@ -10,8 +10,8 @@ interface SectionProps {
 
 const SectionTitleWrapper = styled.div`
   align-items: center;
-  background-color: ${themeGet("colors.primary", "yellow")};
-  color: ${themeGet("colors.black", "black")};
+  background-color: ${themeGet("primary")};
+  color: ${themeGet("textColor")};
   display: flex;
   justify-content: start;
   margin: 2rem 0 1rem;

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 const InputWrapper = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ const InputWrapper = styled.div`
     justify-content: space-between;
 
     > label {
-      color: ${themeGet("colors.textColor", "#292929")};
+      color: ${themeGet("textColor", "#292929")};
       font-size: ${themeGet("fontSizes.1", "18")}px;
       line-height: ${themeGet("lineHeights.normal", "1")};
       font-weight: ${themeGet("fontWeights.4", "500")};
@@ -43,8 +43,8 @@ const InputWrapper = styled.div`
       appearance: none;
       width: 100%;
       height: ${themeGet("heights.2", "44")}px;
-      border: 1px solid ${themeGet("colors.borderColor", "#DBDBDB")};
-      color: ${themeGet("colors.textColor", "#292929")};
+      border: 1px solid ${themeGet("borderColor", "#DBDBDB")};
+      color: ${themeGet("textColor", "#292929")};
       font-size: ${themeGet("fontSizes.1", "18")}px;
       line-height: ${themeGet("lineHeights.normalText", "1.5")};
       font-weight: ${themeGet("fontWeights.3", "400")};
@@ -59,11 +59,11 @@ const InputWrapper = styled.div`
       }
 
       &:focus {
-        border-color: ${themeGet("colors.textColor", "#292929")};
+        border-color: ${themeGet("textColor", "#292929")};
       }
 
       &::placeholder {
-        color: ${themeGet("colors.textColor", "#292929")};
+        color: ${themeGet("textColor", "#292929")};
       }
     }
 
@@ -98,7 +98,7 @@ const InputWrapper = styled.div`
         width: ${themeGet("widths.2", "45")}px;
         height: 100%;
         font-size: ${themeGet("fontSizes.1", "18")}px;
-        color: ${themeGet("colors.textColor", "#292929")};
+        color: ${themeGet("textColor", "#292929")};
         display: flex;
         align-items: center;
         justify-content: center;
@@ -126,7 +126,7 @@ const InputWrapper = styled.div`
     label {
       position: absolute;
       left: 15px;
-      color: ${themeGet("colors.inactiveColor", "#767676")};
+      color: ${themeGet("inactiveColor", "#767676")};
       font-weight: 400;
       top: 3px;
       transition: all 0.2s ease;
@@ -146,7 +146,7 @@ const InputWrapper = styled.div`
       padding-right: 15px;
       height: auto;
       background: transparent;
-      border-color: ${themeGet("colors.textColor", "#292929")};
+      border-color: ${themeGet("textColor", "#292929")};
     }
 
     textarea {
@@ -204,13 +204,13 @@ const InputWrapper = styled.div`
     /* Material input focus style */
     &.is-focus {
       input {
-        border-color: ${themeGet("colors.inactiveIcon", "#ebebeb")};
+        border-color: ${themeGet("inactiveIcon", "#ebebeb")};
       }
 
       label {
         top: -10px;
         font-size: 12px;
-        color: ${themeGet("colors.textColor", "#484848")};
+        color: ${themeGet("textColor", "#484848")};
       }
 
       .highlight {

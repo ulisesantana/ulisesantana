@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 type ButtonStyleProps = {
   fullwidth?: boolean
@@ -10,8 +10,8 @@ const ButtonStyle = styled("button")<ButtonStyleProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: ${themeGet("colors.white", "#fff")};
-  background-color: ${themeGet("colors.black", "#292929")};
+  color: ${themeGet("white", "#fff")};
+  background-color: ${themeGet("black", "#292929")};
   height: ${themeGet("heights.2", "44")}px;
   width: ${props => (props.fullwidth ? "100%" : "auto")};
   font-family: ${themeGet("fontFamily.0", "'Fira Sans', sans-serif")};

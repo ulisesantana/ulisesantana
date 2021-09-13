@@ -1,10 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
-import { MenuItemWrapper, MenuItem } from "./Navbar.style"
+import {Link} from "gatsby"
+import {MenuItem, MenuItemWrapper} from "./Navbar.style"
+import DarkModeToggle from "react-dark-mode-toggle";
 
 type MenuProps = {
   items: MenuItemsProps[]
   className?: string
+  isDark: boolean
+  themeHandler: (isChecked: boolean) => void
 }
 
 type MenuItemsProps = {
@@ -15,6 +18,8 @@ type MenuItemsProps = {
 
 const Menu: React.FunctionComponent<MenuProps> = ({
   items,
+  isDark,
+  themeHandler,
   className,
   ...props
 }) => {
@@ -39,6 +44,13 @@ const Menu: React.FunctionComponent<MenuProps> = ({
           )}
         </MenuItem>
       ))}
+      <MenuItem key="theme-toggle">
+        <DarkModeToggle
+          onChange={themeHandler}
+          checked={isDark}
+          size={className === 'mobile-menu' ? 60: 80}
+        />
+      </MenuItem>
     </MenuItemWrapper>
   )
 }

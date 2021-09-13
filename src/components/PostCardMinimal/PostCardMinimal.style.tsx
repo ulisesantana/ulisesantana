@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const PostCardWrapper = styled.section`
   border-bottom: solid 8px transparent;
@@ -7,7 +7,7 @@ export const PostCardWrapper = styled.section`
   transition: 0.35s ease-in-out;
 
   &:hover {
-    border-bottom-color: ${themeGet("colors.primary", "#F0DB4F")};
+    border-bottom-color: ${themeGet("primary")};
 
     .post_preview {
       transform: translateY(0);
@@ -20,10 +20,10 @@ export const PostCardWrapper = styled.section`
 
   &.draft {
     background: repeating-linear-gradient(45deg,
-    ${themeGet('colors.primary')},
-    ${themeGet('colors.primary')} 10px,
-    ${themeGet('colors.primaryHover')} 10px,
-    ${themeGet('colors.primaryHover')} 20px);
+    ${themeGet('primary')},
+    ${themeGet('primary')} 10px,
+    ${themeGet('primaryHover')} 10px,
+    ${themeGet('primaryHover')} 20px);
   }
 `
 
@@ -64,26 +64,26 @@ export const PostContent = styled.div`
 `
 
 export const PostTitle = styled.h2`
-  font-size: ${themeGet("fontSizes.3", "34")}px;
+  font-size: ${themeGet("fontSizes.3")}px;
   font-weight: 700;
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: ${themeGet("textColor")};
   line-height: 1.53;
   //margin-bottom: 10px;
   font-family: "Fira Sans", sans-serif;
   a {
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: ${themeGet("textColor")};
   }
   @media (max-width: 990px) {
     margin-bottom: 12px;
   }
   @media (max-width: 575px) {
-    font-size: ${themeGet("fontSizes.2", "21")}px;
+    font-size: ${themeGet("fontSizes.2")}px;
   }
 `
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet("fontSizes.0", "16")}px;
-  color: ${themeGet("colors.textColor", "#292929")};
+  font-size: ${themeGet("fontSizes.0")}px;
+  color: ${themeGet("textColor")};
   font-weight: 400;
   line-height: 2;
   margin: 0;
@@ -100,7 +100,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: blue;
+    color: ${props => themeGet(props.theme.isDark ? 'primary' : 'secondary')};
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;
@@ -137,7 +137,7 @@ export const ReadMore = styled.div`
   a {
     font-size: 13px;
     font-weight: 500;
-    color: blue;
+    color: ${props => themeGet(props.theme.isDark ? 'primary' : 'secondary')};
     transition: 0.15s ease-in-out;
     text-decoration: none;
     &:hover {

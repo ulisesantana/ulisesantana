@@ -1,10 +1,10 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import {useState} from "react"
+import {graphql, useStaticQuery} from "gatsby"
 import Image from "gatsby-image"
-import { AboutWrapper, AboutImage, AboutPageTitle, AboutDetails } from "./style"
+import {AboutDetails, AboutImage, AboutWrapper} from "./style"
 import Intro from "../Intro"
-import { useState } from "react"
-import { SocialLinks } from "../../components"
+import {SocialLinks} from "../../components"
 import Links from "./links"
 
 interface AboutProps {}
@@ -44,10 +44,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
   return (
     <>
+      <Intro lang="es" />
       <AboutWrapper>
-        <AboutPageTitle>
-          <Intro lang="es" />
-        </AboutPageTitle>
         <AboutDetails>
           <div className={`flex-start`}>
             <h2>Sobre mí</h2>
@@ -61,8 +59,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             <section>
               <h2>TL;DR</h2>
               <p>
-                Hola, me llamo Ulises Santana Suárez y vivo en Las Palmas de
-                Gran Canaria, España. Soy Full Stack Developer en{" "}
+                Hola, me llamo Ulises Santana Suárez y vivo en El Hierro, España. Soy Full Stack Developer en{" "}
                 <a href={Links.work} target="_blank">
                   Lean Mind
                 </a>
@@ -258,7 +255,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           </p>
 
           <AboutImage>
-            <Image fluid={Data.talk.childImageSharp.fluid} alt="author" />
+            <Image fluid={Data.talk.childImageSharp.fluid} alt="Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018" />
           </AboutImage>
         </AboutDetails>
       </AboutWrapper>

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const SearchWrapper = styled.div`
   align-items: center;
@@ -27,7 +27,7 @@ export const SearchForm = styled.form`
   input {
     width: 100%;
     font-weight: normal;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: ${themeGet("textColor", "#292929")};
     border: 0;
     background: transparent;
     font-size: 1rem;

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const PostDetailsWrapper = styled.section`
   position: relative;
@@ -40,22 +40,22 @@ export const PostDetailsWrapper = styled.section`
 `
 
 export const PostTitle = styled.h1`
-  font-size: ${themeGet("fontSizes.4", "41")}px;
+  font-size: ${themeGet("fontSizes.4")}px;
   font-weight: 700;
-  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  color: ${({ color }) => color || themeGet("textColor")};
   line-height: 1.53;
   margin-bottom: 10px;
 
   @media (max-width: 575px) {
-    font-size: ${themeGet("fontSizes.3", "34")}px;
+    font-size: ${themeGet("fontSizes.3")}px;
     margin-bottom: 15px;
   }
 `
 
 export const PostDate = styled.span`
   display: inline-block;
-  font-size: ${themeGet("fontSizes.1", "16")}px;
-  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  font-size: ${themeGet("fontSizes.1")}px;
+  color: ${({ color }) => color || themeGet("textColor")};
   font-weight: 400;
   margin-bottom: 2rem;
 
@@ -71,8 +71,8 @@ export const PostDate = styled.span`
 
 export const PostReadTime = styled.span`
   display: inline-block;
-  font-size: ${themeGet("fontSizes.1", "16")}px;
-  color: ${({ color }) => color || themeGet("colors.textColor", "#292929")};
+  font-size: ${themeGet("fontSizes.1")}px;
+  color: ${({ color }) => color || themeGet("textColor")};
   font-weight: 400;
   margin-top: 0.4rem;
 
@@ -124,7 +124,7 @@ export const PostPreview = styled.div`
 `
 
 export const PostDescription = styled.div`
-  font-size: ${themeGet("fontSizes.3", "18")}px;
+  font-size: ${themeGet("fontSizes.3")}px;
 
   a.gatsby-resp-image-link {
     border-bottom: none;
@@ -154,7 +154,8 @@ export const PostDescription = styled.div`
     margin-bottom: 2rem;
 
     strong {
-      background-color: ${themeGet("colors.primary", 'yellow')};
+      color: ${themeGet('black')};
+      background-color: ${themeGet("primary")};
       padding: 8px;
     }
   }
@@ -170,29 +171,29 @@ export const PostDescription = styled.div`
   }
 
   h1 {
-    font-size: ${themeGet("fontSizes.6", "41")}px;
+    font-size: ${themeGet("fontSizes.6")}px;
     margin-bottom: 0.75rem;
   }
 
   h2 {
-    font-size: ${themeGet("fontSizes.5", "34")}px;
+    font-size: ${themeGet("fontSizes.5")}px;
     margin-bottom: 0.75rem;
   }
 
   h3 {
-    font-size: ${themeGet("fontSizes.4", "21")}px;
+    font-size: ${themeGet("fontSizes.4")}px;
   }
 
   h4 {
-    font-size: ${themeGet("fontSizes.3", "18")}px;
+    font-size: ${themeGet("fontSizes.3")}px;
   }
 
   h5 {
-    font-size: ${themeGet("fontSizes.2", "16")}px;
+    font-size: ${themeGet("fontSizes.2")}px;
   }
 
   h6 {
-    font-size: ${themeGet("fontSizes.1", "14")}px;
+    font-size: ${themeGet("fontSizes.1")}px;
   }
 
   ol,
@@ -213,11 +214,15 @@ export const PostDescription = styled.div`
   figcaption {
     text-align: center;
   }
+  
+  details {
+    color: ${themeGet("black")};
+  }
 
   details > summary {
-    background-color: ${themeGet("colors.primary", 'yellow')};
+    background-color: ${themeGet("primary")};
     cursor: pointer;
-    font-size: ${themeGet("fontSizes.3", "21")}px;
+    font-size: ${themeGet("fontSizes.3")}px;
     font-weight: bold;
     text-align: center;
     width: 6rem;
@@ -241,15 +246,16 @@ export const PostDescription = styled.div`
   }
 
   details > :not(summary) {
-    background-color: ${themeGet("colors.primary", 'yellow')};
+    background-color: ${themeGet("primary")};
     padding: 16px;
 
   }
 
   blockquote {
-    background-color: ${themeGet("colors.primary", 'yellow')};
+    background-color: ${themeGet("primary")};
+    color: ${props => props.theme.isDark ? themeGet("black") : themeGet("textColor")};
     font-family: "Poppins", sans-serif;
-    font-size: ${themeGet("fontSizes.3", "18")}px;
+    font-size: ${themeGet("fontSizes.3")}px;
     padding: 16px;
     font-weight: 500;
     line-height: 2;
@@ -271,7 +277,7 @@ export const PostDescription = styled.div`
     }
 
     p {
-      font-size: ${themeGet("fontSizes.2", "18")}px;
+      font-size: ${themeGet("fontSizes.2")}px;
       font-weight: 500;
       line-height: 2;
       margin: 1rem auto;
@@ -290,7 +296,7 @@ export const PostDescription = styled.div`
     }
 
     a {
-      border-bottom: solid 2px #000;
+      border-bottom: solid 2px ${themeGet("secondary")};
     }
   }
 
@@ -299,9 +305,9 @@ export const PostDescription = styled.div`
   }
 
   a, figcaption a {
-    font-weight: 500;
+    font-weight: 700;
     transition: 0.15s ease-in-out;
-    color: ${themeGet("textColor", "black")};
+    color: ${props => props.theme.isDark ? themeGet("white") : themeGet("dark")};
   }
 
   &:last-child {
@@ -309,44 +315,44 @@ export const PostDescription = styled.div`
   }
 
   @media (max-width: 575px) {
-    font-size: ${themeGet("fontSizes.1", "16")}px;
+    font-size: ${themeGet("fontSizes.1")}px;
 
     h1 {
-      font-size: ${themeGet("fontSizes.5", "41")}px;
+      font-size: ${themeGet("fontSizes.5")}px;
     }
 
     h2 {
-      font-size: ${themeGet("fontSizes.4", "34")}px;
+      font-size: ${themeGet("fontSizes.4")}px;
     }
 
     h3 {
-      font-size: ${themeGet("fontSizes.3", "21")}px;
+      font-size: ${themeGet("fontSizes.3")}px;
     }
 
     h4 {
-      font-size: ${themeGet("fontSizes.2", "18")}px;
+      font-size: ${themeGet("fontSizes.2")}px;
     }
 
     h5 {
-      font-size: ${themeGet("fontSizes.1", "16")}px;
+      font-size: ${themeGet("fontSizes.1")}px;
     }
 
     h6 {
-      font-size: ${themeGet("fontSizes.0", "14")}px;
+      font-size: ${themeGet("fontSizes.0")}px;
     }
 
     details > summary {
-      font-size: ${themeGet("fontSizes.2", "18")}px;
+      font-size: ${themeGet("fontSizes.2")}px;
       font-weight: bold;
       width: 5rem;
     }
 
     details > blockquote, blockquote {
-      font-size: ${themeGet("fontSizes.1", "16")}px;
+      font-size: ${themeGet("fontSizes.1")}px;
       margin: 16px 0;
 
       p {
-        font-size: ${themeGet("fontSizes.2", "16")}px;
+        font-size: ${themeGet("fontSizes.2")}px;
       }
     }
 
@@ -380,8 +386,8 @@ export const PostTags = styled.div`
   a {
     display: block;
     margin-right: 30px;
-    font-size: ${themeGet("fontSizes.2", "18")}px;
+    font-size: ${themeGet("fontSizes.2")}px;
     font-weight: 400;
-    color: ${themeGet("primary", "yellow")};
+    color: ${themeGet("primary")};
   }
 `

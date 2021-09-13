@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
+import { themeGet } from "../../theme"
 
 export const ContactWrapper = styled.div`
   width: 960px;
@@ -22,7 +22,7 @@ export const ContactPageTitle = styled.div`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: ${themeGet("textColor", "#292929")};
     line-height: 1.53;
     margin-bottom: 15px;
     @media (max-width: 990px) {
