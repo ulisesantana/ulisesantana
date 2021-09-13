@@ -21,13 +21,13 @@ enum ThemeMode {
 
 const isDarkModeEnabled = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 const getDarkModeCachedValue = () => {
-  const state = localStorage.getItem('theme')
+  const state = window.localStorage.getItem('theme')
   if (state !== null) {
     return state === ThemeMode.Dark
   }
   return state
 }
-const setDarkModeCachedValue = (value: boolean) => localStorage.setItem('theme', value ? ThemeMode.Dark : ThemeMode.Light)
+const setDarkModeCachedValue = (value: boolean) => window.localStorage.setItem('theme', value ? ThemeMode.Dark : ThemeMode.Light)
 
 const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
