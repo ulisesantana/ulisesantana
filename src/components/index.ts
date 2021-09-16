@@ -1,4 +1,5 @@
 export * from "./Button/Button"
+export * from "./DarkModeToggle"
 export * from "./Pagination/Pagination"
 export * from "./ScrollUpButton/ScrollUpButton"
 export * from "./Drawer/Drawer"

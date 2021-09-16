@@ -1,7 +1,7 @@
 import React from "react"
 import {Link} from "gatsby"
 import {MenuItem, MenuItemWrapper} from "./Navbar.style"
-import DarkModeToggle from "react-dark-mode-toggle";
+import {DarkModeToggle} from "../";
 
 type MenuProps = {
   items: MenuItemsProps[]
@@ -25,12 +25,10 @@ const Menu: React.FunctionComponent<MenuProps> = ({
 }) => {
   // Add all classs to an array
   const addAllClasses = ["menu"]
-
   // className prop checking
   if (className) {
     addAllClasses.push(className)
   }
-
   return (
     <MenuItemWrapper className={addAllClasses.join(" ")} {...props}>
       {items.map((item, index) => (
@@ -46,13 +44,12 @@ const Menu: React.FunctionComponent<MenuProps> = ({
       ))}
       <MenuItem key="theme-toggle">
         <DarkModeToggle
-          onChange={themeHandler}
-          checked={isDark}
-          size={className === 'mobile-menu' ? 60: 80}
+          isDark={isDark}
+          themeHandler={themeHandler}
         />
       </MenuItem>
     </MenuItemWrapper>
   )
 }
 
-export default Menu
+export default React.memo(Menu)
