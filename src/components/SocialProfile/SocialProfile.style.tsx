@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "../../theme"
 
 export const SocialProfileWrapper = styled.ul`
   align-items: center;
@@ -79,7 +78,7 @@ export const SocialProfileItem = styled.li`
 
   a, a:visited {
     border: none;
-    color: ${props => themeGet(props.theme.isDark ? "primary" : "textColor")};
+    color: ${({theme}) => theme[theme.isDark ? "primary" : "textColor"]};
     font-size: 22px;
     padding: 0.2rem;
     display: block;

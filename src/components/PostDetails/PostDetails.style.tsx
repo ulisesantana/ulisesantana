@@ -42,7 +42,7 @@ export const PostDetailsWrapper = styled.section`
 export const PostTitle = styled.h1`
   font-size: ${themeGet("fontSizes.4")}px;
   font-weight: 700;
-  color: ${({ color }) => color || themeGet("textColor")};
+  color: ${themeGet("textColor")};
   line-height: 1.53;
   margin-bottom: 10px;
 
@@ -55,7 +55,7 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.span`
   display: inline-block;
   font-size: ${themeGet("fontSizes.1")}px;
-  color: ${({ color }) => color || themeGet("textColor")};
+  color: ${themeGet("textColor")};
   font-weight: 400;
   margin-bottom: 2rem;
 
@@ -72,7 +72,7 @@ export const PostDate = styled.span`
 export const PostReadTime = styled.span`
   display: inline-block;
   font-size: ${themeGet("fontSizes.1")}px;
-  color: ${({ color }) => color || themeGet("textColor")};
+  color: ${themeGet("textColor")};
   font-weight: 400;
   margin-top: 0.4rem;
 
