@@ -56,10 +56,6 @@ export const MenuItemWrapper = styled.ul`
   display: flex;
   align-items: center;
   margin-left: auto;
-  
-  &.mobile-menu {
-    
-  }
 `
 
 export const MenuItem = styled.li`

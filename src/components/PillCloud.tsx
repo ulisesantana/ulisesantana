@@ -4,6 +4,7 @@ import { themeGet } from "../theme"
 
 const PillCloudWrapper = styled.ul`
   align-items: center;
+  color: ${themeGet("black")};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -13,6 +14,7 @@ const PillCloudWrapper = styled.ul`
   li {
     align-items: center;
     background: ${themeGet("primary")};
+    color: inherit;
     display: flex;
     justify-content: center;
     max-height: fit-content;

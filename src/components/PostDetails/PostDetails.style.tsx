@@ -240,8 +240,8 @@ export const PostDescription = styled.div`
     }
     100% {
       opacity: 1;
-      margin-left: 0px;
-      margin-right: 0px
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -253,7 +253,7 @@ export const PostDescription = styled.div`
 
   blockquote {
     background-color: ${themeGet("primary")};
-    color: ${props => props.theme.isDark ? themeGet("black") : themeGet("textColor")};
+    color: ${themeGet("black")};
     font-family: "Poppins", sans-serif;
     font-size: ${themeGet("fontSizes.3")}px;
     padding: 16px;
@@ -297,11 +297,12 @@ export const PostDescription = styled.div`
 
     a {
       border-bottom: solid 2px ${themeGet("secondary")};
+      color: ${themeGet("black")};
     }
   }
 
   details > blockquote {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   a, figcaption a {
@@ -357,7 +358,7 @@ export const PostDescription = styled.div`
     }
 
     details > blockquote {
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
 

@@ -3,7 +3,7 @@ import { themeGet } from "../theme"
 
 export const CVInfoWrapper = styled.div`
   align-items: flex-start;
-  color: ${themeGet("secondary")};
+  color: ${props => themeGet(props.theme.isDark ? "primary" : "secondary")};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

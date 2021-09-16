@@ -27,7 +27,7 @@ export const SearchForm = styled.form`
   input {
     width: 100%;
     font-weight: normal;
-    color: ${themeGet("textColor", "#292929")};
+    color: ${themeGet("textColor")};
     border: 0;
     background: transparent;
     font-size: 1rem;
@@ -40,7 +40,7 @@ export const SearchForm = styled.form`
 export const SearchResult = styled.div`
   position: absolute;
   width: 100%;
-  background: #fff;
+  background: ${props => props.theme.backgroundColor};
   top: 100%;
   left: 0;
   display: block;
@@ -48,7 +48,7 @@ export const SearchResult = styled.div`
   z-index: 200;
 
   .post_list {
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid ${props => props.theme.isDark ? props.theme.primary : '#f3f3f3'};
     &:last-child {
       border: 0;
     }

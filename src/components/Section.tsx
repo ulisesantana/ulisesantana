@@ -11,20 +11,26 @@ interface SectionProps {
 const SectionTitleWrapper = styled.div`
   align-items: center;
   background-color: ${themeGet("primary")};
-  color: ${themeGet("textColor")};
+  color: ${themeGet("black")};
   display: flex;
+  font-size: 2rem;
   justify-content: start;
+  line-height: 2rem;
   margin: 2rem 0 1rem;
   padding: 1rem;
 
   span {
     display: inline-flex;
-    font-size: 2rem;
+    font-size: inherit;
+    line-height: inherit;
     padding-right: 1rem;
   }
 
   h2 {
+    color: inherit;
     display: inline-flex;
+    font-size: inherit;
+    line-height: inherit;
     margin: 0;
   }
 `
