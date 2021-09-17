@@ -29,7 +29,7 @@ async function execAndGetLine(execLine: string): Promise<Line> {
 export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
                               title= 'REPL',
                               init = [],
-                              height= 300
+                              height
                             }) => {
   const [lines, setLines] = useState<Line[]>([])
 
@@ -58,7 +58,7 @@ export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
     <Repl
       title={title}
       onSubmit={onSubmit}
-      height={height}
+      height={init?.length > 0 ? init?.length * 100 : height ?? 300}
       lines={lines}
       onClear={onClear}
     />
