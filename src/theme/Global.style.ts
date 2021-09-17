@@ -20,7 +20,9 @@ ${resetCSS}
   --line-height-title: 2;
   --primary-color: #F0DB4F;
   --secondary-color: #007acc;
-  
+}
+
+.theme-light {
   // light theme
   --bg-color: #F7F7F7;
   --highlight-color: #323330;
@@ -34,7 +36,7 @@ ${resetCSS}
   --text-color: #292929;
 }
 
-.dark {
+.theme-dark {
   // dark theme
   --bg-color: #323330;
   --highlight-color: #F7F7F7;

@@ -1,5 +1,7 @@
 import React, {ChangeEventHandler, FC, useEffect, useState} from "react";
 import styled from "styled-components";
+// @ts-ignore
+import {window} from 'browser-monads'
 
 const DarkModeToggleStyle = styled.label`
   /* The switch - the box around the slider */
@@ -88,18 +90,16 @@ const getDarkModeCachedValue = () => {
 }
 
 export const DarkModeToggle: FC = () => {
-  const [isDark, setIsDark] = useState(true)
-
-  useEffect(() => {
-    setIsDark(getDarkModeCachedValue() ?? isDarkModeEnabled())
-  }, [])
+  const [isDark, setIsDark] = useState(getDarkModeCachedValue() ?? isDarkModeEnabled())
 
   useEffect(() => {
     setDarkModeCachedValue(isDark)
     if (isDark) {
-      document.body.classList.add('dark')
+      document.body.classList.add('theme-dark')
+      document.body.classList.remove('theme-light')
     } else {
-      document.body.classList.remove('dark')
+      document.body.classList.add('theme-light')
+      document.body.classList.remove('theme-dark')
     }
   }, [isDark])
 
