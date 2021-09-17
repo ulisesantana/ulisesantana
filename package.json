@@ -8,7 +8,6 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@types/node": "^13.7.1",
-    "awesome-react-repl": "^0.1.10",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.10.0",
     "browser-monads": "^1.0.0",
@@ -45,6 +44,7 @@
     "js-search": "^1.4.2",
     "katex": "^0.10.2",
     "lodash": "^4.17.11",
+    "pretty-format": "^27.2.0",
     "prismjs": "^1.16.0",
     "rc-drawer": "^1.8.1",
     "react": "^16.8.6",
@@ -67,7 +67,12 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
     "@hot-loader/react-dom": "^16.8.6",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/react": "^6.3.8",
     "@types/js-search": "^1.4.0",
     "@types/lodash": "^4.14.130",
     "@types/mdx-js__react": "^1.5.4",
@@ -79,6 +84,7 @@
     "@types/styled-components": "^4.1.11",
     "@types/styled-system": "^4.1.0",
     "@types/yup": "^0.26.13",
+    "babel-loader": "^8.2.2",
     "husky": "^4.2.5",
     "prettier": "^1.17.0"
   },
@@ -104,7 +110,9 @@
     "new:post": "node_modules/.bin/hygen post new",
     "now-build": "yarn run build",
     "deploy": "gatsby build && gh-pages -d public",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "engines": {
     "node": ">=14.0.0"
