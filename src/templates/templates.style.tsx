@@ -190,7 +190,7 @@ export const TagPageHeading = styled.div`
     display: block;
     width: 90px;
     height: 1px;
-    background: #292929;
+    background: var(--text-color);
     margin-top: 15px;
   }
 `
