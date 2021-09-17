@@ -78,6 +78,14 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: 'msapplication-TileColor',
+          content: '#f0db4f'
+        },
+        {
+          name: 'theme-color',
+          content: '#f0db4f'
+        }
       ]
         .concat(
           keywords.length > 0
