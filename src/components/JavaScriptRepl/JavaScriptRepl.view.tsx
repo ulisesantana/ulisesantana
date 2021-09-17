@@ -1,19 +1,36 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, {useEffect, useRef, useState} from "react"
 import styled from "styled-components"
 import {ReplProps} from "./types";
+import {FaTrashAlt} from "react-icons/all";
 
 // Forked from https://github.com/seveibar/react-repl
 const Container = styled.div`
-  font-family: monospace;
-  font-weight: bold;
-  color: #fff;
-  background-color: #333;
+  body.theme-light & {
+    --repl-bg-color: #e4e4e4;
+    --repl-caret-color: var(--secondary-color);
+    --repl-output-color: #939393;
+    --repl-tab-color: #f2f2f2;
+    --repl-title-color: #808080;
+  }
+
+  body.theme-dark & {
+    --repl-bg-color: #404040;
+    --repl-caret-color: var(--primary-color);
+    --repl-output-color: #808080;
+    --repl-tab-color: var(--black);
+    --repl-title-color: var(--text-color);
+  }
+
+  background-color: var(--repl-bg-color);
   border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  font-family: monospace;
+  font-weight: bold;
   overflow: hidden;
 `
 const InputCarat = styled.div`
-  color: #f48fb1;
+  color: var(--repl-caret-color);
   padding-right: 8px;
 `
 const InputLine = styled.div`
@@ -26,7 +43,7 @@ const ActiveInputLine = styled.div`
   margin-top: 8px;
 `
 const Output = styled.div`
-  color: #ccc;
+  color: var(--repl-output-color);
   margin-top: 8px;
   white-space: pre-wrap;
 `
@@ -36,41 +53,32 @@ const Error = styled.div`
   white-space: pre-wrap;
 `
 const TextInput = styled.input`
-  color: #fff;
+  background-color: transparent;
+  border: none;
+  caret-color: var(--repl-caret-color);
+  color: var(--text-color);
+  font-family: monospace;
   font-size: inherit;
   font-weight: bold;
-  border: none;
-  outline: none;
   flex-grow: 1;
-  caret-color: #f48fb1;
-  background-color: transparent;
-  font-family: monospace;
+  outline: none;
 `
 const Header = styled.div`
   display: flex;
 `
 const Title = styled.div`
+  color: var(--repl-title-color);
   flex-grow: 1;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 12px;
-  color: #888;
 `
-const Tabs = styled.div`
-  display: flex;
-  padding-bottom: 8px;
-`
+
 const Tab = styled.div`
-  padding: 8px;
-  padding-left: 14px;
-  padding-right: 14px;
-  background-color: #222;
+  background-color: var(--repl-caret-color);
+  color: var(--repl-tab-color);
   cursor: pointer;
-  &.selected {
-    background-color: #333;
-    color: #64b5f6;
-    cursor: auto;
-  }
+  padding: 16px;
 `
 const TerminalContent = styled.div<React.PropsWithRef<{height: number}>>`
   padding: 16px;
@@ -103,9 +111,7 @@ export const Repl: React.FunctionComponent<ReplProps> = ({
     <Container onClick={() => (inputRef.current.focus())}>
         <Header>
           <Title>{title}</Title>
-            <Tabs>
-              <Tab onClick={onClear}>Clear</Tab>
-            </Tabs>
+          <Tab onClick={onClear}><FaTrashAlt/></Tab>
         </Header>
       <TerminalContent height={height} ref={terminalContentRef}>
         {lines.map((line, i) =>
