@@ -27,7 +27,7 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
         site {
           siteMetadata {
             title
-            description
+            about
             author
           }
         }
@@ -35,7 +35,7 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.about
   const metaTitle = `${title} | Ulises Santana`
 
   return (
