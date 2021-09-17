@@ -59,8 +59,6 @@
     "simple-react-lightbox": "^3.6.9-0",
     "source-map-support": "^0.5.20",
     "styled-components": "^4.2.0",
-    "styled-icons": "^10.2.1",
-    "styled-system": "^4.1.0",
     "ts-node": "^10.2.1",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
