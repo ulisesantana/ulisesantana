@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const CVWrapper = styled.div`
   position: relative;
@@ -20,7 +19,7 @@ export const CVPageTitle = styled.div`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
     line-height: 1.53;
     margin: 0;
     @media (max-width: 990px) {
@@ -72,12 +71,12 @@ export const CVDetails = styled.div`
   blockquote:not(.twitter-tweet) {
     display: flex;
     flex-direction: column;
-    background-color: ${themeGet("colors.primary", "#FFFFFF")};
+    background-color: var(--primary-color);
     border-radius: 1rem;
-    color: ${themeGet("colors.black", "#292929")};
+    color: var(--black);
     cursor: pointer;
     filter: drop-shadow(
-      0.25rem 0.25rem 0.5rem ${themeGet("colors.black", "gray")}
+      0.25rem 0.25rem 0.5rem var(--black)
     );
     font-size: 1.2rem;
     font-style: italic;
@@ -116,7 +115,7 @@ export const CVDetails = styled.div`
       max-width: 960px;
 
       a {
-        color: ${themeGet("colors.black", "#333")} !important;
+        color: var(--black) !important;
       }
     }
 
@@ -172,7 +171,7 @@ export const CVDetails = styled.div`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
     line-height: 1.53;
     margin: 0;
     @media (max-width: 990px) {
@@ -200,14 +199,14 @@ export const CVDetails = styled.div`
 
   button {
     display: block;
-    background-color: ${themeGet("colors.primary", "#FFFFFF")};
+    background-color: var(--primary-color);
     border-radius: 1rem;
-    color: ${themeGet("colors.black", "#292929")};
+    color: var(--black);
     cursor: pointer;
     font-size: 1rem;
     font-style: italic;
     font-weight: 600;
-    filter: drop-shadow(0 0.2rem 0.2rem ${themeGet("colors.black", "black")});
+    filter: drop-shadow(0 0.2rem 0.2rem var(--black));
     padding: 0.5rem;
     outline: none;
     margin: 1rem;

@@ -63,7 +63,7 @@ const Posts: React.FunctionComponent<PostsProps> = ({
 
       {+totalPage >> 1 ? (
         <Pagination
-          nextLink="/page/2"
+          nextLink="/blog/page/2"
           currentPage={currentPage}
           totalPage={totalPage}
         />

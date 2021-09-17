@@ -1,25 +1,24 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const IntroWrapper = styled.section`
   width: 940px;
   max-width: 100%;
-  margin: 0 auto;
-  padding: 75px 10px 75px 10px;
+  margin: 48px auto;
+  padding: 0 16px;
   display: flex;
   align-items: center;
+  
   @media (max-width: 1400px) {
-    padding: 0 10px 60px 10px;
+    padding: 0 16px;
   }
   @media (max-width: 1200px) {
-    padding: 0 10px 50px 10px;
+    padding: 0 16px;
   }
   @media (max-width: 990px) {
-    padding: 0 25px 40px 25px;
+    padding: 0 25px;
   }
   @media (max-width: 575px) {
     display: block;
-    padding: 0;
     text-align: center;
   }
 `
@@ -31,7 +30,7 @@ export const IntroImage = styled.div`
   padding: 30px;
   border-radius: 50%;
   margin: 0 auto;
-  border: 1px solid ${themeGet("colors.lightBorderColor", "#ededed")};
+  border: 4px solid var(--light-border-color);
   flex-shrink: 0;
   perspective: 1000px;
 
@@ -92,8 +91,7 @@ export const IntroImage = styled.div`
 export const IntroTitle = styled.h1`
   font-size: 30px;
   font-weight: 400;
-  font-family: ${themeGet("fontFamily.1", "'Poppins', sans-serif")};
-  color: ${themeGet("colors.black", "#292929")};
+  font-family: var(--font-family-1);
   margin-bottom: 20px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -105,8 +103,7 @@ export const IntroTitle = styled.h1`
   }
 `
 
-export const Desciption = styled.p`
-  color: ${themeGet("colors.textColor", "#292929")};
+export const Description = styled.p`
   font-size: 1.5rem;
   line-height: 2rem;
 

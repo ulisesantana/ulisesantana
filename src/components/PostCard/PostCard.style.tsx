@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const PostCardWrapper = styled.div`
   position: relative;
@@ -35,7 +34,7 @@ export const PostDate = styled.div`
   padding: 30px 35px 15px 35px;
   margin-right: 20px;
   line-height: 1;
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: var(--text-color);
   @media (max-width: 1200px) {
     font-size: 70px;
     padding: 25px 25px 15px 25px;
@@ -66,11 +65,11 @@ export const PostContent = styled.div`
 export const PostTitle = styled.h2`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: var(--text-color);
   line-height: 1.53;
   margin-bottom: 10px;
   a {
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
   }
   @media (max-width: 1200px) {
     font-size: 26px;
@@ -86,8 +85,8 @@ export const PostTitle = styled.h2`
 `
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet("fontSizes.1", "18")}px;
-  color: ${themeGet("textColor", "#292929")};
+  font-size: var(--font-size-1);
+  color: var(--text-color);
   font-weight: 400;
   line-height: 2;
   margin-bottom: 0;
@@ -107,7 +106,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: blue;
+    color: var(--tag-color);
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;

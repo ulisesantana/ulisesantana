@@ -5,7 +5,7 @@ import {
   IntroWrapper,
   IntroImage,
   IntroTitle,
-  Desciption,
+  Description,
   IntroInfo,
 } from "./style"
 import { SocialLinks } from "../../components"
@@ -37,7 +37,7 @@ const Intro: React.FC<{ lang?: Language }> = ({ lang = "en" }) => {
         <IntroTitle>
           {translations[lang].greet} <b>{author}</b>
         </IntroTitle>
-        <Desciption>{translations[lang].about}</Desciption>
+        <Description>{translations[lang].about}</Description>
         <SocialLinks />
       </IntroInfo>
     </IntroWrapper>

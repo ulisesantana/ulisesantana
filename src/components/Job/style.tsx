@@ -1,12 +1,11 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const JobWrapper = styled.article`
   padding: 4px;
   width: 100%;
 
   h3 {
-    color: ${themeGet("colors.secondary", "blue")};
+    color: var(--tag-color);
     font-weight: 600;
     font-size: 1.25rem;
     margin: 1rem 0;
@@ -14,9 +13,9 @@ export const JobWrapper = styled.article`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
   }
 
   hr {

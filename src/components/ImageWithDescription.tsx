@@ -1,5 +1,5 @@
 import React from 'react'
-import { SRLWrapper } from "simple-react-lightbox";
+import {Lightbox} from "./Lightbox";
 
 interface ImageWithDescriptionProps {
   id: string
@@ -29,24 +29,7 @@ export const ImageWithDescription: React.FunctionComponent<ImageWithDescriptionP
   alt,
   children
 }) => (
-  <SRLWrapper options={{
-    settings: {
-      disableKeyboardControls: true,
-      disableWheelControls: true
-    },
-    buttons: {
-      showAutoplayButton: false,
-      showCloseButton: false,
-      showDownloadButton: false,
-      showFullscreenButton: false,
-      showNextButton: false,
-      showPrevButton: false,
-      showThumbnailsButton: false,
-    },
-    thumbnails: {
-      showThumbnails: false
-    }
-  }}>
+  <Lightbox>
     <figure role="group" id={id}>
       <img
         src={src}
@@ -59,7 +42,7 @@ export const ImageWithDescription: React.FunctionComponent<ImageWithDescriptionP
         </small>
       </figcaption>
     </figure>
-  </SRLWrapper>
+  </Lightbox>
 )
 
 

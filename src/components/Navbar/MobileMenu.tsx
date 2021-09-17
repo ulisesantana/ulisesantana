@@ -35,6 +35,7 @@ const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
   return (
     <MobileMenuWrapper {...props}>
       <Drawer
+        className="theme-drawer"
         width="285px"
         placement="right"
         drawerHandler={

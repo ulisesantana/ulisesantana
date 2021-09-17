@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const FeaturedCardWrapper = styled.div`
   position: relative;
@@ -55,7 +54,7 @@ export const FeaturedCardWrapper = styled.div`
       line-height: 1.4;
       margin-bottom: 18px;
       a {
-        color: #fff;
+        color: var(--bg-color);
       }
     }
     .read_more {
@@ -83,7 +82,7 @@ export const PostDetails = styled.div`
   width: calc(100% - 60px);
   bottom: 0;
   left: 30px;
-  background-color: #fff;
+  background-color: var(--bg-color);
   padding: 30px;
   border-radius: 3px;
   opacity: 0;
@@ -120,7 +119,7 @@ export const ReadMore = styled.div`
   a {
     font-size: 13px;
     font-weight: 700;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
     text-decoration: underline;
   }
 `
@@ -128,10 +127,10 @@ export const ReadMore = styled.div`
 export const PostTitle = styled.h2`
   font-size: 21px;
   font-weight: 700;
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: var(--text-color);
   margin-bottom: 10px;
   a {
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
   }
   @media (max-width: 1400px) {
     font-size: 18px;
@@ -173,8 +172,8 @@ export const PostTags = styled.div`
 `
 
 export const Excerpt = styled.p`
-  font-size: ${themeGet("fontSizes.1", "18")}px;
-  color: ${themeGet("textColor", "#292929")};
+  font-size: var(--font-size-1);
+  color: var(--text-color);
   font-weight: 400;
   line-height: 2;
   margin-bottom: 30px;

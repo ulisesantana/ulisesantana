@@ -91,15 +91,32 @@ export const Icon = styled.div`
 export const Goback = styled.div`
   margin-top: 60px;
   a {
+    color: var(--link-color);
     display: inline-flex;
     align-items: center;
     font-size: 15px;
     font-weight: 500;
     transition: 0.15s ease-in-out;
+
+    ${Icon}, svg {
+      color: var(--bg-color);
+    }
+    
+    ${Icon} {
+      background-color: var(--highlight-color);
+    }
+    
+    svg {
+      background-color: transparent;
+    }
+    
     &:hover {
-      color: blue;
+      ${Icon}, svg {
+        color: var(--black);
+      }
+
       ${Icon} {
-        background-color: blue;
+        background-color: var(--primary-color);
       }
     }
   }

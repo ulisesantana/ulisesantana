@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const AboutWrapper = styled.main`
   position: relative;
@@ -21,7 +20,7 @@ export const AboutPageTitle = styled.header`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--highlight-color);
     line-height: 1.53;
     margin: 0;
     @media (max-width: 990px) {
@@ -70,10 +69,9 @@ export const AboutDetails = styled.section`
   }
 
   blockquote {
+    color: var(--black);
     display: flex;
     flex-direction: column;
-    background-color: ${themeGet("colors.primary", "#FFFFFF")};
-    color: ${themeGet("colors.black", "#292929")};
     cursor: pointer;
     font-size: 1.2rem;
     font-style: italic;
@@ -90,6 +88,7 @@ export const AboutDetails = styled.section`
       margin: 0 auto;
 
       h2 {
+        color: inherit;
         margin-bottom: 1rem;
       }
     }
@@ -112,7 +111,7 @@ export const AboutDetails = styled.section`
       max-width: 960px;
 
       a {
-        color: blue !important;
+        color: var(--secondary-color) !important;
       }
     }
 
@@ -163,7 +162,7 @@ export const AboutDetails = styled.section`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
     line-height: 1.53;
     margin: 0;
     @media (max-width: 990px) {
@@ -191,8 +190,8 @@ export const AboutDetails = styled.section`
 
   button {
     display: block;
-    background-color: ${themeGet("colors.primary", "#FFFFFF")};
-    color: ${themeGet("colors.black", "#292929")};
+    background-color: var(--primary-color);
+    color: var(--black);
     cursor: pointer;
     font-size: 1rem;
     font-style: italic;
@@ -222,7 +221,7 @@ export const SocialProfiles = styled.div`
     content: "";
     width: 30px;
     height: 1px;
-    background: #292929;
+    background: var(--text-color);
     display: block;
     margin-bottom: 60px;
     @media (max-width: 767px) {

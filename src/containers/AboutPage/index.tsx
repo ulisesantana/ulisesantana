@@ -1,15 +1,13 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import {useState} from "react"
+import {graphql, useStaticQuery} from "gatsby"
 import Image from "gatsby-image"
-import { AboutWrapper, AboutImage, AboutPageTitle, AboutDetails } from "./style"
+import {AboutDetails, AboutImage, AboutWrapper} from "./style"
 import Intro from "../Intro"
-import { useState } from "react"
-import { SocialLinks } from "../../components"
+import {SocialLinks} from "../../components"
 import Links from "./links"
 
-interface AboutProps {}
-
-const About: React.FunctionComponent<AboutProps> = () => {
+const About: React.FunctionComponent = () => {
   const [tldrOpen, setTLDROpen] = useState(false)
   const toggleTLDR = () => {
     setTLDROpen(!tldrOpen)
@@ -44,10 +42,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
   return (
     <>
+      <Intro lang="en"/>
       <AboutWrapper>
-        <AboutPageTitle>
-          <Intro lang="en" />
-        </AboutPageTitle>
         <AboutDetails>
           <div className={`flex-start`}>
             <h2>About Me</h2>
@@ -61,8 +57,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
             <section>
               <h2>TL;DR</h2>
               <p>
-                Hi, my name is Ulises Santana Suárez and I am located on Las
-                Palmas, Spain. I am Full Stack Developer at{" "}
+                Hi, my name is Ulises Santana Suárez and I am located on El Hierro, Spain. I am Full Stack Developer
+                at{" "}
                 <a href={Links.work} target="_blank">
                   Lean Mind
                 </a>
@@ -81,7 +77,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
                 me.
               </p>
 
-              <SocialLinks />
+              <SocialLinks/>
             </section>
           </blockquote>
           <p>
@@ -240,7 +236,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
           </p>
 
           <AboutImage>
-            <Image fluid={Data.talk.childImageSharp.fluid} alt="author" />
+            <Image fluid={Data.talk.childImageSharp.fluid}
+                   alt="Me talking about how create npm packages at JSDay Canarias 2018"/>
           </AboutImage>
         </AboutDetails>
       </AboutWrapper>

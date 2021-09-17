@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from "react"
+import React, {useEffect, useState} from "react"
 // import { Link } from "gatsby"
-import { IoIosSearch, IoIosClose } from "react-icons/io"
-import { DrawerProvider } from "../Drawer/DrawerContext"
+import {IoIosClose} from "react-icons/io"
+import {DrawerProvider} from "../Drawer/DrawerContext"
 import Menu from "./Menu"
 import MobileMenu from "./MobileMenu"
 import SelectLanguage from "../SelectLanguage"
 import SearchContainer from "../../containers/SearchContainer/SearchContainer"
 import HeaderWrapper, {
-  NavbarWrapper,
   MenuWrapper,
-  NavSearchButton,
+  NavbarWrapper,
+  NavSearchFromWrapper,
   NavSearchWrapper,
   SearchCloseButton,
-  NavSearchFromWrapper,
 } from "./Navbar.style"
-import { Language } from "../../types"
+import {Language} from "../../types"
 
 type NavbarProps = {
   className?: string
   lang: Language
 }
 
-const MenuItems = [
+const MenuItems: any[] = [
   // {
   //   label: "About",
   //   url: "/en",
@@ -72,10 +71,10 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
     <HeaderWrapper className={addAllClasses.join(" ")} {...props}>
       <NavbarWrapper className="navbar">
         <DrawerProvider>
-          <MobileMenu items={state.menu} />
+          <MobileMenu items={state.menu} {...props} />
         </DrawerProvider>
         <MenuWrapper>
-          <Menu items={state.menu} />
+          <Menu items={state.menu} {...props}/>
         </MenuWrapper>
         <SelectLanguage lang={props.lang} />
         {/* <NavSearchButton
@@ -87,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
         </NavSearchButton> */}
       </NavbarWrapper>
 
-      <NavSearchWrapper className={state.toggle === true ? "expand" : ""}>
+      <NavSearchWrapper className={state.toggle ? "expand" : ""}>
         <NavSearchFromWrapper>
           <SearchContainer />
           <SearchCloseButton

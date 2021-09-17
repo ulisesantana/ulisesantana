@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const MilestoneWrapper = styled.article`
   display: block;
@@ -9,7 +8,7 @@ export const MilestoneWrapper = styled.article`
   width: 100%;
 
   h3 {
-    color: ${themeGet("colors.secondary", "blue")};
+    color: var(--secondary-color);
     font-size: 1.25rem;
     margin: 0;
     padding: 0;

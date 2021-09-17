@@ -1,10 +1,8 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 const HeaderWrapper = styled.header`
-  background-color: white;
+  background-color: transparent;
   padding: 8px 0;
-  position: sticky;
   top: 0;
   transition: 0.25s ease-in-out;
   z-index: 100;
@@ -15,7 +13,6 @@ export const NavbarWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
-  background-color: #fff;
   transition: 0.25s ease-in-out;
   margin: 0 auto;
   width: 100%;
@@ -61,26 +58,26 @@ export const MenuItemWrapper = styled.ul`
 `
 
 export const MenuItem = styled.li`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   margin: 0 20px;
   list-style: none;
-  a {
-    color: ${themeGet("colors.lightTextColor", "#757575")};
-    font-size: ${themeGet("fontSizes.1", "18")}px;
-    font-weight: ${themeGet("fontWeights.3", "400")};
-    line-height: ${themeGet("lineHeights.normal", "1")};
+  a, a:hover, a:visited {
+    color: var(--text-color);
+    font-size: var(--font-size-1);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
     padding: 5px 10px;
     text-transform: uppercase;
     text-shadow: rgb(170, 170, 170) 1px 0 1px;
     transition: 0.15s ease-in-out;
     white-space: nowrap;
 
-    &:hover {
-      color: ${themeGet("colors.textColor", "#292929")};
-    }
     &.active-link {
-      color: ${themeGet("colors.textColor", "#292929")};
-      font-weight: ${themeGet("fontWeights.4", "500")};
-      border-bottom: 4px solid ${themeGet("colors.primary", "black")};
+      color: var(--text-color);
+      font-weight: 500;
+      border-bottom: 4px solid var(--primary-color);
     }
   }
 `
@@ -131,7 +128,7 @@ export const NavSearchWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: var(--light-color);
   height: 0;
   visibility: hidden;
   transition: 0.35s ease-in-out;
@@ -212,16 +209,22 @@ export const MobileMenuWrapper = styled.div`
 `
 
 export const DrawerContentWrapper = styled.div`
+  background-color: var(--light-color);
+  height: 100%;
   .mobile-menu {
-    display: block;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
     padding-top: 60px;
+    padding-left: 48px;
     li {
       margin: 0 0 38px 0;
+      padding: 0;
       a {
         display: block;
         position: relative;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 0;
+        padding-right: 24px;
         &.active-link {
           &:before {
             opacity: 1;
@@ -234,8 +237,7 @@ export const DrawerContentWrapper = styled.div`
           height: 18px;
           top: 50%;
           left: 0;
-          opacity: 0;
-          background: ${themeGet("colors.textColor", "#292929")};
+          opacity: 0;;
           transform: translateY(-50%);
         }
       }
@@ -244,10 +246,11 @@ export const DrawerContentWrapper = styled.div`
 `
 
 export const DrawerHead = styled.div`
+  background-color: var(--light-color);;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid var(--light-border-color);
   padding: 3px 0;
 `
 
@@ -278,7 +281,7 @@ export const HamburgerIcon = styled.div`
   span {
     display: block;
     height: 2px;
-    background-color: ${themeGet("colors.textColor", "#292929")};
+    background-color: var(--text-color);
     margin-bottom: 5px;
     &:last-child {
       margin-bottom: 0;

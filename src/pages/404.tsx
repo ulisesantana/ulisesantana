@@ -1,11 +1,8 @@
 import React from "react"
-import Navbar from "../components/Navbar/Navbar"
-import ResetCss from "../components/resetCSS"
-import { SEO } from "../components"
+import {SEO} from "../components"
+import {Layout as EnglishLayout, SpanishLayout} from '../components/Layout'
 import NotFound from "../containers/NotFound"
-import Footer from "../components/Footer/Footer"
-import { SocialLinks } from "../components/"
-import { Language } from "../types"
+import {Language} from "../types"
 import {graphql} from "gatsby";
 
 const NotFoundPage = (props: any) => {
@@ -15,10 +12,9 @@ const NotFoundPage = (props: any) => {
     typeof window !== "undefined"
       ? ((window.navigator.language.split("-") as unknown) as Language)
       : ["es" as Language]
+  const Layout = lang === 'es' ? SpanishLayout : EnglishLayout
   return (
-    <>
-      <ResetCss />
-      <Navbar lang={lang as Language} />
+    <Layout>
       <SEO
         title="404: Not Found"
         meta={[
@@ -32,11 +28,7 @@ const NotFoundPage = (props: any) => {
         ]}
       />
       <NotFound lang={lang as Language} />
-      <Footer>
-        <SocialLinks />
-        <div>Copyright &copy; {new Date().getFullYear()}</div>
-      </Footer>
-    </>
+    </Layout>
   )
 }
 

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const SearchWrapper = styled.div`
   align-items: center;
@@ -27,7 +26,7 @@ export const SearchForm = styled.form`
   input {
     width: 100%;
     font-weight: normal;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: var(--text-color);
     border: 0;
     background: transparent;
     font-size: 1rem;
@@ -40,7 +39,7 @@ export const SearchForm = styled.form`
 export const SearchResult = styled.div`
   position: absolute;
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   top: 100%;
   left: 0;
   display: block;
@@ -48,7 +47,7 @@ export const SearchResult = styled.div`
   z-index: 200;
 
   .post_list {
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid var(--highlight-color);
     &:last-child {
       border: 0;
     }

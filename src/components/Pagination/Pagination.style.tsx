@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "styled-system"
 
 export const PaginationWrapper = styled.div`
   display: flex;
@@ -7,48 +6,28 @@ export const PaginationWrapper = styled.div`
   justify-content: space-between;
 `
 
-export const PrevPage = styled.div`
+export const NavToPage = styled.div`
   min-width: 32px;
-  a {
+  a, a:visited {
     width: 32px;
     height: 32px;
-    color: ${themeGet("colors.textColor", "#292929")};
     border-radius: 50%;
-    background-color: #f3f3f3;
+    background-color: var(--highlight-color);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 25%);
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.15s ease-in-out;
     svg {
+      color: var(--bg-color);
       display: block;
     }
     &:hover {
-      color: #fff;
-      background-color: ${themeGet("colors.primary", "yellow")};
-    }
-  }
-`
-
-export const NextPage = styled.div`
-  min-width: 32px;
-  a {
-    width: 32px;
-    height: 32px;
-    color: ${themeGet("colors.textColor", "#292929")};
-    border-radius: 50%;
-    background-color: #f3f3f3;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.15s ease-in-out;
-    svg {
-      display: block;
-    }
-    &:hover {
-      color: #fff;
-      background-color: ${themeGet("colors.primary", "yellow")};
+      background-color: var(--primary-color);
+      svg {
+        color: var(--black);
+      }
     }
   }
 `
