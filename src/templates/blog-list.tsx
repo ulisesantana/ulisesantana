@@ -60,8 +60,8 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1
     ? "/blog"
-    : `/page/${(currentPage - 1).toString()}`
-  const nextPage = `/page/${(currentPage + 1).toString()}`
+    : `/blog/page/${(currentPage - 1).toString()}`
+  const nextPage = `/blog/page/${(currentPage + 1).toString()}`
   const PrevLink = !isFirst && prevPage
   const NextLink = !isLast && nextPage
   const { siteUrl } = data.site.siteMetadata

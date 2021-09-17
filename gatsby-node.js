@@ -24,7 +24,7 @@ const createPostHandler = (createPage) => (post, index, posts) => {
 
 const createPostListHandler = (createPage, postsPerPage, numPages) => (_, i) => {
     createPage({
-        path: i === 0 ? `/blog` : `/page/${i + 1}`,
+        path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
         component:  path.resolve(`./src/templates/blog-list.tsx`),
         context: {
             draftDisabledList,
