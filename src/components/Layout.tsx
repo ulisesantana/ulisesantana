@@ -10,25 +10,20 @@ import Navbar from "./Navbar/Navbar"
 import {Language} from "../types"
 import ImageWithDescription from "./ImageWithDescription";
 import {JavaScriptRepl} from "./JavaScriptRepl";
-import {GlobalStyle, useDarkMode} from "../theme";
-import {ThemeProvider} from "styled-components";
+import {GlobalStyle} from "../theme";
 
 const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
   menu = true,
-}) => {
-  const {darkMode, setDarkMode, theme} = useDarkMode()
-
-  return (
-    <ThemeProvider theme={theme}>
+}) => (
     <SimpleReactLightbox>
       <MDXProvider components={{ImageWithDescription, JavaScriptRepl}}>
-        <GlobalStyle theme={theme} />
-        {!!menu && <Navbar lang={lang} isDark={darkMode} themeHandler={setDarkMode}/>}
+        <GlobalStyle/>
+        {!!menu && <Navbar lang={lang}/>}
         {children}
         <Footer>
           <SocialLinks/>
-          <div>Copyright &copy; {new Date().getFullYear()}</div>
+          <p>Copyright &copy; {new Date().getFullYear()}</p>
         </Footer>
         <ScrollToTop
           showUnder={300}
@@ -39,9 +34,7 @@ const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
         </ScrollToTop>
       </MDXProvider>
     </SimpleReactLightbox>
-    </ThemeProvider>
   )
-}
 
 export const Layout = BaseLayout()
 export const SpanishLayout = BaseLayout("es")

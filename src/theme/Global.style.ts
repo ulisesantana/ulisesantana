@@ -1,67 +1,57 @@
 import {createGlobalStyle} from "styled-components";
-import {Theme, themeGet} from "./theme";
+import {resetCSS} from "./resetCSS";
 
-export const GlobalStyle = createGlobalStyle<{
-  theme: Theme
-}>`
-html {
-  box-sizing: border-box;
-  font-size: 18px;
-  line-height: 1.15;
-  margin: 0;
-  padding: 0;
-  -webkit-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
+export const GlobalStyle = createGlobalStyle`
+${resetCSS}
+:root {
+  color-scheme: light dark;
+  --black: #323330;
+  --font-family-1: 'Fira Sans',sans-serif;
+  --font-family-2: 'Poppins', sans-serif;
+  --font-size-0: 14px;
+  --font-size-1: 16px;
+  --font-size-2: 18px;
+  --font-size-3: 21px;
+  --font-size-4: 34px;
+  --font-size-5: 41px;
+  --font-size-6: 48px;
+  --line-height-normal: 1;
+  --line-height-normal-text: 1.5;
+  --line-height-title: 2;
+  --primary-color: #F0DB4F;
+  --secondary-color: #007acc;
+  
+  // light theme
+  --bg-color: #F7F7F7;
+  --highlight-color: #323330;
+  --icon-color: var(--text-color);
+  --inactive-field-color: #F7F7F7;
+  --light-color: #cccccc;
+  --light-border-color: #9a9a9a;
+  --link-color: #292929;
+  --link-visited-color: var(--secondary-color);
+  --tag-color: var(--secondary-color);
+  --text-color: #292929;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-  html a,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  a,
-  p,
-  li,
-  dl,
-  th,
-  dt,
-  input,
-  textarea,
-  span,
-  div {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6{
-  margin-top: 0;
-  font-family: 'Poppins',sans-serif;
+.dark {
+  // dark theme
+  --bg-color: #323330;
+  --highlight-color: #F7F7F7;
+  --icon-color: var(--primary-color);
+  --inactive-field-color: #F7F7F7;
+  --light-color: #676767;
+  --light-border-color: #a7a7a7;
+  --link-color: #F0DB4F;
+  --link-visited-color: var(--secondary-color);
+  --tag-color: var(--primary-color);
+  --text-color: #F7F7F7;
 }
 
 body {
-  background-color: ${themeGet("backgroundColor")};
-  color: ${themeGet("textColor")};
-  font-family: 'Fira Sans',sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family-1);
   margin: 0;
   padding: 16px;
   font-size: 1rem;
@@ -69,36 +59,34 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+  width: 100% !important;
 }
 
 p{
+  color: inherit;
   text-align: justify;
   line-height: 2;
   margin: 2rem auto;
 }
 
-input, textarea, select, button{font-family: 'Fira Sans',sans-serif;}
-
-ul,ol {
-  margin: 0;
-  padding: 0;
-}
+input, textarea, select, button{var(--font-family-1)}
 
 a {
+  color: inherit;
   text-decoration: none;
   box-shadow: none;
-
-  &:hover {
-    text-decoration: none;
-  }
   
   &:visited {
-    color: ${props => props.theme.isDark ? themeGet( "secondary") : 'purple'};
+    color: var(--link-visited-color);
+  }
+
+  svg {
+    color: var(--icon-color);
   }
 }
 
 blockquote{
-  font-family: 'Poppins',sans-serif;
+  font-family: var(--font-family-2);
   font-weight: 500;
 }
 
@@ -119,12 +107,12 @@ table {
 }
 
 table tr {
-  background-color: ${themeGet('backgroundColor')};
+  background-color: var(--bg-color);
   border-top: 1px solid #c6cbd1;
 }
 
 table tr:nth-child(2n) {
-  background-color: ${themeGet('inactiveField')};
+  background-color: var(--inactive-field-color);
 }
 
 table th{
@@ -137,43 +125,20 @@ table td,
   padding: .4rem 1rem;
 }
 
-.nav-sticky{
-.header {
-    box-shadow: 0 0 15px rgba(0,0,0,.08);
-  .navbar{
-    @media (min-width: 1400px) {
-        padding-top: 25px;
-        padding-bottom: 25px;
-      }
-    @media (min-width: 1200px) {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-    }
-  }
-
-}
-
-body {
-  width: 100% !important;
-  overflow-x: hidden;
-}
-
 p, span, figcaption, article li {
   a {
-    border-bottom: solid 4px ${themeGet("primary")};
-    color: ${themeGet("textColor")}
-      font-weight: 700;
+    border-bottom: solid 4px var(--primary-color);
+    color: var(--text-color);
+    font-weight: 700;
     transition: all ease-in-out 0.3s;
   }
 }
 
-
 blockquote {
-  background-color: ${themeGet("primary")};
-  color: ${themeGet("black")};
+  background-color: var(--primary-color);
+  color: var(--black);
   a:hover{
-    background-color: ${themeGet("secondary")};
+    background-color: var(--secondary-color);
   }
 }
 
@@ -188,23 +153,16 @@ blockquote {
     margin: 0;
   }
 
-.page-break-after {
-    page-break-after: always;
-  }
-
-.only-print {
-    display: block !important;
-  }
-
-.no-print{
-    display: none !important;
-  }
+  .page-break-after {
+      page-break-after: always;
+    }
+  
+  .only-print {
+      display: block !important;
+    }
+  
+  .no-print{
+      display: none !important;
+    }
 }
-
-//@media (prefers-color-scheme: dark) {
-//  body {
-//      filter: invert();
-//    background-color: deeppink;
-//  }
-//} 
 `

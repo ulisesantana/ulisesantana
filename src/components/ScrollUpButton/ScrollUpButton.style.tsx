@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "../../theme"
 
 const ScrollUpButtonWrapper = styled.div`
   width: 40px;
@@ -9,14 +8,14 @@ const ScrollUpButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  background-color: ${props => themeGet(props.theme.isDark ? "white" : "black")};
-  color: ${props => themeGet(props.theme.isDark ? "black" : "white")};
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  background-color: var(--highlight-color);
+  color: var(--bg-color);
   transition: 0.15s ease-in-out;
 
   &:hover {
-    background-color: ${themeGet("primary")};
-    color: ${themeGet("black")};
+    background-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    color: var(--black);
   }
 
   @media print {

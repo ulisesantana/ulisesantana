@@ -8,8 +8,8 @@ module.exports = {
   siteMetadata: {
     title: `Ulises Santana`,
     author: `Ulises Santana`,
-    about: `"Full Stack Developer con JavaScript como lengua materna y la web como patria. Trasteando con tecnologías desde las Islas Canarias 🏝️"`,
-    description: `A lifelong learner sharing his lessons learned.`,
+    about: `Full Stack Developer con JavaScript como lengua materna y la web como patria. Trasteando con tecnologías desde las Islas Canarias 🏝️`,
+    description: `Un aprendiz eterno compartiendo sus lecciones aprendidas.`,
     siteUrl: `https://ulisesantana.dev/`,
   },
   plugins: [

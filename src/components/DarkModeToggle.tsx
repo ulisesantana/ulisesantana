@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, FC} from "react";
+import React, {ChangeEventHandler, FC, useEffect, useState} from "react";
 import styled from "styled-components";
 
 const DarkModeToggleStyle = styled.label`
@@ -19,7 +19,6 @@ const DarkModeToggleStyle = styled.label`
   /* The slider */
 
   .slider {
-    background-color: #ffef88;
     cursor: pointer;
     border-radius: 34px;
     position: absolute;
@@ -50,7 +49,7 @@ const DarkModeToggleStyle = styled.label`
   }
 
   input + .slider {
-    background-color: ${props => props.theme.secondary};
+    background-color: #3ab9fe;
     align-items: center;
     display: flex;
     justify-content: flex-end;
@@ -72,13 +71,40 @@ const DarkModeToggleStyle = styled.label`
 
 `
 
-interface DarkModeToggleProps {
-  isDark: boolean
-  themeHandler: (isChecked: boolean) => void
+const themeKey = 'theme'
+enum ThemeMode {
+  Dark = 'dark',
+  Light = 'light'
 }
 
-export const DarkModeToggle: FC<DarkModeToggleProps> = ({isDark, themeHandler}) => {
-  const onChangeHandler: ChangeEventHandler<HTMLInputElement> = e => themeHandler(e.target.checked)
+const isDarkModeEnabled = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+const setDarkModeCachedValue = (value: boolean) => window.localStorage.setItem(themeKey, value ? ThemeMode.Dark : ThemeMode.Light)
+const getDarkModeCachedValue = () => {
+  const state = window.localStorage.getItem(themeKey)
+  if (state !== null) {
+    return state === ThemeMode.Dark
+  }
+  return state
+}
+
+export const DarkModeToggle: FC = () => {
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    setIsDark(getDarkModeCachedValue() ?? isDarkModeEnabled())
+  }, [])
+
+  useEffect(() => {
+    setDarkModeCachedValue(isDark)
+    if (isDark) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+  }, [isDark])
+
+  const onChangeHandler: ChangeEventHandler<HTMLInputElement> = e => setIsDark(e.target.checked)
+
   return (
     <DarkModeToggleStyle>
       <input

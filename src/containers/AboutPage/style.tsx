@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "../../theme"
 
 export const AboutWrapper = styled.main`
   position: relative;
@@ -21,7 +20,7 @@ export const AboutPageTitle = styled.header`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("textColor")};
+    color: var(--highlight-color);
     line-height: 1.53;
     margin: 0;
     @media (max-width: 990px) {
@@ -70,7 +69,7 @@ export const AboutDetails = styled.section`
   }
 
   blockquote {
-    color: ${themeGet("black")};
+    color: var(--black);
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -112,7 +111,7 @@ export const AboutDetails = styled.section`
       max-width: 960px;
 
       a {
-        color: ${themeGet("secondary")} !important;
+        color: var(--secondary-color) !important;
       }
     }
 
@@ -163,7 +162,7 @@ export const AboutDetails = styled.section`
   h2 {
     font-size: 30px;
     font-weight: 700;
-    color: ${themeGet("textColor")};
+    color: var(--text-color);
     line-height: 1.53;
     margin: 0;
     @media (max-width: 990px) {
@@ -191,8 +190,8 @@ export const AboutDetails = styled.section`
 
   button {
     display: block;
-    background-color: ${themeGet("primary")};
-    color: ${themeGet("black")};
+    background-color: var(--primary-color);
+    color: var(--black);
     cursor: pointer;
     font-size: 1rem;
     font-style: italic;
@@ -222,7 +221,7 @@ export const SocialProfiles = styled.div`
     content: "";
     width: 30px;
     height: 1px;
-    background: ${themeGet("textColor")};
+    background: var(--text-color);
     display: block;
     margin-bottom: 60px;
     @media (max-width: 767px) {

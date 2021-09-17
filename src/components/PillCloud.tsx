@@ -1,10 +1,9 @@
-import React, { FC } from "react"
+import React, {FC} from "react"
 import styled from "styled-components"
-import { themeGet } from "../theme"
 
 const PillCloudWrapper = styled.ul`
   align-items: center;
-  color: ${themeGet("black")};
+  color: var(--black);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -13,7 +12,7 @@ const PillCloudWrapper = styled.ul`
 
   li {
     align-items: center;
-    background: ${themeGet("primary")};
+    background: var(--primary-color);
     color: inherit;
     display: flex;
     justify-content: center;

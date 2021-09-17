@@ -6,8 +6,6 @@ import {DarkModeToggle} from "../";
 type MenuProps = {
   items: MenuItemsProps[]
   className?: string
-  isDark: boolean
-  themeHandler: (isChecked: boolean) => void
 }
 
 type MenuItemsProps = {
@@ -18,8 +16,6 @@ type MenuItemsProps = {
 
 const Menu: React.FunctionComponent<MenuProps> = ({
   items,
-  isDark,
-  themeHandler,
   className,
   ...props
 }) => {
@@ -43,10 +39,7 @@ const Menu: React.FunctionComponent<MenuProps> = ({
         </MenuItem>
       ))}
       <MenuItem key="theme-toggle">
-        <DarkModeToggle
-          isDark={isDark}
-          themeHandler={themeHandler}
-        />
+        <DarkModeToggle />
       </MenuItem>
     </MenuItemWrapper>
   )

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "../../theme"
 
 export const IntroWrapper = styled.section`
   width: 940px;
@@ -31,7 +30,7 @@ export const IntroImage = styled.div`
   padding: 30px;
   border-radius: 50%;
   margin: 0 auto;
-  border: 4px solid ${themeGet("lightBorderColor")};
+  border: 4px solid var(--light-border-color);
   flex-shrink: 0;
   perspective: 1000px;
 
@@ -92,8 +91,7 @@ export const IntroImage = styled.div`
 export const IntroTitle = styled.h1`
   font-size: 30px;
   font-weight: 400;
-  font-family: ${themeGet("fontFamily.1")};
-  color: ${props => themeGet(props.theme.isDark ? "white" : "black")};
+  font-family: var(--font-family-1);
   margin-bottom: 20px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -106,7 +104,6 @@ export const IntroTitle = styled.h1`
 `
 
 export const Description = styled.p`
-  color: ${themeGet("textColor")};
   font-size: 1.5rem;
   line-height: 2rem;
 

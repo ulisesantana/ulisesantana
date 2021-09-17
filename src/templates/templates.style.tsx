@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "../theme"
 
 export const BlogPostsWrapper = styled.main`
   font-size: 150%;
@@ -43,10 +42,10 @@ export const RelatedPostWrapper = styled.div`
 `
 
 export const RelatedPostTitle = styled.h2`
-  color: ${themeGet("textColor")};
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 500;
-  font-family: ${themeGet("fontFamily.0")};
+  font-family: var(--font-family-1);
   letter-spacing: 0.17rem;
   position: relative;
   margin-bottom: 30px;
@@ -125,7 +124,7 @@ export const RelatedPostItem = styled.div`
       margin-top: 20px;
       a {
         display: block;
-        color: ${props => themeGet(props.theme.isDark ? 'primary' : 'secondary')};
+        color: var(--tag-color);
 
         @media (max-width: 990px) {
           font-size: 12px;
@@ -199,7 +198,7 @@ export const TagPageHeading = styled.div`
 export const TagName = styled.h1`
   font-size: 30px;
   font-weight: 700;
-  color: ${props => themeGet(props.theme.isDark ? "white" : "black")};
+  color: var(--highlight-color);
   margin-bottom: 8px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -240,14 +239,11 @@ export const PostShare = styled.div`
     margin-left: 25px;
     font-size: 22px;
     outline: 0;
-    color: ${themeGet("textColor")};
+    color: var(--highlight-color);
     transition: 0.15s ease-in-out;
     @media (max-width: 767px) {
       font-size: 18px;
       margin-left: 20px;
-    }
-    &:hover {
-      color: ${themeGet("primary")};
     }
     svg {
       display: block;
@@ -274,7 +270,7 @@ export const BlogPostDetailsWrapper = styled.article`
   @media (max-width: 575px) {
     padding: 0;
     .gatsby-highlight {
-      font-size: ${themeGet("fontSizes.1")}px;
+      font-size: var(--font-size-1);
     }
   }
 `
@@ -292,7 +288,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${props => themeGet(props.theme.isDark ? 'primary' : 'secondary')};
+    color: var(--tag-color);
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;

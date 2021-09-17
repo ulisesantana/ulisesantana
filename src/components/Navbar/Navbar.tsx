@@ -18,8 +18,6 @@ import {Language} from "../../types"
 type NavbarProps = {
   className?: string
   lang: Language
-  isDark: boolean
-  themeHandler: (isChecked: boolean) => void
 }
 
 const MenuItems: any[] = [
@@ -88,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, ...props }) => {
         </NavSearchButton> */}
       </NavbarWrapper>
 
-      <NavSearchWrapper className={state.toggle === true ? "expand" : ""}>
+      <NavSearchWrapper className={state.toggle ? "expand" : ""}>
         <NavSearchFromWrapper>
           <SearchContainer />
           <SearchCloseButton

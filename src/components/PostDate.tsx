@@ -1,7 +1,6 @@
 import * as React from "react";
 import {DateHelper} from "../dateHelper";
 import styled from "styled-components";
-import {themeGet} from "../theme";
 
 const PostDateStyle = styled.div`
   font-size: 90px;
@@ -14,7 +13,7 @@ const PostDateStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${themeGet("textColor")};
+  color: var(--text-color);
   transition: 0.35s ease-in-out;
   
   @media (max-width: 1200px) {

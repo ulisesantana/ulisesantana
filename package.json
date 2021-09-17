@@ -102,6 +102,7 @@
     "format": "node_modules/.bin/prettier --write src/**/*.{ts,tsx}",
     "start": "yarn develop",
     "serve": "node_modules/.bin/gatsby serve",
+    "debug": "yarn build && npx serve public",
     "new:post": "node_modules/.bin/hygen post new",
     "now-build": "yarn run build",
     "deploy": "gatsby build && gh-pages -d public",

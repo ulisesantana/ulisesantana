@@ -78,7 +78,7 @@ export const SocialProfileItem = styled.li`
 
   a, a:visited {
     border: none;
-    color: ${({theme}) => theme[theme.isDark ? "primary" : "textColor"]};
+    color: ${({theme}) => theme[theme.isDark ? "primary" : "textColor"]} !important;
     font-size: 22px;
     padding: 0.2rem;
     display: block;

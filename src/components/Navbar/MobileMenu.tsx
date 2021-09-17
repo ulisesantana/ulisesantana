@@ -16,15 +16,11 @@ import { FiX } from "react-icons/fi"
 type MobileMenuProps = {
   items: any
   logo?: string
-  isDark: boolean
-  themeHandler: (isChecked: boolean) => void
 }
 
 const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
   items,
   logo,
-  isDark,
-  themeHandler,
   ...props
 }) => {
   const { state, dispatch }: any = useContext(DrawerContext)
@@ -65,7 +61,7 @@ const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
               <FiX />
             </DrawerClose>
           </DrawerHead>
-          <Menu items={items} className="mobile-menu" themeHandler={themeHandler} isDark={isDark} />
+          <Menu items={items} className="mobile-menu" />
         </DrawerContentWrapper>
       </Drawer>
     </MobileMenuWrapper>

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themeGet } from "../../theme"
 
 export const PostListWrapper = styled.div`
   cursor: pointer;
@@ -10,7 +9,7 @@ export const PostListWrapper = styled.div`
     padding: 30px 60px 30px 30px;
     
     &:visited {
-      color: ${themeGet('textColor')};
+      color: var(--text-color);
     }
     
     @media (max-width: 990px) {
@@ -41,11 +40,11 @@ export const PostDetails = styled.div`
 export const PostTitle = styled.h1`
   font-size: 21px;
   font-weight: 700;
-  color: ${themeGet("textColor")};
+  color: var(--text-color);
   line-height: 1.53;
   margin-bottom: 12px;
   a {
-    color: ${themeGet("textColor")};
+    color: var(--text-color);
   }
   @media (max-width: 990px) {
     font-size: 16px;
@@ -66,7 +65,7 @@ export const PostMeta = styled.div`
 export const PostDate = styled.div`
   font-size: 15px;
   font-weight: normal;
-  color: ${themeGet("textColor")};
+  color: var(--text-color);
   
   @media (max-width: 575px) {
     font-size: 13px;
@@ -87,7 +86,7 @@ export const PostTags = styled.div`
     margin-left: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${props => themeGet(props.theme.isDark ? "primary" : "secondary")};
+    color: var(--tag-color);
     @media (max-width: 990px) {
       font-size: 13px;
       margin-left: 25px;

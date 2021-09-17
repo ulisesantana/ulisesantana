@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import { themeGet } from "../../theme"
 
 const HeaderWrapper = styled.header`
-  background-color: ${themeGet('transparent')};
+  background-color: transparent;
   padding: 8px 0;
   top: 0;
   transition: 0.25s ease-in-out;
@@ -64,24 +63,21 @@ export const MenuItem = styled.li`
   flex-direction: column;
   margin: 0 20px;
   list-style: none;
-  a {
-    color: ${themeGet("textColor")};
-    font-size: ${themeGet("fontSizes.1")}px;
-    font-weight: ${themeGet("fontWeights.3")};
-    line-height: ${themeGet("lineHeights.normal")};
+  a, a:hover, a:visited {
+    color: var(--text-color);
+    font-size: var(--font-size-1);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
     padding: 5px 10px;
     text-transform: uppercase;
     text-shadow: rgb(170, 170, 170) 1px 0 1px;
     transition: 0.15s ease-in-out;
     white-space: nowrap;
 
-    &:hover {
-      color: ${themeGet("textColor")};
-    }
     &.active-link {
-      color: ${themeGet("textColor")};
-      font-weight: ${themeGet("fontWeights.4")};
-      border-bottom: 4px solid ${themeGet("primary")};
+      color: var(--text-color);
+      font-weight: 500;
+      border-bottom: 4px solid var(--primary-color);
     }
   }
 `
@@ -132,7 +128,7 @@ export const NavSearchWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${themeGet("lightColor")};
+  background-color: var(--light-color);
   height: 0;
   visibility: hidden;
   transition: 0.35s ease-in-out;
@@ -213,7 +209,7 @@ export const MobileMenuWrapper = styled.div`
 `
 
 export const DrawerContentWrapper = styled.div`
-  background-color: ${themeGet("lightColor")};
+  background-color: var(--light-color);
   height: 100%;
   .mobile-menu {
     align-items: start;
@@ -250,11 +246,11 @@ export const DrawerContentWrapper = styled.div`
 `
 
 export const DrawerHead = styled.div`
-  background-color: ${themeGet("lightColor")};;
+  background-color: var(--light-color);;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${themeGet("lightBorderColor")};
+  border-bottom: 1px solid var(--light-border-color);
   padding: 3px 0;
 `
 
@@ -285,7 +281,7 @@ export const HamburgerIcon = styled.div`
   span {
     display: block;
     height: 2px;
-    background-color: ${themeGet("textColor")};
+    background-color: var(--text-color);
     margin-bottom: 5px;
     &:last-child {
       margin-bottom: 0;
