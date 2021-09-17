@@ -2,74 +2,63 @@ import React, {ChangeEventHandler, FC, useEffect, useState} from "react";
 import styled from "styled-components";
 // @ts-ignore
 import {window} from 'browser-monads'
+import {MdWbSunny, IoMdMoon} from "react-icons/all";
 
 const DarkModeToggleStyle = styled.label`
-  /* The switch - the box around the slider */
-  position: relative;
+  --size: 36px;
+  cursor: pointer;
   display: inline-block;
-  width: 60px;
-  height: 34px;
-
-  /* Hide default HTML checkbox */
+  height: calc(var(--size) + 10px);
+  position: relative;
+  width: var(--size);
 
   input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
 
-  /* The slider */
+    & + .icon {
+      .moon {
+        height: 0;
+        width: 0;
+      }
 
-  .slider {
-    cursor: pointer;
-    border-radius: 34px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-transition: .4s;
-    transition: .4s;
+      .sun {
+        height: var(--size);
+        width: var(--size);
+      }
+    }
 
-    .icon {
-      padding: 0 4px;
+    &:checked + .icon {
+      .moon {
+        height: var(--size);
+        width: var(--size);
+      }
+
+      .sun {
+        height: 0;
+        width: 0;
+      }
     }
   }
 
-  .slider:before {
-    background-color: #dcf4f6;
-    border-radius: 50%;
+  .moon, .sun {
+    font-size: var(--size);
     position: absolute;
-    font-size: 8px;
-    content: '';
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: all ease-in-out 0.3s;
   }
 
-  input + .slider {
-    background-color: #3ab9fe;
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    height: 100%;
-    width: 100%;
+  .sun {
+    color: #f3872f;
+    left: 0;
+    top: 4px;
   }
 
-  input:checked + .slider {
-    background-color: #0c297f;
-    justify-content: flex-start;
+  .moon {
+    bottom: 8px;
+    color: var(--primary-color);
+    right: 0;
   }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-
 
 `
 
@@ -112,10 +101,9 @@ export const DarkModeToggle: FC = () => {
         onChange={onChangeHandler}
         checked={isDark}
       />
-      <span className="slider">
-        <span className="icon">
-          { isDark ? '🌛' : '🌞'}
-        </span>
+      <span className="icon">
+        <IoMdMoon className="moon"/>
+        <MdWbSunny className="sun"/>
       </span>
     </DarkModeToggleStyle>
   )
