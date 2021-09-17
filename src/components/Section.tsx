@@ -18,18 +18,18 @@ const SectionTitleWrapper = styled.div`
   margin: 2rem 0 1rem;
   padding: 1rem;
 
-  span {
+  h2, span {
+    color: var(--black);
     display: inline-flex;
-    font-size: inherit;
-    line-height: inherit;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  span {
     padding-right: 1rem;
   }
 
   h2 {
-    color: inherit;
-    display: inline-flex;
-    font-size: inherit;
-    line-height: inherit;
     margin: 0;
   }
 `
