@@ -10,14 +10,21 @@ export interface JavaScriptReplProps {
    */
   init?: string[]
   /**
+   * Loads functions or variables to the scope without showing it on the REPL
+   * @default []
+   */
+  loadToScope?: string[]
+  /**
    * Terminal height in pixels
    * @default 300
    */
   height?: number
 }
 
+export type LineType = 'input' | 'output' | 'error' | 'scope'
+
 export interface Line {
-  type: 'input' | 'output' | 'error'
+  type: LineType
   value: string
 }
 

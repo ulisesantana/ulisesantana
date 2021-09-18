@@ -146,7 +146,6 @@ export const Repl: React.FunctionComponent<ReplProps> = ({
       }
     }
   }
-
   return (
     <Container onClick={() => (inputRef.current.focus())}>
       <Header>
