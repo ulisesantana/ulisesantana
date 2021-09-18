@@ -166,17 +166,15 @@ export const PostDescription = styled.div`
   h5,
   h6 {
     font-weight: 500;
-    margin-bottom: 0.75rem;
+    margin: 2rem 0;
   }
 
   h1 {
     font-size: var(--font-size-6);
-    margin-bottom: 0.75rem;
   }
 
   h2 {
     font-size: var(--font-size-5);
-    margin-bottom: 0.75rem;
   }
 
   h3 {
