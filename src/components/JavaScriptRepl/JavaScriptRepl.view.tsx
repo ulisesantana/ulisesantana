@@ -23,7 +23,7 @@ const Container = styled.div`
 
   background-color: var(--repl-bg-color);
   border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 0 8px rgba(0, 0, 0, 0.5);
   color: var(--text-color);
   font-family: monospace;
   font-weight: bold;

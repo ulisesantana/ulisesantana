@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { JobData, MilestoneData } from "@components"
+import { JobData, MilestoneData } from "../components"
 
 export interface CV {
   education: JobData[]

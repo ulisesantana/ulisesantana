@@ -170,26 +170,6 @@ export const AboutDetails = styled.section`
     margin: 1rem auto;
   }
 
-  button {
-    display: block;
-    background-color: var(--primary-color);
-    color: var(--black);
-    cursor: pointer;
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 600;
-    padding: 0.5rem;
-    outline: none;
-    margin: 1rem;
-
-    @media (min-width: 1920px) {
-      display: block;
-    }
-
-    @media (max-width: 1112px) {
-      display: block;
-    }
-  }
 `
 
 export const SocialProfiles = styled.div`
