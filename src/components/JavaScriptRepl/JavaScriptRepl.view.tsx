@@ -6,7 +6,7 @@ import {FaUndo} from "react-icons/fa";
 // Forked from https://github.com/seveibar/react-repl
 const Container = styled.div`
   body.theme-light & {
-    --repl-bg-color: #e4e4e4;
+    --repl-bg-color: #eae5e1;
     --repl-caret-color: var(--secondary-color);
     --repl-output-color: #939393;
     --repl-tab-color: #f2f2f2;
@@ -14,7 +14,7 @@ const Container = styled.div`
   }
 
   body.theme-dark & {
-    --repl-bg-color: #404040;
+    --repl-bg-color: #2d2d2d;
     --repl-caret-color: var(--primary-color);
     --repl-output-color: #808080;
     --repl-tab-color: var(--black);
