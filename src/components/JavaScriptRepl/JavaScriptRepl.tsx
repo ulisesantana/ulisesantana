@@ -61,7 +61,7 @@ export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
     <Repl
       title={title}
       onSubmit={onSubmit}
-      height={init?.length > 0 ? init?.length * 100 : height ?? 300}
+      height={init?.length > 0 ? 'auto' : height ?? 300}
       lines={lines}
       onClear={onClear}
     />

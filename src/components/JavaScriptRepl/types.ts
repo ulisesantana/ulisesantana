@@ -23,7 +23,7 @@ export interface Line {
 
 export interface ReplProps {
   title: string
-  height: number
+  height: number | string
   lines: Line[]
   onSubmit: (input: string) => void
   onClear: () => void

@@ -83,10 +83,10 @@ const Tab = styled.div`
   justify-content: center;
   padding: 16px;
 `
-const TerminalContent = styled.div<React.PropsWithRef<{height: number}>>`
+const TerminalContent = styled.div<React.PropsWithRef<{height: number | string}>>`
   padding: 16px;
   padding-top: 2px;
-  height: ${(props) => props.height}px;
+  height: ${({height}) => isNaN(Number(height)) ? height : `${height}px`};
   overflow-y: auto;
 `
 
