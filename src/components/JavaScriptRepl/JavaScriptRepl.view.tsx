@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from "react"
+import React, {ChangeEventHandler, KeyboardEventHandler, useEffect, useRef, useState} from "react"
 import styled from "styled-components"
-import {ReplProps} from "./types";
-import {FaTrashAlt} from "react-icons/all";
+import {Line, ReplProps} from "./types";
+import {FaUndo} from "react-icons/fa";
 
 // Forked from https://github.com/seveibar/react-repl
 const Container = styled.div`
@@ -29,10 +29,6 @@ const Container = styled.div`
   font-weight: bold;
   overflow: hidden;
 `
-const InputCarat = styled.div`
-  color: var(--repl-caret-color);
-  padding-right: 8px;
-`
 const InputLine = styled.div`
   display: flex;
   margin-top: 8px;
@@ -41,6 +37,10 @@ const ActiveInputLine = styled.div`
   display: flex;
   align-items: center;
   margin-top: 8px;
+`
+const InputCaret = styled.div`
+  color: var(--repl-caret-color);
+  padding-right: 8px;
 `
 const Output = styled.div`
   color: var(--repl-output-color);
@@ -75,9 +75,12 @@ const Title = styled.div`
 `
 
 const Tab = styled.div`
+  align-items: center;
   background-color: var(--repl-caret-color);
   color: var(--repl-tab-color);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   padding: 16px;
 `
 const TerminalContent = styled.div<React.PropsWithRef<{height: number}>>`
@@ -87,13 +90,25 @@ const TerminalContent = styled.div<React.PropsWithRef<{height: number}>>`
   overflow-y: auto;
 `
 
+const renderLine = (line: Line, i: number) =>
+  line.type === "input" ? (
+    <InputLine key={i}>
+      <InputCaret>{">"}</InputCaret>
+      {line.value}
+    </InputLine>
+  ) : line.type === "output" ? (
+    <Output key={i}>{line.value}</Output>
+  ) : (
+    <Error key={i}>{line.value.toString()}</Error>
+  )
+
 export const Repl: React.FunctionComponent<ReplProps> = ({
-                            title,
-                            onClear,
-                            onSubmit,
-                            lines,
-                            height,
-                          }) => {
+  title,
+  onClear,
+  onSubmit,
+  lines,
+  height,
+}) => {
   const inputRef = useRef() as React.MutableRefObject<HTMLInputElement>
   const terminalContentRef = useRef() as React.MutableRefObject<HTMLDivElement>
   const [activeInputValue, setActiveInputValue] = useState("")
@@ -106,52 +121,45 @@ export const Repl: React.FunctionComponent<ReplProps> = ({
     }
   }, [lines])
   useEffect(() => setHistorySelectIndex(-1), [lines])
+  const onInputChange: ChangeEventHandler<HTMLInputElement> = (e) => setActiveInputValue(e.target.value)
+  const onKeyUp: KeyboardEventHandler = (e) => {
+    if (e.key === "Enter") {
+      onSubmit(activeInputValue)
+      setActiveInputValue("")
+    }
+    if (e.key === "ArrowUp") {
+      const newHSI = historySelectIndex + 1
+      const inputs = lines.filter((l) => l.type === "input")
+      inputs.reverse()
+      if (newHSI < inputs.length) {
+        setActiveInputValue(inputs[newHSI].value)
+        setHistorySelectIndex(newHSI)
+      }
+    }
+    if (e.key === "ArrowDown") {
+      const newHSI = historySelectIndex - 1
+      const inputs = lines.filter((l) => l.type === "input")
+      inputs.reverse()
+      if (newHSI >= 0) {
+        setActiveInputValue(inputs[newHSI].value)
+        setHistorySelectIndex(newHSI)
+      }
+    }
+  }
 
   return (
     <Container onClick={() => (inputRef.current.focus())}>
-        <Header>
-          <Title>{title}</Title>
-          <Tab onClick={onClear}><FaTrashAlt/></Tab>
-        </Header>
+      <Header>
+        <Title>{title}</Title>
+        <Tab onClick={onClear}><FaUndo/></Tab>
+      </Header>
       <TerminalContent height={height} ref={terminalContentRef}>
-        {lines.map((line, i) =>
-          line.type === "input" ? (
-            <InputLine key={i}>
-              <InputCarat>{">"}</InputCarat>
-              {line.value}
-            </InputLine>
-          ) : line.type === "output" ? (
-            <Output key={i}>{line.value}</Output>
-          ) : (
-            <Error key={i}>{line.value.toString()}</Error>
-          )
-        )}
+        {lines.map(renderLine)}
         <ActiveInputLine>
-          <InputCarat>{">"}</InputCarat>
+          <InputCaret>{">"}</InputCaret>
           <TextInput
-            onKeyUp={(e) => {
-              if (e.key === "Enter") {
-                onSubmit(activeInputValue)
-                setActiveInputValue("")
-              } else if (e.key === "ArrowUp") {
-                const newHSI = historySelectIndex + 1
-                const inputs = lines.filter((l) => l.type === "input")
-                inputs.reverse()
-                if (newHSI < inputs.length) {
-                  setActiveInputValue(inputs[newHSI].value)
-                  setHistorySelectIndex(newHSI)
-                }
-              } else if (e.key === "ArrowDown") {
-                const newHSI = historySelectIndex - 1
-                const inputs = lines.filter((l) => l.type === "input")
-                inputs.reverse()
-                if (newHSI >= 0) {
-                  setActiveInputValue(inputs[newHSI].value)
-                  setHistorySelectIndex(newHSI)
-                }
-              }
-            }}
-            onChange={(e) => setActiveInputValue(e.target.value)}
+            onKeyUp={onKeyUp}
+            onChange={onInputChange}
             value={activeInputValue}
             ref={inputRef}
           />

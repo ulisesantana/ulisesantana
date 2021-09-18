@@ -26,14 +26,26 @@ async function execAndGetLine(execLine: string): Promise<Line> {
   }
 }
 
+async function generateLinesFromStrings(expressions: string[]): Promise<Line[]> {
+  const lines = [] as Line[]
+  for (const execLine of expressions) {
+    lines.push({ type: "input", value: execLine })
+    if (!execLine.trim()) continue
+    lines.push(await execAndGetLine(execLine))
+  }
+  return lines
+}
+
 export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
                               title= 'REPL',
                               init = [],
                               height
                             }) => {
   const [lines, setLines] = useState<Line[]>([])
-
-  const onClear = () => setLines([])
+  const initializeLines = async () => {
+    setLines(await generateLinesFromStrings(init))
+  }
+  const onClear = () => (initializeLines)()
   const onSubmit = async (execLine: string) => {
     const newLines = lines.concat([{ type: "input", value: execLine }])
     setLines(newLines)
@@ -42,16 +54,7 @@ export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
   }
 
   useEffect(() => {
-    (async () => {
-      if (init.length === 0) return
-      const lines = [] as Line[]
-      for (const execLine of init) {
-        lines.push({ type: "input", value: execLine })
-        if (!execLine.trim()) continue
-        lines.push(await execAndGetLine(execLine))
-      }
-      setLines(lines)
-    })()
+    (initializeLines)()
   }, [])
 
   return (
