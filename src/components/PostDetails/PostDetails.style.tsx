@@ -211,42 +211,6 @@ export const PostDescription = styled.div`
   figcaption {
     text-align: center;
   }
-  
-  details {
-    color: var(--black);
-  }
-
-  details > summary {
-    background-color: var(--primary-color);
-    cursor: pointer;
-    font-size: var(--font-size-3);
-    font-weight: bold;
-    text-align: center;
-    width: 6rem;
-  }
-
-  details[open] summary ~ * {
-    animation: slide-in .5s ease-in-out;
-  }
-
-  @keyframes slide-in {
-    0% {
-      opacity: 0;
-      margin-left: -100%;
-      margin-right: 100%
-    }
-    100% {
-      opacity: 1;
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  details > :not(summary) {
-    background-color: var(--primary-color);
-    padding: 16px;
-
-  }
 
   blockquote {
     background-color: var(--primary-color);
@@ -298,10 +262,6 @@ export const PostDescription = styled.div`
     }
   }
 
-  details > blockquote {
-    margin-top: 0;
-  }
-
   a, figcaption a {
     font-weight: 700;
     transition: 0.15s ease-in-out;
@@ -337,25 +297,6 @@ export const PostDescription = styled.div`
 
     h6 {
       font-size: var(--font-size-0);
-    }
-
-    details > summary {
-      font-size: var(--font-size-2);
-      font-weight: bold;
-      width: 5rem;
-    }
-
-    details > blockquote, blockquote {
-      font-size: var(--font-size-1);
-      margin: 16px 0;
-
-      p {
-        font-size: var(--font-size-2);
-      }
-    }
-
-    details > blockquote {
-      margin-top: 0;
     }
   }
 

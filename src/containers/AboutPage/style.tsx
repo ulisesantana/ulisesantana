@@ -129,21 +129,6 @@ export const AboutDetails = styled.section`
     }
   }
 
-  .tldr-open,
-  .tldr-closed {
-    position: absolute;
-  }
-
-  .tldr-open {
-    padding: 1rem;
-    left: -5vw;
-  }
-
-  .tldr-closed {
-    padding: 0;
-    left: -100vw;
-  }
-
   @media (min-width: 991px) {
     blockquote {
       width: 95vw;
@@ -153,9 +138,6 @@ export const AboutDetails = styled.section`
   @media (max-width: 990px) {
     blockquote {
       width: 100%;
-    }
-    .tldr-open {
-      left: 3.3vw;
     }
   }
 

@@ -1,22 +1,14 @@
 import * as React from "react"
-import {useState} from "react"
 import {graphql, useStaticQuery} from "gatsby"
 import Image from "gatsby-image"
 import {AboutDetails, AboutImage, AboutWrapper} from "./style"
 import Intro from "../Intro"
-import {SocialLinks} from "../../components"
+import {SocialLinks, TLDR} from "../../components"
 import Links from "./links"
 
 interface AboutProps {}
 
 const About: React.FunctionComponent<AboutProps> = () => {
-  const [tldrOpen, setTLDROpen] = useState(false)
-  const toggleTLDR = () => {
-    setTLDROpen(!tldrOpen)
-  }
-
-  const tldrClassName = `tldr-${tldrOpen ? "open" : "closed"}`
-
   const Data = useStaticQuery(graphql`
     query {
       talk: file(absolutePath: { regex: "/jsdaycanarias.jpg/" }) {
@@ -47,42 +39,32 @@ const About: React.FunctionComponent<AboutProps> = () => {
       <Intro lang="es" />
       <AboutWrapper>
         <AboutDetails>
-          <div className={`flex-start`}>
-            <h2>Sobre mí</h2>
-            <button onClick={toggleTLDR}>TL;DR</button>
-          </div>
-          <blockquote
-            id={`tldr`}
-            className={tldrClassName}
-            onClick={toggleTLDR}
-          >
-            <section>
-              <h2>TL;DR</h2>
-              <p>
-                Hola, me llamo Ulises Santana Suárez y vivo en El Hierro, España. Soy Full Stack Developer en{" "}
-                <a href={Links.work} target="_blank">
-                  Lean Mind
-                </a>
-                . Durante los últimos 4 años he estado creando soluciones
-                basadas en tecnología web, algunas de ellas usadas en varios países para millones de usuarios.
-              </p>
+          <h2>Sobre mí</h2>
+          <TLDR>
+            <p>
+              Hola, me llamo Ulises Santana Suárez y vivo en El Hierro, España. Soy Full Stack Developer en{" "}
+              <a href={Links.work} target="_blank">
+                Lean Mind
+              </a>
+              . Durante los últimos 4 años he estado creando soluciones
+              basadas en tecnología web, algunas de ellas usadas en varios países para millones de usuarios.
+            </p>
 
-              <p>
-                Me apasiona programar, el ecosistema de web apps y aprender algo
-                nuevo cada día. Estoy muy agradecido con la comunidad de
-                desarrolladores y a toda la gente que me ha ayudado en mi senda
-                hasta ser un desarrollador profesional. Así que como quiero
-                devolver esa ayuda, si crees que puedo ayudarte de alguna
-                manera, simplemente escríbeme un mensaje por twitter. Si no
-                puedo ayudarte a lo mejor sé quien puede ayudarte. Por cierto,
-                estoy muy interesado en proyectos con un bien social como fin,
-                por lo que no dudes en contactar conmigo si crees que puedo
-                aportar de alguna manera.
-              </p>
+            <p>
+              Me apasiona programar, el ecosistema de web apps y aprender algo
+              nuevo cada día. Estoy muy agradecido con la comunidad de
+              desarrolladores y a toda la gente que me ha ayudado en mi senda
+              hasta ser un desarrollador profesional. Así que como quiero
+              devolver esa ayuda, si crees que puedo ayudarte de alguna
+              manera, simplemente escríbeme un mensaje por twitter. Si no
+              puedo ayudarte a lo mejor sé quien puede ayudarte. Por cierto,
+              estoy muy interesado en proyectos con un bien social como fin,
+              por lo que no dudes en contactar conmigo si crees que puedo
+              aportar de alguna manera.
+            </p>
 
-              <SocialLinks />
-            </section>
-          </blockquote>
+            <SocialLinks />
+          </TLDR>
           <p>
             Nací en las Islas Canarias, España; concretamente en un pequeño
             pueblo en el sureste de Gran Canaria, un lugar maravilloso donde

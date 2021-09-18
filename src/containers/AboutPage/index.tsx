@@ -1,20 +1,12 @@
 import * as React from "react"
-import {useState} from "react"
 import {graphql, useStaticQuery} from "gatsby"
 import Image from "gatsby-image"
 import {AboutDetails, AboutImage, AboutWrapper} from "./style"
 import Intro from "../Intro"
-import {SocialLinks} from "../../components"
+import {SocialLinks, TLDR} from "../../components"
 import Links from "./links"
 
 const About: React.FunctionComponent = () => {
-  const [tldrOpen, setTLDROpen] = useState(false)
-  const toggleTLDR = () => {
-    setTLDROpen(!tldrOpen)
-  }
-
-  const tldrClassName = `tldr-${tldrOpen ? "open" : "closed"}`
-
   const Data = useStaticQuery(graphql`
     query {
       talk: file(absolutePath: { regex: "/jsdaycanarias.jpg/" }) {
@@ -45,41 +37,31 @@ const About: React.FunctionComponent = () => {
       <Intro lang="en"/>
       <AboutWrapper>
         <AboutDetails>
-          <div className={`flex-start`}>
-            <h2>About Me</h2>
-            <button onClick={toggleTLDR}>TL;DR</button>
-          </div>
-          <blockquote
-            id={`tldr`}
-            className={tldrClassName}
-            onClick={toggleTLDR}
-          >
-            <section>
-              <h2>TL;DR</h2>
-              <p>
-                Hi, my name is Ulises Santana Suárez and I am located on El Hierro, Spain. I am Full Stack Developer
-                at{" "}
-                <a href={Links.work} target="_blank">
-                  Lean Mind
-                </a>
-                . I’ve been creating tech solutions based on web technologies for the last 4 years.
-                Some of those solutions were used by millions of user across different countries.
-              </p>
+          <h2>About Me</h2>
+          <TLDR>
+            <p>
+              Hi, my name is Ulises Santana Suárez and I am located on El Hierro, Spain. I am Full Stack Developer
+              at{" "}
+              <a href={Links.work} target="_blank">
+                Lean Mind
+              </a>
+              . I’ve been creating tech solutions based on web technologies for the last 4 years.
+              Some of those solutions were used by millions of user across different countries.
+            </p>
 
-              <p>
-                I really love coding, the web app ecosystem and learn something
-                new everyday. I’m very grateful to the developer community and
-                all the people that helped me on my path to be a professional
-                developer. So, just for keep the wheel rolling, if you think I
-                can help you in any way just text me, if I can’t help you maybe
-                I know somebody who can. By the way, I'm really interested in
-                projects with a social good for aim, so don't hesitate to text
-                me.
-              </p>
+            <p>
+              I really love coding, the web app ecosystem and learn something
+              new everyday. I’m very grateful to the developer community and
+              all the people that helped me on my path to be a professional
+              developer. So, just for keep the wheel rolling, if you think I
+              can help you in any way just text me, if I can’t help you maybe
+              I know somebody who can. By the way, I'm really interested in
+              projects with a social good for aim, so don't hesitate to text
+              me.
+            </p>
 
-              <SocialLinks/>
-            </section>
-          </blockquote>
+            <SocialLinks/>
+          </TLDR>
           <p>
             I come from the Canary Islands, Spain; concretely from a little town
             in the southeast of Gran Canaria, a wonderful place to be raised. I
