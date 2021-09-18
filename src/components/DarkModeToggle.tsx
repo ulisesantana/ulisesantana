@@ -2,11 +2,12 @@ import React, {ChangeEventHandler, FC, useEffect, useState} from "react";
 import styled from "styled-components";
 // @ts-ignore
 import {window} from 'browser-monads'
-import {MdWbSunny, IoMdMoon} from "react-icons/all";
+import {FaRegLightbulb} from "react-icons/fa";
 
 const DarkModeToggleStyle = styled.label`
   --size: 36px;
   cursor: pointer;
+  color: var(--black);
   display: inline-block;
   height: calc(var(--size) + 10px);
   position: relative;
@@ -18,51 +19,42 @@ const DarkModeToggleStyle = styled.label`
     height: 0;
 
     & + .icon {
-      .moon {
-        height: 0;
-        width: 0;
+      &:before {
+        background-color: #a5a5a5;
+        border-radius: 50%;
+        content: '';
+        position: absolute;
+        height: 27px;
+        width: 22px;
+        left: 14px;
+        transition: all ease-in-out 0.5s;
       }
 
-      .sun {
+      .light-bulb {
         height: var(--size);
+        position: absolute;
+        transition: all ease-in-out 0.5s;
         width: var(--size);
       }
     }
 
     &:checked + .icon {
-      .moon {
-        height: var(--size);
-        width: var(--size);
+      &:before {
+        background-color: yellow;
+        filter: drop-shadow(0 0 0.75rem yellow);
+        transition: all ease-in-out 0.5s;
       }
 
-      .sun {
-        height: 0;
-        width: 0;
+      .light-bulb {
+        filter: drop-shadow(0 0 0.25rem yellow);
+        transition: all ease-in-out 0.5s;
       }
     }
   }
-
-  .moon, .sun {
-    font-size: var(--size);
-    position: absolute;
-    transition: all ease-in-out 0.3s;
-  }
-
-  .sun {
-    color: #f3872f;
-    left: 0;
-    top: 4px;
-  }
-
-  .moon {
-    bottom: 8px;
-    color: var(--primary-color);
-    right: 0;
-  }
-
 `
 
 const themeKey = 'theme'
+
 enum ThemeMode {
   Dark = 'dark',
   Light = 'light'
@@ -102,8 +94,7 @@ export const DarkModeToggle: FC = () => {
         checked={isDark}
       />
       <span className="icon">
-        <IoMdMoon className="moon"/>
-        <MdWbSunny className="sun"/>
+        <FaRegLightbulb className="light-bulb"/>
       </span>
     </DarkModeToggleStyle>
   )
