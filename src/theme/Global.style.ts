@@ -1,5 +1,7 @@
 import {createGlobalStyle} from "styled-components";
 import {resetCSS} from "./resetCSS";
+import {lightPrismTheme} from "./prism.light";
+import {darkPrismTheme} from "./prism.dark";
 
 export const GlobalStyle = createGlobalStyle`
 ${resetCSS}
@@ -34,6 +36,7 @@ ${resetCSS}
   --link-visited-color: var(--secondary-color);
   --tag-color: var(--secondary-color);
   --text-color: #292929;
+  ${lightPrismTheme}
 }
 
 .theme-dark {
@@ -48,6 +51,7 @@ ${resetCSS}
   --link-visited-color: var(--secondary-color);
   --tag-color: var(--primary-color);
   --text-color: #F7F7F7;
+  ${darkPrismTheme}
 }
 
 body {
