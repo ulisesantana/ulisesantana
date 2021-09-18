@@ -15,6 +15,7 @@ export const TLDRStyle = styled.div`
     font-size: var(--font-size-3);
     font-weight: bold;
     justify-content: space-between;
+    margin-bottom: 24px;
     padding: 8px;
     text-align: center;
     
@@ -34,6 +35,8 @@ export const TLDRStyle = styled.div`
   }
   
   .summary ~ div {
+    left: -50%;
+    padding-left: 50%;
     position: absolute;
     transition: all ease-in-out 0.5s;
   }
