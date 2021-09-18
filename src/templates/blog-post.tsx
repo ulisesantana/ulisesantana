@@ -108,18 +108,16 @@ const BlogPostTemplate = (props: any) => {
         <RelatedPostWrapper>
           <RelatedPostTitle>Artículos relacionados</RelatedPostTitle>
           <RelatedPostItems>
-            {edges.map(({node}: any) => {
-              return (
-                <RelatedPostItem key={node.slug}>
-                  <PostCard
-                    title={node.frontmatter.title || node.slug}
-                    url={`/${node.slug}`}
-                    image={node.frontmatter.cover.childImageSharp.fluid}
-                    tags={node.frontmatter.tags}
-                  />
-                </RelatedPostItem>
-              )
-            })}
+            {edges.map(({node}: any) => (
+              <RelatedPostItem key={node.slug}>
+                <PostCard
+                  title={node.frontmatter.title || node.slug}
+                  url={`/${node.slug}`}
+                  image={node.frontmatter.cover.childImageSharp.fluid}
+                  tags={node.frontmatter.tags}
+                />
+              </RelatedPostItem>
+            ))}
           </RelatedPostItems>
         </RelatedPostWrapper>
       )}
@@ -144,7 +142,6 @@ export const pageQuery = graphql`
     }
     mdx( slug: { eq: $slug }) {
       id
-      excerpt(pruneLength: 160)
       timeToRead
       body
       slug
@@ -154,7 +151,6 @@ export const pageQuery = graphql`
         images {
           publicURL
         }
-        description
         tags
         cover {
           childImageSharp {
