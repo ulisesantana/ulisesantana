@@ -73,7 +73,6 @@ export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
   useEffect(() => {
     (initializeLines)()
   }, [])
-  console.log(title, lines.length)
   return (
     <Repl
       title={title}
