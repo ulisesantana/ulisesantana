@@ -20,7 +20,7 @@ const DarkModeToggleStyle = styled.label`
 
     & + .icon {
       &:before {
-        background-color: #a5a5a5;
+        background-color: #bbb;
         border-radius: 50%;
         content: '';
         position: absolute;
