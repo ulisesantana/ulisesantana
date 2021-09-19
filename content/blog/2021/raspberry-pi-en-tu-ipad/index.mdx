@@ -8,6 +8,9 @@ draft: false
 images: [wifi-connect-instructions.png, balena-etcher.png, wifi-connect-step-3-1.png, wifi-connect-step-3-2.png, wifi-connect-step-3-3.png, wifi-connect-step-3-4.png, check-path.png, wifi-connect-status.png ]
 ---
 
+```toc
+```
+
 ## El problema: cargar con un portátil para uso ocasional
 
 Cuando viajo me gusta viajar ligero, por lo que llevarme mi portátil no me parece una gran opción. Sin embargo, me gusta
@@ -55,7 +58,7 @@ lo puedes hacer desde cualquier dispositivo: tu móvil, tablet, pc, lo que sea q
 Además el software es bastante simple de instalar más allá de algún pequeño problema con el que me encontré, pero que
 resultó bastante fácil de solventar. Vamos a instalarlo paso a paso desde 0:
 
-### 1. Descarga la imagen de Raspberry Pi OS
+### Descarga la imagen de Raspberry Pi OS
 
 Para empezar deberemos descargar el sistema operativo que vayamos a usar en la Raspberry Pi. Hay varias opciones como
 puedes ver [aquí](https://www.raspberrypi.org/software/operating-systems/#third-party-software), pero prefiero usar
@@ -64,7 +67,7 @@ Debian y es la distro oficial para Raspberry y la más usada. Concretamente usar
 y todo el software recomendado. Es la imagen más pesada, pero también la más completa y si no has trasteado mucho con
 Raspberry es la mejor opción.
 
-### 2. Instala Raspberry Pi OS en tu tarjeta microSD
+### Instala Raspberry Pi OS en tu tarjeta microSD
 
 Una vez tengamos descargada la imagen de Raspberry Pi OS nos tocará flashear la imagen en la tarjeta microSD que vayamos a
 usar en nuestra Raspberry. Una microSD de 16GB nos bastará, pero si tienes pensado meterle muchos proyectos o crees que
@@ -89,7 +92,7 @@ este propósito. Además, es suuuuuper fácil de usar. Sólo tienes que:
 También tienes la opción de hacer el clásico comando `dd` si estás haciendo esto desde un sistema UNIX, pero si
 entiendes esta frase es que no necesito explicártelo y si no la entiendes no te compliques la vida y usa Balena Etcher.
 
-### 3. Habilita el servicio de ssh en tu Raspberry Pi
+### Habilita el servicio de ssh en tu Raspberry Pi
 
 Tanto para conectarla la Raspberry Pi a tu tablet, como para el proceso de instalación, vas a necesitar conectarte por
 ssh. Realmente el proceso de instalación podrías hacerlo también conectando la Raspberry a un monitor, teclado y ratón.
@@ -108,12 +111,12 @@ de que uses macOS el comando sería:
 touch /Volumes/boot/ssh
 ```
 
-### 4. Conecta tu Raspberry Pi por Ethernet a tu router
+### Conecta tu Raspberry Pi por Ethernet a tu router
 
 Para evitar perder la conexión una vez se instale wifi-connect es mejor que conectemos la Raspberry por cable en vez de
 por WiFi.
 
-### 5. Accede por ssh a tu Raspberry Pi
+### Accede por ssh a tu Raspberry Pi
 
 Ahora ya puedes encender a tu Raspberry y conectarte a ella por ssh. Debería ser algo tan sencillo como ejecutar esto desde
 tu terminal:
@@ -126,7 +129,7 @@ Te pedirá la contraseña para el usuario `pi` que será `raspberry`, a menos qu
 lo hago desde mi ordenador, pero también lo puedes hacer desde tu tablet o iPad. Para iPad el cliente ssh que uso y
 recomiendo es [Blink](https://blink.sh). Es de pago, pero es maravillosamente cómodo.
 
-### 6. Actualiza tu Raspberry Pi
+### Actualiza tu Raspberry Pi
 
 Para evitar que algo falle por no tener algún paquete del sistema actualizado vamos a actualizarlo
 ejecutando:
@@ -143,7 +146,7 @@ que en caso de que nos pida confirmar alguna actualización automáticamente lo 
 Aunque te preguntara le ibas a dar que sí a todo, tú lo sabes, yo lo sé, todo el mundo lo sabe. ¿Acaso te has leído
 alguna vez los términos y condiciones de algo antes de darle a *Aceptar*? Por eso mismo.
 
-### 7. Configura el país en el que vas a usar la WiFi
+### Configura el país en el que vas a usar la WiFi
 
 Para esto escribimos en la terminal de la Raspberry:
 
@@ -188,7 +191,7 @@ darle a *ENTER*.
 Una vez hayamos vuelto a la pantalla principal de raspi-config, sólo tenemos que usar la tecla *TAB* para llegar hasta
 la opción `Finish` y darle a *ENTER*. Te pedirá que si quieres reiniciar la Raspberry, dile que sí.
 
-### 8. Añade /usr/local/sbin al PATH
+### Añade /usr/local/sbin al PATH
 
 Wifi Connect se instala por defecto en `/usr/local/sbin`. Esto me dió problemas la primera vez que lo instalé
 porque `/usr/local/sbin` no estaba en el PATH de mi Raspberry. Esto se arregla
@@ -215,7 +218,7 @@ Si aparece es que no necesitas hacer este paso, como puedes ver en la siguiente 
 Si vas a cambiar bash por zsh, fish o cualquier otra shell de tu preferencia recuerda actualizar la variable PATH
 también para ella.
 
-### 9. Instala WiFi Connect
+### Instala WiFi Connect
 
 Sólo tendremos que ejecutar el siguiente comando y comenzará el proceso de instalación. Cuando nos pregunte para
 instalar NetworkManager le diremos que sí.
@@ -224,7 +227,7 @@ instalar NetworkManager le diremos que sí.
 bash <(curl -L https://github.com/balena-io/wifi-connect/raw/master/scripts/raspbian-install.sh)
 ```
 
-### 10. Añade script para arrancar WiFi Connect
+### Añade script para arrancar WiFi Connect
 
 Crearemos el siguiente script en `$HOME/start-wifi-connect.sh`:
 ```bash
@@ -254,7 +257,7 @@ sudo chmod +x $HOME/start-wifi-connect.sh
 ```
 
 
-### 11. Añade servicio para WiFi Connect
+### Añade servicio para WiFi Connect
 
 Ahora vamos a crear un servicio para que WiFi Connect se inicie automáticamente al encender la Raspberry. Como antes
 tenemos la opción de hacerlo a mano creando `/lib/systemd/system/wifi-connect-start.service` con el siguiente contenido:
@@ -287,7 +290,7 @@ curl https://gist.githubusercontent.com/ulisesantana/5f13880a18541459ccd90ef38d9
 sudo mv $HOME/wifi-connect-start.service /lib/systemd/system/wifi-connect-start.service
 ```
 
-### 12. Habilita servicio para WiFi Connect
+### Habilita servicio para WiFi Connect
 
 Con el servicio de WiFi Connect creado, ahora sólo tenemos que habilitarlo para que se inicie automáticamente al
 encender la Raspberry. Sólo tenemos que ejecutar este comando:
@@ -312,7 +315,7 @@ Si todo ha ido bien deberías ver algo como esto:
   src={props.images[7].publicURL}
   alt="Cómo comprobar que el estado del servicio de WiFi Connect funcionando correctamente"
 />
-### 13. Dar permisos de lectura y ejecución a Network Manager
+### Dar permisos de lectura y ejecución a Network Manager
 
 WiFi Connect usa Network Manager el cual no es el gestor de redes por defecto en Raspberry Pi OS. Por tanto, tendremos
 que habilitar los permisos de lectura y ejecución para el directorio donde guarda la configuración de las redes WiFi y
@@ -325,7 +328,7 @@ sudo chmod -R 755 /etc/NetworkManager/system-connections
 
 Una vez ejecutado reinicia la Raspberry.
 
-### 14. Conecta tu Raspberry Pi a tu red WiFi
+### Conecta tu Raspberry Pi a tu red WiFi
 
 Coge tu móvil o cualquier otro dispositivo con conectividad WiFi y conéctate a la nueva red *WiFi Connect*, la cual no
 tiene contraseña. Automáticamente te abrirá el portal de *WiFi Connect* en el que tendrás que
@@ -347,7 +350,7 @@ WiFi quieres que se conecte.
 Por cierto, ten en cuenta que dependiendo de tu modelo de Raspberry no podrás conectarte a redes de 5 GHz, sólo a redes
 de 2.4 GHz.
 
-### 15. Convierte tu Raspberry en tu entorno de desarrollo
+### Convierte tu Raspberry en tu entorno de desarrollo
 
 Ahora que ya puedes llevarte la Raspberry a cualquier lugar y conectarla con tu iPad sólo te queda convertirla en el
 entorno de desarrollo que necesitas. Como mis conexiones a la Raspberry se basan en ssh pues uso todo lo que necesito

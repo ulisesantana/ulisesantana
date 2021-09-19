@@ -148,6 +148,27 @@ blockquote {
   }
 }
 
+a.anchor svg {
+  color: var(--text-color);
+  fill: var(--text-color);
+  margin-bottom: 2px;
+  margin-right: 8px;
+}
+
+.table-of-contents  {
+  a {
+    border: none
+  }
+  ol,ul {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  li, p {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
 .only-print {
   display: none;
 }

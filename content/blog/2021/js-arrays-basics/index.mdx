@@ -1,112 +1,139 @@
 ---
 title: Introducción al Array de JavaScript
-date: 2021-01-28
+date: 2021-09-20
 description: Durante los últimos 5 años los arrays en JavaScript han experimentado muchas mejoras. Te muestro algunas de ellas en esta entrada.
 tags: [javascript, arrays, basics]
 cover: ./js-arrays-basic.png
 draft: true
 ---
 
+```toc
+```
+
 ## ¿Qué es un array?
 
-En JavaScript los arrays son objetos parecidos a una lista y contiene métodos para poder recorrerlo, mutarlo o generar nuevos arrays. 
-Tanto su longitud como el tipo de elementos que contiene es variable. 
-
+En JavaScript los arrays son objetos que contienen una lista de valores con métodos para poder recorrerla, mutarla o generar nuevas listas. Tanto su longitud como el tipo de elementos que contiene es variable.
 
 ## Cómo crear un array
 Un array se puede crear de diferentes maneras:
 
-1. Expresando el array
-2. Usando el constructor Array
-3. Usando el método Array.from
-4. Usando el método Array.of
+### Expresando el array
+Directamente expresando el array con los valores que queramos incluir. También al tener longitud variable podemos instanciarlo vacío para posteriormente rellenarlo, ya que el rellenarlo su longitud irá aumentando.
 
-### 1. Expresando el array
-Directamente expresando el array con los valores que queramos incluir. También al tener longitud variable podemos 
-instanciarlo vacío para posteriormente rellenarlo, ya que el rellenarlo su longitud irá aumentando.
+<JavaScriptRepl
+  title="Expresando un array"
+  init={[
+    "const food = ['pizza', 'sandwich']",
+    "const emptyArray = []",
+    "emptyArray.length"
+  ]}
+/>
 
-```js
-const food = ['pizza', 'sandwich']
-console.log(food) // [ 'pizza', 'sandwich' ]
+### Usando el constructor Array
+El constructor de Array se comporta de una manera u otra dependiendo del número y tipo de parámetros que reciba, en otras palabras, está sobrecargado. Si le pasamos sólo un parámetro y este parámetro es un número, entonces instanciará un Array con la longitud del número que le hayamos pasado y todos sus posiciones estarán vacías.
 
-const emptyArray = [];
-console.log(emptyArray.length) // 0
-```
+En caso de que le pasemos más de un parámetro o si el único parámetro que le pasamos no es un número, instanciará un nuevo array con los elementos que le hemos pasado y su longitud será igual al número de parámetros que le hemos pasado. Por cierto, usar la palabra reservada ***new* es completamente opcional**.
 
-### 2. Usando el constructor Array
-El constructor de Array se comporta de una manera u otra dependiendo del número y tipo de parámetros que reciba, 
-en otras palabras, está sobrecargado. Si le pasamos sólo un parámetro y este parámetro es un número, entonces instanciará 
-un Array vacío con la longitud del número que le hayamos pasado. En caso de que le pasemos más de un parámetro o si el único 
-parámetro que le pasamos no es un número, instanciará un nuevo array con los elementos que le hemos pasado y su longitud 
-será igual al número de parámetros que le hemos pasado. Por cierto, usar la palabra reservada ***new* es completamente opcional**.
+<JavaScriptRepl
+  title="Usando el constructor Array"
+  init={[
+    "const numberArray = new Array(5)",
+    "const stringArray = new Array('foo')",
+    "const fibonacciNumbers = new Array(1,1,2,3,5,8,13)"
+  ]}
+/>
 
-```js
-const numberArray = new Array(10)
-console.log(numberArray) // [ <10 empty items> ]
+### Array.from
 
-const stringArray = new Array('foo')
-console.log(stringArray) // [ 'foo' ]
+Este método fue introducido en ES2015 y funciona a modo de factoría convirtiendo iterables y cosas parecidas a un array (también conocidos como array-like objects) como los NodeList a un array para poder usar sus métodos y trabajar con ellos con mayor comodidad. Otro ejemplo de array-like objects son los iterables como por ejemplo el String, Map o Set.
 
-const fibonacciNumbers = new Array(1,1,2,3,5,8,13)
-console.log(fibonacciNumbers) // [ 1, 1,  2, 3, 5, 8, 13]
-```
+<JavaScriptRepl
+  title="Array.from"
+  init={[
+    "const mapExample = new Map().set('first',1).set('second',2)",
+    "Array.from(mapExample)",
+    "Array.from(mapExample.values())",
+    "Array.from('Hola!')",
+    "Array.from(new Set([1,2,3,4,5,4,3,2,1]))",
+  ]}
+/>
 
-### 3. Array.from
+Un array no deja de ser un objeto con una propiedad `length` y claves numéricas para los índices, por lo que no es tan extraño pensar que puedes hacer esto con `Array.from`:
 
-Este método fue introducido en ES2015 y funciona a modo de factoría convirtiendo iterables y cosas parecidas a un array 
-(también conocidos como array-like objects) como los NodeList a un array para poder usar sus métodos y trabajar con ellos 
-con mayor comodidad. Otro ejemplo de array-like objects son los iterables como por ejemplo el String, Map o Set.
+<JavaScriptRepl
+  title="Array.from"
+  init={[
+    "Array.from({length: 4, 0: 'foo'})",
+  ]}
+/>
 
-```js
-const mapExample = new Map()
+### Array.of
 
-mapExample.set('first',1)
-mapExample.set('second',2)
+Funciona exactamente igual que el constructor Array, pero con una sutil diferencia: cuando le pasas un número como único argumento en vez de crear un array con una longitud igual al número dado, creará un array con ese número como único elemento.
 
-Array.from(mapExample) // [ [ 'first', 1 ], [ 'second', 2 ] ]
-Array.from(mapExample.values()) // [ 1, 2 ]
+<JavaScriptRepl
+  title="Array.of"
+  init={[
+    "const numberArray = Array.of(5)",
+    "const stringArray = Array.of('foo')",
+    "const fibonacciNumbers = Array.of(1,1,2,3,5,8,13)"
+  ]}
+/>
 
-const stringExample = 'Hello world!'
-Array.from(stringExample) // ['H', 'e', 'l', 'l', 'o', ' ', 'w', 'o','r', 'l', 'd', '!']
+## Destructuring
 
-const setExample = new Set([1,2,3,4,5,4,3,2,1])
-Array.from(setExample) // [ 1, 2, 3, 4, 5 ]
-```
-
-### 4. Array.of
-
+El concepto de *destructuring* (en español sería algo así como *desestructurar*) es algo que vino con ES2015 y que no aplica sólo a arrays, sino también a objetos. Centrándonos en los arrays, el destructuring permite
 
 ## La mutabilidad del array en JavaScript
 
-```js
-const array = []
+Un array puede ser mutado tanto en su longitud como en sus valores.
 
-array[0] = 1
-array[99] = 100
+<JavaScriptRepl
+  title="Mutando la longitud de un array"
+  init={[
+    "const array = []",
+    "array[0] = 1",
+    "array",
+    "array[4] = 5",
+    "array",
+    "array.length",
+    "array.length = 0",
+    "array",
+    "array.length",
+  ]}
+/>
 
-array.length // 100
-console.log(array) // [ 1, <98 empty items>, 100 ]
-```
+Como has podido ver en el último caso, si alteras la propiedad length puedes incluso borrar el contenido del array. Para hacer un array inmutable deberíamos *congelarlo* con el método estático `Object.freeze`
 
-```js
-const array = [1,2,3,4,5]
-console.log(array) // [1,2,3,4,5] 
-array.length = 0
-console.log(array) // [] 
-```
+<JavaScriptRepl
+  title="Haciendo un array inmutable"
+  init={[
+    "const array = Object.freeze(Array(1,2,3,4))",
+    "array.push(5)",
+    "array[0] = 0",
+    "array.length = 0",
+    "array"
+  ]}
+/>
+
+También existen métodos del prototipo Array que mutan el contenido del array:
+- [copyWithin](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin): copia una parte del array en otra posición modificando los elementos, pero no su longitud.
+- [fill](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/fill): asigna un valor a todos los elementos de un array.
+- [pop](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/pop): elimina el último elemento de un array y lo devuelve.
+- [push](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push): añade uno o varios elementos al final del array y devuelve la nueva longitud del array.
+- [reverse](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse): invierte el orden del array.
+- [shift](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/shift): elimina el primer elemento de un array y lo devuelve.
+- [sort](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort): ordena el array.
+- [splice](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice):
+- [unshift](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift): añade uno o varios elementos al principio del array y devuelve la nueva longitud del array.
 
 ## Cómo clonar un array en JavaScript
 
+En más de una ocasión querrás trabajar con un array, pero sin mutar la copia original, por lo que tendrás que hacer una copia o clonarlo. Existen varias formas de hacerlo:
 
 ### Usando Array.from
 
-Como habíamos visto a la hora de crear un array se puede usar Array.from ya que acepta cualquier cosa que se parezca a un array y crea una nueva instancia del mismo. 
-
-<a class="badge" href="https://repl.it/@ulisesantana/clone-array" target="_blank">
-
-![Run on Repl.it](https://repl.it/badge/github/ulisesantana/clone-array)
-
-</a>
+Como habíamos visto a la hora de crear un array se puede usar Array.from, ya que acepta cualquier cosa que se parezca a un array y crea una nueva instancia del mismo.
 
 ```js
 const array = [1, 2, 3, 4, 5]
@@ -140,21 +167,28 @@ console.table({'Array original': array, 'Array copiado': array3})
 ```
 La diferencia entre *array2* y *array3* es que *array2* se crea a partir de una nueva instancia de Array basándose en *array*, mientras que *array3* copia la referencia en memoria de *array*. De esta manera, cualquier mutación en *array3* hará que *array* mute también y viceversa.
 
-## Destructuring
+### Rest operator
+
 
 ## Métodos básicos
 
-
-## Métodos que mutan el array
-
+### Array.some
+### Array.every
+### Array.map
+### Array.filter
+### Array.reduce
+### Array.at
 
 ## Formas de recorrer un array
 
 ### for
 
-### for of
+El clásico
 
 ### forEach
+
+### for of
+Esta forma de recorrer arrays (realmente recorre iterables, pero eso lo explicaré otro artículo) llegó con ES2015 y hace muy cómodo recorrer listas de valores.
 
 ### Comparativa con benchmark
 

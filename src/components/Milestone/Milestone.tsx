@@ -1,6 +1,6 @@
-import React, { FC, useMemo } from "react"
-import { MilestoneWrapper } from "./style"
-import { MilestoneHeader } from "./MilestoneHeader"
+import React, {FC} from "react"
+import {MilestoneWrapper} from "./style"
+import {MilestoneHeader} from "./MilestoneHeader"
 
 const getIframeSize = (maxWidth: number) => {
   const iframeWidth = maxWidth > 960 / 0.8 ? 960 : maxWidth * 0.8

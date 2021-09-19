@@ -59,6 +59,14 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              ordered: true,
+              className: "table-of-contents"
+            },
+          },
+          `gatsby-remark-autolink-headers`,
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               copy: true

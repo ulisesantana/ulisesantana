@@ -8,6 +8,9 @@ draft: false
 images: [starship.png, neovim.png]
 ---
 
+```toc
+```
+
 Trabajar desde una [Raspberry Pi](https://www.raspberrypi.org/products) puede parecer una locura, pero la realidad es
 que para cierto tipo de tareas es más que suficiente. Además, al ser tan pequeña la puedes llevar a cualquier lado y
 usarla tanto como un ordenador como a través de ssh con tu tablet o móvil como explico
@@ -186,7 +189,7 @@ Al contrario que el resto de herramientas, la instalación de Neovim no es tan f
 dependencias e incluso el propio proyecto para después compilarlo en nuestra Raspberry. Aun así, verás que no es tan
 complicado, simplemente requerirá más tiempo.
 
-#### 1. Instalar dependencias
+#### Instalar dependencias
 
 Para compilar y usar Neovim necesitamos instalar algunas dependencias:
 
@@ -202,7 +205,7 @@ python -m pip install --upgrade neovim
 npm i -g neovim
 ```
 
-#### 2. Compilar Neovim e instalarlo
+#### Compilar Neovim e instalarlo
 
 Una vez tenemos las dependencias instaladas debemos descargar el proyecto de Neovim desde Github, compilarlo e
 instalarlo:
@@ -221,7 +224,7 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
-#### 3. Instalar los plugins y configuración
+#### Instalar los plugins y configuración
 
 Neovim no es mi entorno de desarrollo habitual, sólo lo uso desde la Raspberry o cuando simplemente voy a editar
 archivos desde la terminal. Debido a esto, no tenía ni idea de cómo configurarlo o qué plugins usar para que se
