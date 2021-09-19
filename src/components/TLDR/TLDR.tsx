@@ -1,6 +1,6 @@
 import React, {FC, MouseEventHandler, RefObject, useRef, useState} from "react";
 import {TLDRStyle} from "./TLDR.style";
-import {FaCaretRight} from "react-icons/all";
+import {FiMaximize2, FiMinimize2} from "react-icons/fi";
 import {useOnclickOutside} from "../../hooks";
 
 export const TLDR: FC = ({children}) => {
@@ -14,14 +14,15 @@ export const TLDR: FC = ({children}) => {
   return (
     <TLDRStyle ref={contentContainerRef}>
       <button className="summary" onClick={onClickHandler}>
-        <span className={className}>
-          <FaCaretRight/>
-        </span>
         <span>
           TL;DR
         </span>
+        <span className={`icon ${className}`}>
+          <FiMinimize2 id="open-eye"/>
+          <FiMaximize2 id="closed-eye"/>
+        </span>
       </button>
-      <div className={className}>
+      <div className={`content ${className}`}>
         {children}
       </div>
     </TLDRStyle>

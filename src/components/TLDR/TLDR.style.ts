@@ -5,6 +5,10 @@ export const TLDRStyle = styled.div`
   padding: 0;
   position: relative;
   
+  @media print {
+    display: none;
+  }
+  
   .summary {
     align-items: center;
     display: flex;
@@ -17,20 +21,39 @@ export const TLDRStyle = styled.div`
     justify-content: space-between;
     margin-bottom: 24px;
     padding: 8px;
+    padding-right: 32px;
     text-align: center;
     
-    span {
-      height: 24px;
-    }
-    
-    .open, .closed {
+    span.icon {
       align-items: center;
       display: flex;
-      transition: all ease-in-out 0.5s;
-    }
-    
-    .open {
-      transform: rotate(90deg);
+      height: 24px;
+      padding-left: 8px;
+      position: relative;
+      
+      #open-eye, #closed-eye {
+        position: absolute;
+        top: 1px;
+        transition: all ease-in-out 0.5s;
+      }
+      
+      &.open {
+        #open-eye {
+          opacity: 1;
+        }
+        #closed-eye {
+          opacity: 0;
+        }
+      }
+      
+      &.closed {
+        #open-eye {
+          opacity: 0;
+        }
+        #closed-eye {
+          opacity: 1;
+        }
+      }
     }
   }
   
@@ -54,11 +77,24 @@ export const TLDRStyle = styled.div`
   & > :not(.summary) {
     background-color: var(--primary-color);
     height: max(24px, auto);
-    padding: 16px;
+    padding: 48px;
+    padding-left: 16px;
+  }
+  
+  .content > :first-child {
+    margin-top: 0;
+  }
+
+  .content > :last-child {
+    margin-bottom: 0;
   }
 
   & > blockquote {
     margin-top: 0;
+  }
+  
+  svg {
+    color: var(--black);
   }
 
 
