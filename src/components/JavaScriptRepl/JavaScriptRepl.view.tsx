@@ -56,6 +56,7 @@ const TextInput = styled.input`
   background-color: transparent;
   border: none;
   caret-color: var(--repl-caret-color);
+  caret-shape: block;
   color: var(--text-color);
   font-family: monospace;
   font-size: inherit;

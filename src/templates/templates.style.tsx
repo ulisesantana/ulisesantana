@@ -265,7 +265,7 @@ export const BlogPostDetailsWrapper = styled.article`
     padding-right: 0;
   }
   @media (max-width: 1199px) {
-    padding: 80px 35px 80px 35px;
+    padding: 0 35px 80px 35px;
   }
   @media (max-width: 575px) {
     padding: 0;
