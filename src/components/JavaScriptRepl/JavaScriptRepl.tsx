@@ -1,19 +1,17 @@
 import React, {useState, useEffect} from "react"
 import Repl from "./JavaScriptRepl.view"
 import prettyFormat from "pretty-format"
-import {JavaScriptReplProps, Line, LineType} from "./types";
+import {JavaScriptReplProps, Line} from "./types";
 
 // Forked from https://github.com/seveibar/react-repl
 function generateREPL() {
-  const Function = Object.getPrototypeOf(function () {}).constructor
-
   function replEval(script: string) {
-    script = script
+    const parsedScript = script
       .trim()
       .replace(/^var /, "")
       .replace(/^let /, "")
       .replace(/^const /, "")
-    return Function("{return (" + script + ")}")()
+    return new Function(`return (${parsedScript})`)()
   }
 
   function execAndGetLine(execLine: string): Line {
@@ -28,53 +26,54 @@ function generateREPL() {
     }
   }
 
-  function generateLinesFromStrings(expressions: string[], type: LineType): Line[] {
+  function loadScope(expressions: string[]) {
+    expressions.map(replEval)
+  }
+
+  function generateLinesFromStrings(expressions: string[]): Line[] {
     const lines = [] as Line[]
     for (const execLine of expressions) {
-      if (type === 'input') {
-        lines.push({type, value: execLine})
-        lines.push(execAndGetLine(execLine))
-      }
-      if (type === 'scope') {
-        replEval(execLine)
-      }
+      lines.push({type: 'input', value: execLine})
+      lines.push(execAndGetLine(execLine))
     }
     return lines
   }
 
   return {
     execAndGetLine,
-    generateLinesFromStrings
+    generateLinesFromStrings,
+    loadScope
   }
 }
 
 export const JavaScriptRepl: React.FunctionComponent<JavaScriptReplProps> = ({
-                                                                               title = 'REPL',
-                                                                               loadToScope = [],
-                                                                               init = [],
-                                                                               height
-                                                                             }) => {
+ title = 'REPL',
+ loadToScope = [],
+ init = [],
+ height
+}) => {
   const repl = generateREPL()
-  const [lines, setLines] = useState<Line[]>([])
   const initializeLines = () => {
-    repl.generateLinesFromStrings(loadToScope, 'scope')
-    const initialCommands = repl.generateLinesFromStrings(init, 'input')
-    setLines(initialCommands)
+    repl.loadScope(loadToScope)
+    return repl.generateLinesFromStrings(init)
   }
-  const onClear = () => (initializeLines)()
+  const [lines, setLines] = useState<Line[]>(initializeLines())
+  const onClear = () => setLines(initializeLines())
   const onSubmit = async (execLine: string) => {
-    const newLines = lines.concat([{type: "input", value: execLine}])
-    if (!execLine.trim()) {
-      setLines(newLines)
-    } else {
-      setLines(newLines.concat([repl.execAndGetLine(execLine)]))
+    if (execLine.trim()) {
+      repl.generateLinesFromStrings(loadToScope)
+      setLines(
+        lines
+          .concat([{type: "input", value: execLine}])
+          .concat([repl.execAndGetLine(execLine)])
+      )
     }
   }
 
   useEffect(() => {
     (initializeLines)()
   }, [])
-
+  console.log(title, lines.length)
   return (
     <Repl
       title={title}
