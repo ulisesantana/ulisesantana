@@ -1,0 +1,34 @@
+---
+title: Introducción al Array Destructuring en JavaScript
+date: 2021-09-25
+description: El destructuring es una funcionalidad que añadió a JavaScript en ES2015 y que desde que llegó se ha convertido en un recurso increíblemente útil.
+tags: [javascript, arrays, basics]
+cover: ./cover.png
+draft: true
+---
+
+```toc
+```
+
+## Destructuring
+
+El concepto de *destructuring* (*desestructuración* en español) es algo que vino con ES2015 y que no aplica sólo a arrays, sino también a objetos. Centrándonos en los arrays, el destructuring es un método simplificado de extraer múltiples propiedades de un array tomando la estructura y deconstruyéndola a través de asignaciones usando una sintaxis similar a los arrays literales. El destructuring de array se basa en las posiciones para hacer la asignación.
+
+```javascript
+const [one, two, three] = [1,2,3]
+```
+<JavaScriptRepl
+  title="Ejemplo de destructuring"
+  loadToScope={[
+   "const [one, two, three] = [1,2,3]",
+  ]}
+  init={[
+    "one",
+    "two",
+    "three",
+  ]}
+/>
+
+
+
+
