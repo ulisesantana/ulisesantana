@@ -1,18 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-import Image from "gatsby-image"
-import {
-  IntroWrapper,
-  IntroImage,
-  IntroTitle,
-  Description,
-  IntroInfo,
-} from "./style"
-import { SocialLinks } from "../../components"
-import { userIntroInfo } from "../../hooks"
+import {Link} from "gatsby"
+import {Description, IntroImage, IntroInfo, IntroTitle, IntroWrapper,} from "./style"
+import {SocialLinks} from "../../components"
+import {userIntroInfo} from "../../hooks"
 import en from "../../locales/en/Intro.json"
 import es from "../../locales/es/Intro.json"
-import { Language } from "../../types"
+import {Language} from "../../types"
+import {GatsbyImage} from "gatsby-plugin-image";
 
 const translations = { en, es }
 
@@ -25,10 +19,10 @@ const Intro: React.FC<{ lang?: Language }> = ({ lang = "en" }) => {
         <IntroImage>
           <div className="flip-container">
             <div className="flip-front">
-              <Image fluid={AuthorImage} alt="author" />
+              <GatsbyImage image={AuthorImage} alt="author" />
             </div>
             <div className="flip-back no-print">
-              <img src={Logo.src} alt={author} />
+              <GatsbyImage image={Logo} alt="author" />
             </div>
           </div>
         </IntroImage>

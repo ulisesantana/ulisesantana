@@ -27,7 +27,7 @@ const BlogPostTemplate = (props: any) => {
   const title = frontmatter.title
   const metaTags = frontmatter.tags == null ? '' : frontmatter.tags.join(',')
   const [metaDate] = frontmatter.date.split('T')
-  const metaImage = `${siteUrl}${frontmatter.cover.childImageSharp.fluid.src}`
+  const metaImage = `${siteUrl}${frontmatter.cover.childImageSharp.gatsbyImageData.images.fallback.src}`
 
   return (
     <SpanishLayout>
@@ -53,20 +53,14 @@ const BlogPostTemplate = (props: any) => {
         <PostDetails
           title={frontmatter.title}
           date={DateHelper.toHuman(frontmatter.date)}
-          preview={
-            frontmatter.cover == null
-              ? null
-              : frontmatter.cover.childImageSharp.fluid
-          }
+          preview={frontmatter?.cover.childImageSharp.gatsbyImageData}
           images={frontmatter.images}
           content={post}
           timeToRead={timeToRead}
           imagePosition="top"
         />
         <Intro lang="es"/>
-        <BlogPostFooter
-          className={frontmatter.cover == null ? "center" : ""}
-        >
+        <BlogPostFooter>
           {frontmatter.tags == null ? null : (
             <PostTags className="post_tags">
               {frontmatter.tags.map((tag: string, index: number) => (
@@ -86,11 +80,7 @@ const BlogPostTemplate = (props: any) => {
             </TwitterShareButton>
             <PinterestShareButton
               url={shareUrl}
-              media={`${
-                frontmatter.cover == null
-                  ? null
-                  : frontmatter.cover.childImageSharp.fluid
-              }`}
+              media={`${frontmatter?.cover.childImageSharp.gatsbyImageData}`}
             >
               <IoLogoPinterest/>
             </PinterestShareButton>
@@ -113,7 +103,7 @@ const BlogPostTemplate = (props: any) => {
                 <PostCard
                   title={node.frontmatter.title || node.slug}
                   url={`/${node.slug}`}
-                  image={node.frontmatter.cover.childImageSharp.fluid}
+                  image={node.frontmatter?.cover.childImageSharp.gatsbyImageData}
                   tags={node.frontmatter.tags}
                 />
               </RelatedPostItem>
@@ -155,9 +145,7 @@ export const pageQuery = graphql`
         tags
         cover {
           childImageSharp {
-            fluid(cropFocus: CENTER, maxWidth: 1170, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 1170, quality: 90)           
           }
         }
       }
@@ -178,9 +166,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fluid(cropFocus: CENTER, maxWidth: 480, maxHeight: 285, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 480, height: 285, quality: 90)
               }
             }
           }

@@ -19,7 +19,7 @@ type Post = {
       tags: string[]
       cover: {
         childImageSharp: {
-          fluid: SVGAElement
+          gatsbyImageData: SVGAElement
         }
       }
     }
@@ -48,11 +48,7 @@ const Posts: React.FunctionComponent<PostsProps> = ({
           <PostCardMinimal
             key={node.slug}
             title={title}
-            image={
-              node.frontmatter.cover == null
-                ? null
-                : node.frontmatter.cover.childImageSharp.fluid
-            }
+            image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
             url={node.slug}
             description={node.frontmatter.description || node.excerpt}
             date={node.frontmatter.date}
