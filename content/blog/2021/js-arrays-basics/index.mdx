@@ -82,7 +82,22 @@ Funciona exactamente igual que el constructor Array, pero con una sutil diferenc
 
 ## Destructuring
 
-El concepto de *destructuring* (en español sería algo así como *desestructurar*) es algo que vino con ES2015 y que no aplica sólo a arrays, sino también a objetos. Centrándonos en los arrays, el destructuring permite
+El concepto de *destructuring* (*desestructuración* en español) es algo que vino con ES2015 y que no aplica sólo a arrays, sino también a objetos. Centrándonos en los arrays, el destructuring es un método simplificado de extraer múltiples propiedades de un array tomando la estructura y deconstruyéndola a través de asignaciones usando una sintaxis similar a los arrays literales. El destructuring de array se basa en las posiciones para hacer la asignación.
+
+```javascript
+const [one, two, three] = [1,2,3]
+```
+<JavaScriptRepl
+  title="Ejemplo de destructuring"
+  loadToScope={[
+   "const [one, two, three] = [1,2,3]",
+  ]}
+  init={[
+    "one",
+    "two",
+    "three",
+  ]}
+/>
 
 ## La mutabilidad del array en JavaScript
 
