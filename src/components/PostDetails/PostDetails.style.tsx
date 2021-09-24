@@ -167,6 +167,10 @@ export const PostDescription = styled.div`
   h6 {
     font-weight: 500;
     margin: 2rem 0;
+    
+    a {
+      border-bottom: 4px solid var(--link-color);
+    }
   }
 
   h1 {

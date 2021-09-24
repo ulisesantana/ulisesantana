@@ -148,11 +148,14 @@ blockquote {
   }
 }
 
-a.anchor svg {
-  color: var(--text-color);
-  fill: var(--text-color);
-  margin-bottom: 2px;
-  margin-right: 8px;
+a.anchor.before {
+  border-bottom: none;
+  svg {
+    color: var(--text-color);
+    fill: var(--text-color);
+    margin-bottom: 2px;
+    margin-right: 8px;
+  }
 }
 
 .table-of-contents  {
