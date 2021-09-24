@@ -41,7 +41,7 @@ const DarkModeToggleStyle = styled.label`
     &:checked + .icon {
       &:before {
         background-color: yellow;
-        filter: drop-shadow(0 0 0.75rem yellow);
+        filter: drop-shadow(0 0 0.50rem yellow);
         transition: all ease-in-out 0.5s;
       }
 
