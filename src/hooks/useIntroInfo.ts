@@ -5,26 +5,16 @@ export function userIntroInfo() {
     query {
       avatar: file(absolutePath: { regex: "/author.jpg/" }) {
         childImageSharp {
-          gatsbyImageData(
-            layout: FIXED,
-            placeholder: TRACED_SVG, 
-            transformOptions: {cropFocus: CENTER}, 
-            width: 200, 
-            height: 200, 
-            quality: 100
-          ) 
+          fluid(cropFocus: CENTER, maxWidth: 210, maxHeight: 210, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
         }
       }
       easter: file(absolutePath: { regex: "/logo.png/" }) {
         childImageSharp {
-          gatsbyImageData(
-            layout: FIXED,
-            placeholder: TRACED_SVG, 
-            transformOptions: {cropFocus: CENTER}, 
-            width: 200, 
-            height: 200, 
-            quality: 100
-          ) 
+          fluid(cropFocus: CENTER, maxWidth: 210, maxHeight: 210, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
         }
       }
       site {
@@ -37,8 +27,8 @@ export function userIntroInfo() {
   `)
 
   const { author } = Data.site.siteMetadata
-  const AuthorImage = Data.avatar.childImageSharp.gatsbyImageData
-  const Logo = Data.easter.childImageSharp.gatsbyImageData
+  const AuthorImage = Data.avatar.childImageSharp.fluid
+  const Logo = Data.easter.childImageSharp.fluid
 
   return { author, AuthorImage, Logo }
 }

@@ -7,7 +7,7 @@ import {graphql} from "gatsby";
 
 const NotFoundPage = (props: any) => {
   const {siteUrl} = props.data.site.siteMetadata
-  const metaImage = `${siteUrl}${props.data.avatar.childImageSharp.gatsbyImageData.images.fallback.src}`
+  const metaImage = `${siteUrl}${props.data.avatar.childImageSharp.fluid.src}`
   const [lang] =
     typeof window !== "undefined"
       ? ((window.navigator.language.split("-") as unknown) as Language)
@@ -44,9 +44,11 @@ export const pageQuery = graphql`
       }
     }
      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
-         childImageSharp {
-            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 210, height: 210, quality: 90)           
+        childImageSharp {
+          fluid(cropFocus: CENTER, maxWidth: 210, maxHeight: 210, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
+        }
       }
   }
 `

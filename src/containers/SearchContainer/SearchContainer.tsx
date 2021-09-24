@@ -28,7 +28,9 @@ function Search() {
               tags
               cover {
                 childImageSharp {
-                  gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 62, height: 62, quality: 90) 
+                  fluid(cropFocus: CENTER, maxWidth: 62, maxHeight: 62, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
                 }
               }
             }
@@ -105,7 +107,9 @@ function Search() {
                   key={item.slug}
                   title={item.title}
                   url={item.slug}
-                  image={item.cover.childImageSharp.gatsbyImageData}
+                  image={
+                    item.cover == null ? null : item.cover.childImageSharp.fluid
+                  }
                   date={item.date}
                   tags={item.tags}
                 />

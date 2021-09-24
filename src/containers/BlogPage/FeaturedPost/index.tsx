@@ -42,7 +42,9 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
               tags
               cover {
                 childImageSharp {
-                  gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 270, height: 405, quality: 100) 
+                  fluid(cropFocus: CENTER, maxWidth: 270, maxHeight: 405, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
                 }
               }
             }
@@ -64,7 +66,11 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
             <FeaturedPostCol key={title}>
               <FeaturedCard
                 title={title}
-                image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
+                image={
+                  node.frontmatter.cover == null
+                    ? null
+                    : node.frontmatter.cover.childImageSharp.fluid
+                }
                 url={node.slug}
                 tags={node.frontmatter.tags}
                 description={node.excerpt}

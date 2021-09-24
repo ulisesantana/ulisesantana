@@ -1,17 +1,17 @@
 import * as React from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 import _ from "lodash"
+import Img from "gatsby-image"
 import {
-  Excerpt,
   FeaturedCardWrapper,
-  PostDetails,
-  PostMeta,
   PostPreview,
-  PostTags,
+  PostDetails,
   PostTitle,
+  PostTags,
+  PostMeta,
   ReadMore,
+  Excerpt,
 } from "./FeaturedCard.style"
-import {GatsbyImage} from "gatsby-plugin-image";
 
 interface FeaturedCardProps {
   image?: any
@@ -20,6 +20,7 @@ interface FeaturedCardProps {
   url: string
   tags?: []
   className?: string
+  imageType?: "fixed" | "fluid"
   overlay?: boolean
 }
 
@@ -30,6 +31,7 @@ const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
   url,
   tags,
   className,
+  imageType,
   overlay,
   ...props
 }) => {
@@ -45,11 +47,17 @@ const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
 
   return (
     <FeaturedCardWrapper className={addClass.join(" ")} {...props}>
+      {image == null ? null : (
         <PostPreview className="post_preview">
           <Link to={url}>
-            <GatsbyImage image={image} alt="Avance del artículo" />
+            {imageType === "fluid" ? (
+              <Img fluid={image} alt="post preview" />
+            ) : (
+              <Img fixed={image} alt="post preview" />
+            )}
           </Link>
         </PostPreview>
+      )}
 
       <PostDetails className="post_details">
         <PostMeta>
@@ -89,6 +97,10 @@ const FeaturedCard: React.FunctionComponent<FeaturedCardProps> = ({
       </PostDetails>
     </FeaturedCardWrapper>
   )
+}
+
+FeaturedCard.defaultProps = {
+  imageType: "fluid",
 }
 
 export default FeaturedCard

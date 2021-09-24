@@ -1,5 +1,6 @@
 import * as React from "react"
-import {GatsbyImage} from "gatsby-plugin-image";
+import Img from "gatsby-image"
+
 import {
   Excerpt,
   PostCardWrapper,
@@ -19,6 +20,7 @@ interface PostCardMinimalProps {
   date?: string
   tags?: string[]
   className?: string
+  imageType?: "fixed" | "fluid"
 }
 
 const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
@@ -28,6 +30,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
   url,
   date,
   className,
+  imageType,
   ...props
 }) => {
   // Add all classs to an array
@@ -46,7 +49,11 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
             {date && <PostDate date={date}/>}
             {image == null ? null : (
               <PostPreview className="post_preview">
-                <GatsbyImage image={image} alt="Avance del artículo" />
+                {imageType === "fluid" ? (
+                  <Img fluid={image} alt="post preview" />
+                ) : (
+                  <Img fixed={image} alt="post preview" />
+                )}
               </PostPreview>
             )}
           </PostDateAndPreview>
@@ -66,6 +73,10 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
       </a>
     </PostCardWrapper>
   )
+}
+
+PostCardMinimal.defaultProps = {
+  imageType: "fluid",
 }
 
 export default PostCardMinimal

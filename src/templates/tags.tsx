@@ -25,7 +25,7 @@ const Tags = ({ pageContext, data }: any) => {
         {edges.map(({ node }: any) => (
           <PostCardMinimal
             key={node.slug}
-            image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
+            image={node.frontmatter.cover.childImageSharp.fluid}
             title={node.frontmatter.title}
             url={'/' + node.slug}
             description={node.frontmatter.description || node.excerpt}
@@ -62,7 +62,9 @@ export const pageQuery = graphql`
             title
             cover {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 170, height: 170, quality: 90) 
+                fluid(cropFocus: CENTER, maxWidth: 170, maxHeight: 170, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
               }
             }
             tags
