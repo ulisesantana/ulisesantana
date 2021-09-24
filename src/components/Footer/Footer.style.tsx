@@ -1,10 +1,12 @@
 import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
-  position: relative;
-  overflow: hidden;
   color: var(--text-color);
+  margin: 0 auto;
+  max-width: 940px;
+  overflow: hidden;
   padding: 30px 15px;
+  position: relative;
   text-align: center;
   
   .bar {
