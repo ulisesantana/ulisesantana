@@ -60,7 +60,7 @@ Un array se puede crear de diferentes maneras:
 Directamente expresando el array con los valores que queramos incluir. También al tener longitud variable podemos instanciarlo vacío para posteriormente rellenarlo, ya que el rellenarlo su longitud irá aumentando.
 
 <JavaScriptRepl
-  title="Expresando un array"
+  title="Array literal"
   init={[
     "const food = ['pizza', 'sandwich']",
     "const emptyArray = []",
@@ -75,7 +75,7 @@ El constructor de Array se comporta de una manera u otra dependiendo del número
 En caso de que le pasemos más de un parámetro o si el único parámetro que le pasamos no es un número, instanciará un nuevo array con los elementos que le hemos pasado y su longitud será igual al número de parámetros que le hemos pasado. Por cierto, usar la palabra reservada **_new_ es completamente opcional**.
 
 <JavaScriptRepl
-  title="Usando el constructor Array"
+  title="Constructor de Array"
   init={[
     "const numberArray = new Array(5)",
     "const stringArray = new Array('foo')",
@@ -122,10 +122,10 @@ Funciona exactamente igual que el constructor Array, pero con una sutil diferenc
 
 Como vemos tenemos varias opciones a la hora de crear un array en JavaScript. En mi día a día lo que más hago para crear arrays es creando un _array literal_ o usando `Array.from`. Prefiero el _array literal_ porque por un lado escribo menos código y por otro lado es como la mayoría de las personas que programan en JavaScript lo declaran, por lo que si otra persona lee mi código lo entenderá. **Al final escribimos código para que lo lean personas, no sólo máquinas**.
 
-El `Array.from` lo uso sobre todo cuando necesito pasar un iterable o array-like object a array para trabajar con él. También lo uso para hacer cosas como esta y tratar de parecer más inteligente:
+El `Array.from` lo uso sobre todo cuando necesito pasar un iterable o array-like object a array para trabajar con él. También lo uso para hacer cosas como esta y tratar de parecer más inteligente ☕️🧐:
 
 <JavaScriptRepl
-  title="Array.from"
+  title="Array.from fancy"
   init={[
     "Array.from({length: 5}).map((_, index) => `${'*'.repeat(index + 1)}`)",
   ]}
