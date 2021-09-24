@@ -2,8 +2,10 @@ import styled from "styled-components"
 
 const HeaderWrapper = styled.header`
   background-color: transparent;
-  padding: 8px 0;
-  top: 0;
+  max-width: 940px;
+  padding: 8px;
+  margin: 0 auto;
+  //top: 0;
   transition: 0.25s ease-in-out;
   z-index: 100;
 `
@@ -16,7 +18,6 @@ export const NavbarWrapper = styled.div`
   transition: 0.25s ease-in-out;
   margin: 0 auto;
   width: 100%;
-  max-width: 960px;
 
   @media print {
     display: none;

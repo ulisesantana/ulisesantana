@@ -1,14 +1,39 @@
 import React from "react"
-import { Link } from "gatsby"
-import { Language } from "../types"
+import {graphql, Link, useStaticQuery} from "gatsby"
+import {Language} from "../types"
+import {GatsbyImage} from "gatsby-plugin-image";
 
-const LanguageMenu = ({ lang }: { lang: Language }) => {
+export const SelectLanguage = ({ lang }: { lang: Language }) => {
+  const data = useStaticQuery(graphql`
+    {
+      enFlag: file(absolutePath: { regex: "/en.png/" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+      esFlag: file(absolutePath: { regex: "/spain-republic.jpg/" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+    }
+  `)
   return (
     <div style={{ display: "inline-block", fontSize: "36px" }}>
-      {lang === "es" && <Link to={"/en"}>🇬🇧</Link>}
-      {lang === "en" && <Link to={"/"}>🇪🇸</Link>}
+      {lang === "es" && <Link to={"/en"}>
+        <GatsbyImage
+          image={data.enFlag.childImageSharp.gatsbyImageData}
+          alt="English flag"
+        />
+      </Link>}
+      {lang === "en" && <Link to={"/"}>
+        <GatsbyImage
+          image={data.esFlag.childImageSharp.gatsbyImageData}
+          alt="Bandera española republicana"
+        />
+      </Link>}
     </div>
   )
 }
 
-export default LanguageMenu
+export default SelectLanguage

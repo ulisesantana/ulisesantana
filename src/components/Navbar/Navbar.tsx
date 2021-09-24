@@ -21,10 +21,14 @@ type NavbarProps = {
 }
 
 const MenuItems: any[] = [
-  // {
-  //   label: "About",
-  //   url: "/en",
-  // }
+  {
+    label: "About",
+    url: "/en",
+  },
+  {
+    label: "Blog",
+    url: "/blog",
+  },
 ]
 
 const MenuItemsSpanish = [
