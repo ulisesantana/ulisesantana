@@ -1,5 +1,4 @@
 import * as React from "react"
-import Img from "gatsby-image"
 import {
   PostListWrapper,
   PostPreview,
@@ -10,6 +9,7 @@ import {
   PostTags,
 } from "./PostList.style"
 import {DateHelper} from "../../dateHelper";
+import {GatsbyImage} from "gatsby-plugin-image";
 
 interface PostListProps {
   image?: any
@@ -18,7 +18,6 @@ interface PostListProps {
   date?: string
   tags?: []
   className?: string
-  imageType?: "fixed" | "fluid"
 }
 
 const PostList: React.FunctionComponent<PostListProps> = ({
@@ -28,7 +27,6 @@ const PostList: React.FunctionComponent<PostListProps> = ({
   date,
   tags,
   className,
-  imageType,
   ...props
 }) => {
   // Add all classs to an array
@@ -42,16 +40,9 @@ const PostList: React.FunctionComponent<PostListProps> = ({
   return (
     <PostListWrapper className={addAllClasses.join(" ")} {...props}>
       <a href={url}>
-        {image == null ? null : (
-          <PostPreview className="post_preview">
-            {imageType === "fluid" ? (
-              <Img fluid={image} alt="post preview" />
-            ) : (
-              <Img fixed={image} alt="post preview" />
-            )}
-          </PostPreview>
-        )}
-
+        <PostPreview className="post_preview">
+          <GatsbyImage image={image} alt="Avance del artículo" />
+        </PostPreview>
         <PostDetails>
           <PostTitle className="post_title">{title}</PostTitle>
           <PostMeta>
@@ -74,10 +65,6 @@ const PostList: React.FunctionComponent<PostListProps> = ({
       </a>
     </PostListWrapper>
   )
-}
-
-PostList.defaultProps = {
-  imageType: "fluid",
 }
 
 export default PostList

@@ -25,8 +25,12 @@ interface BlogListProps {
     }
     avatar: {
       childImageSharp: {
-        fluid: {
-          src: string
+        gatsbyImageData: {
+          images: {
+            fallback: {
+              src: string
+            }
+          }
         }
       }
     }
@@ -65,7 +69,7 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
   const PrevLink = !isFirst && prevPage
   const NextLink = !isLast && nextPage
   const { siteUrl } = data.site.siteMetadata
-  const metaImage = `${siteUrl}${data.avatar.childImageSharp.fluid.src}`
+  const metaImage = `${siteUrl}${data.avatar.childImageSharp.gatsbyImageData.images.fallback.src}`
 
   return (
     <SpanishLayout>
@@ -94,11 +98,7 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
               className={node.frontmatter.draft ? 'draft' : ''}
               key={node.slug}
               title={node.frontmatter.title || node.slug}
-              image={
-                node.frontmatter.cover == null
-                  ? null
-                  : node.frontmatter.cover.childImageSharp.fluid
-              }
+              image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
               url={`/${node.slug}`}
               description={node.frontmatter.description || node.excerpt}
               date={node.frontmatter.date}
@@ -131,13 +131,11 @@ export const pageQuery = graphql`
     sitePage {
       path
     }
-    avatar: file(absolutePath: { regex: "/author.jpg/" }) {
-        childImageSharp {
-          fluid(cropFocus: CENTER, maxWidth: 210, maxHeight: 210, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
+     avatar: file(absolutePath: { regex: "/author.jpg/" }) {
+         childImageSharp {
+            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 210, height: 210, quality: 90)           
+         }
+     }
     allMdx(
       filter: { frontmatter: { draft: { nin: $draftDisabledList } } }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -156,9 +154,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fluid(cropFocus: CENTER, maxWidth: 170, maxHeight: 170, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 170, height: 170, quality: 90) 
               }
             }
           }
