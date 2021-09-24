@@ -30,7 +30,7 @@ export const IntroImage = styled.div`
   padding: 30px;
   border-radius: 50%;
   margin: 0 auto;
-  border: 4px solid var(--light-border-color);
+  border: 4px solid var(--link-color);
   flex-shrink: 0;
   perspective: 1000px;
 
