@@ -13,7 +13,6 @@ export const NavToPage = styled.div`
     height: 32px;
     border-radius: 50%;
     background-color: var(--highlight-color);
-    box-shadow: 0 5px 15px rgb(0 0 0 / 25%);
     font-size: 18px;
     display: flex;
     align-items: center;

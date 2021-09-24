@@ -43,7 +43,7 @@ export const SearchResult = styled.div`
   top: 100%;
   left: 0;
   display: block;
-  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
   z-index: 200;
 
   .post_list {
