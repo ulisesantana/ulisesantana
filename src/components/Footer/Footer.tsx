@@ -11,6 +11,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({
 }) => {
   return (
     <FooterWrapper className="no-print" {...props}>
+      <span className="bar"/>
       {children}
     </FooterWrapper>
   )

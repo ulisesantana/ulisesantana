@@ -6,17 +6,28 @@ const FooterWrapper = styled.footer`
   color: var(--text-color);
   padding: 30px 15px;
   text-align: center;
-  border-top: 1px solid var(--highlight-color);
-  margin-top: 120px;
+  
+  .bar {
+    border-top: 4px solid var(--link-color);
+    display: block;
+    margin: 48px auto;
+    width: 50%;
+  }
   
   @media (max-width: 1200px) {
-    margin-top: 90px;
+    .bar {
+      margin: 48px auto;
+    }
   }
   @media (max-width: 990px) {
-    margin-top: 90px;
+    .bar {
+      margin: 0 auto 48px;
+    }
   }
   @media (max-width: 575px) {
-    margin-top: 60px;
+    .bar {
+      margin: 0 auto 32px;
+    }
     padding: 22px 15px;
   }
 
