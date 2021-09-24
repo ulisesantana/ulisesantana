@@ -124,6 +124,7 @@ module.exports = {
       resolve: `gatsby-plugin-lodash`,
     },
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
