@@ -59,9 +59,11 @@ export const TLDRStyle = styled.div`
   
   .summary ~ div {
     left: -50%;
-    padding-left: 50%;
+    padding-left: calc(50% + 48px);
     position: absolute;
     transition: all ease-in-out 0.5s;
+    width: 150%;
+    z-index: 100;
   }
 
   .summary ~ .open {
@@ -105,6 +107,11 @@ export const TLDRStyle = styled.div`
       width: 5rem;
     }
 
+    .summary ~ div {
+      padding: 16px;
+      padding-left: 50%;
+    }
+
     blockquote, blockquote {
       font-size: var(--font-size-1);
       margin: 16px 0;
@@ -116,6 +123,14 @@ export const TLDRStyle = styled.div`
 
     blockquote {
       margin-top: 0;
+    }
+  }
+  
+  @media (min-width: 1500px) {
+    .summary ~ div {
+      left: 0;
+      padding-left: 48px;
+      width: 100%;
     }
   }
 `
