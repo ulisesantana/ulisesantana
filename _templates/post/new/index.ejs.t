@@ -1,5 +1,5 @@
 ---
-to: content/blog/<%=new Date().getFullYear()%>/<%=slug%>/index.md
+to: content/blog/<%=new Date().getFullYear()%>/<%=slug%>/index.mdx
 ---
 
 ---
