@@ -28,7 +28,7 @@ function Search() {
               tags
               cover {
                 childImageSharp {
-                  gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 62, height: 62, quality: 90) 
+                  gatsbyImageData(transformOptions: {cropFocus: CENTER}, aspectRatio: 1)  
                 }
               }
             }

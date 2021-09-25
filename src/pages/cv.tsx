@@ -3,12 +3,13 @@ import {Layout} from "../components"
 import {SEO} from "../components"
 import CVPage from "../containers/CVPage"
 import {graphql} from "gatsby"
+import {getSrc} from "gatsby-plugin-image";
 
 type CVProps = {}
 
 const CV: React.FunctionComponent<CVProps> = (props: any) => {
   const {siteUrl, description} = props.data.site.siteMetadata
-  const metaImage = `${siteUrl}${props.data.avatar.childImageSharp.gatsbyImageData.images.fallback.src}`
+  const metaImage = `${siteUrl}${getSrc(props.data.avatar)}`
 
   return (
     <Layout menu={false}>
@@ -47,7 +48,7 @@ export const pageQuery = graphql`
     }
      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
          childImageSharp {
-            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 210, height: 210, quality: 90)           
+            gatsbyImageData            
           }
       }
   }

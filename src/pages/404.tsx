@@ -4,10 +4,11 @@ import {Layout as EnglishLayout, SpanishLayout} from '../components/Layout'
 import NotFound from "../containers/NotFound"
 import {Language} from "../types"
 import {graphql} from "gatsby";
+import {getSrc} from "gatsby-plugin-image";
 
 const NotFoundPage = (props: any) => {
   const {siteUrl} = props.data.site.siteMetadata
-  const metaImage = `${siteUrl}${props.data.avatar.childImageSharp.gatsbyImageData.images.fallback.src}`
+  const metaImage = `${siteUrl}${getSrc(props.data.avatar)}`
   const [lang] =
     typeof window !== "undefined"
       ? ((window.navigator.language.split("-") as unknown) as Language)
@@ -45,7 +46,7 @@ export const pageQuery = graphql`
     }
      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
          childImageSharp {
-            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 210, height: 210, quality: 90)           
+            gatsbyImageData            
           }
       }
   }

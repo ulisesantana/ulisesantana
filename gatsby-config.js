@@ -98,6 +98,13 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `tracedSVG`,
+          quality: 100
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

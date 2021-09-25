@@ -62,7 +62,7 @@ export const pageQuery = graphql`
             title
             cover {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 170, height: 170, quality: 90) 
+                gatsbyImageData(transformOptions: {cropFocus: CENTER}, aspectRatio: 1)    
               }
             }
             tags

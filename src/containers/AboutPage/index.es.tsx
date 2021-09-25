@@ -13,12 +13,12 @@ const About: React.FunctionComponent<AboutProps> = () => {
     query {
       talk: file(absolutePath: { regex: "/jsdaycanarias.jpg/" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 870, quality: 90) 
+          gatsbyImageData  
         }
       }
       dahl: file(absolutePath: { regex: "/dahl.jpg/" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 870, quality: 90) 
+          gatsbyImageData  
         }
       }
       site {

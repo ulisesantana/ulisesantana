@@ -145,7 +145,7 @@ export const pageQuery = graphql`
         tags
         cover {
           childImageSharp {
-            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 1170, quality: 90)           
+            gatsbyImageData            
           }
         }
       }
@@ -166,7 +166,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 480, height: 285, quality: 90)
+                gatsbyImageData 
               }
             }
           }

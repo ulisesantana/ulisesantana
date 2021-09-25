@@ -39,7 +39,7 @@ const PostList: React.FunctionComponent<PostListProps> = ({
 
   return (
     <PostListWrapper className={addAllClasses.join(" ")} {...props}>
-      <a href={url}>
+      <a href={`/${url}`}>
         <PostPreview className="post_preview">
           <GatsbyImage image={image} alt="Avance del artículo" />
         </PostPreview>

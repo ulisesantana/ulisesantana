@@ -5,26 +5,12 @@ export function userIntroInfo() {
     query {
       avatar: file(absolutePath: { regex: "/author.jpg/" }) {
         childImageSharp {
-          gatsbyImageData(
-            layout: FIXED,
-            placeholder: TRACED_SVG, 
-            transformOptions: {cropFocus: CENTER}, 
-            width: 200, 
-            height: 200, 
-            quality: 100
-          ) 
+          gatsbyImageData(width: 210, height: 210)
         }
       }
       easter: file(absolutePath: { regex: "/logo.png/" }) {
         childImageSharp {
-          gatsbyImageData(
-            layout: FIXED,
-            placeholder: TRACED_SVG, 
-            transformOptions: {cropFocus: CENTER}, 
-            width: 200, 
-            height: 200, 
-            quality: 100
-          ) 
+          gatsbyImageData(width: 210, height: 210)
         }
       }
       site {

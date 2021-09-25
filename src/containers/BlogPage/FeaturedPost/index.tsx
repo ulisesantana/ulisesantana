@@ -42,7 +42,7 @@ const FeaturedPosts: React.FunctionComponent<FeaturedPostsProps> = () => {
               tags
               cover {
                 childImageSharp {
-                  gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 270, height: 405, quality: 100) 
+                  gatsbyImageData  
                 }
               }
             }

@@ -133,7 +133,7 @@ export const pageQuery = graphql`
     }
      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
          childImageSharp {
-            gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 210, height: 210, quality: 90)           
+            gatsbyImageData            
          }
      }
     allMdx(
@@ -154,7 +154,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG,  transformOptions: {cropFocus: CENTER}, width: 170, height: 170, quality: 90) 
+                gatsbyImageData(transformOptions: {cropFocus: CENTER}, aspectRatio: 1)
               }
             }
           }
