@@ -53,8 +53,8 @@ export const RelatedPostTitle = styled.h2`
   &:after {
     content: "";
     width: 68px;
-    height: 1px;
-    background: #292929;
+    height: 2px;
+    background: var(--link-color);
     display: block;
     margin-top: 8px;
   }
