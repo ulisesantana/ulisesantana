@@ -81,6 +81,9 @@ export const PostReadTime = styled.span`
 `
 
 export const PostPreview = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
   margin-top: 45px;
   position: relative;
   @media (max-width: 1200px) {
