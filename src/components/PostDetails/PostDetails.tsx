@@ -1,5 +1,5 @@
 import * as React from "react"
-import Img from "gatsby-image"
+import {GatsbyImage} from "gatsby-plugin-image";
 import { Link } from "gatsby"
 import _ from "lodash"
 import {
@@ -54,7 +54,7 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
       <>
         {preview == null ? null : (
           <PostPreview className="post_preview">
-            <Img fluid={preview} alt={title} />
+            <GatsbyImage image={preview} alt={title} />
           </PostPreview>
         )}
       </>

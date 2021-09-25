@@ -1,6 +1,6 @@
 import * as React from "react"
 import {graphql, useStaticQuery} from "gatsby"
-import Image from "gatsby-image"
+import {GatsbyImage} from "gatsby-plugin-image";
 import {AboutDetails, AboutImage, AboutWrapper} from "./style"
 import Intro from "../Intro"
 import {SocialLinks, TLDR} from "../../components"
@@ -13,16 +13,12 @@ const About: React.FunctionComponent<AboutProps> = () => {
     query {
       talk: file(absolutePath: { regex: "/jsdaycanarias.jpg/" }) {
         childImageSharp {
-          fluid(cropFocus: CENTER, maxWidth: 870, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData  
         }
       }
       dahl: file(absolutePath: { regex: "/dahl.jpg/" }) {
         childImageSharp {
-          fluid(cropFocus: CENTER, maxWidth: 870, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData  
         }
       }
       site {
@@ -155,8 +151,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
           </p>
 
           <AboutImage>
-            <Image
-              fluid={Data.dahl.childImageSharp.fluid}
+            <GatsbyImage
+              image={Data.dahl.childImageSharp.gatsbyImageData}
               alt="En la JSConf 2018 con Ryan Dahl"
             />
             <span>
@@ -237,7 +233,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           </p>
 
           <AboutImage>
-            <Image fluid={Data.talk.childImageSharp.fluid} alt="Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018" />
+            <GatsbyImage image={Data.talk.childImageSharp.gatsbyImageData} alt="Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018" />
           </AboutImage>
         </AboutDetails>
       </AboutWrapper>

@@ -4,10 +4,11 @@ import { SEO } from "../components"
 import AboutPage from "../containers/AboutPage/index.es"
 import es from "../locales/es/Intro.json"
 import {graphql} from "gatsby";
+import {getSrc} from "gatsby-plugin-image";
 
 const Home: React.FunctionComponent = (props: any) => {
   const { siteUrl } = props.data.site.siteMetadata
-  const metaImage = `${siteUrl}${props.data.avatar.childImageSharp.fluid.src}`
+  const metaImage = `${siteUrl}${getSrc(props.data.avatar)}`
   return (
     <SpanishLayout>
       <SEO
@@ -40,11 +41,9 @@ export const pageQuery = graphql`
       }
     }
      avatar: file(absolutePath: { regex: "/author.jpg/" }) {
-        childImageSharp {
-          fluid(cropFocus: CENTER, maxWidth: 210, maxHeight: 210, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+         childImageSharp {
+            gatsbyImageData            
           }
-        }
       }
   }
 `
