@@ -104,7 +104,7 @@
     "start": "yarn develop",
     "serve": "node_modules/.bin/gatsby serve",
     "debug": "yarn build && npx serve public",
-    "new:post": "node_modules/.bin/hygen post new",
+    "post:new": "node_modules/.bin/hygen post new",
     "now-build": "yarn run build",
     "deploy": "gatsby build && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
