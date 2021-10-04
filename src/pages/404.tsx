@@ -19,8 +19,9 @@ const NotFoundPage = (props: any) => {
       <SEO
         title="404: Not Found"
         meta={[
-          { property: `og:type`, content: `website`},
+          {property: `og:type`, content: `website`},
           {property: 'og:image', content: metaImage},
+          {property: 'og:image:url', content: metaImage},
           {property: 'og:url', content: siteUrl},
           {property: 'og:image:width', content: '1515'},
           {property: 'og:image:height', content: '1452'},
@@ -28,7 +29,7 @@ const NotFoundPage = (props: any) => {
           {property: 'twitter:image', content: metaImage},
         ]}
       />
-      <NotFound lang={lang as Language} />
+      <NotFound lang={lang as Language}/>
     </Layout>
   )
 }

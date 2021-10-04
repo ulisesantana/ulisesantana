@@ -41,6 +41,7 @@ const BlogPostTemplate = (props: any) => {
           {property: 'article:section', content: 'Technology'},
           {property: 'article:tag', content: metaTags},
           {property: 'og:image', content: metaImage},
+          {property: 'og:image:url', content: metaImage},
           {property: 'og:url', content: shareUrl},
           {property: 'og:image:width', content: '1301'},
           {property: 'og:image:height', content: '653'},

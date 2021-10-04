@@ -78,6 +78,7 @@ const BlogList = ({data, pageContext}: BlogListProps) => {
         meta={[
           {property: `og:type`, content: `website`},
           {property: 'og:image', content: metaImage},
+          {property: 'og:image:url', content: metaImage},
           {property: 'og:url', content: siteUrl},
           {property: 'og:image:width', content: '1515'},
           {property: 'og:image:height', content: '1452'},

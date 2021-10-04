@@ -51,6 +51,10 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
           content: metaDescription,
         },
         {
+          property: `og:site_name`,
+          content: site.siteMetadata.title,
+        },
+        {
           property: `og:title`,
           content: metaTitle,
         },
@@ -84,6 +88,14 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
         },
         {
           name: 'theme-color',
+          content: '#f0db4f'
+        },
+        {
+          name: 'msapplication-navbutton-color',
+          content: '#f0db4f'
+        },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
           content: '#f0db4f'
         }
       ]

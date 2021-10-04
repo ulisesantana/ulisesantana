@@ -23,6 +23,7 @@ const CV: React.FunctionComponent<CVProps> = (props: any) => {
           {property: `profile:username`, content: `ulisesantana`},
           {property: `profile:gender`, content: `male`},
           {property: 'og:image', content: metaImage},
+          {property: 'og:image:url', content: metaImage},
           {property: 'og:url', content: siteUrl},
           {property: 'og:image:width', content: '1515'},
           {property: 'og:image:height', content: '1452'},
