@@ -84,19 +84,19 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
         },
         {
           name: 'msapplication-TileColor',
-          content: '#f0db4f'
+          content: '#F7E018'
         },
         {
           name: 'theme-color',
-          content: '#f0db4f'
+          content: '#F7E018'
         },
         {
           name: 'msapplication-navbutton-color',
-          content: '#f0db4f'
+          content: '#F7E018'
         },
         {
           name: 'apple-mobile-web-app-status-bar-style',
-          content: '#f0db4f'
+          content: '#F7E018'
         }
       ]
         .concat(

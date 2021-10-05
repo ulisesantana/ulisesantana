@@ -20,8 +20,8 @@ ${resetCSS}
   --line-height-normal: 1;
   --line-height-normal-text: 1.5;
   --line-height-title: 2;
-  --primary-color: #F0DB4F;
-  --secondary-color: #007acc;
+  --primary-color: #F7E018;
+  --secondary-color: #2D79C7;
 }
 
 .theme-light {
@@ -47,7 +47,7 @@ ${resetCSS}
   --inactive-field-color: #F7F7F7;
   --light-color: #676767;
   --light-border-color: #a7a7a7;
-  --link-color: #F0DB4F;
+  --link-color: #F7E018;
   --link-visited-color: var(--secondary-color);
   --tag-color: var(--primary-color);
   --text-color: #F7F7F7;

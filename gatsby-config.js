@@ -113,7 +113,7 @@ module.exports = {
         short_name: `Ulises Santana`,
         start_url: `/`,
         background_color: `#323330`,
-        theme_color: `#f0db4f`,
+        theme_color: `#F7E018`,
         display: `minimal-ui`,
         icon: `content/assets/favicon.png`,
       },
