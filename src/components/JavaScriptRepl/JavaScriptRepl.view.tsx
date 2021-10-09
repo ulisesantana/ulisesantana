@@ -23,7 +23,6 @@ const Container = styled.div`
 
   background-color: var(--repl-bg-color);
   border-radius: 4px;
-  box-shadow: 8px 0 8px rgba(0, 0, 0, 0.5);
   color: var(--text-color);
   font-family: monospace;
   font-weight: bold;
@@ -77,12 +76,15 @@ const Title = styled.div`
 
 const Tab = styled.div`
   align-items: center;
-  background-color: var(--repl-caret-color);
-  color: var(--repl-tab-color);
+  color: var(--repl-caret-color);
   cursor: pointer;
   display: flex;
   justify-content: center;
   padding: 16px;
+  
+  svg {
+    color: var(--repl-caret-color);
+  }
 `
 const TerminalContent = styled.div<React.PropsWithRef<{height: number | string}>>`
   padding: 16px;
