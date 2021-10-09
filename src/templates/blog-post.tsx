@@ -72,7 +72,7 @@ const BlogPostTemplate = (props: any) => {
             </PostTags>
           )}
           <PostShare>
-            <span>Comparte esta entrada:</span>
+            <span>Comparte este artículo:</span>
             <FacebookShareButton url={shareUrl} quote={frontmatter.title}>
               <IoLogoFacebook/>
             </FacebookShareButton>
