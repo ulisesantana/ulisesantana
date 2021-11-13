@@ -44,7 +44,7 @@ ${resetCSS}
   --bg-color: #323330;
   --highlight-color: #F7F7F7;
   --icon-color: var(--primary-color);
-  --inactive-field-color: #F7F7F7;
+  --inactive-field-color: #545454;
   --light-color: #676767;
   --light-border-color: #a7a7a7;
   --link-color: #F7E018;
@@ -91,7 +91,7 @@ a {
   }
 }
 
-blockquote{
+blockquote {
   font-family: var(--font-family-2);
   font-weight: 500;
 }
