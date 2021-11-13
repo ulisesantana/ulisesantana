@@ -108,7 +108,9 @@ export const SEO: React.FunctionComponent<SEOProps> = ({
             : []
         )
         .concat(meta)}
-    />
+    >
+      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+    </Helmet>
   )
 }
 
