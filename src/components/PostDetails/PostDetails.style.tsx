@@ -149,6 +149,10 @@ export const PostDescription = styled.div`
       background-color: var(--primary-color);
       padding: 8px;
     }
+    
+    a strong {
+      text-decoration: underline;
+    }
   }
 
   h1,
