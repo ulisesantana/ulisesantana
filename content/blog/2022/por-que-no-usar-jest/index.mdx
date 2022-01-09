@@ -22,11 +22,11 @@ Hace un par de meses probé [Node Tap](https://node-tap.org), que es el *test fr
 
 En el hilo del tweet hablan de este [issue en Github de serverless](https://github.com/serverless/serverless/pull/6517) donde se comenta las razones por las que acabaron pasando de Jest a Mocha:
 
-  - Ejecuta los test en un entorno de Node.js copiado / pirateado que presenta algunos problemas:
-    - Los *outputs* de `stdout` y `stderr` no se imprimen en el mismo orden en el que se ejecutan.
+  - Ejecuta los test en un entorno de Node.js modificado que presenta algunos problemas:
+    - Los *outputs* de `stdout` y `stderr` no se imprimen en el mismo orden en el que se ejecutan. Se prioriza los `stderr` antes que `stdout`.
     - Algunas API públicas de Node.js se reemplazan con alternativas no estándar.
     - Debido al manejo de caché de módulos no estándar y desigual, es propenso a memory leaks.
-  - El progreso de los test no se muestra hasta que finalizan, lo cual es inconveniente en las pruebas de larga duración.
+  - El progreso de los test no se muestra hasta que finalizan, lo cual es no es lo mejor en los test que requieren mucho tiempo, como los test de integración.
   - Cualquier *output* `stdout` / `stderr` está oculto hasta que finaliza el test
   - El *test runner* predeterminado tiene varios errores (se puede parchear mediante el uso de `jest-circus` el *test runner* alternativo, que funciona por defecto a partir de Jest 27)
     - Fallos en beforeAll no impiden la ejecución de las pruebas
@@ -34,7 +34,7 @@ En el hilo del tweet hablan de este [issue en Github de serverless](https://gith
     - only y skip no se respetan por completo
   - El código fuente es el resultado de la transpilación, lo que dificulta la depuración de posibles problemas en el *test runner*.
 
-Además, he visto a Matteo Collina comentar una y mil veces que el problema que tiene con Jest es que no estás testeando tu aplicación corriendo en Node.js, sino corriendo en Jest. ¿Por qué afirma esto Matteo? Porque Jest se ejecuta en un contexto de V8 diferente, esto es porque Jest por debajo usa [*vm*](https://nodejs.org/api/vm.html), un módulo nativo de Node.js. En [este vídeo que explica la arquitectura de Jest](https://www.youtube.com/watch?v=3YDiloj8_d0), concretamente en el [minuto 37:32](https://youtu.be/3YDiloj8_d0?t=2252), se habla de `jest-runtime`, que es la parte de **Jest** que se encarga de **simular entornos de ejecución**, ya sea `jest-dom` o lo que Christoph llama *like a fake node environment* que sería la parte de Node.js. Entre otras cosas **este *entorno simulado* tiene su propia implementación de *require* permitiéndonos mockear módulos**, que en la práctica significa que podemos mockear dependencias con Jest. Parafraseando lo que dice Matteo en el tweet que tenemos debajo: **Esto permite una experiencia de desarrollo increíble, pero nuestros tests son menos útiles porque no se están ejecutando en el entorno real.**
+Además, he visto a Matteo Collina comentar una y mil veces que el problema que tiene con Jest es que no estás testeando tu aplicación corriendo en Node.js, sino corriendo en Jest. ¿Por qué afirma esto Matteo? Porque Jest se ejecuta en un contexto de V8 diferente, esto es porque Jest por debajo usa [*vm*](https://nodejs.org/api/vm.html), un módulo nativo de Node.js. En [este vídeo se explica la arquitectura de Jest](https://www.youtube.com/watch?v=3YDiloj8_d0) y concretamente en el [minuto 37:32](https://youtu.be/3YDiloj8_d0?t=2252) se habla de `jest-runtime`, que es la parte de **Jest** que se encarga de **simular entornos de ejecución**, ya sea `jest-dom` o lo que Christoph llama *like a fake node environment* que sería la parte de Node.js. Entre otras cosas **este *entorno simulado* tiene su propia implementación de *require* permitiéndonos mockear módulos**, que en la práctica significa que podemos mockear dependencias con Jest. Parafraseando lo que dice Matteo en el tweet que tenemos debajo: **Esto permite una experiencia de desarrollo increíble, pero nuestros tests son menos útiles porque no se están ejecutando en el entorno real.**
 
 <blockquote class="twitter-tweet" data-lang="es" data-theme="light" data-align="center"><p lang="en" dir="ltr">The major downsides is <a href="https://t.co/Cc1z15gqEH">https://t.co/Cc1z15gqEH</a>. Essentially you are not running your code on top of Node or a Browser, but on top of Jest. They do it because it allows a HUGE amount of great DX. On the other hand… your test are less useful because it’s not the real env.</p>&mdash; Matteo Collina (@matteocollina) <a href="https://twitter.com/matteocollina/status/1479955450179301382?ref_src=twsrc%5Etfw">8 de Enero de 2022</a></blockquote>
 
