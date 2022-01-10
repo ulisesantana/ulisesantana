@@ -49,15 +49,15 @@ Sin duda alguna tenemos problemas para testear código en Node.js. El issue inic
 
 ## Alternativas
 
-### Mocha ([4,765,970 descargas semanales](https://www.npmjs.com/package/mocha))
+### Mocha
 
 [Mocha](https://mochajs.org) con [Chai](https://www.chaijs.com) llevan siendo una buena opción para testear tu código en JavaScript desde hace casi 10 años. Es un tandem rápido y ligero: Mocha es el *test runner* y chai es la *assertion library*. Sin embargo, como comentaba antes, el ser ligero hace que si quieres añadir mocks, spies o informes de cobertura de test necesitas instalar nuevos paquetes.
 
-### Node-Tap ([153,919 descargas semanales](https://www.npmjs.com/package/tap))
+### Node-Tap
 
 [Node Tap](https://node-tap.org) también existe desde hace 10 años, pero no tiene tanta popularidad. Al contrario que Mocha, no es un *test runner*, sino un *test framework* y tal como dice su web: **viene con pilas incluidas**. Al igual que Jest permite mockear módulos, incluye su *assertion library* y puede generar informes de cobertura de test. Es bastante completo, sigue el [protocolo TAP](https://testanything.org) y es el *test framework* que recomienda Matteo Collina. Por cierto, quien creó Node Tap es [Isaac Schlueter](https://twitter.com/izs), el mismo que creó npm. La gran diferencia que con Mocha y Jest es que con Node Tap ejecutas el archivo en el que tienes los test con Node.js directamente, no con el *test runner*. En otras palabras, para ejecutar los test no ejecutas `tap add.test.js`, sino que ejecutas `node add.test.js`.
 
-### Tape ([531,791 descargas semanales](https://www.npmjs.com/package/tape))
+### Tape
 
 [Tape](https://github.com/substack/tape) también existe desde hace casi 10 años y está influenciado por *Node Tap*. En la última edición de Node Cookbook, el libro que te recomiendan para sacarte la certificación de Node.js, es el primer *test framework* con el que te enseñan a hacer un test. Hay que añadir, que también te enseñan como hacer test con Mocha y con Jest. Pese a que es muy parecido a Node Tap, es menos potente y probablemente necesites librerías extra, pero también es más ligero. Por otro lado, la documentación no es más que el README del proyecto. Por último, también sigue el [protocolo TAP](https://testanything.org).
 
@@ -65,7 +65,7 @@ Sin duda alguna tenemos problemas para testear código en Node.js. El issue inic
 
 |                                          |    Jest    |   Mocha   | Node Tap |   Tape  |
 |------------------------------------------|:----------:|:---------:|:--------:|:-------:|
-| Descargas semanales                      | 12,305,334 | 4,765,970 | 153,919  | 531,791 |
+| Descargas semanales                      | [12,305,334](https://www.npmjs.com/package/jest) | [4,765,970](https://www.npmjs.com/package/mocha) | [153,919](https://www.npmjs.com/package/tap)  | [531,791](https://www.npmjs.com/package/tape) |
 | Node Cookbook                            |     ✅     |     ✅     |    ❌     |    ✅   |
 | Assertion library                        |     ✅     |     ❌     |    ✅     |    ✅   |
 | Informes de cobertura de test            |     ✅     |     ❌     |    ✅     |    ❌   |
@@ -84,7 +84,7 @@ Por otro lado, lo que usaba antes de que Jest llegara a mi vida era [Mocha](http
 
 ## Conclusión
 
-Si buscas una respuesta demoledora que te diga qué solución debes usar para hacer test con JavaScript me temo que no la vas a encontrar aquí. Pese a todo lo que hemos visto Jest no deja de ser un paquete con más de [**12 millones de descargas a la semana**](https://www.npmjs.com/package/jest) y que si aterrizas en un equipo de JavaScript lo más probable es que los test estén en Jest. Además, el libro *Node Cookbook*, que es el que te recomiendan para prepararte la certificación de Node.js, te enseña cómo hacer test con Jest, Mocha y Tape. Se me hace difícil decir que dejes de usar Jest, pero sí quiero que tengas claro que **no estás ejecutando tus test en el mismo entorno en el que se va a ejecutar en producción**. Esto último hace que no puedas tener una seguridad al 100% de que todo va a funcionar como esperas, tal vez el 99%, pero nunca el 100%. Ojo, que ese 99% puede ser válido para lo que vas a hacer. Es como la cobertura de test de un proyecto, en muchas ocasiones con tener un 90% es suficiente, pero probablemente sería mejor tener un 100% si se respeta la sostenibilidad del proyecto.
+Si buscas una respuesta demoledora que te diga qué solución debes usar para hacer test con JavaScript me temo que no la vas a encontrar aquí. Pese a todo lo que hemos visto Jest no deja de ser un paquete con más de **12 millones de descargas a la semana** y que si aterrizas en un equipo de JavaScript lo más probable es que los test estén en Jest. Además, el libro *Node Cookbook*, que es el que te recomiendan para prepararte la certificación de Node.js, te enseña cómo hacer test con Jest, Mocha y Tape. Se me hace difícil decir que dejes de usar Jest, pero sí quiero que tengas claro que **no estás ejecutando tus test en el mismo entorno en el que se va a ejecutar en producción**. Esto último hace que no puedas tener una seguridad al 100% de que todo va a funcionar como esperas, tal vez el 99%, pero nunca el 100%. Ojo, que ese 99% puede ser válido para lo que vas a hacer. Es como la cobertura de test de un proyecto, en muchas ocasiones con tener un 90% es suficiente, pero probablemente sería mejor tener un 100% si se respeta la sostenibilidad del proyecto.
 
 Por mi parte me he propuesto dos cosas. La primera es que quiero darle una segunda oportunidad a *Node Tap*, por el simple hecho de comprender la herramienta y ver en qué casos puede ser útil. La segunda es que en cada equipo nuevo que entre les voy a explicar este problema de Jest para que como equipo sepamos qué problemas pueden aparecer cuando usamos Jest en nuestros proyectos. Otra historia será que usemos o no Jest para nuevos proyectos o nos planteemos cambiar de *test framework*.
 
