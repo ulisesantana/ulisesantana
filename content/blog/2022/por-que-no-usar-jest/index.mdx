@@ -26,7 +26,7 @@ En el hilo del tweet hablan de este [issue en Github de serverless](https://gith
     - Los *outputs* de `stdout` y `stderr` no se imprimen en el mismo orden en el que se ejecutan. Se prioriza los `stderr` antes que `stdout`.
     - Algunas API públicas de Node.js se reemplazan con alternativas no estándar.
     - Debido al manejo de caché de módulos de una manera no estándar y desigual, es propenso a memory leaks.
-  - El progreso de los test no se muestra hasta que finalizan, lo cual es no es lo mejor en los test que requieren mucho tiempo, como los test de integración.
+  - El progreso de los test no se muestra hasta que finalizan, lo cual no es lo mejor en los test que requieren mucho tiempo, como los test de integración.
   - Cualquier *output* `stdout` / `stderr` está oculto hasta que finaliza el test.
   - El *test runner* predeterminado tiene varios errores (se puede parchear mediante el uso de `jest-circus` el *test runner* alternativo, que funciona por defecto a partir de Jest 27):
     - Fallos en beforeAll no impiden la ejecución de las pruebas.
