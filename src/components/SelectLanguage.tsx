@@ -11,7 +11,7 @@ export const SelectLanguage = ({ lang }: { lang: Language }) => {
           gatsbyImageData(layout: FIXED)
         }
       }
-      esFlag: file(absolutePath: { regex: "/spain-republic.jpg/" }) {
+      esFlag: file(absolutePath: { regex: "/canary-islands.png/" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED)
         }
@@ -29,7 +29,7 @@ export const SelectLanguage = ({ lang }: { lang: Language }) => {
       {lang === "en" && <Link to={"/"}>
         <GatsbyImage
           image={data.esFlag.childImageSharp.gatsbyImageData}
-          alt="Bandera española republicana"
+          alt="Bandera canaria"
         />
       </Link>}
     </div>
