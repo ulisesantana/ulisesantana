@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const MilestoneWrapper = styled.article`
   display: block;
   padding: 4px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   max-width: 300px;
   width: 100%;
 

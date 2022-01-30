@@ -41,6 +41,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/data/`,
+        name: `data`
+      },
+    },
+    {
       resolve: "gatsby-plugin-i18n",
       options: {
         langKeyDefault: "es",
@@ -132,12 +139,6 @@ module.exports = {
     },
     `gatsby-transformer-yaml`,
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/data/`,
-      },
-    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

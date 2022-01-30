@@ -4,6 +4,7 @@ import styled from "styled-components"
 interface SectionProps {
   title: string
   icon: JSX.Element
+  multiColumn?: boolean
   className?: string
 }
 
@@ -41,6 +42,12 @@ const SectionWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
+    &.multi-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 16px;
+    }
 
     p {
       font-size: 1rem;
@@ -74,11 +81,12 @@ export const Section: FC<SectionProps> = ({
   title,
   icon,
   children,
+  multiColumn,
   ...attrs
 }) => (
   <SectionWrapper {...attrs}>
     <SectionTitle title={title} icon={icon} />
-    <div className="content">{children}</div>
+    <div className={"content" + (multiColumn ? ' multi-column' : '')}>{children}</div>
   </SectionWrapper>
 )
 

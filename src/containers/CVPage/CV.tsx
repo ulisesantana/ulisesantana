@@ -72,13 +72,14 @@ export function CV() {
         className="page-break-after"
         title="Milestones"
         icon={<FaStar />}
+        multiColumn
       >
         {renderInfo(milestones)}
       </Section>
-      <Section title="Sponsored Events" icon={<FaStar />}>
+      <Section title="Sponsored Events" icon={<FaStar />} multiColumn>
         {renderInfo(sponsored)}
       </Section>
-      <Section title="Attended Conferences before COVID-19" icon={<FaStar />}>
+      <Section title="Attended Conferences before COVID-19" icon={<FaStar /> }  multiColumn>
         {renderInfo(attended)}
       </Section>
     </>

@@ -308,101 +308,206 @@ attended:
   - when: 05/2019
     location: Paris, France
     title: React Europe
-   - when: 11/2018
-     location: La Laguna, Santa Cruz de Tenerife, Spain
-     title: JSDay Canarias
-   - when: 11/2018
-     location: Kilkenny, Ireland
-     title: NodeCONF EU
-   - when: 06/2018
-     location: Berlin, Germany
-     title: JSConf EU
-   - when: 04/2018
-     location: Las Palmas de Gran Canaria, Spain
-     title: Socracan
+  - when: 11/2018
+    location: La Laguna, Santa Cruz de Tenerife, Spain
+    title: JSDay Canarias
+  - when: 11/2018
+    location: Kilkenny, Ireland
+    title: NodeCONF EU
+  - when: 06/2018
+    location: Berlin, Germany
+    title: JSConf EU
+  - when: 04/2018
+    location: Las Palmas de Gran Canaria, Spain
+    title: Socracan
 stuff:
   - title: Bizenter
     url:
     git:
     description: An assets management app. Asked by
-    stack: []
+    stack: [ ]
   - title: ts-boilerplate
     url: https://github.com/ulisesantana/ts-boilerplate
     git: https://github.com/ulisesantana/ts-boilerplate
     description: A basic boilerplate for TypeScript projects
-    stack: ["TypeScript", "Jest", "Husky", "xo"]
+    stack: [ "TypeScript", "Jest", "Husky", "xo" ]
   - title: ink-boilerplate
     url: https://github.com/ulisesantana/ink-boilerplate
     git: https://github.com/ulisesantana/ink-boilerplate
     description: A basic boilerplate for building CLI with React
-    stack: ["React", "Ava", "Husky", "xo"]
+    stack: [ "React", "Ava", "Husky", "xo" ]
   - title: Testing with React Workshop
     url:
     git: https://github.com/ulisesantana/react-testing-workshop
     description:
-    stack: []
+    stack: [ ]
   - title: Game of life in vanilla
     url: https://wwww.ulisesantana.dev/game-of-life-vanilla
     git: https://github.com/ulisesantana/game-of-life-vanilla
     description:
-    stack: ["Parcel", "TypeScript"]
+    stack: [ "Parcel", "TypeScript" ]
   - title: Randomizer
     url:
     git:
     description: An Offline Progressive Web App app for get an item from a random list.
-    stack: ["React", "TypeScript", "Styled Components"]
+    stack: [ "React", "TypeScript", "Styled Components" ]
   - title: Diet
     url: https://www.ulisesantana.dev/diet/
     git: https://github.com/ulisesantana/diet
     description: I have some minor health issues which affects to my diet. With this PWA me and my family can cook or buy food friendly for me.
-    stack: ["React", "TypeScript", "Styled Components", "React Material UI"]
+    stack: [ "React", "TypeScript", "Styled Components", "React Material UI" ]
   - title: array-analyzer
     url: https://www.ulisesantana.dev/array-analyzer/
     git: https://github.com/ulisesantana/array-analyzer
     description: Analize the data on JSON Array with the built-in Array methods
-    stack: ["React", "TypeScript", "Styled Components"]
+    stack: [ "React", "TypeScript", "Styled Components" ]
   - title: Toolbox
     url:
     git: https://github.com/ulisesantana/toolbox/tree/develop
     description: A Chrome extension with some basic and dummy tools for my daily basis.
-    stack: ["React", "TypeScript", "Styled Components", "Styleguidist"]
+    stack: [ "React", "TypeScript", "Styled Components", "Styleguidist" ]
   - title: assets-api
     url:
     git: https://github.com/ulisesantana/assets-api
     description: A proof of concept about a REST API build with TypeScript, Koa and TypeORM.
-    stack: ["TypeScript", "TypeORM", "Koa"]
+    stack: [ "TypeScript", "TypeORM", "Koa" ]
   - title: buffer
     url:
     git: https://github.com/ulisesantana/buffer
     description: A proof of concept about a buffer with Mongo and Redis
-    stack: ["TypeScript", "Redis", "Mongo"]
+    stack: [ "TypeScript", "Redis", "Mongo" ]
   - title: cluedo
     url:
     git: https://github.com/ulisesantana/cluedo
     description: Digital version for playing to GOT Cluedo. Instead of using paper and pencil, just use your phone.
-    stack: ["Vue"]
+    stack: [ "Vue" ]
   - title: ubuntuReady
     url:
     git: https://github.com/ulisesantana/ubuntuReady
     description: A bash script for setting up a new Ubuntu. Automate all the basic stuff I use install and config when I have a new PC.
-    stack: ["bash"]
+    stack: [ "bash" ]
   - title: bug-hunter
     url:
     git: https://github.com/ulisesantana/bug-hunter
     description: A CLI game as proof of concept about doing something with CLI on Vanilla Node.js.
-    stack: ["Node.js"]
+    stack: [ "Node.js" ]
   - title: Web Native Form Validation
     url: https://repl.it/@ulisesantana/Web-Native-Form-Validation
     git:
     description: A proof of concept about vanilla form validation without JavaScript.
-    stack: ["HTML", "CSS"]
+    stack: [ "HTML", "CSS" ]
   - title: Object deep validation
     url: https://repl.it/@ulisesantana/Validate
     git:
     description: A proof of concept about object validation with a recursive function
-    stack: ["Node.js"]
+    stack: [ "Node.js" ]
   - title: Fibonacci limits
     url: https://repl.it/@ulisesantana/fibonacci
     git:
     description: A proof of concept about performance with a recursive function versus a iterative one using Big Number in JavaScript.
-    stack: ["Node.js"]
+    stack: [ "Node.js" ]
+projects:
+  - name: git-reporter
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: array-analyzer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: randomizer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: bizenter
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: cheapest-power-hour
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: week-plan
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: paralacurva
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: diet
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: object-comparer
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: toolbox
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: ipRetriever
+    url:
+    source:
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: bug-hunter
+    url:
+    source: https://github.com/ulisesantana/bug-hunter
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
+  - name: fefo
+    url:
+    source: https://github.com/ulisesantana/bug-hunter
+    image:
+    status: Maintained
+    description:
+      es:
+      en:
