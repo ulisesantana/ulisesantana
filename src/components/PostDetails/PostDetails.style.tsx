@@ -116,6 +116,11 @@ export const PostPreview = styled.div`
 
 export const PostDescription = styled.div`
   font-size: var(--font-size-3);
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 
   a.gatsby-resp-image-link {
     border-bottom: none;
