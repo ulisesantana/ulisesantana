@@ -120,6 +120,7 @@ export const PostDescription = styled.div`
   img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
   }
 
   a.gatsby-resp-image-link {
