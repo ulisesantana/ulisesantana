@@ -43,7 +43,7 @@ const renderInfo = (list: InfoList) => {
 
 
 export function CV() {
-  const { education, jobs, about, milestones } = useCV()
+  const { education, jobs, about, milestones, sponsored } = useCV()
 
   return (
     <>
@@ -75,6 +75,9 @@ export function CV() {
         multiColumn
       >
         {renderInfo(milestones)}
+      </Section>
+      <Section title="Sponsored Events" icon={<FaStar />} multiColumn>
+          {renderInfo(sponsored)}
       </Section>
     </>
   )
