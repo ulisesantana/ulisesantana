@@ -183,7 +183,7 @@ const About: React.FunctionComponent = () => {
           </p>
 
           <p>
-            As part of my giveback plan, I've been sponsoring the last two
+            As part of my giveback plan, I've been sponsoring the last three
             <a href={Links.jsday} target={`_blank`}>
               {" "}
               JS Day Canarias{" "}
@@ -195,8 +195,7 @@ const About: React.FunctionComponent = () => {
             >
               PyDay Gran Canaria 2019
             </a>
-            , besides also sponsor and co-organize
-            <a href="https://twitter.com/GDCR_Canarias" target={`_blank`}>
+            , besides also sponsor and co-organize <a href="https://twitter.com/GDCR_Canarias" target={`_blank`}>
               Global Day of Coderetreat Canarias 2019
             </a>
             . Also, On November 2018 I had the opportunity to give a

@@ -200,7 +200,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
 
           <p>
             Como parte de mi plan de aportar a la comunidad, he patrocinado las
-            dos últimas ediciones de
+            tres últimas ediciones de
             <a href={Links.jsday} target={`_blank`}>
               {" "}
               JS Day Canarias{" "}
@@ -212,8 +212,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
             >
               PyDay Gran Canaria 2019
             </a>
-            , aparte de también patrocinar y co-organizar el
-            <a href="https://twitter.com/GDCR_Canarias" target={`_blank`}>
+            , aparte de también patrocinar y co-organizar el <a href="https://twitter.com/GDCR_Canarias" target={`_blank`}>
               Global Day of Coderetreat Canarias 2019
             </a>
             . Además, en Noviembre de 2018 tuve la oportunidad de dar una charla
