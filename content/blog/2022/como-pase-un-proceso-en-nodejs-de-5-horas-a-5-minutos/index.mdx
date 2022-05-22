@@ -181,9 +181,9 @@ function fetchUserListInfo(ids) {
 }
 ```
 
-Esta sería otra forma de hacer el `fetchUserListInfo` que hemos visto un par de diapositivas atrás. Tanto esta como la anterior solución tienen un problema, no sabes cuántas promesas vas a tener en el `Promise.all`. En casos en los que no sabes el número de promesa que vas a gestionar o este número es muy alto es recomendable usar la librería `p-map` y limitar la concurrencia. La razón para hacer esto es que si tienes demasiadas promesas puedes acabar haciéndote un DDoS a ti mismo sin darte cuenta.
+Esta sería otra forma de hacer el `fetchUserListInfo` que hemos visto un par de diapositivas atrás. Tanto esta como la anterior solución tienen un problema, no sabes cuántas promesas vas a tener en el `Promise.all`. En casos en los que no sabes el número de promesas que vas a gestionar o este número es muy alto es recomendable usar la librería `p-map` y limitar la concurrencia. La razón para hacer esto es que si tienes demasiadas promesas puedes acabar haciéndote un ataque de denegación de servicio a ti mismo sin darte cuenta.
 
-En el *Proyecto Leñador* más que un DDoS lo que nos preocupaba era ahogar la base de datos. En estos proyectos la práctica habitual era limitar la concurrencia al número de conexiones que teníamos configurado para la base de datos, evitando así ahogarla.
+En el *Proyecto Leñador* más que un ataque de denegación de servicio lo que nos preocupaba era ahogar la base de datos. En estos proyectos la práctica habitual era limitar la concurrencia al número de conexiones que teníamos configurado para la base de datos, evitando así ahogarla.
 
 ```js
 import pMap from 'p-map';
@@ -197,7 +197,7 @@ function fetchUserListInfo(ids) {
 }
 ```
 
-La diferencia usando `p-map` es que tienes que pasar por separado la lista sobre la que quieres quieres iterar, la función que se ejecutará para cada uno de los elementos de la lista y por último las opciones de `p-map`. En este caso sólo le definimos que queremos que como máximo resuelva 10 promesas a la vez.
+La diferencia usando `p-map` es que tienes que pasar por separado la lista sobre la que quieres iterar, la función que se ejecutará para cada uno de los elementos de la lista y por último las opciones de `p-map`. En este caso sólo le definimos que queremos que como máximo resuelva 10 promesas a la vez.
 
 Por último, tener en cuenta que `p-map` en su versión 5 pasó a ser de tipo ESModules y a menos que tu proyecto esté hecho de esta manera no te va a funcionar. Para poder usarlo con CommonJS necesitas tirar de la versión 4. La realidad es que ambas versiones sólo difieren en si funcionan con ESModules o con CommonJS. Vamos, que si importas cosas en ficheros con `import` o con `require` respectivamente.
 
@@ -241,7 +241,7 @@ function CacheByPromise() {
 }
 ```
 
-Aquí vemos cómo serían las implementaciones de gestión de cache, una por valor y la otra por promesa. Como vemos, la única diferencia es la asignación a la variable la primera vez que se solicita el recurso. En un caso usa el await, en el otro no.
+Aquí vemos cómo serían las implementaciones de gestión de caché, una por valor y la otra por promesa. Como vemos, la única diferencia es la asignación a la variable la primera vez que se solicita el recurso. En un caso usa el await, en el otro no.
 
 ![Resultado de ejecutar la demo para comparar valores cacheados por promesa o por valor](./cached-promises.png)
 
@@ -281,9 +281,9 @@ Aparte de haber mejorado la sostenibilidad del proyecto, habíamos mejorado la p
 
 Al final todo salió bien, pero sin duda aprendí un par de cosas de esta experiencia:
 
-- **La asincronía en JS está más incomprendida de lo que pensaba.** La gestión de asincronía en JavaScript es algo que no todo el mundo tiene interiorizado. Todo el mundo usa promesas y el async/await y empezar a trabajar con JavaScript o TypeScript no es tan complicado, lo que sí es más complicado es saber cómo gestionar la asincronía en JavaScript. Aclarar, que la asincronía en sí es algo que no es fácil de comprender, ya que esto pasa en otros lenguajes también.
+- **La asincronía en JS está más incomprendida de lo que pensaba.** La gestión de asincronía en JavaScript es algo que no todo el mundo tiene interiorizado. Todo el mundo usa promesas y el async/await y empezar a trabajar con JavaScript o TypeScript no es tan complicado, lo que sí es más complicado es saber cómo gestionar la asincronía en JavaScript. Aclarar, que la asincronía en sí es algo que no es fácil de comprender, ya que esto pasa también en otros lenguajes.
 - **Forma a tu equipo, comparte el conocimiento.** Busca tiempo para poco a poco ir formándolo. En mi experiencia el mob programming ayuda bastante, pero no es suficiente. Algunos conceptos necesitas interiorizarlos y para eso lo mejor es hacer katas o tener formaciones con objetivos concretos. Al principio es bastante duro preparar esta clase de formaciones, pero a medida que las tengas podrás reusarlas a medida que entren personas nuevas o si cambias de equipo puedes formar a ese nuevo equipo.
-- **La responsabilidad debe ser compartida.** Es bastante típico que las personas con más experiencia del equipo se echen las cosas a la espalda. La responsabilidad debe ser compartida, tanto tecnológica como a nivel de diseño de software o metodologías. La idea es que los miembros del equipo aprendan unos de otros sin importar el nivel de experiencia que tengan. El intercambio de ideas desde distintos puntos de vista puede enriquecer mucho al equipo.
+- **La responsabilidad debe ser compartida.** Es bastante típico que las personas con más experiencia del equipo se echen las cosas a la espalda. La responsabilidad debe ser compartida, tanto tecnológica como en lo relativo a diseño de software o metodologías. La idea es que los miembros del equipo aprendan unos de otros sin importar el nivel de experiencia que tengan. El intercambio de ideas desde distintos puntos de vista puede enriquecer mucho al equipo.
 - **Sé prescindible.** Si eres prescindible no serás el cuello de botella. En esta historia yo fui un cuello de botella por conocimiento y por dominio. Es algo de lo que me arrepiento, pero también algo de lo que aprendí. Ojo, digo prescindible que no innecesario. Con esto quiero decir que no seas crítico por conocimiento, ya sea de dominio, procesos o tecnología. Trata siempre de compartir tu conocimiento con el equipo y documentarlo. Todo lo que tiene un inicio tiene un fin, por lo que algún momento dejarás de estar en el equipo en el que estás ahora. Cuando eso pase lo importante es que no te lleves conocimiento contigo, sino que lo hayas dejado en el equipo en forma de documentación. De esta manera serás prescindible.
 
 Y esta ha sido la historia y el aprendizaje de cómo pasé un proceso en Node.js de 5 horas a 5 minutos. Recapitulando estos son mis 6 consejos cuando gestionas asincronía en JavaScript:
@@ -299,7 +299,7 @@ Y esta ha sido la historia y el aprendizaje de cómo pasé un proceso en Node.js
 Tengo un par de cosas más en el tintero que no son producto de esta experiencia con *El Proyecto Leñador*, sino del día a día durante los últimos años y quiero compartirlas.
 
 - **No mezcles tipos de asincronía**: Aparte de ser más difícil de leer, también acaba afectando al performance porque la mayoría de las veces lo que hacemos es complicar el comportamiento asíncrono.
-- **Async generators, ese gran desconocido**: En JavaScript existe una cosa llamada generators, de la cual llegó hace un par de años su versión asíncrona. Los async generators donde brillan es al gestionar streams. Sin embargo, hay otros casos de uso que también son muy útiles. Lucciano Mammino dió una [charla sobre ellos en la NodeCONF EU en 2019](https://www.youtube.com/watch?v=uTzBHPpMEhA).
+- **Async generators, ese gran desconocido**: En JavaScript existe una cosa llamada generators, de la cual llegó hace un par de años su versión asíncrona. Los async generators donde brillan es al gestionar streams. Sin embargo, hay otros casos de uso que también son muy útiles. Lucciano Mammino dió una [charla sobre ellos en la NodeCONF EU en 2021](https://www.youtube.com/watch?v=uTzBHPpMEhA).
 - **Investiga sobre el Event Loop**: Entender cómo funciona JavaScript por debajo te ayuda a entender por qué a veces las cosas no pasan como esperamos. En la documentación de Node.js hay un apartado de guías en la cual hay una llamada [*The Node.js Event Loop, Timers, and process.nextTick()*](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/). Es un documento que tardaron 6 meses en escribir y que explica los diferentes procesos y el orden en el que se ejecutan en cada vuelta del Event Loop en Node.js.
 
 También dejo por aquí [este artículo de James Snell](https://www.nearform.com/blog/optimise-node-js-performance-avoiding-broken-promises/) sobre gestión de promesas en Node.js.
