@@ -3,7 +3,7 @@ import {graphql, useStaticQuery} from "gatsby"
 import {GatsbyImage} from "gatsby-plugin-image";
 import {AboutDetails, AboutImage, AboutWrapper} from "./style"
 import Intro from "../Intro"
-import {SocialLinks, TLDR} from "../../components"
+import {YouTubeVideo, SocialLinks, TLDR} from "../../components"
 import Links from "./links"
 
 interface AboutProps {}
@@ -238,12 +238,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
           <p>Si quieres saber un poco más de mí puedes ver esta entrevista que me hizo mi compañero <a target="_blank" href="https://adrianferrera.com">Adrián Ferrera</a> en su podcast <a
             target="_blank" href="https://www.youtube.com/channel/UC8hcSq8ZoFG8hZrZ8XFC7Qw">Devs Lives</a>.</p>
 
-          <div className="iframe-container">
-            <iframe className="responsive-iframe" src="https://www.youtube-nocookie.com/embed/T9Frov6wS7U"
-                    title="YouTube video player" frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen></iframe>
-          </div>
+          <YouTubeVideo id="T9Frov6wS7U"/>
 
         </AboutDetails>
       </AboutWrapper>

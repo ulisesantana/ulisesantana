@@ -12,13 +12,14 @@ import ImageWithDescription from "./ImageWithDescription";
 import {JavaScriptRepl} from "./JavaScriptRepl";
 import {GlobalStyle} from "../theme";
 import {TLDR} from "./TLDR";
+import {YouTubeVideo} from "./YouTubeVideo";
 
 const BaseLayout = (lang: Language = "en"): React.FC<{ menu?: boolean }> => ({
   children,
   menu = true,
 }) => (
     <SimpleReactLightbox>
-      <MDXProvider components={{ImageWithDescription, JavaScriptRepl, TLDR}}>
+      <MDXProvider components={{ImageWithDescription, JavaScriptRepl, TLDR, YouTubeVideo}}>
         <GlobalStyle/>
         {!!menu && <Navbar lang={lang}/>}
         {children}
