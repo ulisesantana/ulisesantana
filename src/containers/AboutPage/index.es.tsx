@@ -234,6 +234,17 @@ const About: React.FunctionComponent<AboutProps> = () => {
           <AboutImage>
             <GatsbyImage image={Data.talk.childImageSharp.gatsbyImageData} alt="Hablando de cómo crear un paquete de npm en el JSDay Canarias de 2018" />
           </AboutImage>
+
+          <p>Si quieres saber un poco más de mí puedes ver esta entrevista que me hizo mi compañero <a target="_blank" href="https://adrianferrera.com">Adrián Ferrera</a> en su podcast <a
+            target="_blank" href="https://www.youtube.com/channel/UC8hcSq8ZoFG8hZrZ8XFC7Qw">Devs Lives</a>.</p>
+
+          <div className="iframe-container">
+            <iframe className="responsive-iframe" src="https://www.youtube-nocookie.com/embed/T9Frov6wS7U"
+                    title="YouTube video player" frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen></iframe>
+          </div>
+
         </AboutDetails>
       </AboutWrapper>
     </>
