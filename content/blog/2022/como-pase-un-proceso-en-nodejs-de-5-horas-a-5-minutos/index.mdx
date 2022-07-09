@@ -203,52 +203,7 @@ Por último, tener en cuenta que `p-map` en su versión 5 pasó a ser de tipo ES
 
 ![Pasar de CommonJS to ESModules](./cjs-to-esm.png)
 
-### 5. Cachear queries
-
-Esto no es exclusivo de Node.js, pero era algo que no estábamos haciendo y que podía ayudar, ya que había ciertos datos que no cambiaban durante la ejecución y que no venía mal tenerlos cacheados.
-
-Lo que sí es exclusivo de Node.js es cómo cachear esta clase de datos. No cacheas el valor, sino la promesa que te devuelve. Ya después cuando coges la promesa cacheada la resuelves y sigues trabajando con normalidad.
-
-Cacheando por valor:
-```js
-function CacheByValue() {
-  let value = undefined
-
-  return {
-    async getNumber() {
-      if (value === undefined) {
-        value = await doSomethingAsync()
-      }
-      return value
-    }
-  }
-}
-```
-
-Cacheando por promesa:
-```js
-function CacheByPromise() {
-  let value = undefined
-
-  return {
-    getNumber() {
-      if (value === undefined) {
-        value = doSomethingAsync()
-      }
-      return value
-    }
-  }
-}
-```
-
-Aquí vemos cómo serían las implementaciones de gestión de caché, una por valor y la otra por promesa. Como vemos, la única diferencia es la asignación a la variable la primera vez que se solicita el recurso. En un caso usa el await, en el otro no.
-
-![Resultado de ejecutar la demo para comparar valores cacheados por promesa o por valor](./cached-promises.png)
-
-En esta otra demo echo a correr estos dos trozos de código cien millones de veces para ver si realmente hay diferencia. La realidad es que la hay y es recomendable cachear la promesa en vez del valor si queremos seguir rascando performance.
-
-
-### 6. Haz caso de los warnings
+### 5. Haz caso de los warnings
 
 No sé si a alguien más le pasa que la mayoría del tiempo ignoras los warnings y sólo le das importancia cuando son errores. En la consola al ejecutar el proceso me salía esto:
 
@@ -291,8 +246,7 @@ Y esta ha sido la historia y el aprendizaje de cómo pasé un proceso en Node.js
 2. Evita los await dentro de los bucles
 3. Usa Promise.all siempre que puedas
 4. Sé consciente de cuantas promesas estás gestionando
-5. Cachea la promesa en vez del valor que resuelve
-6. Haz casos de los warnings.
+5. Haz casos de los warnings.
 
 ## Un par de cosas más
 
