@@ -36,3 +36,32 @@ draft: true
     - Cada telescopio recogía 350 TB al día de datos. En discos duros de Helio. En total fueron 5 Petabytes de datos que había que analizar.
     - En total tardaron 2 años en procesarlo todo. Fue con Google Cloud.
     - Para sacar Sagitario A* en el Event Horizont Telescope añadieron 3 telescopios más, siendo un total de 11.
+1. Daniel Candil (ex THQ Nordic) y cómo hacer que el entorno te hable (environmental storytelling)
+    - ¿Qué hace un Director de Arte en un videojuego?
+    - Art of the show (Disney 1955)
+    - El Diseño Temático
+    - 
+1. Defining boundaries con Jorge Barroso.
+    - Definición de boundary de Uncle Bob en Clean Architecture
+    - Podemos traducirlo como frontera
+    - En el libro de Evans sobre DDD hay otra definición también interesante.
+    - Propuesta de Jorge:
+        - Boundaries externos: esa capa de servicios que suelen tener pocas opciones. La más externa a nosotros.
+        - Boundaries internos: como nuestras propias capas de software hablan entre ellas.
+        - Boundaries de método (o de clase): las clases en sí mismas tienen sus métodos públicos y privados.
+    - Jorge habla de que tenemos problemas de polisemia en la industria del software.
+    - Todas las decisiones que tomamos en el software va de tratar de aplicar alta cohesión y bajo acoplamiento. Si haces algo que no cumpla esta regla, seguro que la estás liando.
+    - Public Contracts: los contratos públicos son las puertas de entrada de los boundaries. Es la puerta de entrada de nuestras fronteras. 
+        1. Hide implementations.
+        1. Show expectations.
+        1. Avoid 'Literals' on public External contracts. (Usa objetos de dominio en vez de literales)
+        1. Interfaces, protocols, abstract classes... Are only implementation details.
+    - Single Responsability Principle: Boundaries should help to split responsabilities.
+    - Una de las cosas que tienen las boundaries es que ayudan mucho a poder testear.
+    - Cuando el software escala, es el dominio lo que crece, dejando como accesorio todo lo que está alrededor (bases de datos, infraestructura y demás)
+    - Boundaries are about Expectations. 
+    - Cosas a buscar:
+        - ¿Segregación de estado y comportamiento?
+        - Principio de Segregación de Interfaces
+        - Patrón Adaptador
+        - CRC?
