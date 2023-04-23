@@ -18,12 +18,6 @@
     <a href="https://linkedin.com/in/ulisesantana" target="blank">
         <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="ulisesantana" height="32" width="48" />
     </a>
-    <a href="https://codesandbox.com/ulisesantana" target="blank">
-        <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg" alt="ulisesantana" height="32" width="48" />
-    </a>
-    <a href="https://instagram.com/ulisesantana" target="blank">
-        <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="ulisesantana" height="32" width="48" />
-    </a>
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
@@ -46,23 +40,8 @@
     <a href="https://nodejs.org" target="_blank">
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg" alt="nodejs" width="48" height="48"/>
     </a>
-    <a href="https://reactjs.org/" target="_blank">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="48" height="48"/>
-    </a>
-    <a href="https://redux.js.org" target="_blank">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="48" height="48"/>
-    </a>
-    <a href="https://www.gatsbyjs.com/" target="_blank">
-        <img src="https://www.vectorlogo.zone/logos/gatsbyjs/gatsbyjs-icon.svg" alt="gatsby" width="48" height="48"/>
-    </a>
-    <a href="https://jestjs.io" target="_blank">
-        <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="48" height="48"/>
-    </a>
-    <a href="https://mochajs.org" target="_blank">
-        <img src="https://www.vectorlogo.zone/logos/mochajs/mochajs-icon.svg" alt="mocha" width="48" height="48"/>
-    </a>
-    <a href="https://www.cypress.io" target="_blank">
-        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg" alt="cypress" width="48" height="48"/>
+     <a href="https://www.python.org" target="_blank">
+        <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" alt="python" width="48" height="48"/>
     </a>
     <a href="https://www.docker.com/" target="_blank">
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="48" height="48"/>
