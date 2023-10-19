@@ -2,10 +2,6 @@
 <h1 align="center">Hi 👋, I'm Ulises Santana</h1>
 <h4 align="center">Full Stack Developer with JavaScript as mother tongue and web as my home nation. Based in the Canary Islands 🏝️</h4>
 
-- 🔭 I’m currently working on [Triditive](https://triditive.com)
-
-- 🌱 I’m currently getting deeper in **🐍 Python**
-
 - 💬 Ask me about **JavaScript, Node.js or Web Development**
 
 - 📄 Know about my experiences [https://ulisesantana.dev/cv](https://ulisesantana.dev/cv)
